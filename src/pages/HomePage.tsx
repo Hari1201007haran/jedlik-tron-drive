@@ -1,6 +1,9 @@
 import React from 'react'
-import { ArrowRight, Zap, Cog, Leaf, Shield } from 'lucide-react'
+import { ArrowRight, Zap, Cog, Leaf, Shield, Users, MapPin, Phone, Mail, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 
 type HomePageProps = {
   onNavigate: (page: string) => void
@@ -34,6 +37,64 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     }
   ]
 
+  const features = [
+    {
+      icon: Zap,
+      title: 'Adaptive Power Delivery',
+      description: 'Intelligent power management that adapts to driving conditions for optimal performance and efficiency.'
+    },
+    {
+      icon: Cog,
+      title: 'Intelligent Battery Management',
+      description: 'Advanced BMS technology for extended battery life and enhanced safety protocols.'
+    },
+    {
+      icon: Leaf,
+      title: 'Eco-Friendly Operation',
+      description: 'Zero-emission operation with recyclable components for sustainable urban mobility.'
+    },
+    {
+      icon: Shield,
+      title: 'Modular Design',
+      description: 'Flexible architecture allowing easy maintenance and customization for various applications.'
+    }
+  ]
+
+  const techSpecs = [
+    { label: 'Power Output', value: '5kW - 15kW', unit: 'Continuous' },
+    { label: 'Torque Range', value: '50 - 120', unit: 'Nm' },
+    { label: 'Efficiency', value: '95%+', unit: 'Peak' },
+    { label: 'Voltage Range', value: '48V - 72V', unit: 'DC' },
+    { label: 'RPM Range', value: '0 - 3000', unit: 'RPM' },
+    { label: 'Protection Rating', value: 'IP65', unit: 'Sealed' }
+  ]
+
+  const faqs = [
+    {
+      question: 'What is Jedlik Motors?',
+      answer: 'Jedlik Motors is a DPIIT recognised startup based in Chennai, India, specializing in next-generation electric motor technology for urban commuting solutions.'
+    },
+    {
+      question: 'What types of motors do you offer?',
+      answer: 'We offer a range of high-efficiency electric motors designed for urban mobility applications, featuring adaptive power delivery, intelligent battery management, and modular design.'
+    },
+    {
+      question: 'How can I purchase a product?',
+      answer: 'You can contact us through our contact form, email, or phone. Our team will help you find the right motor solution for your specific requirements.'
+    },
+    {
+      question: 'What support do you provide?',
+      answer: 'We are supported by Anna Incubator and iCreate, providing comprehensive technical support, maintenance guidance, and consultation services.'
+    }
+  ]
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -62,7 +123,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              onClick={() => onNavigate('features')}
+              onClick={() => scrollToSection('features')}
               size="lg"
               className="tron-glass tron-glow hover:animate-pulse-glow font-orbitron font-bold text-lg px-8 py-4 group"
             >
@@ -71,13 +132,18 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </Button>
             
             <Button
-              onClick={() => onNavigate('techspecs')}
+              onClick={() => scrollToSection('techspecs')}
               variant="outline"
               size="lg"
               className="tron-glass border-accent hover:bg-accent hover:text-accent-foreground font-orbitron font-bold text-lg px-8 py-4"
             >
               TECH SPECIFICATIONS
             </Button>
+          </div>
+          
+          {/* Scroll indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <ChevronDown className="h-8 w-8 text-primary/60" />
           </div>
         </div>
       </section>
@@ -112,6 +178,225 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
+      {/* About Us Section */}
+      <section id="about" className="py-20 relative">
+        <div className="absolute inset-0 tron-grid-bg opacity-10" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
+            ABOUT <span className="text-accent">JEDLIK MOTORS</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="tron-glass-strong p-8 rounded-lg border border-primary/30">
+              <div className="flex items-center mb-6">
+                <Users className="h-8 w-8 text-primary mr-4" />
+                <h3 className="text-2xl font-orbitron font-bold tron-glow-text">Our Mission</h3>
+              </div>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                We're a DPIIT recognised startup based in the automobile capital of India, Chennai. 
+                We're a group of mechanical engineers working on the next generation of urban commuting. 
+                We're supported by Anna Incubator and iCreate.
+              </p>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="tron-glass p-6 rounded-lg border border-accent/30">
+                <h4 className="text-xl font-orbitron font-bold text-accent mb-3">DPIIT Recognised</h4>
+                <p className="text-muted-foreground">Officially recognized startup by the Department for Promotion of Industry and Internal Trade.</p>
+              </div>
+              <div className="tron-glass p-6 rounded-lg border border-primary/30">
+                <h4 className="text-xl font-orbitron font-bold text-primary mb-3">Chennai Based</h4>
+                <p className="text-muted-foreground">Located in India's automobile capital, leveraging decades of automotive expertise.</p>
+              </div>
+              <div className="tron-glass p-6 rounded-lg border border-accent/30">
+                <h4 className="text-xl font-orbitron font-bold text-accent mb-3">Expert Team</h4>
+                <p className="text-muted-foreground">Mechanical engineers dedicated to revolutionizing urban mobility solutions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
+            CUTTING-EDGE <span className="text-accent">FEATURES</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 group"
+              >
+                <div className="flex items-center mb-6">
+                  <div className="flex items-center justify-center w-16 h-16 rounded-lg bg-primary/20 group-hover:bg-accent/20 transition-colors mr-4">
+                    <feature.icon className="h-8 w-8 text-primary group-hover:text-accent transition-colors" />
+                  </div>
+                  <h3 className="text-2xl font-orbitron font-bold group-hover:tron-glow-text transition-all">
+                    {feature.title}
+                  </h3>
+                </div>
+                <p className="text-muted-foreground group-hover:text-foreground transition-colors text-lg leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Specs Section */}
+      <section id="techspecs" className="py-20 relative">
+        <div className="absolute inset-0 tron-grid-bg opacity-10" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
+            TECHNICAL <span className="text-accent">SPECIFICATIONS</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {techSpecs.map((spec, index) => (
+              <div
+                key={index}
+                className="tron-glass-strong p-6 rounded-lg border border-primary/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 text-center group"
+              >
+                <h3 className="text-lg font-orbitron font-bold text-muted-foreground mb-2 group-hover:text-foreground transition-colors">
+                  {spec.label}
+                </h3>
+                <div className="text-3xl font-orbitron font-black text-primary group-hover:tron-glow-text transition-all mb-1">
+                  {spec.value}
+                </div>
+                <p className="text-accent font-medium">{spec.unit}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
+            FREQUENTLY ASKED <span className="text-accent">QUESTIONS</span>
+          </h2>
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="tron-glass-strong border border-primary/30 rounded-lg px-6"
+              >
+                <AccordionTrigger className="text-lg font-orbitron font-bold hover:text-primary hover:tron-glow-text transition-all">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-4">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 relative">
+        <div className="absolute inset-0 tron-grid-bg opacity-10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
+            GET IN <span className="text-accent">TOUCH</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div className="tron-glass-strong p-8 rounded-lg border border-primary/30">
+              <h3 className="text-2xl font-orbitron font-bold mb-6 tron-glow-text">Send us a Message</h3>
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <Input
+                      placeholder="Your Name"
+                      className="tron-glass border-primary/30 focus:border-accent"
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      type="email"
+                      placeholder="Email Address"
+                      className="tron-glass border-primary/30 focus:border-accent"
+                    />
+                  </div>
+                </div>
+                <Input
+                  type="tel"
+                  placeholder="Phone Number"
+                  className="tron-glass border-primary/30 focus:border-accent"
+                />
+                <Input
+                  placeholder="Subject"
+                  className="tron-glass border-primary/30 focus:border-accent"
+                />
+                <Textarea
+                  placeholder="Your Message"
+                  rows={6}
+                  className="tron-glass border-primary/30 focus:border-accent resize-none"
+                />
+                <Button
+                  type="submit"
+                  className="w-full tron-glass tron-glow hover:animate-pulse-glow font-orbitron font-bold text-lg py-3"
+                >
+                  SEND MESSAGE
+                </Button>
+              </form>
+            </div>
+            
+            {/* Contact Info */}
+            <div className="space-y-8">
+              <div className="tron-glass-strong p-6 rounded-lg border border-accent/30">
+                <div className="flex items-center mb-4">
+                  <MapPin className="h-6 w-6 text-accent mr-4" />
+                  <h4 className="text-xl font-orbitron font-bold text-accent">Location</h4>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  Anna incubator, Second Floor, Platinum Jubilee building, AC Tech Campus, 
+                  Anna University, Guindy, Chennai, Tamil Nadu 600025
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="tron-glass p-6 rounded-lg border border-primary/30">
+                  <div className="flex items-center mb-3">
+                    <Phone className="h-5 w-5 text-primary mr-3" />
+                    <h4 className="text-lg font-orbitron font-bold text-primary">Phone</h4>
+                  </div>
+                  <p className="text-muted-foreground">+91 9790678445</p>
+                </div>
+                
+                <div className="tron-glass p-6 rounded-lg border border-primary/30">
+                  <div className="flex items-center mb-3">
+                    <Mail className="h-5 w-5 text-primary mr-3" />
+                    <h4 className="text-lg font-orbitron font-bold text-primary">Email</h4>
+                  </div>
+                  <p className="text-muted-foreground">info@jedlik.in</p>
+                </div>
+              </div>
+              
+              {/* Map Placeholder */}
+              <div className="tron-glass-strong h-64 rounded-lg border border-primary/30 flex items-center justify-center">
+                <div className="text-center">
+                  <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <p className="text-muted-foreground font-orbitron">Interactive Map</p>
+                  <p className="text-sm text-muted-foreground/60 mt-2">Map integration placeholder</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5" />
@@ -123,7 +408,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             Join the future of urban mobility with Jedlik Motors' innovative solutions.
           </p>
           <Button
-            onClick={() => onNavigate('contact')}
+            onClick={() => scrollToSection('contact')}
             size="lg"
             className="tron-glass tron-glow hover:animate-pulse-glow font-orbitron font-bold text-lg px-12 py-4"
           >
