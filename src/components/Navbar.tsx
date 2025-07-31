@@ -18,6 +18,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     { id: 'features', label: 'Features' },
     { id: 'techspecs', label: 'Tech Specs' },
     { id: 'contact', label: 'Contact Us' },
+    { id: 'messages', label: 'Messages' },
     { id: 'locate', label: 'Locate Us' },
     { id: 'faq', label: 'FAQ' },
   ]

@@ -11,6 +11,7 @@ import AboutUsPage from "./pages/AboutUsPage";
 import FeaturesPage from "./pages/FeaturesPage";
 import TechSpecsPage from "./pages/TechSpecsPage";
 import ContactUsPage from "./pages/ContactUsPage";
+import MessagesPage from "./pages/MessagesPage";
 import LocateUsPage from "./pages/LocateUsPage";
 import FAQPage from "./pages/FAQPage";
 
@@ -31,6 +32,8 @@ const App = () => {
         return <TechSpecsPage />;
       case 'contact':
         return <ContactUsPage />;
+      case 'messages':
+        return <MessagesPage />;
       case 'locate':
         return <LocateUsPage />;
       case 'faq':

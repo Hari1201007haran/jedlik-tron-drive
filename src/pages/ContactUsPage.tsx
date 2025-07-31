@@ -32,13 +32,14 @@ const ContactUsPage: React.FC = () => {
     try {
       // Store the contact form data in Supabase
       const { data, error } = await supabase
-        .from('expert_messages')
+        .from('contact_messages')
         .insert([
           {
-            user_id: 'anonymous', // Since we don't have auth, using anonymous
-            expert_id: 'contact-form', // Identifier for contact form messages
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
             subject: formData.subject,
-            message: `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'Not provided'}\n\nMessage:\n${formData.message}`,
+            message: formData.message,
             status: 'pending'
           }
         ])
