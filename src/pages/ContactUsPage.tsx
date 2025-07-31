@@ -3,8 +3,12 @@ import { Send, MapPin, Phone, Mail, Globe } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { useToast } from '@/hooks/use-toast'
+import { supabase } from '@/integrations/supabase/client'
 
 const ContactUsPage: React.FC = () => {
+  const { toast } = useToast()
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,11 +25,67 @@ const ContactUsPage: React.FC = () => {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
-    // Add success message or API call here
+    setIsSubmitting(true)
+
+    try {
+      // Store the contact form data in Supabase
+      const { data, error } = await supabase
+        .from('expert_messages')
+        .insert([
+          {
+            user_id: 'anonymous', // Since we don't have auth, using anonymous
+            expert_id: 'contact-form', // Identifier for contact form messages
+            subject: formData.subject,
+            message: `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'Not provided'}\n\nMessage:\n${formData.message}`,
+            status: 'pending'
+          }
+        ])
+        .select()
+
+      if (error) {
+        throw error
+      }
+
+      // Send notification email using Edge Function
+      const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          to: 'hariharan0071201@gmail.com',
+          formData: formData,
+          recordId: data?.[0]?.id
+        }
+      })
+
+      if (emailError) {
+        console.error('Email sending failed:', emailError)
+        // Still show success since data was saved
+      }
+
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thank you for contacting us. We'll get back to you soon.",
+      })
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      })
+
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
@@ -172,9 +232,10 @@ const ContactUsPage: React.FC = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full tron-glass tron-glow hover:animate-pulse-glow font-orbitron font-bold group"
+                  disabled={isSubmitting}
+                  className="w-full tron-glass tron-glow hover:animate-pulse-glow font-orbitron font-bold group disabled:opacity-50"
                 >
-                  SEND MESSAGE
+                  {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
                   <Send className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </form>
