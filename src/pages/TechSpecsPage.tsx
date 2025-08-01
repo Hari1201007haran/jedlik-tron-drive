@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { ChevronDown, ChevronUp, Zap, Gauge, Battery, Thermometer } from 'lucide-react'
+import circuitBoardBg from '../assets/circuit-board-bg.jpg'
+import codeMonitorBg from '../assets/code-monitor-bg.jpg'
+import matrixBg from '../assets/matrix-bg.jpg'
 
 const TechSpecsPage: React.FC = () => {
   const [expandedSection, setExpandedSection] = useState<string | null>('urban-commuter')
@@ -87,6 +90,11 @@ const TechSpecsPage: React.FC = () => {
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          style={{ backgroundImage: `url(${matrixBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90" />
         <div className="absolute inset-0 tron-grid-bg opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
         
@@ -104,6 +112,11 @@ const TechSpecsPage: React.FC = () => {
 
       {/* Specifications Section */}
       <section className="py-20 relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{ backgroundImage: `url(${circuitBoardBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background/95" />
         <div className="absolute inset-0 tron-grid-bg opacity-10" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="space-y-6">
@@ -179,6 +192,11 @@ const TechSpecsPage: React.FC = () => {
 
       {/* Technical Standards Section */}
       <section className="py-20 relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25"
+          style={{ backgroundImage: `url(${codeMonitorBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/90" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-16 tron-glow-text">
