@@ -84,7 +84,7 @@ serve(async (req) => {
     const resendApiKey = Deno.env.get('RESEND_API_KEY')
     if (resendApiKey) {
       const emailResponse = await resend.emails.send({
-        from: 'Jedlik Motors <noreply@jedlik.in>',
+        from: 'Jedlik Motors <onboarding@resend.dev>',
         to: [to],
         subject: `New Contact Form: ${formData.subject}`,
         html: emailContent,
