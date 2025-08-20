@@ -360,10 +360,22 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   <MapPin className="h-6 w-6 text-accent mr-4" />
                   <h4 className="text-xl font-orbitron font-bold text-accent">Location</h4>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed mb-4">
                   Anna incubator, Second Floor, Platinum Jubilee building, AC Tech Campus, 
                   Anna University, Guindy, Chennai, Tamil Nadu 600025
                 </p>
+                <Button
+                  onClick={() => {
+                    const address = "Anna incubator, Second Floor, Platinum Jubilee building, AC Tech Campus, Anna University, Guindy, Chennai, Tamil Nadu 600025";
+                    const encodedAddress = encodeURIComponent(address);
+                    window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+                  }}
+                  className="w-full tron-glass border-accent hover:bg-accent hover:text-accent-foreground font-orbitron font-bold"
+                  variant="outline"
+                >
+                  <MapPin className="h-4 w-4 mr-2" />
+                  GET DIRECTIONS
+                </Button>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
