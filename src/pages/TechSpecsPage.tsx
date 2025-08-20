@@ -5,79 +5,25 @@ import codeMonitorBg from '../assets/code-monitor-bg.jpg'
 import matrixBg from '../assets/matrix-bg.jpg'
 
 const TechSpecsPage: React.FC = () => {
-  const [expandedSection, setExpandedSection] = useState<string | null>('urban-commuter')
+  const [expandedSection, setExpandedSection] = useState<string | null>('e-pod')
 
   const motorModels = [
     {
-      id: 'urban-commuter',
-      name: 'Urban Commuter Series',
-      category: 'City Mobility',
+      id: 'e-pod',
+      name: 'e-POD',
+      category: 'Revolutionary Urban Mobility',
       icon: Zap,
       specs: {
-        'Power Output': '2.5 - 5.0 kW',
-        'Peak Torque': '15 - 25 Nm',
-        'Efficiency': '95%+',
-        'Operating Voltage': '48V - 72V',
-        'Battery Type': 'Li-ion NMC',
-        'Range': '60 - 100 km',
-        'Charging Time': '4 - 6 hours',
-        'Weight': '12 - 18 kg',
-        'IP Rating': 'IP67',
-        'Operating Temperature': '-20°C to +60°C'
-      }
-    },
-    {
-      id: 'performance-pro',
-      name: 'Performance Pro Series',
-      category: 'High Performance',
-      icon: Gauge,
-      specs: {
-        'Power Output': '5.0 - 10.0 kW',
-        'Peak Torque': '25 - 45 Nm',
-        'Efficiency': '96%+',
-        'Operating Voltage': '72V - 96V',
-        'Battery Type': 'Li-ion NCA',
-        'Range': '80 - 150 km',
-        'Charging Time': '3 - 5 hours',
-        'Weight': '18 - 25 kg',
-        'IP Rating': 'IP68',
-        'Operating Temperature': '-25°C to +65°C'
-      }
-    },
-    {
-      id: 'eco-efficient',
-      name: 'Eco-Efficient Series',
-      category: 'Sustainable Mobility',
-      icon: Battery,
-      specs: {
-        'Power Output': '1.5 - 3.0 kW',
-        'Peak Torque': '12 - 20 Nm',
-        'Efficiency': '97%+',
-        'Operating Voltage': '36V - 60V',
-        'Battery Type': 'Li-ion LFP',
-        'Range': '80 - 120 km',
-        'Charging Time': '5 - 8 hours',
-        'Weight': '8 - 14 kg',
-        'IP Rating': 'IP65',
-        'Operating Temperature': '-15°C to +55°C'
-      }
-    },
-    {
-      id: 'industrial-grade',
-      name: 'Industrial Grade Series',
-      category: 'Heavy Duty',
-      icon: Thermometer,
-      specs: {
-        'Power Output': '10.0 - 20.0 kW',
-        'Peak Torque': '50 - 100 Nm',
-        'Efficiency': '94%+',
-        'Operating Voltage': '96V - 144V',
-        'Battery Type': 'Li-ion Custom',
-        'Range': '100 - 200 km',
-        'Charging Time': '2 - 4 hours',
-        'Weight': '25 - 40 kg',
-        'IP Rating': 'IP69K',
-        'Operating Temperature': '-30°C to +70°C'
+        'Seating Capacity': '2 persons',
+        'Top Speed': '120 km/h',
+        'Range per Charge': '200 km',
+        'Charging Time': '4 hours',
+        'Vehicle Type': 'Fully enclosed two-wheeler',
+        'Key Features': 'Airbags, Weather protection',
+        'USP': 'Car safety + Motorcycle maneuverability',
+        'Safety Features': 'Airbags (uncommon in two-wheelers)',
+        'Comfort': 'Pushback seats for ergonomic comfort',
+        'Weather Protection': 'Full protection - no helmets required'
       }
     }
   ]
@@ -104,7 +50,7 @@ const TechSpecsPage: React.FC = () => {
               TECHNICAL <span className="text-accent">SPECIFICATIONS</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Detailed technical data for our complete range of electric motor solutions
+              Complete technical specifications for the revolutionary e-POD urban mobility solution
             </p>
           </div>
         </div>
@@ -175,11 +121,11 @@ const TechSpecsPage: React.FC = () => {
                         Key Advantages
                       </h4>
                       <ul className="text-sm text-muted-foreground space-y-1">
-                        <li>• Advanced thermal management system</li>
-                        <li>• Intelligent regenerative braking</li>
-                        <li>• Real-time performance monitoring</li>
-                        <li>• Modular design for easy maintenance</li>
-                        <li>• Compliance with international safety standards</li>
+                        <li>• Superior maneuverability in congested city traffic</li>
+                        <li>• Docking capability for multi-unit travel</li>
+                        <li>• Combines safety of a car with agility of motorcycle</li>
+                        <li>• Zero helmet requirement with full weather protection</li>
+                        <li>• Advanced safety features uncommon in two-wheelers</li>
                       </ul>
                     </div>
                   </div>

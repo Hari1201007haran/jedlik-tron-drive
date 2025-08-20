@@ -39,34 +39,34 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
   const features = [
     {
-      icon: Zap,
-      title: 'Adaptive Power Delivery',
-      description: 'Intelligent power management that adapts to driving conditions for optimal performance and efficiency.'
+      icon: Shield,
+      title: 'Airbags for Safety',
+      description: 'Advanced airbag system uncommon in two-wheelers, providing car-level safety protection.'
     },
     {
       icon: Cog,
-      title: 'Intelligent Battery Management',
-      description: 'Advanced BMS technology for extended battery life and enhanced safety protocols.'
+      title: 'Full Weather Protection',
+      description: 'Complete weather protection with fully enclosed design – no helmets required.'
     },
     {
       icon: Leaf,
-      title: 'Eco-Friendly Operation',
-      description: 'Zero-emission operation with recyclable components for sustainable urban mobility.'
+      title: 'Superior Maneuverability',
+      description: 'Outstanding maneuverability in congested city traffic with innovative docking capability.'
     },
     {
-      icon: Shield,
-      title: 'Modular Design',
-      description: 'Flexible architecture allowing easy maintenance and customization for various applications.'
+      icon: Zap,
+      title: 'Extended Range',
+      description: '200 km range with rapid charging in just 4 hours for efficient urban mobility.'
     }
   ]
 
   const techSpecs = [
-    { label: 'Power Output', value: '5kW - 15kW', unit: 'Continuous' },
-    { label: 'Torque Range', value: '50 - 120', unit: 'Nm' },
-    { label: 'Efficiency', value: '95%+', unit: 'Peak' },
-    { label: 'Voltage Range', value: '48V - 72V', unit: 'DC' },
-    { label: 'RPM Range', value: '0 - 3000', unit: 'RPM' },
-    { label: 'Protection Rating', value: 'IP65', unit: 'Sealed' }
+    { label: 'Seating Capacity', value: '2', unit: 'Persons' },
+    { label: 'Top Speed', value: '120', unit: 'km/h' },
+    { label: 'Range per Charge', value: '200', unit: 'km' },
+    { label: 'Charging Time', value: '4', unit: 'Hours' },
+    { label: 'Vehicle Type', value: 'Enclosed', unit: 'Two-wheeler' },
+    { label: 'USP', value: 'Car + Bike', unit: 'Hybrid Safety' }
   ]
 
   const faqs = [
