@@ -5,23 +5,23 @@ const AboutUsPage: React.FC = () => {
   const achievements = [
     {
       icon: Award,
-      title: 'DPIIT Recognised',
-      description: 'Department for Promotion of Industry and Internal Trade recognition for our innovative startup.',
+      title: 'POC Development',
+      description: 'Developed 1:6 scale Proof of Concept for e-POD with patent filed under Startup India.',
     },
     {
-      icon: MapPin,
-      title: 'Chennai Based',
-      description: 'Located in the automobile capital of India, leveraging the rich automotive ecosystem.',
-    },
-    {
-      icon: Users,
-      title: 'Expert Team',
-      description: 'Group of dedicated mechanical engineers passionate about urban mobility solutions.',
+      icon: Award,
+      title: 'TEC Grants Received',
+      description: 'Secured grants of ₹50,000 from iCreate, ₹9,00,000 from Nidhi Prayas, and ₹15,00,000 from SIFSC.',
     },
     {
       icon: Lightbulb,
-      title: 'Innovation Focus',
-      description: 'Committed to developing next-generation technologies for sustainable transportation.',
+      title: 'Full Scale Model',
+      description: 'Built fully 3D-printed CAD-based functional model and full scale single-seat prototype.',
+    },
+    {
+      icon: Users,
+      title: 'Industry Recognition',
+      description: 'Featured across industry networks with growing recognition and early tester collaborations.',
     },
   ]
 
@@ -38,7 +38,7 @@ const AboutUsPage: React.FC = () => {
               ABOUT <span className="text-accent">JEDLIK MOTORS</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Pioneering the future of urban commuting through innovative electric motor technology
+              Redefining urban commuting with safety, comfort, and maneuverability through the revolutionary e-POD
             </p>
           </div>
 
@@ -51,18 +51,13 @@ const AboutUsPage: React.FC = () => {
                 </h2>
                 <div className="space-y-6 text-lg leading-relaxed">
                   <p className="text-foreground">
-                    We're a <span className="text-primary font-semibold">DPIIT recognised startup</span> based 
-                    in the automobile capital of India, Chennai. Our team consists of passionate mechanical engineers 
-                    working on the next generation of urban commuting solutions.
+                    Jedlik Motors was founded by <span className="text-primary font-semibold">passionate adventurers and engineers</span> on a mission to redefine urban commuting with safety, comfort, and maneuverability. Born from the personal experiences of riders facing daily risks and inefficiencies.
                   </p>
                   <p className="text-muted-foreground">
-                    We're supported by <span className="text-accent font-semibold">Anna Incubator</span> and{' '}
-                    <span className="text-accent font-semibold">iCreate</span>, leveraging their expertise 
-                    and resources to bring cutting-edge electric motor technology to the market.
+                    We're creating a revolutionary new mobility solution — the <span className="text-accent font-semibold">e-POD</span>, a fully enclosed, two-wheeled electric vehicle combining the agility of a motorcycle with the safety and comfort of a car.
                   </p>
                   <p className="text-foreground">
-                    Our vision is to revolutionize urban transportation by creating efficient, sustainable, 
-                    and intelligent motor solutions that will power the cities of tomorrow.
+                    Our vision is to provide <span className="text-primary font-semibold">superior maneuverability in congested city traffic</span> while offering features like airbags, full weather protection, and innovative docking capability for multi-unit travel.
                   </p>
                 </div>
               </div>
@@ -131,14 +126,14 @@ const AboutUsPage: React.FC = () => {
             SUPPORTED BY INDUSTRY LEADERS
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="tron-glass-strong p-8 rounded-lg border border-accent/30">
               <h3 className="text-xl font-orbitron font-bold mb-4 text-accent">
-                ANNA INCUBATOR
+                ANNA INCUBATION
               </h3>
               <p className="text-muted-foreground">
-                Leveraging the expertise and resources of Anna University's premier incubation center 
-                to accelerate our technological development.
+                Currently incubated at Anna University's premier incubation center, 
+                leveraging their expertise and resources for technological development.
               </p>
             </div>
             
@@ -147,8 +142,18 @@ const AboutUsPage: React.FC = () => {
                 iCREATE
               </h3>
               <p className="text-muted-foreground">
-                Partnering with iCreate's innovation ecosystem to bring our cutting-edge solutions 
-                to market with world-class mentorship and support.
+                Grant support and partnership with iCreate's innovation ecosystem 
+                to accelerate our cutting-edge solutions to market.
+              </p>
+            </div>
+
+            <div className="tron-glass-strong p-8 rounded-lg border border-accent/30">
+              <h3 className="text-xl font-orbitron font-bold mb-4 text-accent">
+                STARTUP INDIA
+              </h3>
+              <p className="text-muted-foreground">
+                Patent recognition and support under the Startup India initiative, 
+                validating our innovative approach to urban mobility.
               </p>
             </div>
           </div>
