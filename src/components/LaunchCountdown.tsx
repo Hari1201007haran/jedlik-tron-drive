@@ -12,12 +12,17 @@ const LaunchCountdown: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    // Set target date to October 9, 2024 at 12:00 AM
-    const targetDate = new Date('2024-10-09T00:00:00').getTime();
+    // Set target date to October 9, 2025 at 12:00 AM (since 2024 has passed)
+    const targetDate = new Date('2025-10-09T00:00:00').getTime();
+    
+    console.log('Target date:', new Date(targetDate));
+    console.log('Current date:', new Date());
 
     const calculateTimeLeft = () => {
       const now = new Date().getTime();
       const difference = targetDate - now;
+      
+      console.log('Time difference (ms):', difference);
 
       if (difference > 0) {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -25,8 +30,10 @@ const LaunchCountdown: React.FC = () => {
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
+        console.log('Calculated time:', { days, hours, minutes, seconds });
         setTimeLeft({ days, hours, minutes, seconds });
       } else {
+        console.log('Event has passed!');
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
     };
@@ -66,7 +73,7 @@ const LaunchCountdown: React.FC = () => {
         </div>
         
         <p className="text-lg md:text-xl text-muted-foreground mt-6 font-medium">
-          October 9, 2024 - Don't miss the future of urban mobility!
+          October 9, 2025 - Don't miss the future of urban mobility!
         </p>
       </div>
     </div>
