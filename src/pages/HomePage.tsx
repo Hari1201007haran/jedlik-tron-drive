@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import LaunchCountdown from '@/components/LaunchCountdown'
 
 type HomePageProps = {
   onNavigate: (page: string) => void
@@ -97,6 +98,9 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
   return (
     <div className="min-h-screen">
+      {/* Launch Countdown Timer */}
+      <LaunchCountdown />
+      
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
