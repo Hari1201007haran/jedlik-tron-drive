@@ -12,9 +12,10 @@ const LaunchCountdown: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
+    // Set target date to October 9, 2024 at 12:00 AM
     const targetDate = new Date('2024-10-09T00:00:00').getTime();
 
-    const timer = setInterval(() => {
+    const calculateTimeLeft = () => {
       const now = new Date().getTime();
       const difference = targetDate - now;
 
@@ -27,9 +28,14 @@ const LaunchCountdown: React.FC = () => {
         setTimeLeft({ days, hours, minutes, seconds });
       } else {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        clearInterval(timer);
       }
-    }, 1000);
+    };
+
+    // Calculate immediately on mount
+    calculateTimeLeft();
+
+    // Then update every second
+    const timer = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(timer);
   }, []);
@@ -49,7 +55,7 @@ const LaunchCountdown: React.FC = () => {
             { label: 'Seconds', value: timeLeft.seconds },
           ].map((item, index) => (
             <Card key={item.label} className="tron-glass border-accent/30 p-4 md:p-6 min-w-[80px] md:min-w-[120px]">
-              <div className="text-3xl md:text-5xl font-orbitron font-bold text-accent">
+              <div className="text-3xl md:text-5xl font-orbitron font-bold text-accent animate-pulse">
                 {item.value.toString().padStart(2, '0')}
               </div>
               <div className="text-sm md:text-base text-muted-foreground font-medium mt-2">
