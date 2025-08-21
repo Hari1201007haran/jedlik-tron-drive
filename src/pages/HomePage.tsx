@@ -413,6 +413,59 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
+      {/* Founders Section */}
+      <section className="py-20 relative">
+        <div className="absolute inset-0 tron-grid-bg opacity-10" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
+            OUR <span className="text-accent">LEADERSHIP</span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Founder */}
+            <div className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 text-center group">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mx-auto mb-6 group-hover:from-accent/30 group-hover:to-primary/30 transition-all">
+                <Users className="h-10 w-10 text-primary group-hover:text-accent transition-colors" />
+              </div>
+              <h3 className="text-xl font-orbitron font-bold mb-2 group-hover:tron-glow-text transition-all">
+                Raguram SK
+              </h3>
+              <p className="text-accent font-medium mb-3">FOUNDER</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Visionary leader driving next-generation urban mobility solutions
+              </p>
+            </div>
+
+            {/* Co-founders */}
+            <div className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 text-center group">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mx-auto mb-6 group-hover:from-accent/30 group-hover:to-primary/30 transition-all">
+                <Users className="h-10 w-10 text-primary group-hover:text-accent transition-colors" />
+              </div>
+              <h3 className="text-xl font-orbitron font-bold mb-2 group-hover:tron-glow-text transition-all">
+                Muthuram B
+              </h3>
+              <p className="text-accent font-medium mb-3">CO-FOUNDER</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Expert in mechanical engineering and innovative design solutions
+              </p>
+            </div>
+
+            <div className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 text-center group">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mx-auto mb-6 group-hover:from-accent/30 group-hover:to-primary/30 transition-all">
+                <Users className="h-10 w-10 text-primary group-hover:text-accent transition-colors" />
+              </div>
+              <h3 className="text-xl font-orbitron font-bold mb-2 group-hover:tron-glow-text transition-all">
+                Nishanthraj GV
+              </h3>
+              <p className="text-accent font-medium mb-3">CO-FOUNDER</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Technology specialist focused on sustainable transportation
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5" />
