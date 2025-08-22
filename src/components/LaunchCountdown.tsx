@@ -49,66 +49,101 @@ const LaunchCountdown: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full bg-gradient-to-br from-background via-background/98 to-background/95 py-12 border-b border-border/30 tron-grid-bg relative overflow-hidden">
-      {/* Background glow effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5"></div>
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+    <div className="w-full bg-gradient-to-br from-background via-background/95 to-background/90 py-16 md:py-20 border-b border-border/20 relative overflow-hidden">
+      {/* Enhanced background effects */}
+      <div className="absolute inset-0 tron-grid-bg opacity-30"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent via-transparent to-accent/10"></div>
+      <div className="absolute top-0 left-1/4 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
       
       <div className="container mx-auto px-4 text-center relative z-10">
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-orbitron font-bold text-accent mb-4 tron-glow-text animate-pulse">
-            LAUNCH COUNTDOWN
+        {/* Header Section */}
+        <div className="mb-12 md:mb-16">
+          <div className="inline-flex items-center gap-3 mb-6">
+            <div className="w-3 h-3 bg-accent rounded-full animate-ping"></div>
+            <span className="text-accent font-orbitron text-sm uppercase tracking-widest">Live Event</span>
+            <div className="w-3 h-3 bg-primary rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold mb-6">
+            <span className="text-primary tron-glow-text">LAUNCH</span>
+            <br />
+            <span className="text-accent tron-glow-text">COUNTDOWN</span>
           </h1>
-          <div className="w-32 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-6"></div>
-          <p className="text-lg md:text-xl text-muted-foreground font-medium">
-            Time Left Until Project Launch Event
+          
+          <div className="flex justify-center mb-6">
+            <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+            <div className="w-2 h-2 bg-primary rounded-full mx-4 animate-pulse"></div>
+            <div className="h-px w-24 bg-gradient-to-r from-transparent via-accent to-transparent"></div>
+          </div>
+          
+          <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed">
+            Experience the future of urban mobility at our exclusive launch event
           </p>
         </div>
         
-        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 lg:gap-8 mb-8">
+        {/* Countdown Cards */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mb-12 max-w-4xl mx-auto">
           {[
-            { label: 'DAYS', value: timeLeft.days, color: 'from-primary to-primary/70' },
-            { label: 'HOURS', value: timeLeft.hours, color: 'from-accent to-accent/70' },
-            { label: 'MINUTES', value: timeLeft.minutes, color: 'from-primary to-primary/70' },
-            { label: 'SECONDS', value: timeLeft.seconds, color: 'from-accent to-accent/70' },
+            { label: 'DAYS', value: timeLeft.days, color: 'from-primary via-primary/80 to-primary/60', accent: 'primary' },
+            { label: 'HOURS', value: timeLeft.hours, color: 'from-accent via-accent/80 to-accent/60', accent: 'accent' },
+            { label: 'MINUTES', value: timeLeft.minutes, color: 'from-primary via-primary/80 to-primary/60', accent: 'primary' },
+            { label: 'SECONDS', value: timeLeft.seconds, color: 'from-accent via-accent/80 to-accent/60', accent: 'accent' },
           ].map((item, index) => (
-            <Card key={item.label} className="tron-glass-strong border-primary/40 p-6 md:p-8 min-w-[100px] md:min-w-[140px] lg:min-w-[160px] relative group hover:scale-105 transition-all duration-300 hover:border-accent/60">
-              {/* Card glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-lg" 
-                   style={{background: `linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))`}}></div>
+            <Card key={item.label} className="relative group bg-background/40 backdrop-blur-sm border border-border/40 hover:border-accent/60 transition-all duration-500 hover:scale-105 hover:bg-background/60">
+              {/* Card background glow */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${item.accent === 'primary' ? 'from-primary/5' : 'from-accent/5'} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg`}></div>
               
-              {/* Number display */}
-              <div className={`text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold bg-gradient-to-br ${item.color} bg-clip-text text-transparent animate-pulse relative z-10`}>
-                {item.value.toString().padStart(2, '0')}
+              {/* Card content */}
+              <div className="p-4 md:p-6 lg:p-8 relative z-10">
+                {/* Number display */}
+                <div className={`text-3xl md:text-5xl lg:text-6xl font-orbitron font-bold bg-gradient-to-br ${item.color} bg-clip-text text-transparent mb-2 md:mb-3 leading-none`}>
+                  {item.value.toString().padStart(2, '0')}
+                </div>
+                
+                {/* Label */}
+                <div className="text-xs md:text-sm font-medium text-muted-foreground tracking-wider uppercase">
+                  {item.label}
+                </div>
+                
+                {/* Animated accent line */}
+                <div className={`h-0.5 w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r ${item.color} mt-3 mx-auto`}></div>
               </div>
               
-              {/* Label */}
-              <div className="text-xs md:text-sm lg:text-base text-muted-foreground font-medium mt-3 tracking-wider uppercase relative z-10">
-                {item.label}
-              </div>
-              
-              {/* Animated border */}
-              <div className="absolute inset-0 rounded-lg border border-transparent bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
-                   style={{background: 'linear-gradient(90deg, transparent, hsl(var(--primary)), hsl(var(--accent)), transparent)', 
-                           maskImage: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                           maskComposite: 'xor'}}></div>
+              {/* Corner accents */}
+              <div className={`absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 ${item.accent === 'primary' ? 'border-primary/60' : 'border-accent/60'} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+              <div className={`absolute top-2 right-2 w-3 h-3 border-r-2 border-t-2 ${item.accent === 'primary' ? 'border-primary/60' : 'border-accent/60'} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+              <div className={`absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 ${item.accent === 'primary' ? 'border-primary/60' : 'border-accent/60'} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+              <div className={`absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 ${item.accent === 'primary' ? 'border-primary/60' : 'border-accent/60'} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
             </Card>
           ))}
         </div>
         
-        <div className="space-y-4">
-          <p className="text-xl md:text-2xl lg:text-3xl text-foreground font-orbitron font-semibold">
-            October 9, 2025
-          </p>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Don't miss the future of urban mobility! Join us for the most anticipated launch event of the year.
+        {/* Event Details */}
+        <div className="bg-background/20 backdrop-blur-sm border border-border/30 rounded-lg p-6 md:p-8 max-w-2xl mx-auto tron-glass">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-1 h-8 bg-gradient-to-b from-primary to-accent"></div>
+            <h3 className="text-2xl md:text-3xl font-orbitron font-bold text-foreground">
+              October 9, 2025
+            </h3>
+            <div className="w-1 h-8 bg-gradient-to-b from-accent to-primary"></div>
+          </div>
+          
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
+            Join us for an exclusive unveiling of revolutionary urban mobility solutions that will transform how we navigate tomorrow's cities.
           </p>
           
-          {/* Pulse indicator */}
-          <div className="flex justify-center items-center gap-2 mt-6">
-            <div className="w-2 h-2 bg-accent rounded-full animate-ping"></div>
-            <span className="text-sm text-muted-foreground uppercase tracking-wider">Live Countdown</span>
-            <div className="w-2 h-2 bg-primary rounded-full animate-ping animation-delay-75"></div>
+          {/* Status indicator */}
+          <div className="flex justify-center items-center gap-3">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-accent rounded-full animate-ping"></div>
+              <span className="text-sm text-accent font-medium uppercase tracking-wider">Event Active</span>
+            </div>
+            <div className="w-px h-4 bg-border/50"></div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+              <span className="text-sm text-primary font-medium uppercase tracking-wider">Live Updates</span>
+            </div>
           </div>
         </div>
       </div>
