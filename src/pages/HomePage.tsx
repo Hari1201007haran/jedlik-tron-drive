@@ -107,11 +107,11 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Global Startup Summit Logo - Top Left */}
-        <div className="absolute top-8 left-8 z-20">
+        <div className="absolute top-4 left-4 z-50">
           <img 
             src={logoImage} 
             alt="Global Startup Summit 2025" 
-            className="w-32 h-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+            className="w-40 h-auto drop-shadow-lg hover:scale-105 transition-all duration-300"
           />
         </div>
         
