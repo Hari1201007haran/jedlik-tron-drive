@@ -11,6 +11,9 @@ type HomePageProps = {
 }
 
 const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
+  // Global Startup Summit Logo
+  const logoImage = "/lovable-uploads/d27e743e-23dc-4d96-8f3c-02b03ea9d052.png";
+  
   const highlights = [
     {
       icon: Zap,
@@ -103,6 +106,15 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Global Startup Summit Logo - Top Left */}
+        <div className="absolute top-8 left-8 z-20">
+          <img 
+            src={logoImage} 
+            alt="Global Startup Summit 2025" 
+            className="w-32 h-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+          />
+        </div>
+        
         {/* Animated Background */}
         <div className="absolute inset-0 tron-grid-bg animate-grid-flow opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-accent/10" />
