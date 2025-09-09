@@ -347,9 +347,15 @@ const ContactUsPage: React.FC = () => {
                 </div>
                 
                 <Button
+                  onClick={() => {
+                    const address = "Anna incubator, Second Floor, Platinum Jubilee building, AC Tech Campus, Anna University, Guindy, Chennai, Tamil Nadu 600025";
+                    const encodedAddress = encodeURIComponent(address);
+                    window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+                  }}
                   variant="outline"
                   className="w-full mt-6 tron-glass border-accent hover:bg-accent hover:text-accent-foreground font-orbitron font-bold hover:scale-105 transition-all duration-300"
                 >
+                  <MapPin className="h-4 w-4 mr-2" />
                   GET DIRECTIONS
                 </Button>
               </div>

@@ -85,6 +85,11 @@ const LocateUsPage: React.FC = () => {
                 </div>
                 
                 <Button
+                  onClick={() => {
+                    const address = "Anna incubator, Second Floor, Platinum Jubilee building, AC Tech Campus, Anna University, Guindy, Chennai, Tamil Nadu 600025";
+                    const encodedAddress = encodeURIComponent(address);
+                    window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+                  }}
                   size="lg"
                   className="w-full mt-6 tron-glass tron-glow hover:animate-pulse-glow font-orbitron font-bold group"
                 >
