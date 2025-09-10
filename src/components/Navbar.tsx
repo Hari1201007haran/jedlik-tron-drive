@@ -1,6 +1,5 @@
 import React from 'react'
-import { Sun, Moon, Menu, X } from 'lucide-react'
-import { useTheme } from './ThemeProvider'
+import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 type NavbarProps = {
@@ -9,7 +8,6 @@ type NavbarProps = {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
-  const { theme, setTheme } = useTheme()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
 
   const navItems = [
@@ -22,10 +20,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     { id: 'locate', label: 'Locate Us' },
     { id: 'faq', label: 'FAQ' },
   ]
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
-  }
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 tron-glass border-b border-primary/30">
@@ -63,28 +57,16 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             </div>
           </div>
 
-          {/* Theme Toggle */}
-          <div className="flex items-center space-x-4">
+          {/* Mobile menu button */}
+          <div className="md:hidden">
             <Button
               variant="ghost"
               size="sm"
-              onClick={toggleTheme}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="tron-glass hover:tron-glow border border-primary/30"
             >
-              {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              {isMobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </Button>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="tron-glass hover:tron-glow border border-primary/30"
-              >
-                {isMobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-              </Button>
-            </div>
           </div>
         </div>
 

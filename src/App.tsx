@@ -43,7 +43,7 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="dark" storageKey="jedlik-ui-theme">
+      <ThemeProvider>
         <TooltipProvider>
           <Toaster />
           <Sonner />
