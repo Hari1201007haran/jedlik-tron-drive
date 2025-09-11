@@ -76,19 +76,19 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   const faqs = [
     {
       question: 'What is Jedlik Motors?',
-      answer: 'Jedlik Motors is a DPIIT recognised startup based in Chennai, India, specializing in next-generation electric motor technology for urban commuting solutions.'
+      answer: 'Jedlik Motors was founded by passionate adventurers and engineers on a mission to redefine urban commuting with safety, comfort, and maneuverability. Born from the personal experiences of riders facing daily risks and inefficiencies.'
     },
     {
       question: 'What types of motors do you offer?',
       answer: 'We offer a range of high-efficiency electric motors designed for urban mobility applications, featuring adaptive power delivery, intelligent battery management, and modular design.'
     },
     {
-      question: 'How can I purchase a product?',
-      answer: 'You can contact us through our contact form, email, or phone. Our team will help you find the right motor solution for your specific requirements.'
+      question: 'When will you reveal the product?',
+      answer: 'We are gonna reveal the product on October 9 at Codissia Trade Fair Complex, Coimbatore.'
     },
     {
-      question: 'What support do you provide?',
-      answer: 'We are supported by Anna Incubator and iCreate, providing comprehensive technical support, maintenance guidance, and consultation services.'
+      question: 'How can we contact you?',
+      answer: 'You can contact us via email: info@jedlik.in and via phone: +91 9790678445.'
     }
   ]
 
