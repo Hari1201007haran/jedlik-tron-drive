@@ -370,7 +370,7 @@ const ContactUsPage: React.FC = () => {
                   <div className="space-y-3 text-sm">
                     {[
                       { day: 'Monday - Friday', time: '9:00 AM - 6:00 PM', active: true },
-                      { day: 'Saturday', time: '10:00 AM - 4:00 PM', active: true },
+                      { day: 'Saturday', time: '9:00 AM - 4:00 PM', active: true },
                       { day: 'Sunday', time: 'Closed', active: false }
                     ].map((schedule, index) => (
                       <div key={index} className="flex justify-between items-center p-2 rounded hover:bg-primary/5 transition-colors">
