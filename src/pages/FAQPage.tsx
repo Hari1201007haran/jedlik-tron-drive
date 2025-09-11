@@ -8,12 +8,12 @@ const FAQPage: React.FC = () => {
     {
       id: 'what-is-jedlik',
       question: 'What is Jedlik Motors?',
-      answer: 'Jedlik Motors is a DPIIT recognised startup based in Chennai, India, focused on developing next-generation electric motor technologies for urban commuting. We are a team of mechanical engineers working on innovative solutions for sustainable transportation.'
+      answer: 'Jedlik Motors was founded by passionate adventurers and engineers on a mission to redefine urban commuting with safety, comfort, and maneuverability. Born from the personal experiences of riders facing daily risks and inefficiencies.'
     },
     {
       id: 'motor-types',
-      question: 'What types of motors do you offer?',
-      answer: 'We offer four main series of electric motors: Urban Commuter Series (2.5-5.0 kW), Performance Pro Series (5.0-10.0 kW), Eco-Efficient Series (1.5-3.0 kW), and Industrial Grade Series (10.0-20.0 kW). Each series is designed for specific applications and performance requirements.'
+      question: 'Who are the founders of Jedlik Motors?',
+      answer: 'Mr.Raguram SK, Mr.Muthuram B, Mr.Nishanthraj GV.'
     },
     {
       id: 'purchase',
@@ -22,8 +22,8 @@ const FAQPage: React.FC = () => {
     },
     {
       id: 'warranty',
-      question: 'What warranty do you provide?',
-      answer: 'We provide comprehensive warranty coverage for all our motor systems. The warranty period varies by product series, typically ranging from 2-5 years. Our warranty covers manufacturing defects, performance issues, and includes technical support throughout the warranty period.'
+      question: 'When are you going to reveal the product?',
+      answer: 'We are going to reveal the product on TNGSS Summit on October 9th 2025 at Codissia Trade Fair Complex, Coimbatore.'
     },
     {
       id: 'customization',
@@ -37,18 +37,18 @@ const FAQPage: React.FC = () => {
     },
     {
       id: 'efficiency',
-      question: 'How efficient are your motors?',
-      answer: 'Our motors achieve industry-leading efficiency ratings: Urban Commuter Series (95%+), Performance Pro Series (96%+), Eco-Efficient Series (97%+), and Industrial Grade Series (94%+). These high efficiency levels translate to longer range, reduced energy costs, and lower environmental impact.'
+      question: 'Where is the location of your Company?',
+      answer: 'We are currently located at Anna Incubator,Anna University,Chennai.'
     },
     {
       id: 'certifications',
-      question: 'Are your products certified?',
-      answer: 'Yes, all our products comply with international standards including ISO 9001:2015, IEC 60034, CE marking for European markets, and BIS certification for the Indian market. We also conduct extensive testing including endurance, environmental stress, EMC/EMI compliance, and safety validation.'
+      question: 'How Can I contact you?',
+      answer: 'You can contact us via email: info@jedlik.in and via phone: +91 9790678445.'
     },
     {
       id: 'delivery',
-      question: 'What are your delivery timelines?',
-      answer: 'Delivery timelines vary based on product configuration and order quantity. Standard products typically ship within 2-4 weeks, while customized solutions may take 6-12 weeks. We provide regular updates throughout the manufacturing and delivery process.'
+      question: 'When did you start the company?',
+      answer: 'We started the company at November 2023.'
     },
     {
       id: 'maintenance',
