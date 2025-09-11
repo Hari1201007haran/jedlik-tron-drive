@@ -7,7 +7,7 @@ const LocateUsPage: React.FC = () => {
     {
       icon: Car,
       title: 'By Car',
-      description: 'Take the Guindy - Velachery Road and enter Anna University campus through the main gate.',
+      description: 'Take the Sardar Patel Road  and enter Anna University campus through the main gate.',
       time: '15 mins from Chennai Airport',
       color: 'primary'
     },
@@ -470,10 +470,10 @@ const LocateUsPage: React.FC = () => {
                 
                 <div className="space-y-4">
                   {[
-                    { name: 'Guindy Metro Station', distance: '1 km', status: 'active' },
-                    { name: 'Guindy Railway Station', distance: '2 km', status: 'active' },
+                    { name: 'Guindy Metro Station', distance: '2.7 km', status: 'active' },
+                    { name: 'Guindy Railway Station', distance: '2.8 km', status: 'active' },
                     { name: 'Chennai Airport', distance: '8 km', status: 'operational' },
-                    { name: 'Kathipara Junction', distance: '3 km', status: 'busy' }
+                    { name: 'Kathipara Junction', distance: '4 km', status: 'busy' }
                   ].map((hub, idx) => (
                     <div
                       key={idx}
