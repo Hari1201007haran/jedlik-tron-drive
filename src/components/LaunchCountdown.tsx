@@ -87,7 +87,7 @@ const LaunchCountdown: React.FC = () => {
           </div>
           
           <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed">
-            Experience the future of urban mobility at our exclusive launch event
+            Experience the future of urban mobility at our exclusive launch event at Codissia Trade Fair Complex, Coimbatore
           </p>
         </div>
         
