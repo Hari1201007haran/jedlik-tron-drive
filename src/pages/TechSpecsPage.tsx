@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { ChevronDown, ChevronUp, Zap, Gauge, Battery, Thermometer } from 'lucide-react'
+import { ChevronDown, ChevronUp, Zap, Gauge, Battery, Thermometer, Shield, Star, CheckCircle } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import circuitBoardBg from '../assets/circuit-board-bg.jpg'
 import codeMonitorBg from '../assets/code-monitor-bg.jpg'
 import matrixBg from '../assets/matrix-bg.jpg'
@@ -35,21 +36,36 @@ const TechSpecsPage: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-24 overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
           style={{ backgroundImage: `url(${matrixBg})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90" />
-        <div className="absolute inset-0 tron-grid-bg opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/80 to-background/95" />
+        <div className="absolute inset-0 tron-grid-bg opacity-30 animate-grid-flow" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20" />
+        
+        {/* Floating tech elements */}
+        <div className="absolute top-20 left-20 animate-float">
+          <Zap className="h-8 w-8 text-primary/40" />
+        </div>
+        <div className="absolute top-32 right-32 animate-float" style={{ animationDelay: '2s' }}>
+          <Battery className="h-10 w-10 text-accent/40" />
+        </div>
+        <div className="absolute bottom-20 left-1/4 animate-float" style={{ animationDelay: '4s' }}>
+          <Gauge className="h-6 w-6 text-primary/40" />
+        </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-orbitron font-black mb-6 tron-glow-text">
+          <div className="text-center mb-20 animate-fadeIn">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-8">
+              <Star className="h-4 w-4 text-primary mr-2" />
+              <span className="text-sm font-medium text-primary">Next-Gen Urban Mobility</span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-orbitron font-black mb-8 tron-glow-text animate-pulse-glow">
               TECHNICAL <span className="text-accent">SPECIFICATIONS</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Complete technical specifications for the revolutionary e-POD urban mobility solution
             </p>
           </div>
@@ -57,146 +73,236 @@ const TechSpecsPage: React.FC = () => {
       </section>
 
       {/* Specifications Section */}
-      <section className="py-20 relative">
+      <section className="py-24 relative">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
           style={{ backgroundImage: `url(${circuitBoardBg})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background/95" />
-        <div className="absolute inset-0 tron-grid-bg opacity-10" />
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="space-y-6">
-            {motorModels.map((model) => (
-              <div
+        <div className="absolute inset-0 bg-gradient-to-b from-background/98 via-background/90 to-background/98" />
+        <div className="absolute inset-0 tron-grid-bg opacity-20" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-orbitron font-bold mb-4 tron-glow-text">
+              VEHICLE <span className="text-accent">SPECIFICATIONS</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Detailed technical specifications and performance metrics
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {motorModels.map((model, index) => (
+              <Card
                 key={model.id}
-                className="tron-glass-strong rounded-lg border border-primary/30 overflow-hidden"
+                className="tron-glass-strong border-primary/40 overflow-hidden hover:border-primary/60 transition-all duration-500 animate-fadeIn"
+                style={{ animationDelay: `${index * 0.2}s` }}
               >
                 {/* Header */}
                 <button
                   onClick={() => toggleSection(model.id)}
-                  className="w-full p-6 flex items-center justify-between hover:bg-primary/5 transition-colors"
+                  className="w-full p-8 flex items-center justify-between hover:bg-primary/5 transition-all duration-300 group"
                 >
-                  <div className="flex items-center space-x-4">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/20">
-                      <model.icon className="h-6 w-6 text-primary" />
+                  <div className="flex items-center space-x-6">
+                    <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-primary/20 border border-primary/30 group-hover:bg-primary/30 transition-all duration-300 tron-glow">
+                      <model.icon className="h-8 w-8 text-primary" />
                     </div>
                     <div className="text-left">
-                      <h3 className="text-xl font-orbitron font-bold text-primary tron-glow-text">
+                      <h3 className="text-2xl md:text-3xl font-orbitron font-black text-primary tron-glow-text mb-2">
                         {model.name}
                       </h3>
-                      <p className="text-sm text-muted-foreground">{model.category}</p>
+                      <p className="text-base text-muted-foreground font-medium">{model.category}</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-center space-x-2">
-                    <span className="text-sm text-accent font-semibold">
-                      {expandedSection === model.id ? 'Collapse' : 'Expand'}
+                  <div className="flex items-center space-x-3">
+                    <span className="text-sm text-accent font-bold uppercase tracking-wider">
+                      {expandedSection === model.id ? 'Collapse' : 'View Details'}
                     </span>
-                    {expandedSection === model.id ? (
-                      <ChevronUp className="h-5 w-5 text-accent" />
-                    ) : (
-                      <ChevronDown className="h-5 w-5 text-accent" />
-                    )}
+                    <div className="p-2 rounded-lg bg-accent/10 border border-accent/30">
+                      {expandedSection === model.id ? (
+                        <ChevronUp className="h-5 w-5 text-accent" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5 text-accent" />
+                      )}
+                    </div>
                   </div>
                 </button>
 
                 {/* Expanded Content */}
                 {expandedSection === model.id && (
-                  <div className="px-6 pb-6 border-t border-primary/20">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-                      {Object.entries(model.specs).map(([key, value]) => (
+                  <CardContent className="px-8 pb-8 border-t border-primary/30 animate-accordion-down">
+                    {/* Quick Stats */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 mt-6">
+                      <div className="text-center p-4 tron-glass rounded-lg border border-accent/20">
+                        <Gauge className="h-6 w-6 text-accent mx-auto mb-2" />
+                        <div className="text-sm text-muted-foreground">Top Speed</div>
+                        <div className="text-lg font-orbitron font-bold text-accent">120 km/h</div>
+                      </div>
+                      <div className="text-center p-4 tron-glass rounded-lg border border-primary/20">
+                        <Battery className="h-6 w-6 text-primary mx-auto mb-2" />
+                        <div className="text-sm text-muted-foreground">Range</div>
+                        <div className="text-lg font-orbitron font-bold text-primary">200 km</div>
+                      </div>
+                      <div className="text-center p-4 tron-glass rounded-lg border border-accent/20">
+                        <Zap className="h-6 w-6 text-accent mx-auto mb-2" />
+                        <div className="text-sm text-muted-foreground">Charging</div>
+                        <div className="text-lg font-orbitron font-bold text-accent">4 hours</div>
+                      </div>
+                      <div className="text-center p-4 tron-glass rounded-lg border border-primary/20">
+                        <Shield className="h-6 w-6 text-primary mx-auto mb-2" />
+                        <div className="text-sm text-muted-foreground">Seating</div>
+                        <div className="text-lg font-orbitron font-bold text-primary">2 persons</div>
+                      </div>
+                    </div>
+
+                    {/* Detailed Specs */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                      {Object.entries(model.specs).map(([key, value], specIndex) => (
                         <div
                           key={key}
-                          className="tron-glass p-4 rounded-lg border border-accent/20 hover:border-accent/40 transition-colors"
+                          className="tron-glass p-6 rounded-lg border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:scale-105 animate-fadeIn"
+                          style={{ animationDelay: `${specIndex * 0.1}s` }}
                         >
-                          <div className="text-sm text-muted-foreground mb-1">{key}</div>
+                          <div className="text-sm text-muted-foreground mb-2 uppercase tracking-wide">{key}</div>
                           <div className="text-lg font-orbitron font-bold text-accent">{value}</div>
                         </div>
                       ))}
                     </div>
                     
-                    {/* Additional Info */}
-                    <div className="mt-6 p-4 tron-glass rounded-lg border border-primary/20">
-                      <h4 className="text-lg font-orbitron font-bold mb-2 text-primary">
-                        Key Advantages
-                      </h4>
-                      <ul className="text-sm text-muted-foreground space-y-1">
-                        <li>• Superior maneuverability in congested city traffic</li>
-                        <li>• Docking capability for multi-unit travel</li>
-                        <li>• Combines safety of a car with agility of motorcycle</li>
-                        <li>• Zero helmet requirement with full weather protection</li>
-                        <li>• Advanced safety features uncommon in two-wheelers</li>
-                      </ul>
-                    </div>
-                  </div>
+                    {/* Key Advantages */}
+                    <Card className="tron-glass border border-primary/30">
+                      <CardHeader>
+                        <CardTitle className="text-xl font-orbitron font-bold text-primary flex items-center">
+                          <Star className="h-5 w-5 mr-2" />
+                          Key Advantages
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          {[
+                            'Superior maneuverability in congested city traffic',
+                            'Docking capability for multi-unit travel',
+                            'Combines safety of a car with agility of motorcycle',
+                            'Zero helmet requirement with full weather protection',
+                            'Advanced safety features uncommon in two-wheelers'
+                          ].map((advantage, idx) => (
+                            <div key={idx} className="flex items-start space-x-3">
+                              <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                              <span className="text-sm text-muted-foreground">{advantage}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CardContent>
                 )}
-              </div>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       {/* Technical Standards Section */}
-      <section className="py-20 relative">
+      <section className="py-24 relative">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
           style={{ backgroundImage: `url(${codeMonitorBg})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-16 tron-glow-text">
-            INDUSTRY <span className="text-accent">STANDARDS</span>
-          </h2>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 to-background/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10" />
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-orbitron font-bold mb-4 tron-glow-text">
+              INDUSTRY <span className="text-accent">STANDARDS</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Compliance certifications and rigorous testing protocols
+            </p>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="tron-glass-strong p-8 rounded-lg border border-primary/30">
-              <h3 className="text-xl font-orbitron font-bold mb-6 text-primary tron-glow-text">
-                CERTIFICATIONS
-              </h3>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                  ISO 9001:2015 Quality Management
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-accent rounded-full mr-3"></div>
-                  IEC 60034 Standards Compliance
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                  CE Marking for European Market
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-accent rounded-full mr-3"></div>
-                  BIS Certification for Indian Market
-                </li>
-              </ul>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <Card className="tron-glass-strong border-primary/40 hover:border-primary/60 transition-all duration-300 animate-fadeIn">
+              <CardHeader className="pb-4">
+                <CardTitle className="text-2xl font-orbitron font-bold text-primary tron-glow-text flex items-center">
+                  <Shield className="h-6 w-6 mr-3" />
+                  CERTIFICATIONS
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-6">
+                  {[
+                    { cert: 'ISO 9001:2015 Quality Management', color: 'primary' },
+                    { cert: 'IEC 60034 Standards Compliance', color: 'accent' },
+                    { cert: 'CE Marking for European Market', color: 'primary' },
+                    { cert: 'BIS Certification for Indian Market', color: 'accent' }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center p-4 tron-glass rounded-lg border border-accent/10 hover:border-accent/30 transition-all duration-300">
+                      <div className={`w-3 h-3 bg-${item.color} rounded-full mr-4 animate-pulse-glow`}></div>
+                      <span className="text-muted-foreground font-medium">{item.cert}</span>
+                      <CheckCircle className={`h-5 w-5 text-${item.color} ml-auto`} />
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
             
-            <div className="tron-glass-strong p-8 rounded-lg border border-accent/30">
-              <h3 className="text-xl font-orbitron font-bold mb-6 text-accent">
-                TESTING PROTOCOLS
-              </h3>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-accent rounded-full mr-3"></div>
-                  Endurance Testing (10,000+ hours)
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                  Environmental Stress Testing
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-accent rounded-full mr-3"></div>
-                  EMC/EMI Compliance Testing
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                  Safety and Performance Validation
-                </li>
-              </ul>
-            </div>
+            <Card className="tron-glass-strong border-accent/40 hover:border-accent/60 transition-all duration-300 animate-fadeIn" style={{ animationDelay: '0.2s' }}>
+              <CardHeader className="pb-4">
+                <CardTitle className="text-2xl font-orbitron font-bold text-accent flex items-center">
+                  <Thermometer className="h-6 w-6 mr-3" />
+                  TESTING PROTOCOLS
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-6">
+                  {[
+                    { test: 'Endurance Testing (10,000+ hours)', color: 'accent' },
+                    { test: 'Environmental Stress Testing', color: 'primary' },
+                    { test: 'EMC/EMI Compliance Testing', color: 'accent' },
+                    { test: 'Safety and Performance Validation', color: 'primary' }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center p-4 tron-glass rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300">
+                      <div className={`w-3 h-3 bg-${item.color} rounded-full mr-4 animate-pulse-glow`}></div>
+                      <span className="text-muted-foreground font-medium">{item.test}</span>
+                      <CheckCircle className={`h-5 w-5 text-${item.color} ml-auto`} />
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Performance Metrics */}
+          <div className="mt-16">
+            <Card className="tron-glass-strong border-primary/30 animate-fadeIn" style={{ animationDelay: '0.4s' }}>
+              <CardHeader>
+                <CardTitle className="text-2xl font-orbitron font-bold text-center tron-glow-text">
+                  PERFORMANCE <span className="text-accent">METRICS</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  <div className="text-center p-6 tron-glass rounded-lg border border-accent/20">
+                    <div className="text-3xl font-orbitron font-black text-accent mb-2">99.8%</div>
+                    <div className="text-sm text-muted-foreground">Reliability Rating</div>
+                  </div>
+                  <div className="text-center p-6 tron-glass rounded-lg border border-primary/20">
+                    <div className="text-3xl font-orbitron font-black text-primary mb-2">10K+</div>
+                    <div className="text-sm text-muted-foreground">Test Hours</div>
+                  </div>
+                  <div className="text-center p-6 tron-glass rounded-lg border border-accent/20">
+                    <div className="text-3xl font-orbitron font-black text-accent mb-2">5★</div>
+                    <div className="text-sm text-muted-foreground">Safety Rating</div>
+                  </div>
+                  <div className="text-center p-6 tron-glass rounded-lg border border-primary/20">
+                    <div className="text-3xl font-orbitron font-black text-primary mb-2">Zero</div>
+                    <div className="text-sm text-muted-foreground">Emissions</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
