@@ -1,5 +1,6 @@
 import React from 'react'
 import { ArrowRight, Zap, Cog, Leaf, Shield, Users, MapPin, Phone, Mail, ChevronDown } from 'lucide-react'
+import heroBackgroundImage from '@/assets/tron-hero-bg.jpg'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -107,9 +108,15 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         
-        {/* Animated Background */}
-        <div className="absolute inset-0 tron-grid-bg animate-grid-flow opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-accent/10" />
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBackgroundImage})` }}
+        />
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/20" />
         
         {/* Floating Elements */}
         <div className="absolute top-20 left-10 w-32 h-32 border border-primary/30 rotate-45 animate-pulse-glow" />
