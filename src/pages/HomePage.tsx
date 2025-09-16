@@ -1,6 +1,9 @@
 import React from 'react'
 import { ArrowRight, Zap, Cog, Leaf, Shield, Users, MapPin, Phone, Mail, ChevronDown } from 'lucide-react'
 import heroBackgroundImage from '@/assets/tron-hero-bg.jpg'
+import founderImage from '@/assets/founder.jpg'
+import coFounder1Image from '@/assets/co-founder-1.jpg'
+import coFounder2Image from '@/assets/co-founder-2.jpg'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -435,11 +438,15 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Founder */}
             <div className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 text-center group">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mx-auto mb-6 group-hover:from-accent/30 group-hover:to-primary/30 transition-all">
-                <Users className="h-10 w-10 text-primary group-hover:text-accent transition-colors" />
+              <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-primary/30 group-hover:border-accent/60 transition-all">
+                <img
+                  src={founderImage}
+                  alt="John Smith - Founder"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-orbitron font-bold mb-2 group-hover:tron-glow-text transition-all">
-                Raguram SK
+                John Smith
               </h3>
               <p className="text-accent font-medium mb-3">FOUNDER</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
@@ -449,11 +456,15 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
             {/* Co-founders */}
             <div className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 text-center group">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mx-auto mb-6 group-hover:from-accent/30 group-hover:to-primary/30 transition-all">
-                <Users className="h-10 w-10 text-primary group-hover:text-accent transition-colors" />
+              <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-primary/30 group-hover:border-accent/60 transition-all">
+                <img
+                  src={coFounder1Image}
+                  alt="Michael Johnson - Co-Founder"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-orbitron font-bold mb-2 group-hover:tron-glow-text transition-all">
-                Muthuram B
+                Michael Johnson
               </h3>
               <p className="text-accent font-medium mb-3">CO-FOUNDER</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
@@ -462,11 +473,15 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </div>
 
             <div className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 text-center group">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mx-auto mb-6 group-hover:from-accent/30 group-hover:to-primary/30 transition-all">
-                <Users className="h-10 w-10 text-primary group-hover:text-accent transition-colors" />
+              <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-primary/30 group-hover:border-accent/60 transition-all">
+                <img
+                  src={coFounder2Image}
+                  alt="David Wilson - Co-Founder"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-orbitron font-bold mb-2 group-hover:tron-glow-text transition-all">
-                Nishanthraj GV
+                David Wilson
               </h3>
               <p className="text-accent font-medium mb-3">CO-FOUNDER</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
