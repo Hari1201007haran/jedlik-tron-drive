@@ -1,5 +1,6 @@
 import React from 'react'
 import { MapPin, Navigation, Clock, Car, Phone, Mail, Building, Zap } from 'lucide-react'
+import heroBackgroundImage from '@/assets/tron-hero-bg.jpg'
 import { Button } from '@/components/ui/button'
 
 const LocateUsPage: React.FC = () => {
@@ -55,17 +56,16 @@ const LocateUsPage: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0">
-          <div className="tron-grid-bg opacity-30 animate-grid-flow" />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent via-accent/10 to-primary/5" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-        </div>
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBackgroundImage})` }}
+        />
         
-        {/* Floating Orbs */}
-        <div className="absolute top-20 left-20 w-32 h-32 bg-primary/20 rounded-full blur-xl animate-pulse" />
-        <div className="absolute bottom-40 right-32 w-24 h-24 bg-accent/30 rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }} />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/20" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">

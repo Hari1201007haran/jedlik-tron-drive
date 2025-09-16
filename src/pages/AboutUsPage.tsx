@@ -1,5 +1,6 @@
 import React from 'react'
 import { Award, MapPin, Users, Lightbulb } from 'lucide-react'
+import heroBackgroundImage from '@/assets/tron-hero-bg.jpg'
 
 const AboutUsPage: React.FC = () => {
   const achievements = [
@@ -28,9 +29,16 @@ const AboutUsPage: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 tron-grid-bg opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBackgroundImage})` }}
+        />
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/20" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -41,7 +49,13 @@ const AboutUsPage: React.FC = () => {
               Redefining urban commuting with safety, comfort, and maneuverability through the revolutionary e-POD
             </p>
           </div>
+        </div>
+      </section>
 
+      {/* About Content Section */}
+      <section className="py-20 relative">
+        <div className="absolute inset-0 tron-grid-bg opacity-10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Main Content */}
             <div className="order-2 lg:order-1">
