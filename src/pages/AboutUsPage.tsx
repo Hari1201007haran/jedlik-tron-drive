@@ -12,7 +12,7 @@ const AboutUsPage: React.FC = () => {
     {
       icon: Award,
       title: 'TEC Grants Received',
-      description: 'Secured grants of ₹50,000 from iCreate, ₹9,00,000 from Nidhi Prayas, and ₹15,00,000 from SIFSC.',
+      description: 'Secured grants of ₹50,000, ₹9,00,000 from Nidhi Prayas, and ₹15,00,000 from SIFSC.',
     },
     {
       icon: Lightbulb,
@@ -132,47 +132,6 @@ const AboutUsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Support Section */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5" />
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-orbitron font-bold mb-8 tron-glow-text">
-            SUPPORTED BY INDUSTRY LEADERS
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="tron-glass-strong p-8 rounded-lg border border-accent/30">
-              <h3 className="text-xl font-orbitron font-bold mb-4 text-accent">
-                ANNA INCUBATION
-              </h3>
-              <p className="text-muted-foreground">
-                Currently incubated at Anna University's premier incubation center, 
-                leveraging their expertise and resources for technological development.
-              </p>
-            </div>
-            
-            <div className="tron-glass-strong p-8 rounded-lg border border-accent/30">
-              <h3 className="text-xl font-orbitron font-bold mb-4 text-accent">
-                iCREATE
-              </h3>
-              <p className="text-muted-foreground">
-                Grant support and partnership with iCreate's innovation ecosystem 
-                to accelerate our cutting-edge solutions to market.
-              </p>
-            </div>
-
-            <div className="tron-glass-strong p-8 rounded-lg border border-accent/30">
-              <h3 className="text-xl font-orbitron font-bold mb-4 text-accent">
-                STARTUP INDIA
-              </h3>
-              <p className="text-muted-foreground">
-                Patent recognition and support under the Startup India initiative, 
-                validating our innovative approach to urban mobility.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

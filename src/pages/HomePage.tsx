@@ -22,7 +22,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     {
       icon: Zap,
       title: 'Advanced Performance',
-      description: 'Next-generation motor technology for superior urban mobility',
+      description: 'Advanced motor technology for superior urban mobility',
       link: 'techspecs'
     },
     {
@@ -135,7 +135,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             OF URBAN COMMUTING
           </h2>
           <p className="text-lg md:text-xl font-inter mb-12 text-muted-foreground max-w-2xl mx-auto">
-            Electrifying tomorrow's journeys with next-generation motor technology. 
+            Electrifying tomorrow's journeys with advanced motor technology. 
             DPIIT recognised startup from Chennai, India.
           </p>
           
