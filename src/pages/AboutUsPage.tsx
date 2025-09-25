@@ -7,17 +7,17 @@ const AboutUsPage: React.FC = () => {
     {
       icon: Award,
       title: 'POC Development',
-      description: 'Developed 1:6 scale Proof of Concept for e-POD with patent filed under Startup India.',
+      description: 'Developed 1:6 scale Proof of Concept for e-POD with patent published under Startup India.',
     },
     {
       icon: Award,
-      title: 'TEC Grants Received',
-      description: 'Secured grants of ₹50,000, ₹9,00,000 from Nidhi Prayas, and ₹15,00,000 from SIFSC.',
+      title: 'Grants Received',
+      description: 'Grants worth $30,000 receivedfor development of prototype.',
     },
     {
       icon: Lightbulb,
-      title: 'Full Scale Model',
-      description: 'Built fully 3D-printed CAD-based functional model and full scale single-seat prototype.',
+      title: 'Prototype Model',
+      description: 'Currently completed the prototype phase with the pilot expected to arrive on 2027.',
     },
     {
       icon: Users,
