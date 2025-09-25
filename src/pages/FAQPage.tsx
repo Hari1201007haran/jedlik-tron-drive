@@ -52,8 +52,8 @@ const FAQPage: React.FC = () => {
     },
     {
       id: 'maintenance',
-      question: 'How do I maintain the motors?',
-      answer: 'Our motors are designed for minimal maintenance. Regular maintenance includes visual inspections, cleaning, connection checks, and performance monitoring. We provide detailed maintenance guides and can arrange for professional maintenance services if required.'
+      question: 'How do I maintain the vehicle?',
+      answer: 'We support ease of repairablity and provide DIY kits and videos to maintain the vehicle at times of need.'
     }
   ]
 
@@ -138,7 +138,7 @@ const FAQPage: React.FC = () => {
               STILL HAVE <span className="text-accent">QUESTIONS?</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Our technical experts are here to help you find the perfect electric motor solution for your needs.
+              Our technical experts are here to help you find the urban commuting solution for your needs.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
