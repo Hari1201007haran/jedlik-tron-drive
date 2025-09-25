@@ -64,7 +64,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     {
       icon: Zap,
       title: 'Extended Range',
-      description: '200 km range with rapid charging in just 4 hours for efficient urban mobility.'
+      description: '200 km range with rapid charging in just 4 hours for efficient urban commuting.'
     }
   ]
 
@@ -135,7 +135,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             OF URBAN COMMUTING
           </h2>
           <p className="text-lg md:text-xl font-inter mb-12 text-muted-foreground max-w-2xl mx-auto">
-            Electrifying tomorrow's journeys with advanced motor technology. 
+            Electrifying tomorrow's journeys with advanced steering technology. 
             DPIIT recognised startup from Chennai, India.
           </p>
           
@@ -198,7 +198,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
               <div className="tron-glass p-6 rounded-lg border border-accent/30">
                 <h4 className="text-xl font-orbitron font-bold text-accent mb-3">Expert Team</h4>
-                <p className="text-muted-foreground">Next generation engineers working on next generation of community.</p>
+                <p className="text-muted-foreground">Next generation engineers working on next generation of commuting.</p>
               </div>
             </div>
           </div>
