@@ -75,7 +75,7 @@ const LaunchCountdown: React.FC = () => {
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold mb-6">
-            <span className="text-primary tron-glow-text">LAUNCH</span>
+            <span className="text-primary tron-glow-text">REVEAL</span>
             <br />
             <span className="text-accent tron-glow-text">COUNTDOWN</span>
           </h1>
@@ -87,7 +87,7 @@ const LaunchCountdown: React.FC = () => {
           </div>
           
           <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed">
-            Experience the future of urban mobility at our exclusive launch event at Codissia Trade Fair Complex, Coimbatore
+            Our exclusive launch event at Codissia Trade Fair Complex, Coimbatore
           </p>
         </div>
         
