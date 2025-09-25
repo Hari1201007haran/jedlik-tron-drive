@@ -57,15 +57,6 @@ const LaunchCountdown: React.FC = () => {
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
       
       <div className="container mx-auto px-4 text-center relative z-10">
-        {/* Global Startup Summit Logo - Top Left */}
-        <div className="absolute top-4 left-4 z-50">
-          <img 
-            src="/lovable-uploads/d27e743e-23dc-4d96-8f3c-02b03ea9d052.png" 
-            alt="Global Startup Summit 2025" 
-            className="w-40 h-auto drop-shadow-lg hover:scale-105 transition-all duration-300"
-          />
-        </div>
-        
         {/* Header Section */}
         <div className="mb-12 md:mb-16">
           <div className="inline-flex items-center gap-3 mb-6">
