@@ -83,7 +83,7 @@ const FeaturesPage: React.FC = () => {
               CUTTING-EDGE <span className="text-accent">FEATURES</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover the innovative technologies that power our next-generation electric motors
+              Discover the innovative technologies that power our next-generation urban commuters
             </p>
           </div>
         </div>
