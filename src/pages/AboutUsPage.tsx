@@ -12,7 +12,7 @@ const AboutUsPage: React.FC = () => {
     {
       icon: Award,
       title: 'Grants Received',
-      description: 'Grants worth $30,000 receivedfor development of prototype.',
+      description: 'Grants worth $30,000 received for development of prototype.',
     },
     {
       icon: Lightbulb,
@@ -65,10 +65,10 @@ const AboutUsPage: React.FC = () => {
                 </h2>
                 <div className="space-y-6 text-lg leading-relaxed">
                   <p className="text-foreground">
-                     <span className="text-primary font-semibold">To create safe and comfortable urban community solutions for city dwellers.</span> 
+                     <span className="text-primary font-semibold">To create safe and comfortable urban commuting solutions for city dwellers.</span> 
                   </p>
                   <p className="text-muted-foreground">
-                    We're creating a  <span className="text-accent font-semibold">e-POD</span>, a fully enclosed, two-wheeled electric vehicle combining the agility of a motorcycle with the safety and comfort of a car.
+                    We're creating <span className="text-accent font-semibold">e-POD</span>, a fully enclosed, two-wheeled vehicle combining the agility of a motorcycle with the safety and comfort of a car.
                   </p>
                   <p className="text-foreground">
                     Our vision is to provide <span className="text-primary font-semibold">superior maneuverability in congested city traffic</span> while offering features like airbags, full weather protection, and innovative docking capability for multi-unit travel.
