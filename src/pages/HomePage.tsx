@@ -166,35 +166,6 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Highlights Section */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 tron-grid-bg opacity-10" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
-            NEXT-GEN <span className="text-accent">INNOVATION</span>
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {highlights.map((highlight, index) => (
-              <div
-                key={index}
-                onClick={() => onNavigate(highlight.link)}
-                className="tron-glass-strong p-6 rounded-lg border border-primary/30 hover:border-primary/60 hover:tron-glow transition-all duration-300 cursor-pointer group"
-              >
-                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/20 mb-4 group-hover:bg-accent/20 transition-colors">
-                  <highlight.icon className="h-6 w-6 text-primary group-hover:text-accent transition-colors" />
-                </div>
-                <h3 className="text-xl font-orbitron font-bold mb-3 group-hover:tron-glow-text transition-all">
-                  {highlight.title}
-                </h3>
-                <p className="text-muted-foreground group-hover:text-foreground transition-colors">
-                  {highlight.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* About Us Section */}
       <section id="about" className="py-20 relative">

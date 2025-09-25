@@ -168,47 +168,6 @@ const FAQPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Knowledge Base Section */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 tron-grid-bg opacity-10" />
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-16 tron-glow-text">
-            ADDITIONAL <span className="text-accent">RESOURCES</span>
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="tron-glass-strong p-6 rounded-lg border border-primary/30 hover:border-primary/60 hover:tron-glow transition-all duration-300 text-center group">
-              <div className="text-3xl mb-4">📋</div>
-              <h3 className="text-xl font-orbitron font-bold mb-3 group-hover:tron-glow-text transition-all">
-                Technical Manuals
-              </h3>
-              <p className="text-muted-foreground group-hover:text-foreground transition-colors">
-                Comprehensive documentation for installation, operation, and maintenance
-              </p>
-            </div>
-            
-            <div className="tron-glass-strong p-6 rounded-lg border border-accent/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 text-center group">
-              <div className="text-3xl mb-4">🎓</div>
-              <h3 className="text-xl font-orbitron font-bold mb-3 group-hover:tron-glow-text transition-all">
-                Training Programs
-              </h3>
-              <p className="text-muted-foreground group-hover:text-foreground transition-colors">
-                Professional training for technicians and engineers
-              </p>
-            </div>
-            
-            <div className="tron-glass-strong p-6 rounded-lg border border-primary/30 hover:border-primary/60 hover:tron-glow transition-all duration-300 text-center group">
-              <div className="text-3xl mb-4">🔧</div>
-              <h3 className="text-xl font-orbitron font-bold mb-3 group-hover:tron-glow-text transition-all">
-                Service Support
-              </h3>
-              <p className="text-muted-foreground group-hover:text-foreground transition-colors">
-                On-site service and remote diagnostic capabilities
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

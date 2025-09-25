@@ -413,49 +413,6 @@ const ContactUsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Enhanced CTA Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
-        <div className="absolute inset-0 tron-grid-bg opacity-20" />
-        
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="tron-glass-strong p-8 lg:p-12 rounded-xl border border-primary/40 hover:border-accent/60 transition-all duration-500 group hover:scale-105">
-            <div className="flex justify-center mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-primary rounded-full animate-ping"></div>
-                <span className="text-primary font-orbitron text-sm uppercase tracking-widest">Ready to Connect</span>
-                <div className="w-3 h-3 bg-accent rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
-              </div>
-            </div>
-            
-            <h2 className="text-3xl md:text-4xl font-orbitron font-bold mb-6">
-              <span className="text-primary tron-glow-text">LET'S BUILD THE</span>
-              <br />
-              <span className="text-accent tron-glow-text">FUTURE TOGETHER</span>
-            </h2>
-            
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Join us in revolutionizing urban mobility with cutting-edge electric motor technology
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 text-primary-foreground font-orbitron font-bold hover:scale-105 transition-all duration-300"
-              >
-                START A PROJECT
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="tron-glass border-accent hover:bg-accent hover:text-accent-foreground font-orbitron font-bold hover:scale-105 transition-all duration-300"
-              >
-                SCHEDULE A CALL
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }
