@@ -69,12 +69,12 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   ]
 
   const techSpecs = [
-    { label: 'Seating Capacity', value: '2', unit: 'Persons' },
+    { label: 'Seating Capacity', value: '2', unit: 'Push Back Seats' },
     { label: 'Top Speed', value: '120', unit: 'km/h' },
     { label: 'Range per Charge', value: '200', unit: 'km' },
     { label: 'Charging Time', value: '4', unit: 'Hours' },
-    { label: 'Vehicle Type', value: 'Enclosed', unit: 'Two-wheeler' },
-    { label: 'USP', value: 'Car + Bike', unit: 'Hybrid Safety' }
+    { label: 'Protection', value: 'Airbag', unit: 'Fully-enclosed' },
+    { label: 'Weather Protection', value: 'Air-conditioning', unit: 'For Sunny Days' }
   ]
 
   const faqs = [
@@ -83,8 +83,8 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       answer: 'Jedlik Motors was founded by passionate adventurers and engineers on a mission to redefine urban commuting with safety, comfort, and maneuverability. Born from the personal experiences of riders facing daily risks and inefficiencies.'
     },
     {
-      question: 'What types of motors do you offer?',
-      answer: 'We offer a range of high-efficiency electric motors designed for urban mobility applications, featuring adaptive power delivery, intelligent battery management, and modular design.'
+      question: 'Why choose e-POD?',
+      answer: 'e-POD offer the comfort and safety of a car with the maneuverability of a motorcycle.'
     },
     {
       question: 'When will you reveal the product?',
@@ -145,7 +145,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               size="lg"
               className="tron-glass tron-glow hover:animate-pulse-glow font-orbitron font-bold text-lg px-8 py-4 group"
             >
-              EXPLORE OUR MOTORS
+              Introducing e-POD
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
             
@@ -182,8 +182,8 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <h3 className="text-2xl font-orbitron font-bold tron-glow-text">Our Mission</h3>
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We're a DPIIT recognised startup based in the automobile capital of India, Chennai. 
-                We're a group of mechanical engineers working on electric motor technology.
+                To create safe and comfortable urban community solutions for city dwellers. 
+                
               </p>
             </div>
             
@@ -198,7 +198,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
               <div className="tron-glass p-6 rounded-lg border border-accent/30">
                 <h4 className="text-xl font-orbitron font-bold text-accent mb-3">Expert Team</h4>
-                <p className="text-muted-foreground">Mechanical engineers dedicated to revolutionizing urban mobility solutions.</p>
+                <p className="text-muted-foreground">Next generation engineers working on next generation of community.</p>
               </div>
             </div>
           </div>
@@ -416,11 +416,11 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 />
               </div>
               <h3 className="text-xl font-orbitron font-bold mb-2 group-hover:tron-glow-text transition-all">
-                John Smith
+                Raguram SK
               </h3>
               <p className="text-accent font-medium mb-3">FOUNDER</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Visionary leader driving next-generation urban mobility solutions
+                
               </p>
             </div>
 
@@ -434,11 +434,11 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 />
               </div>
               <h3 className="text-xl font-orbitron font-bold mb-2 group-hover:tron-glow-text transition-all">
-                Michael Johnson
+                Muthuram B
               </h3>
               <p className="text-accent font-medium mb-3">CO-FOUNDER</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Expert in mechanical engineering and innovative design solutions
+                
               </p>
             </div>
 
@@ -451,11 +451,11 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 />
               </div>
               <h3 className="text-xl font-orbitron font-bold mb-2 group-hover:tron-glow-text transition-all">
-                David Wilson
+                Nishanthraj GV
               </h3>
               <p className="text-accent font-medium mb-3">CO-FOUNDER</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Technology specialist focused on sustainable transportation
+                
               </p>
             </div>
           </div>
