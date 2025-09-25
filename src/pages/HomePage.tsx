@@ -182,7 +182,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <h3 className="text-2xl font-orbitron font-bold tron-glow-text">Our Mission</h3>
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To create safe and comfortable urban community solutions for city dwellers. 
+                To create safe and comfortable urban commuting solutions for city dwellers. 
                 
               </p>
             </div>
