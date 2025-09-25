@@ -337,7 +337,7 @@ const LocateUsPage: React.FC = () => {
               TRANSPORT <span className="text-accent animate-pulse">MATRIX</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Multiple pathways to reach our innovation hub
+              Multiple pathways to reach us
             </p>
           </div>
           
