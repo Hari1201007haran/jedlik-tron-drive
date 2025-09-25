@@ -152,7 +152,7 @@ const ContactUsPage: React.FC = () => {
             </div>
             
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Get in touch with our team to discuss your electric motor needs and future mobility solutions
+              Get in touch with our team to discuss your urban commuting needs and future mobility solutions
             </p>
           </div>
         </div>
