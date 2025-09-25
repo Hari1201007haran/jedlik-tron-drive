@@ -183,8 +183,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 We're a DPIIT recognised startup based in the automobile capital of India, Chennai. 
-                We're a group of mechanical engineers working on the next generation of urban commuting. 
-                We're supported by Anna Incubator and iCreate.
+                We're a group of mechanical engineers working on electric motor technology.
               </p>
             </div>
             
