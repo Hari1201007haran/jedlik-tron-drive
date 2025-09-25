@@ -63,8 +63,8 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     },
     {
       icon: Zap,
-      title: 'Extended Range',
-      description: '200 km range with rapid charging in just 4 hours for efficient urban commuting.'
+      title: 'Fast Charging',
+      description: '80 km range with charging under 10 minutes.'
     }
   ]
 
