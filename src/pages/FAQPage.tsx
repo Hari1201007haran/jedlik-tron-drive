@@ -28,7 +28,7 @@ const FAQPage: React.FC = () => {
     {
       id: 'customization',
       question: 'Do you offer customization services?',
-      answer: 'Yes, we offer extensive customization services. Our modular design approach allows us to adapt our motors to specific voltage requirements, power outputs, and integration needs. Contact our engineering team to discuss your custom requirements.'
+      answer: 'Yes, we offer extensive customization services. Our modular design approach allows us to adapt our e-POD to specific voltage requirements, power outputs, and integration needs. Contact our engineering team to discuss your custom requirements.'
     },
     {
       id: 'support',
