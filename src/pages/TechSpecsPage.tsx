@@ -63,7 +63,7 @@ const TechSpecsPage: React.FC = () => {
               <span className="text-sm font-medium text-primary">Next-Gen Urban Mobility</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-orbitron font-black mb-8 tron-glow-text animate-pulse-glow">
-              TECHNICAL <span className="text-accent">SPECIFICATIONS</span>
+              TECHNICAL <span className="text-accent">SPECS</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Complete technical specifications for the revolutionary e-POD urban mobility solution
