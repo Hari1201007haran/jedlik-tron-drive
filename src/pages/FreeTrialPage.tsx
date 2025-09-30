@@ -1,6 +1,5 @@
 import { Scan, Gift, CheckCircle2, Clock, Zap, Shield, Sparkles } from "lucide-react";
 import qrCode from "@/assets/free-trial-qr.png";
-import heroBackgroundImage from "@/assets/tron-hero-bg.jpg";
 
 const FreeTrialPage = () => {
   return (
@@ -17,14 +16,6 @@ const FreeTrialPage = () => {
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBackgroundImage})` }}
-        />
-        
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 bg-gradient-to-b from-tron-grid/30 via-accent/5 to-transparent"></div>
         
         {/* Multiple animated orbs */}
