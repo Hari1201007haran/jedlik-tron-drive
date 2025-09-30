@@ -61,7 +61,7 @@ const FreeTrialPage = () => {
             </h1>
             
             <p className="text-xl md:text-3xl text-foreground/80 max-w-4xl mx-auto font-light leading-relaxed">
-              Step into the future of <span className="text-primary font-semibold">electric mobility</span> with a 
+              Step into the future of <span className="text-primary font-semibold">urban mobility</span> with a 
               <span className="text-accent font-semibold"> complimentary month</span> of premium access
             </p>
           </div>
@@ -96,7 +96,7 @@ const FreeTrialPage = () => {
                     <Zap className="w-8 h-8 text-accent relative z-10 animate-pulse" style={{animationDelay: '0.5s'}} />
                   </div>
                   <p className="text-lg text-foreground/70 max-w-md mx-auto">
-                    Point your camera at the code below to begin your premium journey
+                    Point your camera at the QR code below to begin your premium journey
                   </p>
                 </div>
 
@@ -137,7 +137,7 @@ const FreeTrialPage = () => {
                 <div className="grid md:grid-cols-3 gap-8">
                   {[
                     { num: 1, icon: Scan, title: "Scan QR Code", desc: "Open your camera and point at the code", color: "primary" },
-                    { num: 2, icon: Shield, title: "Secure Registration", desc: "Complete the quick verification form", color: "accent" },
+                    { num: 2, icon: Shield, title: "Secure Registration", desc: "Complete the quick registration form", color: "accent" },
                     { num: 3, icon: Zap, title: "Instant Access", desc: "Start your premium trial immediately", color: "tron-glow" }
                   ].map((step, i) => (
                     <div key={i} className="relative group">
@@ -201,13 +201,13 @@ const FreeTrialPage = () => {
               {
                 icon: Gift,
                 title: "Zero Cost",
-                description: "No payment info or credit card needed",
+                description: "No payment info needed",
                 gradient: "from-tron-glow/20 to-primary/20"
               },
               {
                 icon: Scan,
                 title: "Instant Start",
-                description: "Scan and ride within minutes",
+                description: "Scan and ride",
                 gradient: "from-accent/20 to-primary/20"
               }
             ].map((benefit, index) => (
@@ -251,7 +251,7 @@ const FreeTrialPage = () => {
             <div className="relative inline-block mb-8">
               <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-tron-glow blur-2xl opacity-50 animate-pulse"></div>
               <h2 className="relative text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-tron-glow bg-clip-text text-transparent">
-                Begin Your Journey
+                Start Your Journey
               </h2>
             </div>
             
@@ -282,7 +282,7 @@ const FreeTrialPage = () => {
             <div className="flex flex-wrap items-center justify-center gap-8 mt-12 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-accent" />
-                <span>No Credit Card</span>
+                <span>No payment</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-accent" />
