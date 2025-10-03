@@ -1,5 +1,5 @@
-import { Scan, Gift, CheckCircle2, Clock, Zap, Shield, Sparkles } from "lucide-react";
-import qrCode from "@/assets/free-trial-qr.png";
+import { Scan, Gift, CheckCircle2, Clock, Zap, Shield, Sparkles, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const FreeTrialPage = () => {
   return (
@@ -96,49 +96,40 @@ const FreeTrialPage = () => {
                     <Zap className="w-8 h-8 text-accent relative z-10 animate-pulse" style={{animationDelay: '0.5s'}} />
                   </div>
                   <p className="text-lg text-foreground/70 max-w-md mx-auto">
-                    Point your camera at the QR code below to begin your premium journey
+                    Click the button below to begin your premium journey
                   </p>
                 </div>
 
-                {/* QR Code with enhanced design */}
+                {/* CTA Button */}
                 <div className="flex justify-center mb-12">
                   <div className="relative group">
-                    {/* Outer scanning effect */}
-                    <div className="absolute -inset-4 border-2 border-accent/30 rounded-3xl animate-pulse"></div>
-                    <div className="absolute -inset-8 border border-primary/20 rounded-3xl"></div>
+                    {/* Outer glow ring */}
+                    <div className="absolute -inset-4 bg-gradient-to-r from-primary via-accent to-tron-glow rounded-3xl opacity-30 blur-xl group-hover:opacity-60 transition-all duration-500 animate-pulse"></div>
                     
-                    {/* QR Container */}
-                    <div className="relative bg-white p-8 rounded-2xl shadow-2xl transform group-hover:scale-105 transition-all duration-300">
-                      {/* Corner markers */}
-                      <div className="absolute -top-2 -left-2 w-6 h-6 border-t-4 border-l-4 border-accent rounded-tl-lg"></div>
-                      <div className="absolute -top-2 -right-2 w-6 h-6 border-t-4 border-r-4 border-accent rounded-tr-lg"></div>
-                      <div className="absolute -bottom-2 -left-2 w-6 h-6 border-b-4 border-l-4 border-accent rounded-bl-lg"></div>
-                      <div className="absolute -bottom-2 -right-2 w-6 h-6 border-b-4 border-r-4 border-accent rounded-br-lg"></div>
-                      
-                      <img 
-                        src={qrCode} 
-                        alt="Free Trial QR Code" 
-                        className="w-72 h-72 md:w-80 md:h-80 relative z-10"
-                      />
-                      
-                      {/* Scan line animation */}
-                      <div className="absolute inset-0 overflow-hidden rounded-2xl">
-                        <div className="w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent absolute top-0 animate-pulse" 
-                          style={{animation: 'scan 2s ease-in-out infinite'}}></div>
-                      </div>
-                    </div>
-                    
-                    {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent blur-2xl -z-10"></div>
+                    <a 
+                      href="https://forms.zohopublic.in/raguramkarthikeyan/form/FreeTrialregistration/formperma/2bMMbZJGO4RLOYFPV4fUSG3wyByX9FcnfLsl8TuYYWs"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <Button 
+                        size="lg"
+                        className="relative px-12 py-8 text-xl md:text-2xl font-bold rounded-2xl bg-gradient-to-r from-primary via-accent to-tron-glow hover:shadow-2xl hover:shadow-accent/50 transition-all duration-500 group-hover:scale-110 border-2 border-accent/30"
+                      >
+                        <Zap className="w-6 h-6 mr-3 animate-pulse" />
+                        Start Free Trial
+                        <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform" />
+                      </Button>
+                    </a>
                   </div>
                 </div>
 
                 {/* Instructions */}
                 <div className="grid md:grid-cols-3 gap-8">
                   {[
-                    { num: 1, icon: Scan, title: "Scan QR Code", desc: "Open your camera and point at the code", color: "primary" },
+                    { num: 1, icon: Zap, title: "Click Button", desc: "Press the button above to open the form", color: "primary" },
                     { num: 2, icon: Shield, title: "Secure Registration", desc: "Complete the quick registration form", color: "accent" },
-                    { num: 3, icon: Zap, title: "Instant Access", desc: "Start your premium trial immediately", color: "tron-glow" }
+                    { num: 3, icon: CheckCircle2, title: "Instant Access", desc: "Start your premium trial immediately", color: "tron-glow" }
                   ].map((step, i) => (
                     <div key={i} className="relative group">
                       <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-0 group-hover:opacity-30 blur transition-all duration-500"></div>
@@ -264,18 +255,18 @@ const FreeTrialPage = () => {
             <div className="inline-flex flex-col items-center gap-4 p-8 rounded-3xl bg-gradient-to-br from-primary/10 via-accent/5 to-transparent border border-primary/30 backdrop-blur-sm">
               <div className="flex items-center gap-3">
                 <div className="relative">
-                  <Scan className="w-8 h-8 text-primary animate-pulse" />
+                  <Zap className="w-8 h-8 text-primary animate-pulse" />
                   <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full animate-pulse"></div>
                 </div>
                 <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Scan Now
+                  Click to Register
                 </span>
                 <div className="relative">
-                  <Zap className="w-8 h-8 text-accent animate-pulse" style={{animationDelay: '0.5s'}} />
+                  <ArrowRight className="w-8 h-8 text-accent animate-pulse" style={{animationDelay: '0.5s'}} />
                   <div className="absolute inset-0 bg-accent/20 blur-xl rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground">Point your camera at the QR code above</p>
+              <p className="text-sm text-muted-foreground">Click the button above to get started</p>
             </div>
             
             {/* Trust indicators */}
