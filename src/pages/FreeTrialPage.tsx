@@ -198,7 +198,7 @@ const FreeTrialPage = () => {
               {
                 icon: Scan,
                 title: "Instant Start",
-                description: "Scan and ride",
+                description: "Register and ride",
                 gradient: "from-accent/20 to-primary/20"
               }
             ].map((benefit, index) => (
