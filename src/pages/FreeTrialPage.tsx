@@ -59,14 +59,13 @@ const FreeTrialPage = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-tron-grid/30 via-accent/5 to-transparent"></div>
+      <section className="relative py-24 md:py-40 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-accent/3 to-transparent"></div>
         
-        {/* Multiple animated orbs */}
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-40 right-1/3 w-72 h-72 bg-primary/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '0.5s'}}></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-tron-glow/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1.5s'}}></div>
+        {/* Refined animated orbs */}
+        <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-accent/15 to-transparent rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-40 right-1/3 w-[400px] h-[400px] bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl animate-pulse" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gradient-to-br from-tron-glow/8 to-transparent rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16 animate-fade-in">
@@ -86,69 +85,68 @@ const FreeTrialPage = () => {
               ))}
             </div>
 
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-accent/20 via-accent/10 to-accent/20 border border-accent/30 mb-8 hover:scale-105 transition-all duration-300 shadow-lg shadow-accent/20">
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-accent/15 via-accent/8 to-accent/15 border border-accent/25 mb-10 hover:scale-105 transition-all duration-300 shadow-lg shadow-accent/10 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-accent animate-pulse" />
-              <span className="text-sm font-semibold text-accent">Limited Time Exclusive Offer</span>
+              <span className="text-sm font-bold tracking-wide text-accent/90">Limited Time Exclusive Offer</span>
               <Sparkles className="w-4 h-4 text-accent animate-pulse" style={{animationDelay: '0.5s'}} />
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 relative">
-              <span className="bg-gradient-to-r from-primary via-accent to-tron-glow bg-clip-text text-transparent animate-fade-in drop-shadow-2xl">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-10 relative leading-tight">
+              <span className="bg-gradient-to-r from-primary via-primary/80 to-accent/80 bg-clip-text text-transparent animate-fade-in">
                 Free Trial
               </span>
               <br />
-              <span className="bg-gradient-to-r from-tron-glow via-accent to-primary bg-clip-text text-transparent animate-fade-in">
+              <span className="bg-gradient-to-r from-accent/80 via-primary/80 to-primary bg-clip-text text-transparent animate-fade-in">
                 Experience
               </span>
-              {/* Glowing underline */}
-              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-accent to-transparent blur-sm"></div>
+              {/* Refined glowing underline */}
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-64 h-0.5 bg-gradient-to-r from-transparent via-accent/60 to-transparent blur-sm"></div>
             </h1>
             
-            <p className="text-xl md:text-3xl text-foreground/80 max-w-4xl mx-auto font-light leading-relaxed">
-              Step into the future of <span className="text-primary font-semibold">urban mobility</span> with a 
-              <span className="text-accent font-semibold"> complimentary month</span> of premium access
+            <p className="text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto font-light leading-relaxed">
+              Step into the future of <span className="text-primary font-medium">urban mobility</span> with a 
+              <span className="text-accent/90 font-medium"> complimentary month</span> of premium access
             </p>
           </div>
 
-          {/* QR Code Card */}
-          <div className="max-w-3xl mx-auto">
+          {/* Main CTA Card */}
+          <div className="max-w-4xl mx-auto mt-16">
             <div className="relative group">
-              {/* Outer glow ring */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-tron-glow rounded-3xl opacity-30 blur-xl group-hover:opacity-50 transition-all duration-500 animate-pulse"></div>
+              {/* Refined outer glow */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-accent/15 to-primary/20 rounded-[2rem] opacity-40 blur-2xl group-hover:opacity-60 transition-all duration-700"></div>
               
-              <div className="relative tron-glass rounded-3xl p-10 md:p-14 border-2 border-primary/30 overflow-hidden animate-fade-in backdrop-blur-xl">
-                {/* Animated corner accents */}
-                <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-accent/50 rounded-tl-3xl"></div>
-                <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-accent/50 rounded-tr-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-accent/50 rounded-bl-3xl"></div>
-                <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-accent/50 rounded-br-3xl"></div>
+              <div className="relative bg-gradient-to-br from-background/80 via-background/90 to-background/80 rounded-[2rem] p-12 md:p-16 border border-primary/20 overflow-hidden animate-fade-in backdrop-blur-2xl shadow-2xl">
+                {/* Subtle corner accents */}
+                <div className="absolute top-0 left-0 w-24 h-24 border-t border-l border-accent/30 rounded-tl-[2rem]"></div>
+                <div className="absolute top-0 right-0 w-24 h-24 border-t border-r border-accent/30 rounded-tr-[2rem]"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 border-b border-l border-accent/30 rounded-bl-[2rem]"></div>
+                <div className="absolute bottom-0 right-0 w-24 h-24 border-b border-r border-accent/30 rounded-br-[2rem]"></div>
                 
-                {/* Background effects */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
-                <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-tron-glow/10 rounded-full blur-3xl"></div>
+                {/* Refined background effects */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
+                <div className="absolute -top-32 -right-32 w-64 h-64 bg-primary/15 rounded-full blur-3xl"></div>
+                <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-accent/10 rounded-full blur-3xl"></div>
               
               <div className="relative z-10">
-                <div className="text-center mb-10">
-                  <div className="inline-flex items-center gap-3 mb-6 relative">
-                    <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full"></div>
-                    <Scan className="w-8 h-8 text-primary relative z-10 animate-pulse" />
-                    <h2 className="text-3xl md:text-4xl font-bold relative z-10 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <div className="text-center mb-12">
+                  <div className="inline-flex items-center gap-4 mb-8 relative">
+                    <div className="absolute inset-0 bg-primary/10 blur-2xl rounded-full"></div>
+                    <Zap className="w-9 h-9 text-primary relative z-10 animate-pulse" />
+                    <h2 className="text-4xl md:text-5xl font-bold relative z-10 bg-gradient-to-r from-primary via-primary/90 to-accent/80 bg-clip-text text-transparent">
                       Instant Access
                     </h2>
-                    <Zap className="w-8 h-8 text-accent relative z-10 animate-pulse" style={{animationDelay: '0.5s'}} />
+                    <Sparkles className="w-9 h-9 text-accent/80 relative z-10 animate-pulse" style={{animationDelay: '0.5s'}} />
                   </div>
-                  <p className="text-lg text-foreground/70 max-w-md mx-auto">
+                  <p className="text-lg text-foreground/60 max-w-lg mx-auto leading-relaxed">
                     Click the button below to begin your premium journey
                   </p>
                 </div>
 
-                {/* CTA Button */}
-                <div className="flex justify-center mb-12">
-                  <div className="relative group">
-                    {/* Outer glow ring */}
-                    <div className="absolute -inset-4 bg-gradient-to-r from-primary via-accent to-tron-glow rounded-3xl opacity-30 blur-xl group-hover:opacity-60 transition-all duration-500 animate-pulse"></div>
+                {/* Enhanced CTA Button */}
+                <div className="flex justify-center mb-16">
+                  <div className="relative group/btn">
+                    {/* Refined outer glow */}
+                    <div className="absolute -inset-3 bg-gradient-to-r from-primary/30 via-accent/20 to-primary/30 rounded-2xl opacity-50 blur-2xl group-hover/btn:opacity-80 transition-all duration-700"></div>
                     
                     <a 
                       href="https://forms.zohopublic.in/raguramkarthikeyan/form/FreeTrialregistration/formperma/2bMMbZJGO4RLOYFPV4fUSG3wyByX9FcnfLsl8TuYYWs"
@@ -158,37 +156,37 @@ const FreeTrialPage = () => {
                     >
                       <Button 
                         size="lg"
-                        className="relative px-12 py-8 text-xl md:text-2xl font-bold rounded-2xl bg-gradient-to-r from-primary via-accent to-tron-glow hover:shadow-2xl hover:shadow-accent/50 transition-all duration-500 group-hover:scale-110 border-2 border-accent/30"
+                        className="relative px-16 py-8 text-xl md:text-2xl font-bold rounded-2xl bg-gradient-to-r from-primary/90 via-accent/80 to-primary/90 hover:from-primary hover:via-accent/90 hover:to-primary hover:shadow-2xl hover:shadow-primary/30 transition-all duration-500 group-hover/btn:scale-105 border border-primary/30"
                       >
-                        <Zap className="w-6 h-6 mr-3 animate-pulse" />
+                        <Zap className="w-7 h-7 mr-3 animate-pulse" />
                         Start Free Trial
-                        <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform" />
+                        <ArrowRight className="w-7 h-7 ml-3 group-hover/btn:translate-x-2 transition-transform duration-300" />
                       </Button>
                     </a>
                   </div>
                 </div>
 
-                {/* Instructions */}
-                <div className="grid md:grid-cols-3 gap-8">
+                {/* Refined Instructions */}
+                <div className="grid md:grid-cols-3 gap-6">
                   {[
                     { num: 1, icon: Zap, title: "Click Button", desc: "Press the button above to open the form", color: "primary" },
                     { num: 2, icon: Shield, title: "Secure Registration", desc: "Complete the quick registration form", color: "accent" },
-                    { num: 3, icon: CheckCircle2, title: "Instant Access", desc: "Start your premium trial immediately", color: "tron-glow" }
+                    { num: 3, icon: CheckCircle2, title: "Instant Access", desc: "Start your premium trial immediately", color: "primary" }
                   ].map((step, i) => (
-                    <div key={i} className="relative group">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-0 group-hover:opacity-30 blur transition-all duration-500"></div>
-                      <div className="relative text-center p-6 rounded-2xl bg-gradient-to-br from-background/80 to-background/40 border border-primary/20 backdrop-blur-sm hover:border-primary/40 transition-all duration-300">
-                        <div className="relative mb-4 inline-block">
-                          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl"></div>
-                          <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center border border-primary/30 group-hover:scale-110 transition-transform duration-300">
-                            <step.icon className={`w-8 h-8 text-${step.color}`} />
+                    <div key={i} className="relative group/step">
+                      <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 to-accent/10 rounded-2xl opacity-0 group-hover/step:opacity-100 blur-xl transition-all duration-500"></div>
+                      <div className="relative text-center p-8 rounded-2xl bg-gradient-to-br from-background/70 to-background/50 border border-primary/15 backdrop-blur-md hover:border-primary/30 transition-all duration-300 h-full">
+                        <div className="relative mb-6 inline-block">
+                          <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-accent/10 rounded-2xl blur-lg"></div>
+                          <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 flex items-center justify-center border border-primary/20 group-hover/step:scale-110 group-hover/step:rotate-3 transition-all duration-300">
+                            <step.icon className={`w-10 h-10 text-${step.color}`} />
                           </div>
-                          <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center text-xs font-bold shadow-lg">
+                          <div className="absolute -top-3 -right-3 w-9 h-9 rounded-full bg-gradient-to-br from-accent/90 to-primary/90 flex items-center justify-center text-sm font-bold shadow-lg border border-primary/20">
                             {step.num}
                           </div>
                         </div>
-                        <h3 className="font-bold text-lg mb-2 text-foreground">{step.title}</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                        <h3 className="font-bold text-xl mb-3 text-foreground">{step.title}</h3>
+                        <p className="text-sm text-muted-foreground/80 leading-relaxed">{step.desc}</p>
                       </div>
                     </div>
                   ))}
