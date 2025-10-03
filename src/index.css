@@ -27,8 +27,8 @@
     --muted: 220 50% 6%;
     --muted-foreground: 195 50% 65%;
 
-    /* Accent: Vibrant Orange/Amber */
-    --accent: 35 100% 50%;
+    /* Accent: Muted Orange/Copper - softer, more futuristic */
+    --accent: 30 85% 48%;
     --accent-foreground: 220 50% 2%;
 
     --destructive: 0 84% 60%;
@@ -44,7 +44,7 @@
     --tron-grid: 195 100% 15%;
     --tron-glow: 195 100% 50%;
     --tron-glass: 220 50% 8%;
-    --tron-accent-orange: 35 100% 50%;
+    --tron-accent-orange: 30 85% 48%;
     
     /* Sidebar colors */
     --sidebar-background: 220 50% 3%;

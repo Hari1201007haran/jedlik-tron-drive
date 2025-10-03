@@ -1,9 +1,53 @@
-import { Scan, Gift, CheckCircle2, Clock, Zap, Shield, Sparkles, ArrowRight } from "lucide-react";
+import { Scan, Gift, CheckCircle2, Clock, Zap, Shield, Sparkles, ArrowRight, Award, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const FreeTrialPage = () => {
+  // Mock credits data - replace with actual data from your backend
+  const remainingCredits = 450;
+  const totalCredits = 500;
+  const creditsPercentage = (remainingCredits / totalCredits) * 100;
+
   return (
     <div className="min-h-screen relative overflow-hidden">
+      {/* Credits Display - Top Right */}
+      <div className="fixed top-24 right-4 z-50 animate-fade-in">
+        <div className="relative group">
+          <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 via-accent/20 to-primary/30 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500"></div>
+          <div className="relative bg-background/95 backdrop-blur-xl rounded-2xl p-4 border border-primary/30 group-hover:border-accent/50 transition-all duration-300 min-w-[200px]">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="relative">
+                <Award className="w-6 h-6 text-accent" />
+                <div className="absolute inset-0 bg-accent/20 blur-md rounded-full animate-pulse"></div>
+              </div>
+              <div className="flex-1">
+                <p className="text-xs text-muted-foreground font-medium">Trial Credits</p>
+                <p className="text-lg font-bold text-foreground">
+                  {remainingCredits}
+                  <span className="text-sm text-muted-foreground font-normal">/{totalCredits}</span>
+                </p>
+              </div>
+            </div>
+            
+            {/* Progress bar */}
+            <div className="relative h-2 bg-background/50 rounded-full overflow-hidden border border-primary/20">
+              <div 
+                className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary via-accent to-primary rounded-full transition-all duration-1000 ease-out"
+                style={{ width: `${creditsPercentage}%` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-1 mt-2">
+              <TrendingUp className="w-3 h-3 text-accent" />
+              <p className="text-[10px] text-muted-foreground">
+                {creditsPercentage.toFixed(0)}% remaining
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Animated Background Grid */}
       <div className="fixed inset-0 opacity-20">
         <div className="absolute inset-0" style={{
