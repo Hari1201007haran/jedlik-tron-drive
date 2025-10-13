@@ -28,7 +28,7 @@ const VehicleReveal: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary blur-[100px] opacity-50" />
             
             <h1 className="relative text-7xl md:text-8xl lg:text-[10rem] font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-[shimmer_3s_linear_infinite] drop-shadow-[0_0_30px_rgba(var(--primary),0.5)]">
-              JEDLIK E-POD
+              JEDLIK   E-POD
             </h1>
           </div>
           
