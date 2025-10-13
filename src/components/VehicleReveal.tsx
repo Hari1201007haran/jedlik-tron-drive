@@ -18,18 +18,26 @@ const VehicleReveal: React.FC = () => {
       <div className="relative container mx-auto px-4 py-20">
         {/* Header */}
         <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-full border border-primary/40 mb-8 shadow-lg shadow-primary/10 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 rounded-full border-2 border-primary/50 mb-10 shadow-[0_0_30px_rgba(var(--primary),0.3)] backdrop-blur-md">
             <Sparkles className="w-5 h-5 text-primary animate-pulse" />
-            <span className="text-sm font-semibold text-primary uppercase tracking-widest">Now Revealed</span>
+            <span className="text-sm font-bold text-primary uppercase tracking-[0.3em]">Now Revealed</span>
           </div>
           
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-[shimmer_3s_linear_infinite] drop-shadow-2xl">
-            JEDLIK E-POD
-          </h1>
+          <div className="relative inline-block mb-10">
+            {/* Background glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary blur-[100px] opacity-50" />
+            
+            <h1 className="relative text-7xl md:text-8xl lg:text-[10rem] font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-[shimmer_3s_linear_infinite] drop-shadow-[0_0_30px_rgba(var(--primary),0.5)]">
+              JEDLIK E-POD
+            </h1>
+          </div>
           
-          <p className="text-xl md:text-2xl text-muted-foreground/80 max-w-3xl mx-auto font-light">
-            The future of sustainable urban mobility has arrived
-          </p>
+          <div className="relative max-w-4xl mx-auto">
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 blur-2xl opacity-30" />
+            <p className="relative text-xl md:text-3xl text-foreground/90 font-light tracking-wide leading-relaxed px-8 py-6 bg-background/30 backdrop-blur-sm rounded-2xl border border-primary/20">
+              The future of sustainable urban mobility has arrived
+            </p>
+          </div>
         </div>
 
         {/* Main Vehicle Image */}
