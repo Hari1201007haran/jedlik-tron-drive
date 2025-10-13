@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Zap, Shield, Gauge } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import epodImage from '@/assets/epod-vehicle.jpg';
 
 const VehicleReveal: React.FC = () => {
@@ -46,35 +46,10 @@ const VehicleReveal: React.FC = () => {
               className="w-full h-auto transform group-hover:scale-105 transition-transform duration-700"
             />
           </div>
-          
-          {/* Floating Stats */}
-          <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-full max-w-4xl px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { icon: Zap, label: 'Electric Power', value: '100%', color: 'from-primary/20 to-primary/5' },
-                { icon: Shield, label: 'Safety First', value: 'Grade A', color: 'from-accent/20 to-accent/5' },
-                { icon: Gauge, label: 'Top Speed', value: '60 km/h', color: 'from-primary/20 to-primary/5' },
-                { icon: Sparkles, label: 'Zero Emission', value: 'Green', color: 'from-accent/20 to-accent/5' }
-              ].map((stat, index) => (
-                <div 
-                  key={index}
-                  className={`relative bg-gradient-to-br ${stat.color} backdrop-blur-xl border border-primary/20 rounded-xl p-4 text-center group hover:border-primary/40 transition-all duration-300`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="absolute inset-0 bg-background/80 rounded-xl" />
-                  <div className="relative">
-                    <stat.icon className="w-6 h-6 mx-auto mb-2 text-primary group-hover:scale-110 transition-transform" />
-                    <div className="text-2xl font-bold text-foreground mb-1">{stat.value}</div>
-                    <div className="text-xs text-muted-foreground uppercase tracking-wide">{stat.label}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Features Section */}
-        <div className="mt-24 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="mt-16 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {[
             {
               title: 'Futuristic Design',
