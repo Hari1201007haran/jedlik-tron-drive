@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Send, MapPin, Phone, Mail, Globe } from 'lucide-react'
+import { Send, MapPin, Phone, Mail, Globe, Linkedin, Twitter, Instagram } from 'lucide-react'
 import heroBackgroundImage from '@/assets/tron-hero-bg.jpg'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -326,6 +326,45 @@ const ContactUsPage: React.FC = () => {
                       </div>
                     </div>
                   ))}
+                </div>
+                
+                {/* Social Media Section */}
+                <div className="mt-8 pt-8 border-t border-muted/20">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                    <h3 className="text-xl font-orbitron font-bold text-accent tron-glow-text">
+                      FOLLOW US
+                    </h3>
+                  </div>
+                  
+                  <div className="flex gap-4 justify-center sm:justify-start">
+                    <a
+                      href="https://www.linkedin.com/company/jedlik/posts/?feedView=all"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/social flex items-center justify-center w-14 h-14 rounded-lg bg-primary/20 hover:bg-primary/30 border border-primary/30 hover:border-primary/60 transition-all duration-300 hover:scale-110 hover:tron-glow"
+                    >
+                      <Linkedin className="h-6 w-6 text-primary group-hover/social:animate-pulse" />
+                    </a>
+                    
+                    <a
+                      href="https://x.com/JedlikMoto"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/social flex items-center justify-center w-14 h-14 rounded-lg bg-accent/20 hover:bg-accent/30 border border-accent/30 hover:border-accent/60 transition-all duration-300 hover:scale-110 hover:tron-glow"
+                    >
+                      <Twitter className="h-6 w-6 text-accent group-hover/social:animate-pulse" />
+                    </a>
+                    
+                    <a
+                      href="https://www.instagram.com/jedlik.in?igsh=MWhjNDg1YjE2dWdmNA=="
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/social flex items-center justify-center w-14 h-14 rounded-lg bg-primary/20 hover:bg-primary/30 border border-primary/30 hover:border-primary/60 transition-all duration-300 hover:scale-110 hover:tron-glow"
+                    >
+                      <Instagram className="h-6 w-6 text-primary group-hover/social:animate-pulse" />
+                    </a>
+                  </div>
                 </div>
               </div>
 
