@@ -15,6 +15,7 @@ import ContactUsPage from "./pages/ContactUsPage";
 import LocateUsPage from "./pages/LocateUsPage";
 import FAQPage from "./pages/FAQPage";
 import FreeTrialPage from "./pages/FreeTrialPage";
+import GalleryPage from "./pages/GalleryPage";
 
 
 const queryClient = new QueryClient();
@@ -40,6 +41,8 @@ const App = () => {
         return <FAQPage />;
       case 'freetrial':
         return <FreeTrialPage />;
+      case 'gallery':
+        return <GalleryPage />;
       default:
         return <HomePage onNavigate={setCurrentPage} />;
     }
