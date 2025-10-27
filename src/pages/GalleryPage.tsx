@@ -14,6 +14,11 @@ import teamDiscussion from '@/assets/gallery-team-discussion.jpg'
 import eventVehicle from '@/assets/gallery-event-vehicle.jpg'
 import teamPhoto from '@/assets/gallery-team-photo.jpg'
 import eventDuo from '@/assets/gallery-event-duo.jpg'
+import epodPrototype from '@/assets/gallery-epod-prototype.jpg'
+import chassisWorkshop from '@/assets/gallery-chassis-workshop.jpg'
+import epodSideView from '@/assets/gallery-epod-side-view.jpg'
+import epodFullView from '@/assets/gallery-epod-full-view.jpg'
+import teamBooth from '@/assets/gallery-team-booth.jpg'
 
 interface GalleryImage {
   src: string
@@ -35,6 +40,11 @@ const GalleryPage = () => {
     { src: teamDiscussion, title: 'Team Discussion at Event', category: 'Team' },
     { src: eventVehicle, title: 'E-POD at Global Summit', category: 'Events' },
     { src: eventDuo, title: 'Team Members at Exhibition', category: 'Team' },
+    { src: epodPrototype, title: 'E-POD Prototype Development', category: 'Vehicle' },
+    { src: chassisWorkshop, title: 'Chassis Assembly in Workshop', category: 'Manufacturing' },
+    { src: epodSideView, title: 'E-POD Side Profile', category: 'Vehicle' },
+    { src: epodFullView, title: 'E-POD Complete Vehicle', category: 'Vehicle' },
+    { src: teamBooth, title: 'Team at Innovation Summit', category: 'Team' },
   ]
 
   const openLightbox = (index: number) => {
