@@ -118,64 +118,66 @@ const GalleryPage = () => {
 
       {/* Lightbox Modal */}
       <Dialog open={selectedImage !== null} onOpenChange={closeLightbox}>
-        <DialogContent className="max-w-7xl w-full h-[90vh] p-0 bg-background/95 border-primary/30">
+        <DialogContent className="max-w-[95vw] md:max-w-7xl w-full h-[95vh] md:h-[90vh] p-0 bg-background/95 backdrop-blur-sm border-primary/30 overflow-hidden">
           {selectedImage !== null && (
-            <div className="relative w-full h-full flex items-center justify-center">
+            <div className="relative w-full h-full flex items-center justify-center p-4 md:p-8">
               {/* Close Button */}
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute top-4 right-4 z-50 tron-glass hover:tron-glow border border-primary/30"
+                className="absolute top-2 right-2 md:top-4 md:right-4 z-50 tron-glass hover:tron-glow border border-primary/30"
                 onClick={closeLightbox}
               >
-                <X className="h-6 w-6" />
+                <X className="h-5 w-5 md:h-6 md:w-6" />
               </Button>
 
               {/* Previous Button */}
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute left-4 z-50 tron-glass hover:tron-glow border border-primary/30"
+                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-50 tron-glass hover:tron-glow border border-primary/30"
                 onClick={(e) => {
                   e.stopPropagation()
                   navigateImage('prev')
                 }}
               >
-                <ChevronLeft className="h-8 w-8" />
+                <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
               </Button>
 
               {/* Next Button */}
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute right-4 z-50 tron-glass hover:tron-glow border border-primary/30"
+                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-50 tron-glass hover:tron-glow border border-primary/30"
                 onClick={(e) => {
                   e.stopPropagation()
                   navigateImage('next')
                 }}
               >
-                <ChevronRight className="h-8 w-8" />
+                <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
               </Button>
 
-              {/* Image */}
-              <div className="w-full h-full flex flex-col items-center justify-center p-8">
-                <img
-                  src={galleryImages[selectedImage].src}
-                  alt={galleryImages[selectedImage].title}
-                  className="max-w-full max-h-[calc(100%-80px)] object-contain rounded-lg"
-                />
+              {/* Image Container */}
+              <div className="w-full h-full flex flex-col items-center justify-center">
+                <div className="relative flex-1 w-full flex items-center justify-center mb-4">
+                  <img
+                    src={galleryImages[selectedImage].src}
+                    alt={galleryImages[selectedImage].title}
+                    className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg"
+                  />
+                </div>
                 
                 {/* Image Info */}
-                <div className="mt-6 text-center">
-                  <div className="inline-block px-4 py-1 mb-2 rounded-full bg-primary/20 border border-primary/30">
-                    <span className="text-sm font-medium text-primary">
+                <div className="text-center pb-2 flex-shrink-0">
+                  <div className="inline-block px-3 md:px-4 py-1 mb-2 rounded-full bg-primary/20 border border-primary/30">
+                    <span className="text-xs md:text-sm font-medium text-primary">
                       {galleryImages[selectedImage].category}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground tron-glow-text">
+                  <h3 className="text-lg md:text-xl font-semibold text-foreground tron-glow-text">
                     {galleryImages[selectedImage].title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mt-2">
+                  <p className="text-xs md:text-sm text-muted-foreground mt-1">
                     {selectedImage + 1} / {galleryImages.length}
                   </p>
                 </div>
