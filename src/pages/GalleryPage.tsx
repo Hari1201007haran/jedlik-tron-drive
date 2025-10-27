@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import { X, ChevronLeft, ChevronRight } from 'lucide-react'
+import React, { useState, useEffect } from 'react'
+import { X, ChevronLeft, ChevronRight, Grid3x3, Package, Users, Calendar } from 'lucide-react'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 
 // Import gallery images
 import eventBoothCrowd from '@/assets/gallery-event-booth-crowd.jpg'
@@ -28,6 +29,7 @@ interface GalleryImage {
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
+  const [selectedCategory, setSelectedCategory] = useState<string>('All')
 
   const galleryImages: GalleryImage[] = [
     { src: eventBoothCrowd, title: 'Global Startup Summit Exhibition', category: 'Events' },
@@ -58,12 +60,53 @@ const GalleryPage = () => {
   const navigateImage = (direction: 'prev' | 'next') => {
     if (selectedImage === null) return
     
+    const filteredImages = selectedCategory === 'All' 
+      ? galleryImages 
+      : galleryImages.filter(img => img.category === selectedCategory)
+    
+    const currentFilteredIndex = filteredImages.findIndex((_, idx) => 
+      galleryImages.indexOf(filteredImages[idx]) === selectedImage
+    )
+    
     if (direction === 'prev') {
-      setSelectedImage(selectedImage === 0 ? galleryImages.length - 1 : selectedImage - 1)
+      const newIndex = currentFilteredIndex === 0 ? filteredImages.length - 1 : currentFilteredIndex - 1
+      setSelectedImage(galleryImages.indexOf(filteredImages[newIndex]))
     } else {
-      setSelectedImage(selectedImage === galleryImages.length - 1 ? 0 : selectedImage + 1)
+      const newIndex = currentFilteredIndex === filteredImages.length - 1 ? 0 : currentFilteredIndex + 1
+      setSelectedImage(galleryImages.indexOf(filteredImages[newIndex]))
     }
   }
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedImage === null) return
+      
+      if (e.key === 'ArrowLeft') {
+        navigateImage('prev')
+      } else if (e.key === 'ArrowRight') {
+        navigateImage('next')
+      } else if (e.key === 'Escape') {
+        closeLightbox()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [selectedImage])
+
+  const categories = ['All', 'Events', 'Vehicle', 'Team', 'Manufacturing']
+  const categoryIcons = {
+    All: Grid3x3,
+    Events: Calendar,
+    Vehicle: Package,
+    Team: Users,
+    Manufacturing: Package,
+  }
+
+  const filteredImages = selectedCategory === 'All' 
+    ? galleryImages 
+    : galleryImages.filter(img => img.category === selectedCategory)
 
   return (
     <div className="min-h-screen pt-20">
@@ -89,15 +132,51 @@ const GalleryPage = () => {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
       </section>
 
+      {/* Category Filters */}
+      <section className="py-8 border-b border-primary/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap gap-3 justify-center">
+            {categories.map((category) => {
+              const Icon = categoryIcons[category as keyof typeof categoryIcons]
+              const isActive = selectedCategory === category
+              return (
+                <Button
+                  key={category}
+                  variant={isActive ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedCategory(category)}
+                  className={`gap-2 transition-all duration-300 ${
+                    isActive 
+                      ? 'tron-glow shadow-lg scale-105' 
+                      : 'hover:border-primary/60 hover:scale-105'
+                  }`}
+                >
+                  <Icon className="h-4 w-4" />
+                  {category}
+                  <Badge variant="secondary" className="ml-1 text-xs">
+                    {category === 'All' 
+                      ? galleryImages.length 
+                      : galleryImages.filter(img => img.category === category).length}
+                  </Badge>
+                </Button>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Gallery Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryImages.map((image, index) => (
+            {filteredImages.map((image, index) => {
+              const originalIndex = galleryImages.indexOf(image)
+              return (
               <div
-                key={index}
-                className="group relative aspect-[4/3] overflow-hidden rounded-lg border border-primary/20 hover:border-primary/60 transition-all duration-500 cursor-pointer"
-                onClick={() => openLightbox(index)}
+                key={originalIndex}
+                className="group relative aspect-[4/3] overflow-hidden rounded-lg border border-primary/20 hover:border-primary/60 transition-all duration-500 cursor-pointer animate-fade-in"
+                style={{ animationDelay: `${index * 50}ms` }}
+                onClick={() => openLightbox(originalIndex)}
               >
                 {/* Image */}
                 <img
@@ -107,11 +186,11 @@ const GalleryPage = () => {
                 />
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <div className="inline-block px-3 py-1 mb-2 rounded-full bg-primary/20 border border-primary/30">
-                      <span className="text-xs font-medium text-primary">{image.category}</span>
-                    </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                    <Badge className="mb-2 bg-primary/20 border-primary/40 hover:bg-primary/30">
+                      {image.category}
+                    </Badge>
                     <h3 className="text-lg font-semibold text-foreground tron-glow-text">
                       {image.title}
                     </h3>
@@ -119,24 +198,32 @@ const GalleryPage = () => {
                 </div>
 
                 {/* Glow Effect */}
-                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/40 rounded-lg transition-all duration-500 tron-glow opacity-0 group-hover:opacity-100"></div>
+                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/40 rounded-lg transition-all duration-500 tron-glow opacity-0 group-hover:opacity-100 pointer-events-none"></div>
+                
+                {/* Corner accents */}
+                <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-primary/0 group-hover:border-primary/60 transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+                <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-primary/0 group-hover:border-primary/60 transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+                <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-primary/0 group-hover:border-primary/60 transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+                <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-primary/0 group-hover:border-primary/60 transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
               </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
 
       {/* Lightbox Modal */}
       <Dialog open={selectedImage !== null} onOpenChange={closeLightbox}>
-        <DialogContent className="max-w-[95vw] md:max-w-7xl w-full h-[95vh] md:h-[90vh] p-0 bg-background/95 backdrop-blur-sm border-primary/30 overflow-hidden">
+        <DialogContent className="max-w-[95vw] md:max-w-7xl w-full h-[95vh] md:h-[90vh] p-0 bg-background/98 backdrop-blur-md border-primary/40 overflow-hidden tron-glass">
           {selectedImage !== null && (
             <div className="relative w-full h-full flex items-center justify-center p-4 md:p-8">
               {/* Close Button */}
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute top-2 right-2 md:top-4 md:right-4 z-50 tron-glass hover:tron-glow border border-primary/30"
+                className="absolute top-2 right-2 md:top-4 md:right-4 z-50 tron-glass hover:tron-glow border border-primary/40 hover:border-primary/60 transition-all duration-300"
                 onClick={closeLightbox}
+                title="Close (Esc)"
               >
                 <X className="h-5 w-5 md:h-6 md:w-6" />
               </Button>
@@ -145,11 +232,12 @@ const GalleryPage = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-50 tron-glass hover:tron-glow border border-primary/30"
+                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-50 tron-glass hover:tron-glow border border-primary/40 hover:border-primary/60 hover:scale-110 transition-all duration-300"
                 onClick={(e) => {
                   e.stopPropagation()
                   navigateImage('prev')
                 }}
+                title="Previous (←)"
               >
                 <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
               </Button>
@@ -158,11 +246,12 @@ const GalleryPage = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-50 tron-glass hover:tron-glow border border-primary/30"
+                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-50 tron-glass hover:tron-glow border border-primary/40 hover:border-primary/60 hover:scale-110 transition-all duration-300"
                 onClick={(e) => {
                   e.stopPropagation()
                   navigateImage('next')
                 }}
+                title="Next (→)"
               >
                 <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
               </Button>
@@ -173,22 +262,31 @@ const GalleryPage = () => {
                   <img
                     src={galleryImages[selectedImage].src}
                     alt={galleryImages[selectedImage].title}
-                    className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg"
+                    className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-2xl animate-scale-in"
                   />
+                  {/* Image frame corners */}
+                  <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary/60"></div>
+                  <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-primary/60"></div>
+                  <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-primary/60"></div>
+                  <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary/60"></div>
                 </div>
                 
                 {/* Image Info */}
-                <div className="text-center pb-2 flex-shrink-0">
-                  <div className="inline-block px-3 md:px-4 py-1 mb-2 rounded-full bg-primary/20 border border-primary/30">
-                    <span className="text-xs md:text-sm font-medium text-primary">
-                      {galleryImages[selectedImage].category}
-                    </span>
-                  </div>
+                <div className="text-center pb-2 flex-shrink-0 space-y-2">
+                  <Badge className="bg-primary/20 border-primary/40 hover:bg-primary/30">
+                    {galleryImages[selectedImage].category}
+                  </Badge>
                   <h3 className="text-lg md:text-xl font-semibold text-foreground tron-glow-text">
                     {galleryImages[selectedImage].title}
                   </h3>
-                  <p className="text-xs md:text-sm text-muted-foreground mt-1">
-                    {selectedImage + 1} / {galleryImages.length}
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    {filteredImages.findIndex(img => galleryImages.indexOf(img) === selectedImage) + 1} / {filteredImages.length}
+                    {selectedCategory !== 'All' && (
+                      <span className="ml-2 text-primary/60">({selectedImage + 1} of {galleryImages.length} total)</span>
+                    )}
+                  </p>
+                  <p className="text-xs text-muted-foreground/60">
+                    Use arrow keys to navigate • Press Esc to close
                   </p>
                 </div>
               </div>
