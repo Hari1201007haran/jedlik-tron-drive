@@ -4,7 +4,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider } from "./components/ThemeProvider";
-import { ChatBot } from "./components/ChatBot";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
@@ -55,7 +54,6 @@ const App = () => {
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <ChatBot />
           <div className="min-h-screen tron-grid-bg animate-grid-flow">
             <Navbar currentPage={currentPage} onNavigate={setCurrentPage} />
             <main className="relative z-10">
