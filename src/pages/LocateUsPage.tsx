@@ -259,7 +259,7 @@ const LocateUsPage: React.FC = () => {
                               <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
                               <div className="text-sm text-muted-foreground font-orbitron">Campus</div>
                             </div>
-                            <div className="font-bold text-accent text-lg">Anna Univ</div>
+                            <div className="font-bold text-accent text-lg">Anna University</div>
                           </div>
                         </div>
                       </div>
