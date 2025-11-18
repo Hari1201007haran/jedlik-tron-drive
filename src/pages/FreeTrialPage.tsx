@@ -269,21 +269,6 @@ const FreeTrialPage = () => {
               <p className="text-sm text-muted-foreground">Click the button above to get started</p>
             </div>
             
-            {/* Trust indicators */}
-            <div className="flex flex-wrap items-center justify-center gap-8 mt-12 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-accent" />
-                <span>No payment</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-accent" />
-                <span>Instant Activation</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-accent" />
-                <span>Cancel Anytime</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
