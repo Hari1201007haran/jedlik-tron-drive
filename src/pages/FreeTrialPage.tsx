@@ -106,21 +106,21 @@ const FreeTrialPage = () => {
                     {/* Outer glow ring */}
                     <div className="absolute -inset-4 bg-gradient-to-r from-primary via-accent to-tron-glow rounded-3xl opacity-30 blur-xl group-hover:opacity-60 transition-all duration-500 animate-pulse"></div>
                     
-                    <a 
-                      href="https://forms.zohopublic.in/raguramkarthikeyan/form/FreeTrialregistration/formperma/2bMMbZJGO4RLOYFPV4fUSG3wyByX9FcnfLsl8TuYYWs"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block"
+                    <Button 
+                      size="lg"
+                      asChild
+                      className="relative px-12 py-8 text-xl md:text-2xl font-bold rounded-2xl bg-gradient-to-r from-primary via-accent to-tron-glow hover:shadow-2xl hover:shadow-accent/50 transition-all duration-500 group-hover:scale-110 border-2 border-accent/30"
                     >
-                      <Button 
-                        size="lg"
-                        className="relative px-12 py-8 text-xl md:text-2xl font-bold rounded-2xl bg-gradient-to-r from-primary via-accent to-tron-glow hover:shadow-2xl hover:shadow-accent/50 transition-all duration-500 group-hover:scale-110 border-2 border-accent/30"
+                      <a 
+                        href="https://forms.zohopublic.in/raguramkarthikeyan/form/FreeTrialregistration/formperma/2bMMbZJGO4RLOYFPV4fUSG3wyByX9FcnfLsl8TuYYWs"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <Zap className="w-6 h-6 mr-3 animate-pulse" />
                         Start Free Trial
                         <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform" />
-                      </Button>
-                    </a>
+                      </a>
+                    </Button>
                   </div>
                 </div>
 
