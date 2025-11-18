@@ -252,7 +252,12 @@ const FreeTrialPage = () => {
             </p>
             
             {/* Animated prompt */}
-            <div className="inline-flex flex-col items-center gap-4 p-8 rounded-3xl bg-gradient-to-br from-primary/10 via-accent/5 to-transparent border border-primary/30 backdrop-blur-sm">
+            <a 
+              href="https://forms.zohopublic.in/raguramkarthikeyan/form/FreeTrialregistration/formperma/2bMMbZJGO4RLOYFPV4fUSG3wyByX9FcnfLsl8TuYYWs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex flex-col items-center gap-4 p-8 rounded-3xl bg-gradient-to-br from-primary/10 via-accent/5 to-transparent border border-primary/30 backdrop-blur-sm hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-pointer group"
+            >
               <div className="flex items-center gap-3">
                 <div className="relative">
                   <Zap className="w-8 h-8 text-primary animate-pulse" />
@@ -262,12 +267,12 @@ const FreeTrialPage = () => {
                   Click to Register
                 </span>
                 <div className="relative">
-                  <ArrowRight className="w-8 h-8 text-accent animate-pulse" style={{animationDelay: '0.5s'}} />
+                  <ArrowRight className="w-8 h-8 text-accent animate-pulse group-hover:translate-x-2 transition-transform" style={{animationDelay: '0.5s'}} />
                   <div className="absolute inset-0 bg-accent/20 blur-xl rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground">Click the button above to get started</p>
-            </div>
+              <p className="text-sm text-muted-foreground">Click here to get started</p>
+            </a>
             
           </div>
         </div>
