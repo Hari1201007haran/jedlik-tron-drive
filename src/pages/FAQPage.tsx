@@ -142,23 +142,34 @@ const FAQPage: React.FC = () => {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="tron-glass p-6 rounded-lg border border-accent/20">
+              <a 
+                href="mailto:info@jedlik.in"
+                className="tron-glass p-6 rounded-lg border border-accent/20 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300 cursor-pointer block group"
+              >
                 <div className="text-2xl mb-2">📧</div>
-                <h3 className="font-orbitron font-bold mb-2 text-accent">Email Us</h3>
+                <h3 className="font-orbitron font-bold mb-2 text-accent group-hover:tron-glow-text">Email Us</h3>
                 <p className="text-sm text-muted-foreground">info@jedlik.in</p>
-              </div>
+              </a>
               
-              <div className="tron-glass p-6 rounded-lg border border-primary/20">
+              <a 
+                href="tel:+919790678445"
+                className="tron-glass p-6 rounded-lg border border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-pointer block group"
+              >
                 <div className="text-2xl mb-2">📞</div>
-                <h3 className="font-orbitron font-bold mb-2 text-primary">Call Us</h3>
+                <h3 className="font-orbitron font-bold mb-2 text-primary group-hover:tron-glow-text">Call Us</h3>
                 <p className="text-sm text-muted-foreground">+91 9790678445</p>
-              </div>
+              </a>
               
-              <div className="tron-glass p-6 rounded-lg border border-accent/20">
+              <a 
+                href="https://maps.google.com/?q=Anna+Incubator,+Anna+University,+Chennai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tron-glass p-6 rounded-lg border border-accent/20 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300 cursor-pointer block group"
+              >
                 <div className="text-2xl mb-2">🌐</div>
-                <h3 className="font-orbitron font-bold mb-2 text-accent">Visit Us</h3>
+                <h3 className="font-orbitron font-bold mb-2 text-accent group-hover:tron-glow-text">Visit Us</h3>
                 <p className="text-sm text-muted-foreground">Anna University, Chennai</p>
-              </div>
+              </a>
             </div>
             
             <p className="text-sm text-muted-foreground">
