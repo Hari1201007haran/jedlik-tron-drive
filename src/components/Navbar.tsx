@@ -35,7 +35,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
   <img
     src="/jedlik_logo_transparent.png"
     alt="Jedlik Motors"
-    className="h-60 w-auto object-contain"
+    className="h-40 w-auto object-contain"
   />
 </button>
           </div>
