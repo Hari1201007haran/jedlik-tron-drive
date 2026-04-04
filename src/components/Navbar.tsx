@@ -16,6 +16,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     { id: 'features', label: 'Features' },
     { id: 'techspecs', label: 'Tech Specs' },
     { id: 'gallery', label: 'Gallery' },
+    { id: 'ourteam', label: 'Our Team' },
     { id: 'freetrial', label: 'Free Trial' },
     { id: 'contact', label: 'Contact Us' },
     { id: 'locate', label: 'Locate Us' },
@@ -28,16 +29,16 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-           <button
-  onClick={() => onNavigate('home')}
-  className="flex items-center"
->
-  <img
-    src="/jedlik_logo_transparent.png"
-    alt="Jedlik Motors"
-    className="h-16 w-auto object-contain"
-  />
-</button>
+            <button
+              onClick={() => onNavigate('home')}
+              className="flex items-center"
+            >
+              <img
+                src="/jedlik_logo_transparent.png"
+                alt="Jedlik Motors"
+                className="h-14 w-auto object-contain"
+              />
+            </button>
           </div>
 
           {/* Desktop Navigation */}
