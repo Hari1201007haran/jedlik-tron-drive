@@ -156,6 +156,40 @@ const FreeTrialPage = () => {
         </div>
       </section>
 
+      {/* ── YouTube Video Section ── */}
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 mb-4">
+              <Sparkles className="w-5 h-5 text-accent animate-pulse" />
+              <span className="text-sm font-semibold text-accent">See It In Action</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-accent to-tron-glow bg-clip-text text-transparent">
+              Watch How It Works
+            </h2>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="relative group">
+              {/* Glow border */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-tron-glow rounded-3xl opacity-30 blur-xl group-hover:opacity-50 transition-all duration-500"></div>
+              <div className="relative rounded-3xl overflow-hidden border-2 border-primary/30">
+                <div className="aspect-video">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/HgYsyzu40nY"
+                    title="Jedlik Motors Free Trial"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="py-24 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
