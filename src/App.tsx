@@ -11,12 +11,11 @@ import AboutUsPage from "./pages/AboutUsPage";
 import FeaturesPage from "./pages/FeaturesPage";
 import TechSpecsPage from "./pages/TechSpecsPage";
 import ContactUsPage from "./pages/ContactUsPage";
-
 import LocateUsPage from "./pages/LocateUsPage";
 import FAQPage from "./pages/FAQPage";
 import FreeTrialPage from "./pages/FreeTrialPage";
 import GalleryPage from "./pages/GalleryPage";
-
+import OurTeamPage from "./pages/OurTeamPage";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +42,8 @@ const App = () => {
         return <FreeTrialPage />;
       case 'gallery':
         return <GalleryPage />;
+      case 'ourteam':
+        return <OurTeamPage />;
       default:
         return <HomePage onNavigate={setCurrentPage} />;
     }
