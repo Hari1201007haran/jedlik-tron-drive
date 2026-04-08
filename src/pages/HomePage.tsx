@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { ArrowRight, Zap, Cog, Leaf, Shield, Users, MapPin, Phone, Mail, ChevronDown } from 'lucide-react'
 import heroBackgroundImage from '@/assets/tron-hero-bg.jpg'
 import founderImage from '@/assets/founder.jpg'
@@ -8,13 +8,14 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import VehicleReveal from '@/components/VehicleReveal'
 
 type HomePageProps = {
   onNavigate: (page: string) => void
 }
 
 const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
   // Global Startup Summit Logo
   const logoImage = "/lovable-uploads/d27e743e-23dc-4d96-8f3c-02b03ea9d052.png";
   
@@ -105,9 +106,53 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
   return (
     <div className="min-h-screen">
-      {/* Vehicle Reveal Section */}
-      <VehicleReveal />
-      
+
+      {/* ── Vehicle Video Section (replaces VehicleReveal photos) ── */}
+      <section className="relative w-full overflow-hidden">
+        {/* Tron-style top border glow */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent z-10" />
+
+        {/* Background video */}
+        <video
+          ref={videoRef}
+          className="w-full object-cover"
+          style={{ minHeight: '520px', maxHeight: '700px', display: 'block' }}
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          {/*
+            ✅ Upload your video to the /public folder in GitHub as:
+               jedlik-vehicle.mp4
+            Then it will show here automatically.
+          */}
+          <source src="/jedlik-vehicle.mp4" type="video/mp4" />
+        </video>
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/35 pointer-events-none" />
+
+        {/* Tron corner accents */}
+        <div className="absolute top-4 left-4 w-10 h-10 border-t-2 border-l-2 border-primary/60 z-10" />
+        <div className="absolute top-4 right-4 w-10 h-10 border-t-2 border-r-2 border-primary/60 z-10" />
+        <div className="absolute bottom-4 left-4 w-10 h-10 border-b-2 border-l-2 border-primary/60 z-10" />
+        <div className="absolute bottom-4 right-4 w-10 h-10 border-b-2 border-r-2 border-primary/60 z-10" />
+
+        {/* Text overlay at the bottom */}
+        <div className="absolute bottom-8 left-0 right-0 text-center z-10 px-4">
+          <p className="text-xs font-orbitron tracking-[0.3em] text-primary/70 uppercase mb-2">
+            The future of
+          </p>
+          <h2 className="text-2xl md:text-4xl font-orbitron font-black tron-glow-text">
+            Sustainable Urban Mobility
+          </h2>
+        </div>
+
+        {/* Bottom border glow */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent z-10" />
+      </section>
+
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         
@@ -411,7 +456,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-primary/30 group-hover:border-accent/60 transition-all">
                 <img
                   src={founderImage}
-                  alt="John Smith - Founder"
+                  alt="Raguram SK - Founder"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -419,9 +464,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 Raguram SK
               </h3>
               <p className="text-accent font-medium mb-3">FOUNDER</p>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                
-              </p>
+              <p className="text-muted-foreground text-sm leading-relaxed"></p>
             </div>
 
             {/* Co-founders */}
@@ -429,7 +472,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-primary/30 group-hover:border-accent/60 transition-all">
                 <img
                   src={coFounder1Image}
-                  alt="Michael Johnson - Co-Founder"
+                  alt="Muthuram B - Co-Founder"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -437,16 +480,14 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 Muthuram B
               </h3>
               <p className="text-accent font-medium mb-3">CO-FOUNDER</p>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                
-              </p>
+              <p className="text-muted-foreground text-sm leading-relaxed"></p>
             </div>
 
             <div className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 text-center group">
               <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-primary/30 group-hover:border-accent/60 transition-all">
                 <img
                   src={coFounder2Image}
-                  alt="David Wilson - Co-Founder"
+                  alt="Nishanthraj GV - Co-Founder"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -454,9 +495,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 Nishanthraj GV
               </h3>
               <p className="text-accent font-medium mb-3">CO-FOUNDER</p>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                
-              </p>
+              <p className="text-muted-foreground text-sm leading-relaxed"></p>
             </div>
           </div>
         </div>
