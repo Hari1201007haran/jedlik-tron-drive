@@ -76,7 +76,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   // Mentors use photos uploaded to /public folder
   const mentors = [
     { name: 'Sathya Prasad',      role: 'MECHANICAL MENTOR', img: '/Sathya.jpg'      },
-    { name: 'Srikanth Sridharan', role: 'ELECTRICAL MENTOR',  img: '/Srikanthan.jpg' },
+    { name: 'Srikanthan Sridharan', role: 'ELECTRICAL MENTOR',  img: '/Srikanthan.jpg' },
   ]
   // ─────────────────────────────────────────────────────────────
 
