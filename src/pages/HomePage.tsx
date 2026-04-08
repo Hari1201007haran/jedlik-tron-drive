@@ -66,6 +66,20 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     }
   ]
 
+  // ── Leadership data ──────────────────────────────────────────
+  const founders = [
+    { name: 'Raguram SK',     role: 'FOUNDER',     img: founderImage    },
+    { name: 'Muthuram B',     role: 'CO-FOUNDER',  img: coFounder1Image },
+    { name: 'Nishanthraj GV', role: 'CO-FOUNDER',  img: coFounder2Image },
+  ]
+
+  // Mentors use photos uploaded to /public folder
+  const mentors = [
+    { name: 'Sathya Prasad',      role: 'MECHANICAL MENTOR', img: '/Sathya.jpg'      },
+    { name: 'Srikanth Sridharan', role: 'ELECTRICAL MENTOR',  img: '/Srikanthan.jpg' },
+  ]
+  // ─────────────────────────────────────────────────────────────
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -76,12 +90,8 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   return (
     <div className="min-h-screen">
 
-      {/* ═══════════════════════════════════════════════
-          FULL-SCREEN VIDEO HERO  (like KlingAI)
-      ═══════════════════════════════════════════════ */}
+      {/* ── FULL-SCREEN VIDEO HERO ── */}
       <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-
-        {/* Background video fills the entire viewport */}
         <video
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
@@ -90,24 +100,14 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           muted
           playsInline
         >
-          {/*
-            ✅ Upload your video file to the /public folder in GitHub
-               and name it: jedlik-vehicle.mp4
-          */}
           <source src="/jedlik-vehicle.mp4" type="video/mp4" />
         </video>
 
-        {/* Layered overlays for depth */}
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/80" />
-
-        {/* Bottom glow line */}
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
 
-        {/* ── Centered hero content ── */}
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
-
-          {/* Pill badge */}
           <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full border border-primary/50 bg-primary/10 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="text-xs font-orbitron tracking-[0.2em] text-primary uppercase">
@@ -115,7 +115,6 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </span>
           </div>
 
-          {/* Main headline */}
           <h1 className="text-6xl md:text-8xl font-orbitron font-black mb-2 leading-none tron-glow-text">
             DRIVING THE
           </h1>
@@ -123,7 +122,6 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             FUTURE
           </h1>
 
-          {/* Sub-headline */}
           <p className="text-xl md:text-2xl font-inter text-white/80 mb-3 tracking-widest uppercase font-light">
             Of Urban Commuting
           </p>
@@ -131,7 +129,6 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             Electrifying tomorrow's journeys with the e-POD — safety, comfort &amp; maneuverability, reimagined.
           </p>
 
-          {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               onClick={() => scrollToSection('features')}
@@ -141,7 +138,6 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               Explore e-POD
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
-
             <Button
               onClick={() => scrollToSection('techspecs')}
               variant="outline"
@@ -153,13 +149,11 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        {/* Scroll down indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce z-10">
           <span className="text-[10px] font-orbitron tracking-[0.3em] text-white/30 uppercase">Scroll</span>
           <ChevronDown className="h-5 w-5 text-primary/60" />
         </div>
       </section>
-
 
       {/* About Us Section */}
       <section id="about" className="py-20 relative">
@@ -332,28 +326,40 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Founders Section */}
+      {/* ── LEADERSHIP SECTION ── */}
       <section className="py-20 relative">
         <div className="absolute inset-0 tron-grid-bg opacity-10" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
             OUR <span className="text-accent">LEADERSHIP</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { name: 'Raguram SK', role: 'FOUNDER', img: founderImage },
-              { name: 'Muthuram B', role: 'CO-FOUNDER', img: coFounder1Image },
-              { name: 'Nishanthraj GV', role: 'CO-FOUNDER', img: coFounder2Image },
-            ].map((person) => (
+
+          {/* Founders row — 3 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {founders.map((person) => (
               <div key={person.name} className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 text-center group">
                 <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-primary/30 group-hover:border-accent/60 transition-all">
                   <img src={person.img} alt={person.name} className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-orbitron font-bold mb-2 group-hover:tron-glow-text transition-all">{person.name}</h3>
-                <p className="text-accent font-medium">{person.role}</p>
+                <p className="text-accent font-medium text-sm tracking-widest">{person.role}</p>
               </div>
             ))}
           </div>
+
+          {/* Mentors row — 2 cards, centred */}
+          <div className="flex flex-col sm:flex-row gap-8 justify-center">
+            {mentors.map((person) => (
+              <div key={person.name} className="w-full sm:w-72 tron-glass-strong p-8 rounded-lg border border-accent/30 hover:border-primary/60 hover:tron-glow transition-all duration-300 text-center group">
+                <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-accent/30 group-hover:border-primary/60 transition-all">
+                  <img src={person.img} alt={person.name} className="w-full h-full object-cover" />
+                </div>
+                <h3 className="text-xl font-orbitron font-bold mb-2 group-hover:tron-glow-text transition-all">{person.name}</h3>
+                <p className="text-primary font-medium text-sm tracking-widest">{person.role}</p>
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
 
