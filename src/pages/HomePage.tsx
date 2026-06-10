@@ -15,6 +15,7 @@ type HomePageProps = {
 const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const interiorSectionRef = useRef<HTMLDivElement>(null)
+  const interiorVideoRefs = useRef<(HTMLVideoElement | null)[]>([])
   const [activeSlide, setActiveSlide] = useState(0)
   const [scrollProgress, setScrollProgress] = useState(0)
 
@@ -56,7 +57,13 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       const progress = scrolled / sectionHeight
       setScrollProgress(progress)
       const idx = progress < 0.34 ? 0 : progress < 0.67 ? 1 : 2
-      setActiveSlide(idx)
+      setActiveSlide(prev => {
+        if (idx !== prev) {
+          const vid = interiorVideoRefs.current[idx]
+          if (vid) { vid.currentTime = 0; vid.play() }
+        }
+        return idx
+      })
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
@@ -205,6 +212,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           {interiorSlides.map((slide, i) => (
             <video
               key={i}
+              ref={el => { interiorVideoRefs.current[i] = el }}
               src={slide.video}
               autoPlay
               loop
