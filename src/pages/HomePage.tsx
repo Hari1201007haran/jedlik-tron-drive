@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { ArrowRight, Zap, Cog, Leaf, Shield, Users, MapPin, Phone, Mail, ChevronDown } from 'lucide-react'
 import founderImage from '@/assets/founder.jpg'
 import coFounder1Image from '@/assets/co-founder-1.jpg'
@@ -14,6 +14,53 @@ type HomePageProps = {
 
 const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const interiorSectionRef = useRef<HTMLDivElement>(null)
+  const [activeSlide, setActiveSlide] = useState(0)
+  const [scrollProgress, setScrollProgress] = useState(0)
+
+  const interiorSlides = [
+    {
+      tag: '01 — Driver View',
+      title: "Own The\nRoad",
+      highlight: 'Road',
+      desc: 'See the city the way the driver does. A wide, unobstructed forward view from inside the fully enclosed cockpit — where every journey feels like yours.',
+      video: '/interior-1.mp4',
+      dot: 'Driver',
+    },
+    {
+      tag: '02 — Passenger View',
+      title: "Ride In\nComfort",
+      highlight: 'Comfort',
+      desc: 'The pillion experience, reimagined. Sit back in a push-back seat with full weather protection, air conditioning, and a view that makes every commute feel first class.',
+      video: '/interior-2.mp4',
+      dot: 'Passenger',
+    },
+    {
+      tag: '03 — Signature Doors',
+      title: "Make An\nEntrance",
+      highlight: 'Entrance',
+      desc: 'Scissor doors that open like no other two-wheeler on the road. A glimpse from the outside into the refined interior — bold design meets everyday practicality.',
+      video: '/interior-3.mp4',
+      dot: 'Doors',
+    },
+  ]
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = interiorSectionRef.current
+      if (!section) return
+      const rect = section.getBoundingClientRect()
+      const sectionHeight = section.offsetHeight - window.innerHeight
+      const scrolled = -rect.top
+      if (scrolled < 0 || scrolled > sectionHeight) return
+      const progress = scrolled / sectionHeight
+      setScrollProgress(progress)
+      const idx = progress < 0.34 ? 0 : progress < 0.67 ? 1 : 2
+      setActiveSlide(idx)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const features = [
     {
@@ -320,6 +367,97 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
         </div>
       </section>
+
+      {/* ── STEP INSIDE — Scroll-driven interior section ── */}
+      <div ref={interiorSectionRef} style={{ height: '300vh', position: 'relative' }}>
+        <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
+
+          {/* Video backgrounds */}
+          {interiorSlides.map((slide, i) => (
+            <video
+              key={i}
+              src={slide.video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{
+                position: 'absolute', inset: 0, width: '100%', height: '100%',
+                objectFit: 'cover',
+                opacity: activeSlide === i ? 1 : 0,
+                transition: 'opacity 0.8s ease',
+                zIndex: 1,
+              }}
+            />
+          ))}
+
+          {/* Dark overlay */}
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.6) 100%)', zIndex: 2 }} />
+
+          {/* Grid overlay */}
+          <div style={{
+            position: 'absolute', inset: 0, zIndex: 3, pointerEvents: 'none',
+            backgroundImage: 'linear-gradient(rgba(200,0,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(200,0,0,0.04) 1px, transparent 1px)',
+            backgroundSize: '50px 50px',
+          }} />
+
+          {/* Section heading */}
+          <div style={{ position: 'absolute', top: '6%', left: '50%', transform: 'translateX(-50%)', zIndex: 10, textAlign: 'center' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.25em', color: '#c0392b', textTransform: 'uppercase', marginBottom: '6px' }}>Interior Experience</p>
+            <h2 style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontWeight: 900, letterSpacing: '0.2em', color: '#fff', textTransform: 'uppercase', textShadow: '0 0 40px rgba(200,0,0,0.4)' }}>
+              STEP <span style={{ color: '#e74c3c' }}>INSIDE</span>
+            </h2>
+          </div>
+
+          {/* Slide content */}
+          {interiorSlides.map((slide, i) => (
+            <div
+              key={i}
+              style={{
+                position: 'absolute', bottom: '10%', left: '6%', right: '20%', zIndex: 10,
+                opacity: activeSlide === i ? 1 : 0,
+                transform: activeSlide === i ? 'translateY(0)' : 'translateY(24px)',
+                transition: 'opacity 0.6s ease, transform 0.6s ease',
+              }}
+            >
+              <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.22em', color: '#c0392b', textTransform: 'uppercase', marginBottom: '12px' }}>{slide.tag}</p>
+              <h3 style={{ fontSize: 'clamp(36px, 6vw, 64px)', fontWeight: 900, letterSpacing: '0.05em', color: '#fff', textTransform: 'uppercase', lineHeight: 1.05, marginBottom: '18px', textShadow: '0 0 60px rgba(200,0,0,0.35)' }}>
+                {slide.title.split('\n').map((line, li) =>
+                  line === slide.highlight
+                    ? <span key={li} style={{ color: '#e74c3c', display: 'block' }}>{line}</span>
+                    : <span key={li} style={{ display: 'block' }}>{line}</span>
+                )}
+              </h3>
+              <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.65)', maxWidth: '480px', lineHeight: 1.8 }}>{slide.desc}</p>
+            </div>
+          ))}
+
+          {/* Dot nav */}
+          <div style={{ position: 'absolute', right: '3%', top: '50%', transform: 'translateY(-50%)', zIndex: 10, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {interiorSlides.map((slide, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <div style={{
+                  width: '7px', height: '7px', borderRadius: '50%',
+                  background: activeSlide === i ? '#c0392b' : '#333',
+                  boxShadow: activeSlide === i ? '0 0 10px #c0392b' : 'none',
+                  transition: 'all 0.3s',
+                  transform: activeSlide === i ? 'scale(1.4)' : 'scale(1)',
+                }} />
+                <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.12em', color: activeSlide === i ? '#c0392b' : '#333', textTransform: 'uppercase', transition: 'color 0.3s' }}>{slide.dot}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Video counter */}
+          <div style={{ position: 'absolute', top: '6%', right: '4%', zIndex: 10, display: 'flex', alignItems: 'baseline', gap: '4px' }}>
+            <span style={{ fontSize: '32px', fontWeight: 900, color: '#c0392b', lineHeight: 1 }}>{activeSlide + 1}</span>
+            <span style={{ fontSize: '13px', color: '#444', fontWeight: 700 }}>/ 3</span>
+          </div>
+
+          {/* Progress bar */}
+          <div style={{ position: 'absolute', bottom: 0, left: 0, height: '2px', background: '#c0392b', boxShadow: '0 0 8px #c0392b', width: `${scrollProgress * 100}%`, zIndex: 10, transition: 'width 0.1s linear' }} />
+        </div>
+      </div>
 
       {/* ── LEADERSHIP SECTION ── */}
       <section className="py-20 relative">
