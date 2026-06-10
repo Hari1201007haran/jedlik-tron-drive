@@ -65,7 +65,7 @@ const MentorsPage = () => {
       <section className="py-16 relative">
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-24 max-w-6xl">
+            <div className="flex flex-col sm:flex-row justify-center gap-24">
               {mentors.map((mentor, index) => (
                 <div
                   key={index}
