@@ -250,7 +250,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               }}
             >
               <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.22em', color: '#c0392b', textTransform: 'uppercase', marginBottom: '12px' }}>{slide.tag}</p>
-              <h3 style={{ fontSize: 'clamp(36px, 6vw, 64px)', fontWeight: 900, letterSpacing: '0.05em', color: '#fff', textTransform: 'uppercase', lineHeight: 1.05, marginBottom: '18px', textShadow: '0 0 60px rgba(200,0,0,0.35)' }}>
+              <h3 style={{ fontSize: 'clamp(36px, 6vw, 64px)', fontWeight: 900, letterSpacing: '0.05em', color: '#fff', textTransform: 'uppercase', lineHeight: 1.05, marginBottom: '18px', textShadow: '0 2px 20px rgba(0,0,0,0.9), 0 0 60px rgba(200,0,0,0.5)' }}>
                 {slide.title.split('\n').map((line, li) =>
                   line === slide.highlight
                     ? <span key={li} style={{ color: '#e74c3c', display: 'block' }}>{line}</span>
