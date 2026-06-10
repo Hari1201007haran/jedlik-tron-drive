@@ -73,11 +73,6 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     { name: 'Nishanthraj GV', role: 'CO-FOUNDER',  img: coFounder2Image },
   ]
 
-  // Mentors use photos uploaded to /public folder
-  const mentors = [
-    { name: 'Sathya Prasad',      role: 'MECHANICAL MENTOR', img: '/Sathya.jpg'      },
-    { name: 'Srikanthan Sridharan', role: 'ELECTRICAL MENTOR',  img: '/Srikanthan.jpg' },
-  ]
   // ─────────────────────────────────────────────────────────────
 
   const scrollToSection = (sectionId: string) => {
@@ -335,7 +330,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </h2>
 
           {/* Founders row — 3 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {founders.map((person) => (
               <div key={person.name} className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 text-center group">
                 <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-primary/30 group-hover:border-accent/60 transition-all">
@@ -343,19 +338,6 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 </div>
                 <h3 className="text-xl font-orbitron font-bold mb-2 group-hover:tron-glow-text transition-all">{person.name}</h3>
                 <p className="text-accent font-medium text-sm tracking-widest">{person.role}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Mentors row — 2 cards, centred */}
-          <div className="flex flex-col sm:flex-row gap-8 justify-center">
-            {mentors.map((person) => (
-              <div key={person.name} className="w-full sm:w-72 tron-glass-strong p-8 rounded-lg border border-accent/30 hover:border-primary/60 hover:tron-glow transition-all duration-300 text-center group">
-                <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-accent/30 group-hover:border-primary/60 transition-all">
-                  <img src={person.img} alt={person.name} className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-orbitron font-bold mb-2 group-hover:tron-glow-text transition-all">{person.name}</h3>
-                <p className="text-primary font-medium text-sm tracking-widest">{person.role}</p>
               </div>
             ))}
           </div>

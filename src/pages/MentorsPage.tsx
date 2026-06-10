@@ -9,6 +9,14 @@ const mentors = [
     gradient: "from-primary to-tron-glow",
     description: "Guiding the mechanical engineering vision of Jedlik Motors.",
   },
+  {
+    name: "Srikanthan Sridharan",
+    role: "Electrical Mentor",
+    initials: "SS",
+    photo: "/Srikanthan.jpg",
+    gradient: "from-accent to-primary",
+    description: "Shaping the electrical systems and power architecture of e-POD.",
+  },
 ];
 
 const MentorsPage = () => {
