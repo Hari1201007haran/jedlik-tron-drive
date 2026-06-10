@@ -232,9 +232,9 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
           {/* Section heading */}
           <div style={{ position: 'absolute', top: '80px', left: '50%', transform: 'translateX(-50%)', zIndex: 10, textAlign: 'center', whiteSpace: 'nowrap' }}>
-            <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.25em', color: '#c0392b', textTransform: 'uppercase', marginBottom: '6px' }}>Interior Experience</p>
-            <h2 style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontWeight: 900, letterSpacing: '0.2em', color: '#fff', textTransform: 'uppercase', textShadow: '0 0 40px rgba(200,0,0,0.4)' }}>
-              STEP <span style={{ color: '#e74c3c' }}>INSIDE</span>
+            <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.25em', color: 'hsl(var(--primary))', textTransform: 'uppercase', marginBottom: '6px' }}>Interior Experience</p>
+            <h2 style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontWeight: 900, letterSpacing: '0.2em', color: '#fff', textTransform: 'uppercase', textShadow: '0 0 40px hsl(var(--primary) / 0.4)' }}>
+              STEP <span style={{ color: 'hsl(var(--primary))' }}>INSIDE</span>
             </h2>
           </div>
 
@@ -249,11 +249,11 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 transition: 'opacity 0.6s ease, transform 0.6s ease',
               }}
             >
-              <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.22em', color: '#c0392b', textTransform: 'uppercase', marginBottom: '12px' }}>{slide.tag}</p>
+              <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.22em', color: 'hsl(var(--primary))', textTransform: 'uppercase', marginBottom: '12px' }}>{slide.tag}</p>
               <h3 style={{ fontSize: 'clamp(36px, 6vw, 64px)', fontWeight: 900, letterSpacing: '0.05em', color: '#fff', textTransform: 'uppercase', lineHeight: 1.05, marginBottom: '18px', textShadow: '0 2px 20px rgba(0,0,0,0.9), 0 0 60px rgba(200,0,0,0.5)' }}>
                 {slide.title.split('\n').map((line, li) =>
                   line === slide.highlight
-                    ? <span key={li} style={{ color: '#e74c3c', display: 'block' }}>{line}</span>
+                    ? <span key={li} style={{ color: 'hsl(var(--primary))', display: 'block' }}>{line}</span>
                     : <span key={li} style={{ display: 'block' }}>{line}</span>
                 )}
               </h3>
@@ -267,24 +267,24 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <div style={{
                   width: '7px', height: '7px', borderRadius: '50%',
-                  background: activeSlide === i ? '#c0392b' : '#333',
-                  boxShadow: activeSlide === i ? '0 0 10px #c0392b' : 'none',
+                  background: activeSlide === i ? 'hsl(var(--primary))' : '#333',
+                  boxShadow: activeSlide === i ? '0 0 10px hsl(var(--primary))' : 'none',
                   transition: 'all 0.3s',
                   transform: activeSlide === i ? 'scale(1.4)' : 'scale(1)',
                 }} />
-                <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.12em', color: activeSlide === i ? '#c0392b' : '#333', textTransform: 'uppercase', transition: 'color 0.3s' }}>{slide.dot}</span>
+                <span style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '0.12em', color: activeSlide === i ? 'hsl(var(--primary))' : '#333', textTransform: 'uppercase', transition: 'color 0.3s' }}>{slide.dot}</span>
               </div>
             ))}
           </div>
 
           {/* Video counter */}
           <div style={{ position: 'absolute', top: '6%', right: '4%', zIndex: 10, display: 'flex', alignItems: 'baseline', gap: '4px' }}>
-            <span style={{ fontSize: '32px', fontWeight: 900, color: '#c0392b', lineHeight: 1 }}>{activeSlide + 1}</span>
+            <span style={{ fontSize: '32px', fontWeight: 900, color: 'hsl(var(--primary))', lineHeight: 1 }}>{activeSlide + 1}</span>
             <span style={{ fontSize: '13px', color: '#444', fontWeight: 700 }}>/ 3</span>
           </div>
 
           {/* Progress bar */}
-          <div style={{ position: 'absolute', bottom: 0, left: 0, height: '2px', background: '#c0392b', boxShadow: '0 0 8px #c0392b', width: `${scrollProgress * 100}%`, zIndex: 10, transition: 'width 0.1s linear' }} />
+          <div style={{ position: 'absolute', bottom: 0, left: 0, height: '2px', background: 'hsl(var(--primary))', boxShadow: '0 0 8px hsl(var(--primary))', width: `${scrollProgress * 100}%`, zIndex: 10, transition: 'width 0.1s linear' }} />
         </div>
       </div>
 
