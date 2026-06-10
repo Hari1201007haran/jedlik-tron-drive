@@ -231,7 +231,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           }} />
 
           {/* Section heading */}
-          <div style={{ position: 'absolute', top: '6%', left: '50%', transform: 'translateX(-50%)', zIndex: 10, textAlign: 'center' }}>
+          <div style={{ position: 'absolute', top: '80px', left: '50%', transform: 'translateX(-50%)', zIndex: 10, textAlign: 'center', whiteSpace: 'nowrap' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.25em', color: '#c0392b', textTransform: 'uppercase', marginBottom: '6px' }}>Interior Experience</p>
             <h2 style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontWeight: 900, letterSpacing: '0.2em', color: '#fff', textTransform: 'uppercase', textShadow: '0 0 40px rgba(200,0,0,0.4)' }}>
               STEP <span style={{ color: '#e74c3c' }}>INSIDE</span>
