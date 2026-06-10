@@ -257,7 +257,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                     : <span key={li} style={{ display: 'block' }}>{line}</span>
                 )}
               </h3>
-              <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.65)', maxWidth: '480px', lineHeight: 1.8 }}>{slide.desc}</p>
+              <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', maxWidth: '480px', lineHeight: 1.8, textShadow: '0 1px 8px rgba(0,0,0,0.8)' }}>{slide.desc}</p>
             </div>
           ))}
 
