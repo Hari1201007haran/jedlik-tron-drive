@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center -ml-2 sm:-ml-4 lg:-ml-6">
+          <div className="flex items-center -ml-4 sm:-ml-6 lg:-ml-8">
             <button
               onClick={() => onNavigate('home')}
               className="flex items-center"
