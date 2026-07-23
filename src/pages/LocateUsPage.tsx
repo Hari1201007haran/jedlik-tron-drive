@@ -107,82 +107,9 @@ const LocateUsPage: React.FC = () => {
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            {/* Enhanced Map Section */}
-            <div className="order-2 lg:order-1 animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-              <div className="relative group">
-                {/* Holographic Border Effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
-                
-                <div className="relative tron-glass-strong p-8 rounded-xl border border-primary/40 hover:border-primary/60 transition-all duration-500">
-                  <div className="flex items-center justify-between mb-8">
-                    <h2 className="text-3xl font-orbitron font-bold text-primary tron-glow-text">
-                      NAVIGATION HUB
-                    </h2>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      <span className="text-xs font-orbitron text-muted-foreground">ACTIVE</span>
-                    </div>
-                  </div>
-                  
-                  <div className="w-full h-96 tron-glass rounded-xl border border-primary/30 relative overflow-hidden group/map hover:border-accent/50 transition-all duration-500">
-                    {/* Enhanced Grid Background */}
-                    <div className="absolute inset-0 tron-grid-bg animate-grid-flow opacity-40 group-hover/map:opacity-60 transition-opacity" />
-                    
-                    {/* Floating Particles */}
-                    <div className="absolute top-4 left-6 w-3 h-3 bg-primary/60 rounded-full animate-bounce"></div>
-                    <div className="absolute top-12 right-8 w-2 h-2 bg-accent/60 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
-                    <div className="absolute bottom-8 left-12 w-2 h-2 bg-primary/40 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
-                    
-                    {/* Central Location Display */}
-                    <div className="relative z-20 h-full flex items-center justify-center">
-                      <div className="text-center transform group-hover/map:scale-105 transition-transform duration-300">
-                        <div className="relative mb-6">
-                          <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
-                          <MapPin className="relative h-20 w-20 text-primary mx-auto tron-glow animate-pulse-glow" />
-                          <div className="absolute -top-3 -right-3 w-6 h-6 bg-accent rounded-full animate-ping"></div>
-                          <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-primary/60 rounded-full animate-pulse"></div>
-                        </div>
-                        <h3 className="text-2xl font-orbitron font-bold mb-3 text-primary tron-glow-text">
-                          JEDLIK MOTORS
-                        </h3>
-                        <div className="space-y-1">
-                          <p className="text-sm text-muted-foreground font-medium">
-                            Anna University Campus
-                          </p>
-                          <p className="text-xs text-accent font-orbitron">
-                            COORDINATES: 13.0067°N, 80.2206°E
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Enhanced Decorative Elements */}
-                    <div className="absolute top-6 left-6 w-12 h-12 border-2 border-accent/30 rotate-45 animate-spin" style={{ animationDuration: '8s' }}></div>
-                    <div className="absolute bottom-6 right-6 w-8 h-8 border-2 border-primary/40 rotate-12 animate-pulse"></div>
-                    <div className="absolute top-1/3 right-12 w-6 h-6 border border-accent/40 animate-bounce"></div>
-                    <div className="absolute bottom-1/3 left-8 w-4 h-4 bg-primary/30 rounded-full animate-pulse"></div>
-                  </div>
-                  
-                  <Button
-                    onClick={() => {
-                      const address = "Anna incubator, Second Floor, Platinum Jubilee building, AC Tech Campus, Anna University, Guindy, Chennai, Tamil Nadu 600025";
-                      const encodedAddress = encodeURIComponent(address);
-                      window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
-                    }}
-                    size="lg"
-                    className="w-full mt-8 bg-gradient-to-r from-primary/80 to-accent/80 hover:from-primary hover:to-accent text-white font-orbitron font-bold group/btn border-0 tron-glow hover:tron-glow transition-all duration-300 transform hover:scale-105"
-                  >
-                    <Navigation className="mr-3 h-6 w-6 transition-transform group-hover/btn:rotate-12" />
-                    ENGAGE NAVIGATION SYSTEM
-                    <div className="ml-3 w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                  </Button>
-                </div>
-              </div>
-            </div>
-
+          <div className="max-w-3xl mx-auto">
             {/* Enhanced Address Information */}
-            <div className="order-1 lg:order-2 space-y-8 animate-fadeIn" style={{ animationDelay: '0.4s' }}>
+            <div className="space-y-8 animate-fadeIn" style={{ animationDelay: '0.4s' }}>
               {/* Location Details */}
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-accent/20 via-primary/20 to-accent/20 rounded-xl blur opacity-50 group-hover:opacity-75 transition duration-1000"></div>
