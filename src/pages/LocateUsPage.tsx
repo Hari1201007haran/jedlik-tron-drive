@@ -335,47 +335,7 @@ const LocateUsPage: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Educational Network */}
-            <div className="relative group animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur opacity-50 group-hover:opacity-75 transition duration-1000"></div>
-              
-              <div className="relative tron-glass-strong p-8 rounded-2xl border border-primary/40 hover:border-primary/60 transition-all duration-500">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/30 to-primary/20 flex items-center justify-center tron-glow">
-                    <Building className="w-7 h-7 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-orbitron font-bold text-primary tron-glow-text">
-                      ACADEMIC CLUSTER
-                    </h3>
-                    <p className="text-sm text-muted-foreground font-orbitron">
-                      EDUCATIONAL NETWORK
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="space-y-4">
-                  {[
-                    'Anna University Main Campus',
-                    'AC Tech Campus',
-                    'CEG Campus',
-                    'SAP Campus'
-                  ].map((institution, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center gap-3 p-4 tron-glass rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 group/item"
-                    >
-                      <div className="w-3 h-3 bg-primary/60 rounded-full animate-pulse"></div>
-                      <span className="text-muted-foreground group-hover/item:text-primary transition-colors">
-                        {institution}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            
+          <div className="max-w-xl mx-auto">
             {/* Transport Network */}
             <div className="relative group animate-fadeIn" style={{ animationDelay: '0.4s' }}>
               <div className="absolute -inset-1 bg-gradient-to-r from-accent/20 to-primary/20 rounded-2xl blur opacity-50 group-hover:opacity-75 transition duration-1000"></div>
