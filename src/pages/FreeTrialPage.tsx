@@ -1,5 +1,4 @@
-import { Scan, Gift, CheckCircle2, Clock, Zap, Shield, Sparkles, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Scan, Gift, CheckCircle2, Clock, Zap, Sparkles, ArrowRight } from "lucide-react";
 
 const FreeTrialPage = () => {
   return (
@@ -66,93 +65,6 @@ const FreeTrialPage = () => {
             </p>
           </div>
 
-          {/* QR Code Card */}
-          <div className="max-w-3xl mx-auto">
-            <div className="relative group">
-              {/* Outer glow ring */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-tron-glow rounded-3xl opacity-30 blur-xl group-hover:opacity-50 transition-all duration-500 animate-pulse"></div>
-              
-              <div className="relative tron-glass rounded-3xl p-10 md:p-14 border-2 border-primary/30 overflow-hidden animate-fade-in backdrop-blur-xl">
-                {/* Animated corner accents */}
-                <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-accent/50 rounded-tl-3xl"></div>
-                <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-accent/50 rounded-tr-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-accent/50 rounded-bl-3xl"></div>
-                <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-accent/50 rounded-br-3xl"></div>
-                
-                {/* Background effects */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
-                <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-tron-glow/10 rounded-full blur-3xl"></div>
-              
-              <div className="relative z-10">
-                <div className="text-center mb-10">
-                  <div className="inline-flex items-center gap-3 mb-6 relative">
-                    <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full"></div>
-                    <Scan className="w-8 h-8 text-primary relative z-10 animate-pulse" />
-                    <h2 className="text-3xl md:text-4xl font-bold relative z-10 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                      Instant Access
-                    </h2>
-                    <Zap className="w-8 h-8 text-accent relative z-10 animate-pulse" style={{animationDelay: '0.5s'}} />
-                  </div>
-                  <p className="text-lg text-foreground/70 max-w-md mx-auto">
-                    Click the button below to begin your premium journey
-                  </p>
-                </div>
-
-                {/* CTA Button */}
-                <div className="flex justify-center mb-12">
-                  <div className="relative group">
-                    {/* Outer glow ring */}
-                    <div className="absolute -inset-4 bg-gradient-to-r from-primary via-accent to-tron-glow rounded-3xl opacity-30 blur-xl group-hover:opacity-60 transition-all duration-500 animate-pulse"></div>
-                    
-                    <Button 
-                      size="lg"
-                      asChild
-                      className="relative px-12 py-8 text-xl md:text-2xl font-bold rounded-2xl bg-gradient-to-r from-primary via-accent to-tron-glow hover:shadow-2xl hover:shadow-accent/50 transition-all duration-500 group-hover:scale-110 border-2 border-accent/30"
-                    >
-                      <a 
-                        href="https://forms.zohopublic.in/raguramkarthikeyan/form/FreeTrialregistration/formperma/2bMMbZJGO4RLOYFPV4fUSG3wyByX9FcnfLsl8TuYYWs"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Zap className="w-6 h-6 mr-3 animate-pulse" />
-                        Start Free Trial
-                        <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform" />
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-
-                {/* Instructions */}
-                <div className="grid md:grid-cols-3 gap-8">
-                  {[
-                    { num: 1, icon: Zap, title: "Click Button", desc: "Press the button above to open the form", color: "primary" },
-                    { num: 2, icon: Shield, title: "Secure Registration", desc: "Complete the quick registration form", color: "accent" },
-                    { num: 3, icon: CheckCircle2, title: "Instant Access", desc: "Start your premium trial immediately", color: "tron-glow" }
-                  ].map((step, i) => (
-                    <div key={i} className="relative group">
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-0 group-hover:opacity-30 blur transition-all duration-500"></div>
-                      <div className="relative text-center p-6 rounded-2xl bg-gradient-to-br from-background/80 to-background/40 border border-primary/20 backdrop-blur-sm hover:border-primary/40 transition-all duration-300">
-                        <div className="relative mb-4 inline-block">
-                          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl"></div>
-                          <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center border border-primary/30 group-hover:scale-110 transition-transform duration-300">
-                            <step.icon className={`w-8 h-8 text-${step.color}`} />
-                          </div>
-                          <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center text-xs font-bold shadow-lg">
-                            {step.num}
-                          </div>
-                        </div>
-                        <h3 className="font-bold text-lg mb-2 text-foreground">{step.title}</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
