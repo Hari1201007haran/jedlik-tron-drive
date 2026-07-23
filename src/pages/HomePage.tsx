@@ -425,12 +425,12 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   <h4 className="text-xl font-orbitron font-bold text-accent">Location</h4>
                 </div>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Anna incubator, Second Floor, Platinum Jubilee building, AC Tech Campus,
-                  Anna University, Guindy, Chennai, Tamil Nadu 600025
+                  NIELIT Chennai Centre, ISTE Complex, No. 25, Gandhi Mandapam Road,
+                  Chennai, Tamil Nadu 600025
                 </p>
                 <Button
                   onClick={() => {
-                    const address = "Anna incubator, Second Floor, Platinum Jubilee building, AC Tech Campus, Anna University, Guindy, Chennai, Tamil Nadu 600025";
+                    const address = "NIELIT Chennai Centre, ISTE Complex, No. 25, Gandhi Mandapam Road, Chennai, Tamil Nadu 600025";
                     window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`, '_blank');
                   }}
                   className="w-full tron-glass border-accent hover:bg-accent hover:text-accent-foreground font-orbitron font-bold"

@@ -94,7 +94,7 @@ const ContactUsPage: React.FC = () => {
     {
       icon: MapPin,
       title: 'Address',
-      info: 'Anna incubator, Second Floor, Platinum Jubilee building, AC Tech Campus, Anna University, Guindy, Chennai, Tamil Nadu 600025',
+      info: 'NIELIT Chennai Centre, ISTE Complex, No. 25, Gandhi Mandapam Road, Chennai, Tamil Nadu 600025',
       color: 'primary'
     },
     {
