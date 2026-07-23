@@ -12,7 +12,6 @@ import epodOutdoor from '@/assets/gallery-epod-outdoor.jpg'
 import boothPresentation from '@/assets/gallery-booth-presentation.jpg'
 import vehicleChassis from '@/assets/gallery-vehicle-chassis.jpg'
 import teamDiscussion from '@/assets/gallery-team-discussion.jpg'
-import eventVehicle from '@/assets/gallery-event-vehicle.jpg'
 import teamPhoto from '@/assets/gallery-team-photo.jpg'
 import eventDuo from '@/assets/gallery-event-duo.jpg'
 import epodPrototype from '@/assets/gallery-epod-prototype.jpg'
@@ -42,7 +41,6 @@ const GalleryPage = () => {
     { src: workshopTeam, title: 'Workshop Development Session', category: 'Manufacturing' },
     { src: boothPresentation, title: 'Product Presentation', category: 'Events' },
     { src: teamDiscussion, title: 'Team Discussion at Event', category: 'Team' },
-    { src: eventVehicle, title: 'E-POD at Global Summit', category: 'Events' },
     { src: eventDuo, title: 'Team Members at Exhibition', category: 'Team' },
     { src: epodPrototype, title: 'E-POD Prototype Development', category: 'Vehicle' },
     { src: chassisWorkshop, title: 'Chassis Assembly in Workshop', category: 'Manufacturing' },
