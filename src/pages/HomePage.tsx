@@ -455,13 +455,6 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   <p className="text-muted-foreground">info@jedlik.in</p>
                 </div>
               </div>
-              <div className="tron-glass-strong h-64 rounded-lg border border-primary/30 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <p className="text-muted-foreground font-orbitron">Interactive Map</p>
-                  <p className="text-sm text-muted-foreground/60 mt-2">Map integration placeholder</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
