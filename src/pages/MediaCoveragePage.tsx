@@ -22,10 +22,11 @@ const mediaItems: MediaItem[] = [
     icon: Newspaper,
   },
   {
-    title: 'Jedlik Motors Featured on LinkedIn',
-    source: 'LinkedIn',
+    title: 'Jedlik Motors Featured in EV Update Media E-Magazine',
+    source: 'EV Update Media',
     date: '',
-    description: 'Jedlik Motors and the e-POD were featured in a LinkedIn post. View the full post for details.',
+    description:
+      'Jedlik Motors and the e-POD were featured in an e-magazine edition by EV Update Media, a platform covering news, insights, and industry updates on the electric vehicle and battery sector.',
     url: 'https://lnkd.in/gtw7zF2W',
     icon: Linkedin,
   },
