@@ -24,6 +24,11 @@ const AboutUsPage: React.FC = () => {
       title: 'Industry Recognition',
       description: 'Featured across industry networks with growing recognition and early tester collaborations.',
     },
+    {
+      icon: Award,
+      title: 'Angel Investment',
+      description: 'Raised angel investment of ₹47 lakhs to accelerate product development and scale operations.',
+    },
   ]
 
   return (
@@ -111,7 +116,7 @@ const AboutUsPage: React.FC = () => {
             OUR <span className="text-accent">ACHIEVEMENTS</span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {achievements.map((achievement, index) => (
               <div
                 key={index}
