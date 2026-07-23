@@ -100,7 +100,7 @@ const ContactUsPage: React.FC = () => {
     {
       icon: Phone,
       title: 'Phone',
-      info: '+91 9790678445',
+      info: '+91 90940 36915',
       color: 'accent'
     },
     {
