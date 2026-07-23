@@ -284,7 +284,7 @@ const LocateUsPage: React.FC = () => {
                   
                   <div className="space-y-4">
                     <a 
-                      href="tel:+919790678445"
+                      href="tel:+919094036915"
                       className="group/contact flex items-center space-x-4 p-4 tron-glass rounded-lg border border-accent/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 transform hover:scale-105"
                     >
                       <div className="w-12 h-12 bg-gradient-to-br from-accent/30 to-accent/20 rounded-lg flex items-center justify-center group-hover/contact:from-accent/50 group-hover/contact:to-accent/40 transition-all">
@@ -293,7 +293,7 @@ const LocateUsPage: React.FC = () => {
                       <div className="flex-1">
                         <div className="text-xs text-muted-foreground font-orbitron mb-1">VOICE CHANNEL</div>
                         <span className="text-accent font-bold text-lg group-hover/contact:tron-glow-text transition-all">
-                          +91 9790678445
+                          +91 90940 36915
                         </span>
                       </div>
                       <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
