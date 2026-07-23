@@ -368,43 +368,6 @@ const ContactUsPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Enhanced Map Section */}
-              <div className="tron-glass-strong p-8 rounded-xl border border-primary/40 hover:border-primary/70 transition-all duration-500 group">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-3 h-3 bg-primary rounded-full animate-ping"></div>
-                  <h3 className="text-xl font-orbitron font-bold text-primary tron-glow-text">
-                    FIND US ON MAP
-                  </h3>
-                </div>
-                
-                <div className="w-full h-64 tron-glass rounded-lg border border-primary/20 flex items-center justify-center relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500">
-                  <div className="absolute inset-0 tron-grid-bg opacity-20 animate-grid-flow" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10" />
-                  <div className="relative z-10 text-center">
-                    <MapPin className="h-16 w-16 text-primary mx-auto mb-4 tron-glow animate-bounce" />
-                    <p className="text-foreground font-orbitron font-bold text-lg tron-glow-text">
-                      Interactive Map
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      Anna University, Guindy
-                    </p>
-                  </div>
-                </div>
-                
-                <Button
-                  onClick={() => {
-                    const address = "Anna incubator, Second Floor, Platinum Jubilee building, AC Tech Campus, Anna University, Guindy, Chennai, Tamil Nadu 600025";
-                    const encodedAddress = encodeURIComponent(address);
-                    window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
-                  }}
-                  variant="outline"
-                  className="w-full mt-6 tron-glass border-accent hover:bg-accent hover:text-accent-foreground font-orbitron font-bold hover:scale-105 transition-all duration-300"
-                >
-                  <MapPin className="h-4 w-4 mr-2" />
-                  GET DIRECTIONS
-                </Button>
-              </div>
-
               {/* Enhanced Business Hours */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="tron-glass-strong p-6 rounded-lg border border-primary/30 hover:border-primary/60 transition-all duration-300 group">
