@@ -22,10 +22,10 @@ const Footer: React.FC = () => {
               info@jedlik.in
             </a>
             <a 
-              href="tel:+919790678445" 
+              href="tel:+919094036915" 
               className="text-sm text-muted-foreground hover:text-primary hover:tron-glow-text transition-colors"
             >
-              +91 9790678445
+              +91 90940 36915
             </a>
             <a 
               href="https://www.jedlik.in" 
