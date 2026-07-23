@@ -18,7 +18,7 @@ const FAQPage: React.FC = () => {
     {
       id: 'purchase',
       question: 'How can I purchase a product?',
-      answer: 'You can contact us directly through our contact form, email us at info@jedlik.in, or call us at +91 9790678445. Our team will discuss your requirements and provide customized solutions based on your specific needs.'
+      answer: 'You can contact us directly through our contact form, email us at info@jedlik.in, or call us at +91 90940 36915. Our team will discuss your requirements and provide customized solutions based on your specific needs.'
     },
     {
       id: 'warranty',
@@ -43,7 +43,7 @@ const FAQPage: React.FC = () => {
     {
       id: 'certifications',
       question: 'How Can I contact you?',
-      answer: 'You can contact us via email: info@jedlik.in and via phone: +91 9790678445.'
+      answer: 'You can contact us via email: info@jedlik.in and via phone: +91 90940 36915.'
     },
     {
       id: 'delivery',
@@ -152,12 +152,12 @@ const FAQPage: React.FC = () => {
               </a>
               
               <a 
-                href="tel:+919790678445"
+                href="tel:+919094036915"
                 className="tron-glass p-6 rounded-lg border border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-pointer block group"
               >
                 <div className="text-2xl mb-2">📞</div>
                 <h3 className="font-orbitron font-bold mb-2 text-primary group-hover:tron-glow-text">Call Us</h3>
-                <p className="text-sm text-muted-foreground">+91 9790678445</p>
+                <p className="text-sm text-muted-foreground">+91 90940 36915</p>
               </a>
               
               <a 
