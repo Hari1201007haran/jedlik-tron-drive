@@ -27,10 +27,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 tron-glass border-b border-primary/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto pl-2 pr-4 sm:pl-3 sm:pr-6 lg:pl-4 lg:pr-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center -ml-4 sm:-ml-6 lg:-ml-8">
+          <div className="flex items-center">
             <button
               onClick={() => onNavigate('home')}
               className="flex items-center"
