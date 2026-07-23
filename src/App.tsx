@@ -17,6 +17,7 @@ import FreeTrialPage from "./pages/FreeTrialPage";
 import GalleryPage from "./pages/GalleryPage";
 import OurTeamPage from "./pages/OurTeamPage";
 import MentorsPage from "./pages/MentorsPage";
+import MediaCoveragePage from "./pages/MediaCoveragePage";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,8 @@ const App = () => {
         return <OurTeamPage />;
       case 'mentors':
         return <MentorsPage />;
+      case 'media':
+        return <MediaCoveragePage />;
       default:
         return <HomePage onNavigate={setCurrentPage} />;
     }
