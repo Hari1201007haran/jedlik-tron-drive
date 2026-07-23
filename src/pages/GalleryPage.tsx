@@ -20,6 +20,8 @@ import chassisWorkshop from '@/assets/gallery-chassis-workshop.jpg'
 import epodSideView from '@/assets/gallery-epod-side-view.jpg'
 import epodFullView from '@/assets/gallery-epod-full-view.jpg'
 import teamBooth from '@/assets/gallery-team-booth.jpg'
+import evSummitPanel from '@/assets/gallery-ev-summit-panel.jpg'
+import teamChassisIncubator from '@/assets/gallery-team-chassis-incubator.jpg'
 
 interface GalleryImage {
   src: string
@@ -47,6 +49,8 @@ const GalleryPage = () => {
     { src: epodSideView, title: 'E-POD Side Profile', category: 'Vehicle' },
     { src: epodFullView, title: 'E-POD Complete Vehicle', category: 'Vehicle' },
     { src: teamBooth, title: 'Team at Innovation Summit', category: 'Team' },
+    { src: evSummitPanel, title: 'EV Update Tamil Nadu Summit 2026 Panel Discussion', category: 'Events' },
+    { src: teamChassisIncubator, title: 'Team with e-POD Chassis at Anna Incubator', category: 'Team' },
   ]
 
   const openLightbox = (index: number) => {
