@@ -211,7 +211,7 @@ const FeaturesPage: React.FC = () => {
                 
                 <div className="space-y-8">
                   {[
-                    { label: 'TRL Achievement', value: 'TRL 4', progress: 80, color: 'primary' },
+                    { label: 'TRL Achievement', value: 'TRL 5', progress: 88, color: 'primary' },
                     { label: 'Engineering Expertise', value: 'Multi-disciplinary', progress: 95, color: 'accent' },
                     { label: 'Commercialization Readiness', value: 'High', progress: 85, color: 'primary' },
                     { label: 'Innovation Index', value: 'Breakthrough', progress: 90, color: 'accent' }
@@ -267,7 +267,7 @@ const FeaturesPage: React.FC = () => {
                 },
                 {
                   title: 'COMMERCIALIZATION ROADMAP',
-                  description: 'Achieved TRL 4 Proof of Concept with a clear and structured roadmap to commercialization and market entry, backed by rigorous testing.',
+                  description: 'Achieved TRL 5 with a validated prototype and a clear, structured roadmap to commercialization and market entry, backed by rigorous testing.',
                   color: 'accent',
                   icon: '🚀'
                 },
