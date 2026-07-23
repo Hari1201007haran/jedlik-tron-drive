@@ -116,7 +116,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     },
     {
       question: 'How can we contact you?',
-      answer: 'You can contact us via email: info@jedlik.in and via phone: +91 9790678445.'
+      answer: 'You can contact us via email: info@jedlik.in and via phone: +91 90940 36915.'
     }
   ]
 
@@ -445,7 +445,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                     <Phone className="h-5 w-5 text-primary mr-3" />
                     <h4 className="text-lg font-orbitron font-bold text-primary">Phone</h4>
                   </div>
-                  <p className="text-muted-foreground">+91 9790678445</p>
+                  <p className="text-muted-foreground">+91 90940 36915</p>
                 </div>
                 <div className="tron-glass p-6 rounded-lg border border-primary/30">
                   <div className="flex items-center mb-3">
