@@ -369,7 +369,7 @@ const ContactUsPage: React.FC = () => {
               </div>
 
               {/* Enhanced Business Hours */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6">
                 <div className="tron-glass-strong p-6 rounded-lg border border-primary/30 hover:border-primary/60 transition-all duration-300 group">
                   <h3 className="text-lg font-orbitron font-bold mb-4 text-primary flex items-center gap-2">
                     <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
@@ -386,25 +386,6 @@ const ContactUsPage: React.FC = () => {
                         <span className={schedule.active ? 'text-accent font-medium' : 'text-muted-foreground'}>
                           {schedule.time}
                         </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="tron-glass-strong p-6 rounded-lg border border-accent/30 hover:border-accent/60 transition-all duration-300 group">
-                  <h3 className="text-lg font-orbitron font-bold mb-4 text-accent flex items-center gap-2">
-                    <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                    SUPPORT HOURS
-                  </h3>
-                  <div className="space-y-3 text-sm">
-                    {[
-                      { service: 'Technical Support', time: '24/7 Online', active: true },
-                      { service: 'Phone Support', time: '9:00 AM - 8:00 PM', active: true },
-                      { service: 'Emergency', time: '24/7 Available', active: true }
-                    ].map((support, index) => (
-                      <div key={index} className="flex justify-between items-center p-2 rounded hover:bg-accent/5 transition-colors">
-                        <span className="text-foreground">{support.service}</span>
-                        <span className="text-primary font-medium">{support.time}</span>
                       </div>
                     ))}
                   </div>
