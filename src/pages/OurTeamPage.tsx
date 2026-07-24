@@ -153,12 +153,20 @@ const OurTeamPage = () => {
                         src={member.photo}
                         alt={member.name}
                         className="relative w-28 h-28 rounded-full object-cover border-2 border-primary/30 group-hover:scale-110 transition-transform duration-500"
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          const fallback = target.nextElementSibling as HTMLElement | null;
+                          target.style.display = 'none';
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
                       />
-                    ) : (
-                      <div className={`relative w-28 h-28 rounded-full bg-gradient-to-br ${member.gradient} flex items-center justify-center border-2 border-primary/30 group-hover:scale-110 transition-transform duration-500`}>
-                        <span className="text-3xl font-bold text-white">{member.initials}</span>
-                      </div>
-                    )}
+                    ) : null}
+                    <div
+                      className={`relative w-28 h-28 rounded-full bg-gradient-to-br ${member.gradient} items-center justify-center border-2 border-primary/30 group-hover:scale-110 transition-transform duration-500`}
+                      style={{ display: member.photo ? 'none' : 'flex' }}
+                    >
+                      <span className="text-3xl font-bold text-white">{member.initials}</span>
+                    </div>
                   </div>
 
                   {/* Info */}
