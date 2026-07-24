@@ -1,10 +1,15 @@
 import React from 'react'
 import { Newspaper, Linkedin, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import annaIncubator from '@/assets/media-anna-incubator.jpg'
+import varunTnSummit from '@/assets/media-varun-tn-summit.jpg'
+import skyful from '@/assets/media-skyful.jpg'
+import evUpdate from '@/assets/media-ev-update.jpg'
 
 interface MediaItem {
   title: string
   image?: string
+  fit?: 'cover' | 'contain'
   url: string
   icon: React.ElementType
 }
@@ -18,21 +23,28 @@ const mediaItems: MediaItem[] = [
   },
   {
     title: 'Jedlik Motors Featured in EV Update Media E-Magazine',
+    image: evUpdate,
+    fit: 'contain',
     url: 'https://lnkd.in/gtw7zF2W',
     icon: Linkedin,
   },
   {
     title: 'EV, Electric Mobility & Tamil Nadu',
+    image: varunTnSummit,
     url: 'https://www.linkedin.com/posts/varun-rk_ev-electricmobility-tamilnadu-activity-7432388470595084288-gXrV',
     icon: Linkedin,
   },
   {
     title: '10 Years of Startup India — Anna Incubator',
+    image: annaIncubator,
+    fit: 'contain',
     url: 'https://www.linkedin.com/posts/aic-anna-incubator_10yearsofstartupindia-startupindia-annaincubator-ugcPost-7418539328378769408-hun7',
     icon: Linkedin,
   },
   {
     title: 'World EV Day — Jedlik Motors Startup Story',
+    image: skyful,
+    fit: 'contain',
     url: 'https://www.linkedin.com/posts/sky-ful_worldevday-jedlik-startupstories-ugcPost-7238793805900955649-z9Y2',
     icon: Linkedin,
   },
@@ -83,7 +95,11 @@ const MediaCoveragePage: React.FC = () => {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className={
+                          item.fit === 'contain'
+                            ? 'max-w-[70%] max-h-[70%] object-contain group-hover:scale-105 transition-transform duration-500'
+                            : 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
+                        }
                       />
                     ) : (
                       <Icon className="w-14 h-14 text-primary" />
