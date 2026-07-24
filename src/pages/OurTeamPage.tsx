@@ -73,6 +73,14 @@ const team = [
     gradient: "from-tron-glow to-primary",
     description: "Orchestrating strategy and cross-team coordination.",
   },
+  {
+    name: "Nasreen Banu",
+    role: "Electrical Systems Architect",
+    initials: "NB",
+    photo: "/Nasreen.jpg",
+    gradient: "from-primary to-accent",
+    description: "Architecting the electrical systems powering the e-POD.",
+  },
 ];
 
 const OurTeamPage = () => {
