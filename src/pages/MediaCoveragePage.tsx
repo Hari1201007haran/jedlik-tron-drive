@@ -30,6 +30,33 @@ const mediaItems: MediaItem[] = [
     url: 'https://lnkd.in/gtw7zF2W',
     icon: Linkedin,
   },
+  {
+    title: 'EV, Electric Mobility & Tamil Nadu',
+    source: 'LinkedIn — Varun Ramakrishnan',
+    date: '',
+    description:
+      'A LinkedIn post covering EV and electric mobility developments in Tamil Nadu, featuring Jedlik Motors.',
+    url: 'https://www.linkedin.com/posts/varun-rk_ev-electricmobility-tamilnadu-activity-7432388470595084288-gXrV',
+    icon: Linkedin,
+  },
+  {
+    title: '10 Years of Startup India — Anna Incubator',
+    source: 'LinkedIn — AIC Anna Incubator',
+    date: '',
+    description:
+      'A LinkedIn post from AIC Anna Incubator marking 10 years of Startup India, featuring Jedlik Motors among the incubated startups.',
+    url: 'https://www.linkedin.com/posts/aic-anna-incubator_10yearsofstartupindia-startupindia-annaincubator-ugcPost-7418539328378769408-hun7',
+    icon: Linkedin,
+  },
+  {
+    title: 'World EV Day — Jedlik Motors Startup Story',
+    source: 'LinkedIn',
+    date: '',
+    description:
+      'A World EV Day feature sharing the Jedlik Motors startup story as part of a series celebrating electric vehicle innovation.',
+    url: 'https://www.linkedin.com/posts/sky-ful_worldevday-jedlik-startupstories-ugcPost-7238793805900955649-z9Y2',
+    icon: Linkedin,
+  },
 ]
 
 const MediaCoveragePage: React.FC = () => {
