@@ -5,6 +5,7 @@ import annaIncubator from '@/assets/media-anna-incubator.jpg'
 import varunTnSummit from '@/assets/media-varun-tn-summit.jpg'
 import skyful from '@/assets/media-skyful.jpg'
 import evUpdate from '@/assets/media-ev-update.jpg'
+import startupNewsTamil from '@/assets/media-startup-news-tamil.jpg'
 
 interface MediaItem {
   title: string
@@ -17,7 +18,8 @@ interface MediaItem {
 const mediaItems: MediaItem[] = [
   {
     title: "இருசக்கர வாகனத்தின் வேகம் + காரின் பாதுகாப்பு: 'ஜெட்லிக் மோட்டார்ஸ்'-ன் புரட்சிகரமான e-POD!",
-    image: 'https://startupnewstamil.com/wp-content/uploads/2026/01/P1-1-1024x598.jpg',
+    image: startupNewsTamil,
+    fit: 'contain',
     url: 'https://startupnewstamil.com/news/jedlik-motors-electric-vehicle/',
     icon: Newspaper,
   },
