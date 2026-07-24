@@ -45,7 +45,7 @@ const team = [
     name: "Mohan",
     role: "R&D Manufacturing",
     initials: "MO",
-    photo: "/Mohan.jpg",
+    photo: "/Mohan-v2.jpg",
     gradient: "from-tron-glow to-accent",
     description: "Overseeing precision manufacturing processes.",
   },
