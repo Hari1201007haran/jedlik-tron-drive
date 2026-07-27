@@ -3,7 +3,6 @@ import { Sparkles, Briefcase, MapPin } from "lucide-react";
 interface ExperienceEntry {
   title: string;
   company: string;
-  duration: string;
 }
 
 interface Mentor {
@@ -27,12 +26,8 @@ const mentors: Mentor[] = [
     description: "Guiding the mechanical engineering vision of Jedlik Motors.",
     currentPosition: "EE-Chassis Electronics & ADAS Expert, VINFAST",
     experience: [
-      { title: "EE-Chassis Electronics, ADAS Expert", company: "VINFAST", duration: "Sep 2023 – Jan 2026" },
-      { title: "Sr. Manager", company: "Stellantis", duration: "Jun 2022 – Oct 2023" },
-      { title: "Performance Manager", company: "Renault", duration: "May 2018 – May 2022" },
-      { title: "Chassis ABS/VDC/TPMS Deputy Manager", company: "Nissan", duration: "Mar 2013 – May 2018" },
-      { title: "Deputy Manager – Chassis, Brakes & Steering (EV PF)", company: "Mahindra Reva Electric Vehicles", duration: "Aug 2011 – Mar 2013" },
-      { title: "Assistant Manager", company: "Mahindra & Mahindra Reva", duration: "Aug 2007 – Feb 2011" },
+      { title: "Sr. Manager", company: "Ex-Stellantis" },
+      { title: "Performance Manager", company: "Ex-Renault" },
     ],
   },
   {
@@ -44,10 +39,8 @@ const mentors: Mentor[] = [
     description: "Shaping the electrical systems and power architecture of e-POD.",
     currentPosition: "Assistant Professor, Dept. of Engineering Design, IIT Madras",
     experience: [
-      { title: "Assistant Professor", company: "IIT Madras – Dept. of Engineering Design", duration: "Jan 2020 – Present" },
-      { title: "Research Engineer", company: "Ford Motor Company", duration: "2015 – 2020" },
-      { title: "Intellectual Property Professional", company: "General Electric", duration: "2011 – 2015" },
-      { title: "Research Engineer", company: "Siemens", duration: "Early career" },
+      { title: "Research Engineer", company: "Ex-Ford Motor Company" },
+      { title: "Intellectual Property Professional", company: "Ex-General Electric" },
     ],
   },
   {
@@ -59,16 +52,8 @@ const mentors: Mentor[] = [
     description: "Steering go-to-market strategy and investor relations for Jedlik Motors.",
     currentPosition: "Strategic Advisor & Independent Director – Governance, Growth & Business Advisory",
     experience: [
-      { title: "Strategic Advisor & Independent Director", company: "Governance, Growth & Business Advisory", duration: "Oct 2025 – Present" },
-      { title: "Head – Data Science & Analytics", company: "Veritas Finance Limited", duration: "Dec 2024 – Sep 2025" },
-      { title: "Consultant – Risk & Credit Advisory", company: "Davinta", duration: "Apr 2024 – Nov 2024" },
-      { title: "Head of Risk Management", company: "Cholamandalam MS General Insurance", duration: "Apr 2023 – Mar 2024" },
-      { title: "VP & Chief Risk Officer | Head of Analytics", company: "Cholamandalam Investment and Finance", duration: "Jul 2018 – Mar 2023" },
-      { title: "Director & Global Analytics Leader", company: "Concentrix", duration: "Feb 2014 – Jun 2018" },
-      { title: "VP & Associate Director", company: "IBM Global Process Service", duration: "Apr 2010 – Jan 2014" },
-      { title: "Chief Risk Officer / VP", company: "Cholamandalam DBS Finance (CDFL)", duration: "Jun 2007 – Apr 2010" },
-      { title: "National Portfolio Manager", company: "GE Countrywide Finance / GE Money", duration: "Aug 2005 – Jun 2007" },
-      { title: "Various roles – Retail, Corporate & Transaction Banking", company: "Standard Chartered Grindlays / ANZ Grindlays Bank", duration: "Feb 1995 – Jul 2003" },
+      { title: "VP & Chief Risk Officer | Head of Analytics", company: "Ex-Cholamandalam Investment and Finance" },
+      { title: "Director & Global Analytics Leader", company: "Ex-Concentrix" },
     ],
   },
 ];
@@ -165,26 +150,6 @@ const MentorsPage = () => {
                           <span className="text-xs font-semibold text-accent uppercase tracking-wider">Current Position</span>
                         </div>
                         <p className="text-xs text-foreground/80 font-medium leading-snug">{mentor.currentPosition}</p>
-                      </div>
-                    )}
-
-                    {mentor.experience && mentor.experience.length > 0 && (
-                      <div className="text-left">
-                        <div className="flex items-center gap-1.5 mb-2">
-                          <Briefcase className="w-3 h-3 text-accent flex-shrink-0" />
-                          <span className="text-xs font-semibold text-accent uppercase tracking-wider">Experience</span>
-                        </div>
-                        <div className="space-y-2">
-                          {mentor.experience.map((exp, i) => (
-                            <div key={i} className="flex items-start gap-2">
-                              <div className={`mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-br ${mentor.gradient} flex-shrink-0`}></div>
-                              <div>
-                                <p className="text-xs font-semibold text-foreground/90 leading-tight">{exp.title}</p>
-                                <p className="text-xs text-muted-foreground">{exp.company} · {exp.duration}</p>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
                       </div>
                     )}
 
