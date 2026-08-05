@@ -75,3 +75,4 @@ Notes when touching this path:
 - TypeScript strictness is deliberately off in `tsconfig.app.json`: `strict`, `noImplicitAny`, `strictNullChecks`, `noUnusedLocals`/`Parameters` all disabled. Don't "fix" this repo-wide as a side quest.
 - Add shadcn components under `src/components/ui/` per `components.json` (style `default`, CSS variables on).
 - `.env` is committed and not gitignored. It holds only the public Supabase URL/anon key, but assume anything added there becomes public.
+- The remote is `github.com/Hari1201007haran/jedlik-tron-drive` and work lands directly on `main` — there are no feature branches in the history. Because Lovable syncs from `main`, a push here can reach the live site without review.
