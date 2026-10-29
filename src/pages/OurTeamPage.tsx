@@ -13,7 +13,7 @@ const team = [
     name: "Muthuram",
     role: "Co-Founder & CTO",
     initials: "MU",
-    photo: "/Muthuram.jpg",
+    photo: "/Muthuram.jpg?v=2",
     gradient: "from-accent to-accent",
     description: "Technology architect building next-gen EV systems.",
   },
