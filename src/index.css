@@ -39,7 +39,6 @@
 
     /* Tron-style custom vars — now red-themed */
     --tron-grid: 0 85% 40%;          /* red grid lines */
-    --tron-glow: 0 90% 55%;          /* red glow */
     --tron-glass: 0 0% 8%;           /* dark glass panels */
 
     /* Sidebar */
@@ -83,18 +82,11 @@
     background-color: hsl(var(--background));
   }
 
-  /* Red glow utility */
-  .tron-glow {
-    box-shadow:
-      0 0 10px hsl(var(--tron-glow) / 0.5),
-      0 0 30px hsl(var(--tron-glow) / 0.25),
-      0 0 60px hsl(var(--tron-glow) / 0.1);
-  }
-
+  /* Glow utilities removed — plain background, no glow. */
+  .tron-glow,
   .tron-text-glow {
-    text-shadow:
-      0 0 8px hsl(var(--tron-glow) / 0.8),
-      0 0 20px hsl(var(--tron-glow) / 0.4);
+    box-shadow: none;
+    text-shadow: none;
   }
 
   /* Glass panel */

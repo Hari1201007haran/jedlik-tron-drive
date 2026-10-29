@@ -129,14 +129,8 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
 
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
-          <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full border border-primary/50 bg-primary/10 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-orbitron tracking-[0.2em] text-primary uppercase">
-              DPIIT Recognised · Chennai, India
-            </span>
-          </div>
 
-          <h1 className="text-6xl md:text-8xl font-orbitron font-black mb-2 leading-none tron-glow-text">
+          <h1 className="text-6xl md:text-8xl font-orbitron font-black mb-2 leading-none ">
             DRIVING THE
           </h1>
           <h1 className="text-6xl md:text-8xl font-orbitron font-black mb-8 leading-none text-primary">
@@ -154,7 +148,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <Button
               onClick={() => scrollToSection('features')}
               size="lg"
-              className="tron-glass tron-glow font-orbitron font-bold text-base px-10 py-6 rounded-full group border border-primary/70 hover:bg-primary/20 transition-all"
+              className="tron-glass font-orbitron font-bold text-base px-10 py-6 rounded-full group border border-primary/70 hover:bg-primary/20 transition-all"
             >
               Explore e-POD
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -203,16 +197,10 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           {/* Dark overlay */}
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.85) 100%)', zIndex: 2 }} />
 
-          {/* Subtle red glow (transparent - must not hide the videos) */}
-          <div style={{
-            position: 'absolute', inset: 0, zIndex: 3, pointerEvents: 'none',
-            background: 'radial-gradient(ellipse 80% 60% at 50% 40%, hsl(var(--primary) / 0.10) 0%, transparent 70%)',
-          }} />
-
           {/* Section heading */}
           <div style={{ position: 'absolute', top: '80px', left: '50%', transform: 'translateX(-50%)', zIndex: 10, textAlign: 'center', whiteSpace: 'nowrap' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.25em', color: 'hsl(var(--accent))', textTransform: 'uppercase', marginBottom: '6px' }}>Interior Experience</p>
-            <h2 style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontWeight: 900, letterSpacing: '0.2em', color: '#fff', textTransform: 'uppercase', textShadow: '0 0 40px hsl(var(--primary) / 0.4)' }}>
+            <h2 style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontWeight: 900, letterSpacing: '0.2em', color: '#fff', textTransform: 'uppercase' }}>
               STEP <span style={{ color: 'hsl(var(--accent))' }}>INSIDE</span>
             </h2>
           </div>
@@ -229,7 +217,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               }}
             >
               <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.22em', color: 'hsl(var(--accent))', textTransform: 'uppercase', marginBottom: '12px' }}>{slide.tag}</p>
-              <h3 style={{ fontSize: 'clamp(36px, 6vw, 64px)', fontWeight: 900, letterSpacing: '0.05em', color: '#fff', textTransform: 'uppercase', lineHeight: 1.05, marginBottom: '18px', textShadow: '0 2px 20px rgba(0,0,0,0.9), 0 0 60px rgba(200,0,0,0.5)' }}>
+              <h3 style={{ fontSize: 'clamp(36px, 6vw, 64px)', fontWeight: 900, letterSpacing: '0.05em', color: '#fff', textTransform: 'uppercase', lineHeight: 1.05, marginBottom: '18px', textShadow: '0 2px 20px rgba(0,0,0,0.9)' }}>
                 {slide.title.split('\n').map((line, li) =>
                   line === slide.highlight
                     ? <span key={li} style={{ color: 'hsl(var(--accent))', display: 'block' }}>{line}</span>
@@ -247,7 +235,6 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <div style={{
                   width: '7px', height: '7px', borderRadius: '50%',
                   background: activeSlide === i ? 'hsl(var(--accent))' : '#333',
-                  boxShadow: activeSlide === i ? '0 0 10px hsl(var(--accent))' : 'none',
                   transition: 'all 0.3s',
                   transform: activeSlide === i ? 'scale(1.4)' : 'scale(1)',
                 }} />
@@ -263,31 +250,27 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
 
           {/* Progress bar */}
-          <div style={{ position: 'absolute', bottom: 0, left: 0, height: '2px', background: 'hsl(var(--accent))', boxShadow: '0 0 8px hsl(var(--accent))', width: `${scrollProgress * 100}%`, zIndex: 10, transition: 'width 0.1s linear' }} />
+          <div style={{ position: 'absolute', bottom: 0, left: 0, height: '2px', background: 'hsl(var(--accent))', width: `${scrollProgress * 100}%`, zIndex: 10, transition: 'width 0.1s linear' }} />
         </div>
       </div>
 
       {/* About Us Section */}
       <section id="about" className="py-20 relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 ">
             ABOUT <span className="text-accent">JEDLIK MOTORS</span>
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="tron-glass-strong p-8 rounded-lg border border-primary/30">
               <div className="flex items-center mb-6">
                 <Users className="h-8 w-8 text-primary mr-4" />
-                <h3 className="text-2xl font-orbitron font-bold tron-glow-text">Our Mission</h3>
+                <h3 className="text-2xl font-orbitron font-bold ">Our Mission</h3>
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 To create safe and comfortable urban commuting solutions for city dwellers.
               </p>
             </div>
             <div className="space-y-6">
-              <div className="tron-glass p-6 rounded-lg border border-accent/30">
-                <h4 className="text-xl font-orbitron font-bold text-accent mb-3">DPIIT Recognised</h4>
-                <p className="text-muted-foreground">Officially recognized startup by the Department for Promotion of Industry and Internal Trade.</p>
-              </div>
               <div className="tron-glass p-6 rounded-lg border border-primary/30">
                 <h4 className="text-xl font-orbitron font-bold text-primary mb-3">Chennai Based</h4>
                 <p className="text-muted-foreground">Located in India's automobile capital, leveraging decades of automotive expertise.</p>
@@ -310,19 +293,18 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
       {/* Features Section */}
       <section id="features" className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 ">
             CUTTING-EDGE <span className="text-accent">FEATURES</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 group">
+              <div key={index} className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-accent/60 transition-all duration-300 group">
                 <div className="flex items-center mb-6">
                   <div className="flex items-center justify-center w-16 h-16 rounded-lg bg-primary/20 group-hover:bg-accent/20 transition-colors mr-4">
                     <feature.icon className="h-8 w-8 text-primary group-hover:text-accent transition-colors" />
                   </div>
-                  <h3 className="text-2xl font-orbitron font-bold group-hover:tron-glow-text transition-all">{feature.title}</h3>
+                  <h3 className="text-2xl font-orbitron font-bold transition-all">{feature.title}</h3>
                 </div>
                 <p className="text-muted-foreground group-hover:text-foreground transition-colors text-lg leading-relaxed">{feature.description}</p>
               </div>
@@ -334,14 +316,14 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       {/* Tech Specs Section */}
       <section id="techspecs" className="py-20 relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 ">
             TECHNICAL <span className="text-accent">SPECIFICATIONS</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {techSpecs.map((spec, index) => (
-              <div key={index} className="tron-glass-strong p-6 rounded-lg border border-primary/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 text-center group">
+              <div key={index} className="tron-glass-strong p-6 rounded-lg border border-primary/30 hover:border-accent/60 transition-all duration-300 text-center group">
                 <h3 className="text-lg font-orbitron font-bold text-muted-foreground mb-2 group-hover:text-foreground transition-colors">{spec.label}</h3>
-                <div className="text-3xl font-orbitron font-black text-primary group-hover:tron-glow-text transition-all mb-1">{spec.value}</div>
+                <div className="text-3xl font-orbitron font-black text-primary transition-all mb-1">{spec.value}</div>
                 <p className="text-accent font-medium">{spec.unit}</p>
               </div>
             ))}
@@ -349,34 +331,15 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section id="faq" className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
-            FREQUENTLY ASKED <span className="text-accent">QUESTIONS</span>
-          </h2>
-          <div className="text-center">
-            <Button
-              onClick={() => onNavigate('faq')}
-              size="lg"
-              className="tron-glass tron-glow hover:animate-pulse-glow font-orbitron font-bold text-lg px-12 py-4 rounded-full"
-            >
-              VIEW ALL FAQS
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 ">
             GET IN <span className="text-accent">TOUCH</span>
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="tron-glass-strong p-8 rounded-lg border border-primary/30">
-              <h3 className="text-2xl font-orbitron font-bold mb-6 tron-glow-text">Send us a Message</h3>
+              <h3 className="text-2xl font-orbitron font-bold mb-6 ">Send us a Message</h3>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <Input placeholder="Your Name" className="tron-glass border-primary/30 focus:border-accent" />
@@ -385,7 +348,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <Input type="tel" placeholder="Phone Number" className="tron-glass border-primary/30 focus:border-accent" />
                 <Input placeholder="Subject" className="tron-glass border-primary/30 focus:border-accent" />
                 <Textarea placeholder="Your Message" rows={6} className="tron-glass border-primary/30 focus:border-accent resize-none" />
-                <Button type="submit" className="w-full tron-glass tron-glow hover:animate-pulse-glow font-orbitron font-bold text-lg py-3">
+                <Button type="submit" className="w-full tron-glass font-orbitron font-bold text-lg py-3">
                   SEND MESSAGE
                 </Button>
               </form>
@@ -435,7 +398,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       {/* ── LEADERSHIP SECTION ── */}
       <section className="py-20 relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 ">
             OUR <span className="text-accent">LEADERSHIP</span>
           </h2>
 
@@ -443,32 +406,12 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <Button
               onClick={() => onNavigate('ourteam')}
               size="lg"
-              className="tron-glass tron-glow hover:animate-pulse-glow font-orbitron font-bold text-lg px-12 py-4 rounded-full"
+              className="tron-glass font-orbitron font-bold text-lg px-12 py-4 rounded-full"
             >
               MEET THE TEAM
             </Button>
           </div>
 
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5" />
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-orbitron font-bold mb-6 tron-glow-text">
-            READY TO ELECTRIFY YOUR JOURNEY?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Join the future of urban mobility with Jedlik Motors' innovative solutions.
-          </p>
-          <Button
-            onClick={() => scrollToSection('contact')}
-            size="lg"
-            className="tron-glass tron-glow hover:animate-pulse-glow font-orbitron font-bold text-lg px-12 py-4 rounded-full"
-          >
-            GET IN TOUCH
-          </Button>
         </div>
       </section>
 

@@ -4,13 +4,7 @@ import epodImage from '@/assets/epod-vehicle.jpg';
 
 const VehicleReveal: React.FC = () => {
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-b from-background via-background/95 to-primary/5 overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-      </div>
-
+    <div className="relative w-full min-h-screen bg-background overflow-hidden">
       <div className="relative container mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-12 animate-fade-in">
@@ -30,10 +24,7 @@ const VehicleReveal: React.FC = () => {
 
         {/* Main Vehicle Image */}
         <div className="relative max-w-6xl mx-auto mb-16 animate-scale-in">
-          <div className="relative rounded-2xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/20 group">
-            {/* Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
+          <div className="relative rounded-2xl overflow-hidden border border-primary/20 group">
             {/* Corner Accents */}
             <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-primary" />
             <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-primary" />
@@ -72,7 +63,6 @@ const VehicleReveal: React.FC = () => {
               className={`relative p-6 rounded-xl bg-gradient-to-br ${feature.gradient} border border-primary/20 hover:border-primary/40 transition-all duration-300 group animate-fade-in`}
               style={{ animationDelay: `${0.3 + index * 0.1}s` }}
             >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors" />
               <h3 className="text-xl font-bold mb-2 text-foreground relative">{feature.title}</h3>
               <p className="text-muted-foreground relative">{feature.description}</p>
             </div>

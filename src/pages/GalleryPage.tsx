@@ -114,15 +114,14 @@ const GalleryPage = () => {
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background to-background" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-accent/30 bg-accent/10 animate-fade-in">
-            <div className="w-2 h-2 bg-accent rounded-full animate-pulse-glow"></div>
+            <div className="w-2 h-2 bg-accent rounded-full "></div>
             <span className="text-sm font-medium text-accent">Our Journey</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-orbitron font-bold mb-6 tron-glow-text animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-orbitron font-bold mb-6 animate-fade-in">
             GALLERY
           </h1>
           
@@ -149,7 +148,7 @@ const GalleryPage = () => {
                   onClick={() => setSelectedCategory(category)}
                   className={`gap-2 transition-all duration-300 ${
                     isActive 
-                      ? 'tron-glow shadow-lg scale-105' 
+                      ? ' shadow-lg scale-105' 
                       : 'hover:border-primary/60 hover:scale-105'
                   }`}
                 >
@@ -193,14 +192,14 @@ const GalleryPage = () => {
                     <Badge className="mb-2 bg-primary/20 border-primary/40 hover:bg-primary/30">
                       {image.category}
                     </Badge>
-                    <h3 className="text-lg font-semibold text-foreground tron-glow-text">
+                    <h3 className="text-lg font-semibold text-foreground ">
                       {image.title}
                     </h3>
                   </div>
                 </div>
 
                 {/* Glow Effect */}
-                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/40 rounded-lg transition-all duration-500 tron-glow opacity-0 group-hover:opacity-100 pointer-events-none"></div>
+                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/40 rounded-lg transition-all duration-500 opacity-0 group-hover:opacity-100 pointer-events-none"></div>
                 
                 {/* Corner accents */}
                 <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-primary/0 group-hover:border-primary/60 transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
@@ -223,7 +222,7 @@ const GalleryPage = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute top-2 right-2 md:top-4 md:right-4 z-50 tron-glass hover:tron-glow border border-primary/40 hover:border-primary/60 transition-all duration-300"
+                className="absolute top-2 right-2 md:top-4 md:right-4 z-50 tron-glass border border-primary/40 hover:border-primary/60 transition-all duration-300"
                 onClick={closeLightbox}
                 title="Close (Esc)"
               >
@@ -234,7 +233,7 @@ const GalleryPage = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-50 tron-glass hover:tron-glow border border-primary/40 hover:border-primary/60 hover:scale-110 transition-all duration-300"
+                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-50 tron-glass border border-primary/40 hover:border-primary/60 hover:scale-110 transition-all duration-300"
                 onClick={(e) => {
                   e.stopPropagation()
                   navigateImage('prev')
@@ -248,7 +247,7 @@ const GalleryPage = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-50 tron-glass hover:tron-glow border border-primary/40 hover:border-primary/60 hover:scale-110 transition-all duration-300"
+                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-50 tron-glass border border-primary/40 hover:border-primary/60 hover:scale-110 transition-all duration-300"
                 onClick={(e) => {
                   e.stopPropagation()
                   navigateImage('next')
@@ -278,7 +277,7 @@ const GalleryPage = () => {
                   <Badge className="bg-primary/20 border-primary/40 hover:bg-primary/30">
                     {galleryImages[selectedImage].category}
                   </Badge>
-                  <h3 className="text-lg md:text-xl font-semibold text-foreground tron-glow-text">
+                  <h3 className="text-lg md:text-xl font-semibold text-foreground ">
                     {galleryImages[selectedImage].title}
                   </h3>
                   <p className="text-xs md:text-sm text-muted-foreground">

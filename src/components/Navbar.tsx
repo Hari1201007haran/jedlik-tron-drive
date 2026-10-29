@@ -13,8 +13,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About Us' },
-    { id: 'features', label: 'Features' },
-    { id: 'techspecs', label: 'Tech Specs' },
+    { id: 'features', label: 'Features & Tech Specs' },
     { id: 'gallery', label: 'Gallery' },
     { id: 'validation', label: 'Validation' },
     { id: 'ourteam', label: 'Our Team' },
@@ -22,7 +21,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     { id: 'media', label: 'Media Coverage' },
     { id: 'freetrial', label: 'Free Trial' },
     { id: 'contact', label: 'Contact Us' },
-    { id: 'locate', label: 'Locate Us' },
     { id: 'faq', label: 'FAQ' },
   ]
 
@@ -53,8 +51,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                   onClick={() => onNavigate(item.id)}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
                     currentPage === item.id
-                      ? 'text-primary tron-glow-text'
-                      : 'text-foreground hover:text-primary hover:tron-glow-text'
+                      ? 'text-primary '
+                      : 'text-foreground hover:text-primary '
                   }`}
                 >
                   {item.label}
@@ -72,7 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="tron-glass hover:tron-glow border border-primary/30"
+              className="tron-glass border border-primary/30"
             >
               {isMobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </Button>
@@ -92,8 +90,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                   }}
                   className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-all duration-300 ${
                     currentPage === item.id
-                      ? 'text-primary tron-glow-text bg-primary/10'
-                      : 'text-foreground hover:text-primary hover:tron-glow-text hover:bg-primary/5'
+                      ? 'text-primary bg-primary/10'
+                      : 'text-foreground hover:text-primary hover:bg-primary/5'
                   }`}
                 >
                   {item.label}

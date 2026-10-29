@@ -9,9 +9,7 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import AboutUsPage from "./pages/AboutUsPage";
 import FeaturesPage from "./pages/FeaturesPage";
-import TechSpecsPage from "./pages/TechSpecsPage";
 import ContactUsPage from "./pages/ContactUsPage";
-import LocateUsPage from "./pages/LocateUsPage";
 import FAQPage from "./pages/FAQPage";
 import FreeTrialPage from "./pages/FreeTrialPage";
 import GalleryPage from "./pages/GalleryPage";
@@ -33,12 +31,8 @@ const App = () => {
         return <AboutUsPage />;
       case 'features':
         return <FeaturesPage />;
-      case 'techspecs':
-        return <TechSpecsPage />;
       case 'contact':
         return <ContactUsPage />;
-      case 'locate':
-        return <LocateUsPage />;
       case 'faq':
         return <FAQPage />;
       case 'freetrial':
@@ -64,7 +58,7 @@ const App = () => {
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <div className="min-h-screen tron-grid-bg animate-grid-flow">
+          <div className="min-h-screen tron-grid-bg">
             <Navbar currentPage={currentPage} onNavigate={setCurrentPage} />
             <main className="relative z-10">
               {renderPage()}

@@ -37,16 +37,15 @@ const AboutUsPage: React.FC = () => {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 40%, hsl(var(--primary) / 0.14) 0%, transparent 65%), radial-gradient(ellipse 60% 50% at 80% 85%, hsl(var(--primary) / 0.08) 0%, transparent 70%), #000' }}
+          style={{ background: '#000' }}
         />
         
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/20" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-orbitron font-black mb-6 tron-glow-text">
+            <h1 className="text-4xl md:text-6xl font-orbitron font-black mb-6 ">
               ABOUT <span className="text-accent">JEDLIK MOTORS</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -63,7 +62,7 @@ const AboutUsPage: React.FC = () => {
             {/* Main Content */}
             <div className="order-2 lg:order-1">
               <div className="tron-glass-strong p-8 rounded-lg border border-primary/30">
-                <h2 className="text-2xl font-orbitron font-bold mb-6 text-primary tron-glow-text">
+                <h2 className="text-2xl font-orbitron font-bold mb-6 text-primary ">
                   OUR MISSION
                 </h2>
                 <div className="space-y-6 text-lg leading-relaxed">
@@ -84,12 +83,12 @@ const AboutUsPage: React.FC = () => {
             <div className="order-1 lg:order-2">
               <div className="relative">
                 {/* Decorative Elements */}
-                <div className="absolute -top-4 -left-4 w-32 h-32 border-2 border-primary/30 rounded-lg rotate-12 animate-pulse-glow" />
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-accent/40 rounded-lg -rotate-12 animate-pulse-glow" />
+                <div className="absolute -top-4 -left-4 w-32 h-32 border-2 border-primary/30 rounded-lg rotate-12 " />
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-accent/40 rounded-lg -rotate-12 " />
                 
                 <div className="tron-glass p-8 rounded-lg border border-primary/30 relative z-10">
                   <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-6 border-2 border-primary rounded-full flex items-center justify-center tron-glow">
+                    <div className="w-24 h-24 mx-auto mb-6 border-2 border-primary rounded-full flex items-center justify-center ">
                       <Lightbulb className="w-12 h-12 text-primary" />
                     </div>
                     <h3 className="text-xl font-orbitron font-bold mb-4 text-primary">
@@ -109,7 +108,7 @@ const AboutUsPage: React.FC = () => {
       {/* Achievements Section */}
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-16 tron-glow-text">
+          <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-16 ">
             OUR <span className="text-accent">ACHIEVEMENTS</span>
           </h2>
           
@@ -117,12 +116,12 @@ const AboutUsPage: React.FC = () => {
             {achievements.map((achievement, index) => (
               <div
                 key={index}
-                className="tron-glass-strong p-6 rounded-lg border border-primary/30 hover:border-primary/60 hover:tron-glow transition-all duration-300 text-center group"
+                className="tron-glass-strong p-6 rounded-lg border border-primary/30 hover:border-primary/60 transition-all duration-300 text-center group"
               >
                 <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
                   <achievement.icon className="h-8 w-8 text-primary group-hover:text-accent transition-colors" />
                 </div>
-                <h3 className="text-lg font-orbitron font-bold mb-3 group-hover:tron-glow-text transition-all">
+                <h3 className="text-lg font-orbitron font-bold mb-3 transition-all">
                   {achievement.title}
                 </h3>
                 <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">

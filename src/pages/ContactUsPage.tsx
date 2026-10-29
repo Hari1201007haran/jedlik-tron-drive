@@ -123,12 +123,11 @@ const ContactUsPage: React.FC = () => {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 40%, hsl(var(--primary) / 0.14) 0%, transparent 65%), radial-gradient(ellipse 60% 50% at 80% 85%, hsl(var(--primary) / 0.08) 0%, transparent 70%), #000' }}
+          style={{ background: '#000' }}
         />
         
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/20" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -139,9 +138,9 @@ const ContactUsPage: React.FC = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-black mb-8">
-              <span className="text-primary tron-glow-text">CONTACT</span>
+              <span className="text-primary ">CONTACT</span>
               <br />
-              <span className="text-accent tron-glow-text">US</span>
+              <span className="text-accent ">US</span>
             </h1>
             
             <div className="flex justify-center mb-6">
@@ -163,11 +162,10 @@ const ContactUsPage: React.FC = () => {
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-16">
             {/* Enhanced Contact Form */}
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
               <div className="relative tron-glass-strong p-8 lg:p-10 rounded-xl border border-primary/40 hover:border-primary/70 transition-all duration-500 group-hover:scale-[1.02]">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-4 h-4 bg-primary rounded-full animate-ping"></div>
-                  <h2 className="text-2xl lg:text-3xl font-orbitron font-bold text-primary tron-glow-text">
+                  <h2 className="text-2xl lg:text-3xl font-orbitron font-bold text-primary ">
                     SEND US A MESSAGE
                   </h2>
                 </div>
@@ -185,7 +183,7 @@ const ContactUsPage: React.FC = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="tron-glass border-primary/30 focus:border-primary focus:tron-glow hover:border-primary/50 transition-all duration-300"
+                        className="tron-glass border-primary/30 focus:border-primary hover:border-primary/50 transition-all duration-300"
                         placeholder="Your full name"
                       />
                     </div>
@@ -201,7 +199,7 @@ const ContactUsPage: React.FC = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="tron-glass border-accent/30 focus:border-accent focus:tron-glow hover:border-accent/50 transition-all duration-300"
+                        className="tron-glass border-accent/30 focus:border-accent hover:border-accent/50 transition-all duration-300"
                         placeholder="your.email@example.com"
                       />
                     </div>
@@ -218,7 +216,7 @@ const ContactUsPage: React.FC = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="tron-glass border-primary/30 focus:border-primary focus:tron-glow hover:border-primary/50 transition-all duration-300"
+                        className="tron-glass border-primary/30 focus:border-primary hover:border-primary/50 transition-all duration-300"
                         placeholder="+91 XXXXX XXXXX"
                       />
                     </div>
@@ -234,7 +232,7 @@ const ContactUsPage: React.FC = () => {
                         value={formData.subject}
                         onChange={handleInputChange}
                         required
-                        className="tron-glass border-accent/30 focus:border-accent focus:tron-glow hover:border-accent/50 transition-all duration-300"
+                        className="tron-glass border-accent/30 focus:border-accent hover:border-accent/50 transition-all duration-300"
                         placeholder="Inquiry subject"
                       />
                     </div>
@@ -251,7 +249,7 @@ const ContactUsPage: React.FC = () => {
                       onChange={handleInputChange}
                       required
                       rows={6}
-                      className="tron-glass border-primary/30 focus:border-primary focus:tron-glow resize-none hover:border-primary/50 transition-all duration-300"
+                      className="tron-glass border-primary/30 focus:border-primary resize-none hover:border-primary/50 transition-all duration-300"
                       placeholder="Tell us about your requirements..."
                     />
                   </div>
@@ -290,7 +288,7 @@ const ContactUsPage: React.FC = () => {
               <div className="tron-glass-strong p-8 lg:p-10 rounded-xl border border-accent/40 hover:border-accent/70 transition-all duration-500 group">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-4 h-4 bg-accent rounded-full animate-ping"></div>
-                  <h2 className="text-2xl lg:text-3xl font-orbitron font-bold text-accent tron-glow-text">
+                  <h2 className="text-2xl lg:text-3xl font-orbitron font-bold text-accent ">
                     GET IN TOUCH
                   </h2>
                 </div>
@@ -305,8 +303,8 @@ const ContactUsPage: React.FC = () => {
                       <div className="flex items-start space-x-4">
                         <div className={`flex items-center justify-center w-12 h-12 rounded-lg transition-all duration-300 ${
                           item.color === 'primary' 
-                            ? 'bg-primary/20 group-hover/contact:bg-primary/30 group-hover/contact:tron-glow' 
-                            : 'bg-accent/20 group-hover/contact:bg-accent/30 group-hover/contact:tron-glow'
+                            ? 'bg-primary/20 group-hover/contact:bg-primary/30 ' 
+                            : 'bg-accent/20 group-hover/contact:bg-accent/30 '
                         }`}>
                           <item.icon className={`h-6 w-6 ${
                             item.color === 'primary' ? 'text-primary' : 'text-accent'
@@ -314,7 +312,7 @@ const ContactUsPage: React.FC = () => {
                         </div>
                         
                         <div className="flex-1">
-                          <h3 className="font-orbitron font-bold mb-2 group-hover/contact:tron-glow-text transition-all">
+                          <h3 className="font-orbitron font-bold mb-2 transition-all">
                             {item.title}
                           </h3>
                           <p className="text-muted-foreground group-hover/contact:text-foreground transition-colors text-sm leading-relaxed">
@@ -330,7 +328,7 @@ const ContactUsPage: React.FC = () => {
                 <div className="mt-8 pt-8 border-t border-muted/20">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
-                    <h3 className="text-xl font-orbitron font-bold text-accent tron-glow-text">
+                    <h3 className="text-xl font-orbitron font-bold text-accent ">
                       FOLLOW US
                     </h3>
                   </div>
@@ -340,7 +338,7 @@ const ContactUsPage: React.FC = () => {
                       href="https://www.linkedin.com/company/jedlik/posts/?feedView=all"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/social flex items-center justify-center w-14 h-14 rounded-lg bg-primary/20 hover:bg-primary/30 border border-primary/30 hover:border-primary/60 transition-all duration-300 hover:scale-110 hover:tron-glow"
+                      className="group/social flex items-center justify-center w-14 h-14 rounded-lg bg-primary/20 hover:bg-primary/30 border border-primary/30 hover:border-primary/60 transition-all duration-300 hover:scale-110 "
                     >
                       <Linkedin className="h-6 w-6 text-primary group-hover/social:animate-pulse" />
                     </a>
@@ -349,7 +347,7 @@ const ContactUsPage: React.FC = () => {
                       href="https://x.com/JedlikMoto"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/social flex items-center justify-center w-14 h-14 rounded-lg bg-accent/20 hover:bg-accent/30 border border-accent/30 hover:border-accent/60 transition-all duration-300 hover:scale-110 hover:tron-glow"
+                      className="group/social flex items-center justify-center w-14 h-14 rounded-lg bg-accent/20 hover:bg-accent/30 border border-accent/30 hover:border-accent/60 transition-all duration-300 hover:scale-110 "
                     >
                       <Twitter className="h-6 w-6 text-accent group-hover/social:animate-pulse" />
                     </a>
@@ -358,7 +356,7 @@ const ContactUsPage: React.FC = () => {
                       href="https://www.instagram.com/jedlik.in?igsh=MWhjNDg1YjE2dWdmNA=="
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/social flex items-center justify-center w-14 h-14 rounded-lg bg-primary/20 hover:bg-primary/30 border border-primary/30 hover:border-primary/60 transition-all duration-300 hover:scale-110 hover:tron-glow"
+                      className="group/social flex items-center justify-center w-14 h-14 rounded-lg bg-primary/20 hover:bg-primary/30 border border-primary/30 hover:border-primary/60 transition-all duration-300 hover:scale-110 "
                     >
                       <Instagram className="h-6 w-6 text-primary group-hover/social:animate-pulse" />
                     </a>

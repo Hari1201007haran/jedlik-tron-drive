@@ -32,8 +32,6 @@ import React, { useEffect, useState } from 'react'
 type ValidationTile = {
   src: string
   alt: string
-  /** Small red group badge shown on the tile. */
-  group: 'LinkedIn' | 'Email'
   /** Intrinsic width / height of the source screenshot. */
   ratio: number
 }
@@ -98,79 +96,66 @@ const validationTiles: ValidationTile[] = [
   {
     src: '/validation/linkedin-1.png',
     alt: 'LinkedIn comment describing the enclosed electric two-wheeler as a game-changer for city commuting',
-    group: 'LinkedIn',
     ratio: 647 / 143,
   },
   {
     src: '/validation/linkedin-2.png',
     alt: 'LinkedIn comment congratulating the team',
-    group: 'LinkedIn',
     ratio: 675 / 135,
   },
   {
     src: '/validation/linkedin-3.png',
     alt: 'LinkedIn comment encouraging the team to take the vehicle to the MVP and production, and asking for a roof for heat, sun and dust protection',
-    group: 'LinkedIn',
     ratio: 647 / 262,
   },
   {
     src: '/validation/linkedin-4.png',
     alt: 'LinkedIn comment on the e-POD challenging the assumption that urban mobility must choose between two-wheeler agility and four-wheeler protection',
-    group: 'LinkedIn',
     ratio: 670 / 312,
   },
   {
     src: '/validation/linkedin-5.png',
     alt: 'LinkedIn comment saying the product is great',
-    group: 'LinkedIn',
     ratio: 646 / 117,
   },
   {
     src: '/validation/linkedin-6.png',
     alt: 'LinkedIn comment noting price is key and that Europe and cold-winter countries need the product',
-    group: 'LinkedIn',
     ratio: 693 / 183,
   },
   {
     src: '/validation/linkedin-7.png',
     alt: 'LinkedIn comment saying the next generation will love this product',
-    group: 'LinkedIn',
     ratio: 697 / 152,
   },
   {
     src: '/validation/linkedin-8.png',
     alt: 'LinkedIn comment saying the vehicle helps with traffic congestion and pollution, and calling it a great innovation',
-    group: 'LinkedIn',
     ratio: 696 / 477,
   },
   {
     src: '/validation/linkedin-10.png',
     alt: 'LinkedIn comments with a mix of reactions, one calling the product much needed and a Gr8 news, one calling it a nice concept, and one calling it amazing for police patrol, delivery professionals and micro ambulance use cases',
-    group: 'LinkedIn',
     ratio: 550 / 442,
   },
   {
     src: '/validation/linkedin-12.png',
     alt: 'LinkedIn comments reacting to the launch with hearts and the word amazing',
-    group: 'LinkedIn',
     ratio: 618 / 167,
   },
   {
     src: '/validation/linkedin-13.png',
     alt: 'LinkedIn comment saying offering the battery as a service instead of bundling it into the sticker price is what actually gets the on-road cost down to something a daily commuter will consider',
-    group: 'LinkedIn',
     ratio: 972 / 204,
   },
   {
     src: '/validation/mail-9.png',
     alt: "Inbound email from an industry reader who saw the vision and wants to be on the line for a collaboration, with the sender's address blurred",
-    group: 'Email',
     ratio: 933 / 400,
   },
   {
     src: '/validation/mail-10.png',
     alt: "Inbound email congratulating the team on the product and looking forward to the launch, with the sender's address blurred",
-    group: 'Email',
     ratio: 935 / 473,
   },
 ]
@@ -200,9 +185,8 @@ const ValidationPage: React.FC = () => {
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 tron-grid-bg opacity-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-accent/10" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-6xl font-orbitron font-black mb-6 tron-glow-text">
+          <h1 className="text-4xl md:text-6xl font-orbitron font-black mb-6 ">
             VALIDATION
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -236,11 +220,6 @@ const ValidationPage: React.FC = () => {
                           className="absolute inset-x-0 top-0 z-10 h-[3px] origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
                           style={{ background: 'hsl(var(--primary))' }}
                         />
-
-                        {/* Group badge — red accent, bottom-left of the tile. */}
-                        <span className="absolute bottom-2 left-2 z-10 font-orbitron text-[10px] font-bold uppercase tracking-[0.18em] text-white bg-primary px-2 py-0.5 rounded">
-                          {tile.group}
-                        </span>
 
                         {/* The intrinsic ratio reserves the exact box before the
                             image loads, so the wall never reflows. The box is

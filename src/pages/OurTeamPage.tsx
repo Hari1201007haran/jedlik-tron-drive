@@ -14,7 +14,7 @@ const team = [
     role: "Co-Founder & CTO",
     initials: "MU",
     photo: "/Muthuram.jpg",
-    gradient: "from-accent to-tron-glow",
+    gradient: "from-accent to-accent",
     description: "Technology architect building next-gen EV systems.",
   },
   {
@@ -22,7 +22,7 @@ const team = [
     role: "Co-Founder & COO",
     initials: "NR",
     photo: "/Nishanth.jpg",
-    gradient: "from-tron-glow to-primary",
+    gradient: "from-accent to-primary",
     description: "Operations expert scaling Jedlik's growth journey.",
   },
   {
@@ -30,7 +30,7 @@ const team = [
     role: "R&D Operations",
     initials: "VI",
     photo: "/Vishnu.jpg",
-    gradient: "from-primary to-tron-glow",
+    gradient: "from-primary to-accent",
     description: "Driving research operations for breakthrough innovations.",
   },
   {
@@ -46,7 +46,7 @@ const team = [
     role: "R&D Manufacturing",
     initials: "MO",
     photo: "/Mohan-v2.jpg",
-    gradient: "from-tron-glow to-accent",
+    gradient: "from-accent to-accent",
     description: "Overseeing precision manufacturing processes.",
   },
   {
@@ -62,7 +62,7 @@ const team = [
     role: "Embedded Systems Architect",
     initials: "PR",
     photo: "/Prathiba.jpg",
-    gradient: "from-accent to-tron-glow",
+    gradient: "from-accent to-accent",
     description: "Designing robust firmware and embedded solutions.",
   },
   {
@@ -70,7 +70,7 @@ const team = [
     role: "Chief of Staff",
     initials: "SH",
     photo: "/Harini.jpg",
-    gradient: "from-tron-glow to-primary",
+    gradient: "from-accent to-primary",
     description: "Orchestrating strategy and cross-team coordination.",
   },
   {
@@ -86,32 +86,17 @@ const team = [
 const OurTeamPage = () => {
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Animated Background Grid */}
-      <div className="fixed inset-0 opacity-20">
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'radial-gradient(ellipse 80% 60% at 50% 40%, hsl(var(--primary) / 0.10) 0%, transparent 70%)',
-            animation: "grid-flow 20s linear infinite",
-          }}
-        ></div>
-      </div>
-
       {/* Hero */}
       <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-tron-grid/30 via-accent/5 to-transparent"></div>
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
-
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-accent/20 via-accent/10 to-accent/20 border border-accent/30 mb-8 hover:scale-105 transition-all duration-300 shadow-lg shadow-accent/20">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-accent/20 via-accent/10 to-accent/20 border border-accent/30 mb-8 hover:scale-105 transition-all duration-300">
             <Sparkles className="w-4 h-4 text-accent animate-pulse" />
             <span className="text-sm font-semibold text-accent">The People Behind the Mission</span>
             <Sparkles className="w-4 h-4 text-accent animate-pulse" style={{ animationDelay: "0.5s" }} />
           </div>
 
           <h1 className="text-6xl md:text-8xl font-bold mb-8">
-            <span className="bg-gradient-to-r from-primary via-accent to-tron-glow bg-clip-text text-transparent drop-shadow-2xl">
+            <span className="bg-gradient-to-r from-primary via-accent to-accent bg-clip-text text-transparent">
               Our Team
             </span>
           </h1>
@@ -133,9 +118,6 @@ const OurTeamPage = () => {
                 className="group relative animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Glow on hover */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-tron-glow rounded-3xl opacity-0 group-hover:opacity-30 blur-xl transition-all duration-500"></div>
-
                 <div className="relative h-full p-8 rounded-3xl bg-gradient-to-br from-background/90 to-background/50 border-2 border-primary/20 backdrop-blur-sm hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 text-center">
                   {/* Corner accents */}
                   <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-accent/40 rounded-tl-3xl"></div>
@@ -145,7 +127,6 @@ const OurTeamPage = () => {
 
                   {/* Avatar — photo or initials */}
                   <div className="relative mx-auto mb-6 w-28 h-28">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${member.gradient} rounded-full blur-xl opacity-50 animate-pulse`}></div>
                     {member.photo ? (
                       <img
                         src={member.photo}
@@ -189,9 +170,8 @@ const OurTeamPage = () => {
 
       {/* Bottom CTA */}
       <section className="py-24 relative text-center">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-tron-glow bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-accent bg-clip-text text-transparent">
             Together, We Redefine the Class.
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

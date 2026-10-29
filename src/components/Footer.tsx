@@ -10,20 +10,20 @@ const Footer: React.FC = () => {
               © 2025 Jedlik Motors. All rights reserved.
             </p>
             <p className="text-xs text-muted-foreground mt-1">
-              DPIIT Recognised Startup • Chennai, India
+              Chennai, India
             </p>
           </div>
           
           <div className="flex items-center space-x-6">
             <a 
               href="mailto:info@jedlik.in" 
-              className="text-sm text-muted-foreground hover:text-primary hover:tron-glow-text transition-colors"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               info@jedlik.in
             </a>
             <a 
               href="tel:+919094036915" 
-              className="text-sm text-muted-foreground hover:text-primary hover:tron-glow-text transition-colors"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               +91 90940 36915
             </a>
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
               href="https://www.jedlik.in" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-primary hover:tron-glow-text transition-colors"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               www.jedlik.in
             </a>

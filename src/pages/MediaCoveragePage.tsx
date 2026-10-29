@@ -73,15 +73,14 @@ const MediaCoveragePage: React.FC = () => {
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background to-background" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-accent/30 bg-accent/10 animate-fade-in">
-            <div className="w-2 h-2 bg-accent rounded-full animate-pulse-glow"></div>
+            <div className="w-2 h-2 bg-accent rounded-full "></div>
             <span className="text-sm font-medium text-accent">In The News</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-orbitron font-bold mb-6 tron-glow-text animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-orbitron font-bold mb-6 animate-fade-in">
             MEDIA COVERAGE
           </h1>
 
@@ -104,8 +103,6 @@ const MediaCoveragePage: React.FC = () => {
                 className="group relative animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-tron-glow rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
-
                 <div className="relative h-full flex flex-col rounded-2xl bg-gradient-to-br from-background/90 to-background/50 border-2 border-primary/20 backdrop-blur-sm hover:border-primary/50 transition-all duration-500 overflow-hidden">
                   {/* Thumbnail */}
                   <div className="w-full h-44 bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center overflow-hidden">
@@ -125,7 +122,7 @@ const MediaCoveragePage: React.FC = () => {
                   </div>
 
                   <div className="flex-1 flex flex-col p-6">
-                    <h2 className="flex-1 text-lg font-orbitron font-bold mb-5 tron-glow-text">
+                    <h2 className="flex-1 text-lg font-orbitron font-bold mb-5 ">
                       {item.title}
                     </h2>
 

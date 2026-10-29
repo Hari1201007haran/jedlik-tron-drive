@@ -1,7 +1,24 @@
-import React from 'react'
-import { Zap, Settings, Leaf, Volume2, Puzzle, Shield } from 'lucide-react'
+import React, { useState } from 'react'
+import {
+  Zap,
+  Settings,
+  Leaf,
+  Volume2,
+  Puzzle,
+  Shield,
+  ChevronDown,
+  ChevronUp,
+  Gauge,
+  Battery,
+  Star,
+  CheckCircle
+} from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
+import codeMonitorBg from '../assets/code-monitor-bg.jpg'
 
 const FeaturesPage: React.FC = () => {
+  const [expandedSection, setExpandedSection] = useState<string | null>('e-pod')
+
   const features = [
     {
       icon: Shield,
@@ -16,7 +33,7 @@ const FeaturesPage: React.FC = () => {
       color: 'accent'
     },
     {
-      icon: Volume2,  
+      icon: Volume2,
       title: 'Full Weather Protection',
       description: 'Complete weather protection with fully enclosed design – no helmets required.',
       color: 'primary'
@@ -62,27 +79,51 @@ const FeaturesPage: React.FC = () => {
     }
   ]
 
+  const motorModels = [
+    {
+      id: 'e-pod',
+      name: 'e-POD',
+      category: 'Revolutionary Urban Mobility',
+      icon: Zap,
+      specs: {
+        'Acceleration': '0-60km/hr in 4 seconds',
+        'Steering': 'All Wheel Power Steering',
+        'Throttle': 'By Wire',
+        'Infotainment': 'Android System',
+        'Vehicle Type': 'Fully enclosed two-wheeler',
+        'Key Features': 'Airbags, Weather protection',
+        'USP': 'Car safety + Motorcycle maneuverability',
+        'Safety Features': 'Airbags (uncommon in two-wheelers)',
+        'Comfort': 'Pushback seats for ergonomic comfort',
+        'Weather Protection': 'Full protection - no helmets required'
+      }
+    }
+  ]
+
+  const toggleSection = (sectionId: string) => {
+    setExpandedSection(expandedSection === sectionId ? null : sectionId)
+  }
+
   return (
     <div className="min-h-screen pt-20">
-      {/* Hero Section */}
+      {/* ── Combined Hero ── */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 40%, hsl(var(--primary) / 0.14) 0%, transparent 65%), radial-gradient(ellipse 60% 50% at 80% 85%, hsl(var(--primary) / 0.08) 0%, transparent 70%), #000' }}
+          style={{ background: '#000' }}
         />
-        
+
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/20" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-orbitron font-black mb-6 tron-glow-text">
-              CUTTING-EDGE <span className="text-accent">FEATURES</span>
+            <h1 className="text-4xl md:text-6xl font-orbitron font-black mb-6 ">
+              FEATURES &amp; <span className="text-accent">TECH SPECS</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover the innovative technologies that power our next-generation urban commuters
+              Discover the innovative technologies that power our next-generation urban commuters — and the complete technical specifications of the e-POD
             </p>
           </div>
         </div>
@@ -91,28 +132,31 @@ const FeaturesPage: React.FC = () => {
       {/* Features Grid */}
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-16 ">
+            CUTTING-EDGE <span className="text-accent">FEATURES</span>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-primary/60 hover:tron-glow transition-all duration-300 group"
+                className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-primary/60 transition-all duration-300 group"
               >
                 <div className={`flex items-center justify-center w-16 h-16 rounded-lg mb-6 transition-all duration-300 ${
-                  feature.color === 'primary' 
-                    ? 'bg-primary/20 group-hover:bg-primary/30 group-hover:tron-glow' 
-                    : 'bg-accent/20 group-hover:bg-accent/30 group-hover:tron-glow'
+                  feature.color === 'primary'
+                    ? 'bg-primary/20 group-hover:bg-primary/30 '
+                    : 'bg-accent/20 group-hover:bg-accent/30 '
                 }`}>
                   <feature.icon className={`h-8 w-8 transition-colors ${
-                    feature.color === 'primary' 
-                      ? 'text-primary group-hover:text-primary' 
+                    feature.color === 'primary'
+                      ? 'text-primary group-hover:text-primary'
                       : 'text-accent group-hover:text-accent'
                   }`} />
                 </div>
-                
-                <h3 className="text-xl font-orbitron font-bold mb-4 group-hover:tron-glow-text transition-all">
+
+                <h3 className="text-xl font-orbitron font-bold mb-4 transition-all">
                   {feature.title}
                 </h3>
-                
+
                 <p className="text-muted-foreground group-hover:text-foreground transition-colors leading-relaxed">
                   {feature.description}
                 </p>
@@ -124,34 +168,33 @@ const FeaturesPage: React.FC = () => {
 
       {/* Cutting-Edge Features Section */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-16 tron-glow-text">
+          <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-16 ">
             CUTTING-EDGE <span className="text-accent">TECHNOLOGIES</span>
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {cuttingEdgeFeatures.map((feature, index) => (
               <div
                 key={index}
-                className="tron-glass-strong p-8 rounded-lg border border-accent/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 group"
+                className="tron-glass-strong p-8 rounded-lg border border-accent/30 hover:border-accent/60 transition-all duration-300 group"
               >
                 <div className={`flex items-center justify-center w-16 h-16 rounded-lg mb-6 transition-all duration-300 ${
-                  feature.color === 'primary' 
-                    ? 'bg-primary/20 group-hover:bg-primary/30 group-hover:tron-glow' 
-                    : 'bg-accent/20 group-hover:bg-accent/30 group-hover:tron-glow'
+                  feature.color === 'primary'
+                    ? 'bg-primary/20 group-hover:bg-primary/30 '
+                    : 'bg-accent/20 group-hover:bg-accent/30 '
                 }`}>
                   <feature.icon className={`h-8 w-8 transition-colors ${
-                    feature.color === 'primary' 
-                      ? 'text-primary group-hover:text-primary' 
+                    feature.color === 'primary'
+                      ? 'text-primary group-hover:text-primary'
                       : 'text-accent group-hover:text-accent'
                   }`} />
                 </div>
-                
-                <h3 className="text-xl font-orbitron font-bold mb-4 group-hover:tron-glow-text transition-all">
+
+                <h3 className="text-xl font-orbitron font-bold mb-4 transition-all">
                   {feature.title}
                 </h3>
-                
+
                 <p className="text-muted-foreground group-hover:text-foreground transition-colors leading-relaxed">
                   {feature.description}
                 </p>
@@ -161,13 +204,182 @@ const FeaturesPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Vehicle Specifications Section */}
+      <section className="py-24 relative">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          style={{
+            backgroundImage: `url(${codeMonitorBg})`,
+            backgroundPosition: 'center'
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/98 via-background/90 to-background/98" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-8">
+              <Star className="h-4 w-4 text-primary mr-2" />
+              <span className="text-sm font-medium text-primary">Next-Gen Urban Mobility</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-orbitron font-bold mb-4 ">
+              VEHICLE <span className="text-accent">SPECIFICATIONS</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Detailed technical specifications and performance metrics
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {motorModels.map((model, index) => (
+              <Card
+                key={model.id}
+                className="tron-glass-strong border-primary/40 overflow-hidden hover:border-primary/60 transition-all duration-500 animate-fadeIn"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                {/* Header */}
+                <button
+                  onClick={() => toggleSection(model.id)}
+                  className="w-full p-8 flex items-center justify-between hover:bg-primary/5 transition-all duration-300 group"
+                >
+                  <div className="flex items-center space-x-6">
+                    <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-primary/20 border border-primary/30 group-hover:bg-primary/30 transition-all duration-300 ">
+                      <model.icon className="h-8 w-8 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="text-2xl md:text-3xl font-orbitron font-black text-primary mb-2">
+                        {model.name}
+                      </h3>
+                      <p className="text-base text-muted-foreground font-medium">{model.category}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <span className="text-sm text-accent font-bold uppercase tracking-wider">
+                      {expandedSection === model.id ? 'Collapse' : 'View Details'}
+                    </span>
+                    <div className="p-2 rounded-lg bg-accent/10 border border-accent/30">
+                      {expandedSection === model.id ? (
+                        <ChevronUp className="h-5 w-5 text-accent" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5 text-accent" />
+                      )}
+                    </div>
+                  </div>
+                </button>
+
+                {/* Expanded Content */}
+                {expandedSection === model.id && (
+                  <CardContent className="px-8 pb-8 border-t border-primary/30 animate-accordion-down">
+                    {/* Quick Stats */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 mt-6">
+                      <div className="text-center p-4 tron-glass rounded-lg border border-accent/20">
+                        <Gauge className="h-6 w-6 text-accent mx-auto mb-2" />
+                        <div className="text-sm text-muted-foreground">Top Speed</div>
+                        <div className="text-lg font-orbitron font-bold text-accent">120 km/h</div>
+                      </div>
+                      <div className="text-center p-4 tron-glass rounded-lg border border-primary/20">
+                        <Battery className="h-6 w-6 text-primary mx-auto mb-2" />
+                        <div className="text-sm text-muted-foreground">Range</div>
+                        <div className="text-lg font-orbitron font-bold text-primary">200 km</div>
+                      </div>
+                      <div className="text-center p-4 tron-glass rounded-lg border border-accent/20">
+                        <Zap className="h-6 w-6 text-accent mx-auto mb-2" />
+                        <div className="text-sm text-muted-foreground">Charging</div>
+                        <div className="text-lg font-orbitron font-bold text-accent">4 hours</div>
+                      </div>
+                      <div className="text-center p-4 tron-glass rounded-lg border border-primary/20">
+                        <Shield className="h-6 w-6 text-primary mx-auto mb-2" />
+                        <div className="text-sm text-muted-foreground">Seating</div>
+                        <div className="text-lg font-orbitron font-bold text-primary">2 persons</div>
+                      </div>
+                    </div>
+
+                    {/* Detailed Specs */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                      {Object.entries(model.specs).map(([key, value], specIndex) => (
+                        <div
+                          key={key}
+                          className="tron-glass p-6 rounded-lg border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:scale-105 animate-fadeIn"
+                          style={{ animationDelay: `${specIndex * 0.1}s` }}
+                        >
+                          <div className="text-sm text-muted-foreground mb-2 uppercase tracking-wide">{key}</div>
+                          <div className="text-lg font-orbitron font-bold text-accent">{value}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Key Advantages */}
+                    <Card className="tron-glass border border-primary/30">
+                      <CardHeader>
+                        <CardTitle className="text-xl font-orbitron font-bold text-primary flex items-center">
+                          <Star className="h-5 w-5 mr-2" />
+                          Key Advantages
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          {[
+                            'Superior maneuverability in congested city traffic',
+                            'Docking capability for multi-unit travel',
+                            'Combines safety of a car with agility of motorcycle',
+                            'Zero helmet requirement with full weather protection',
+                            'Advanced safety features uncommon in two-wheelers'
+                          ].map((advantage, idx) => (
+                            <div key={idx} className="flex items-start space-x-3">
+                              <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                              <span className="text-sm text-muted-foreground">{advantage}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CardContent>
+                )}
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Future Autonomy Roadmap ── */}
+      <section className="py-20 relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="tron-glass-strong border border-primary/30 rounded-lg p-8 lg:p-10">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-2xl">🧭</span>
+              <h2 className="text-xl md:text-2xl font-orbitron font-bold text-primary">
+                TOWARDS LEVEL 4 AUTONOMY
+              </h2>
+            </div>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              The e-POD is built on a patented steer-by-wire architecture with safety redundancy and
+              autonomous standing capability. These foundations are the platform we intend to build
+              upon to introduce Level 4 autonomous driving in future.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Level 4 autonomy is a future objective for the e-POD. The vehicle as currently offered
+              requires an active driver, and we will bring higher levels of autonomous capability in
+              future as the relevant systems complete further development, validation and regulatory
+              approval.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { label: 'Steer-by-Wire', value: 'Patented' },
+                { label: 'Safety Redundancy', value: 'Built-in' },
+                { label: 'Prototype Stage', value: 'TRL 5' }
+              ].map((item) => (
+                <div key={item.label} className="tron-glass rounded-lg border border-primary/20 p-4 text-center">
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">{item.label}</div>
+                  <div className="font-orbitron font-bold text-primary">{item.value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Technical Excellence Section */}
       <section className="py-20 relative overflow-hidden">
-        {/* Enhanced background effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10"></div>
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
-        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Enhanced Header */}
           <div className="text-center mb-20">
@@ -176,36 +388,35 @@ const FeaturesPage: React.FC = () => {
               <span className="text-primary font-orbitron text-sm uppercase tracking-widest">Innovation Hub</span>
               <div className="w-3 h-3 bg-accent rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
             </div>
-            
+
             <h2 className="text-4xl md:text-6xl font-orbitron font-black mb-8">
-              <span className="text-primary tron-glow-text">TECHNICAL</span>
+              <span className="text-primary ">TECHNICAL</span>
               <br />
-              <span className="text-accent tron-glow-text">EXCELLENCE</span>
+              <span className="text-accent ">EXCELLENCE</span>
             </h2>
-            
+
             <div className="flex justify-center mb-6">
               <div className="h-px w-32 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
               <div className="w-3 h-3 bg-primary rounded-full mx-6 animate-pulse"></div>
               <div className="h-px w-32 bg-gradient-to-r from-transparent via-accent to-transparent"></div>
             </div>
-            
+
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Pioneering next-generation mobility through cutting-edge engineering and innovative design principles
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 items-start">
             {/* Enhanced Performance Metrics */}
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
               <div className="relative tron-glass-strong p-8 lg:p-10 rounded-xl border border-primary/40 hover:border-primary/70 transition-all duration-500 group-hover:scale-[1.02]">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-4 h-4 bg-primary rounded-full animate-ping"></div>
-                  <h3 className="text-2xl lg:text-3xl font-orbitron font-bold text-primary tron-glow-text">
+                  <h3 className="text-2xl lg:text-3xl font-orbitron font-bold text-primary ">
                     PERFORMANCE METRICS
                   </h3>
                 </div>
-                
+
                 <div className="space-y-8">
                   {[
                     { label: 'TRL Achievement', value: 'TRL 5', progress: 88, color: 'primary' },
@@ -218,16 +429,16 @@ const FeaturesPage: React.FC = () => {
                         <span className="font-semibold text-foreground group-hover/metric:text-primary transition-colors">
                           {metric.label}
                         </span>
-                        <span className={`font-orbitron font-bold ${metric.color === 'primary' ? 'text-primary' : 'text-accent'} tron-glow-text`}>
+                        <span className={`font-orbitron font-bold ${metric.color === 'primary' ? 'text-primary' : 'text-accent'} `}>
                           {metric.value}
                         </span>
                       </div>
                       <div className="relative">
                         <div className="w-full bg-muted/50 h-3 rounded-full overflow-hidden">
-                          <div 
+                          <div
                             className={`h-3 rounded-full transition-all duration-1000 ease-out ${
-                              metric.color === 'primary' 
-                                ? 'bg-gradient-to-r from-primary via-primary/80 to-primary/60' 
+                              metric.color === 'primary'
+                                ? 'bg-gradient-to-r from-primary via-primary/80 to-primary/60'
                                 : 'bg-gradient-to-r from-accent via-accent/80 to-accent/60'
                             }`}
                             style={{ width: `${metric.progress}%`, animationDelay: `${index * 0.2}s` }}
@@ -238,7 +449,7 @@ const FeaturesPage: React.FC = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 {/* Corner accents */}
                 <div className="absolute top-3 left-3 w-4 h-4 border-l-2 border-t-2 border-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-3 right-3 w-4 h-4 border-r-2 border-t-2 border-accent/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -246,7 +457,7 @@ const FeaturesPage: React.FC = () => {
                 <div className="absolute bottom-3 right-3 w-4 h-4 border-r-2 border-b-2 border-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
-            
+
             {/* Enhanced Excellence Cards */}
             <div className="space-y-6">
               {[
@@ -273,37 +484,31 @@ const FeaturesPage: React.FC = () => {
                   description: 'Continuous R&D pipeline with breakthrough technologies in development, positioning us at the forefront of urban mobility innovation.',
                   color: 'primary',
                   icon: '💡'
-                },
-                {
-                  title: 'LEVEL 4 AUTONOMY ROADMAP',
-                  description: 'Building on our patented steer-by-wire platform and safety-redundancy architecture, we intend to bring Level 4 autonomous driving to the e-POD in future, as our autonomous and safety systems mature through further development and validation.',
-                  color: 'primary',
-                  icon: '🧭'
                 }
               ].map((item, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="group relative overflow-hidden"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${item.color === 'primary' ? 'from-primary/10' : 'from-accent/10'} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg`}></div>
-                  
-                  <div className={`relative tron-glass p-6 lg:p-8 rounded-lg border ${item.color === 'primary' ? 'border-primary/30 hover:border-primary/60' : 'border-accent/30 hover:border-accent/60'} transition-all duration-500 group-hover:scale-[1.02] group-hover:tron-glow`}>
+
+                  <div className={`relative tron-glass p-6 lg:p-8 rounded-lg border ${item.color === 'primary' ? 'border-primary/30 hover:border-primary/60' : 'border-accent/30 hover:border-accent/60'} transition-all duration-500 group-hover:scale-[1.02] `}>
                     <div className="flex items-start gap-4 mb-4">
                       <div className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center text-2xl ${item.color === 'primary' ? 'bg-primary/20' : 'bg-accent/20'} group-hover:scale-110 transition-transform duration-300`}>
                         {item.icon}
                       </div>
                       <div className="flex-1">
-                        <h4 className={`text-lg lg:text-xl font-orbitron font-bold mb-3 ${item.color === 'primary' ? 'text-primary' : 'text-accent'} group-hover:tron-glow-text transition-all`}>
+                        <h4 className={`text-lg lg:text-xl font-orbitron font-bold mb-3 ${item.color === 'primary' ? 'text-primary' : 'text-accent'}  transition-all`}>
                           {item.title}
                         </h4>
                       </div>
                     </div>
-                    
+
                     <p className="text-muted-foreground group-hover:text-foreground transition-colors leading-relaxed">
                       {item.description}
                     </p>
-                    
+
                     {/* Animated accent line */}
                     <div className={`h-0.5 w-0 group-hover:w-full transition-all duration-500 ${item.color === 'primary' ? 'bg-gradient-to-r from-primary to-primary/60' : 'bg-gradient-to-r from-accent to-accent/60'} mt-4`}></div>
                   </div>
@@ -311,12 +516,12 @@ const FeaturesPage: React.FC = () => {
               ))}
             </div>
           </div>
-          
+
           {/* Enhanced CTA Section */}
           <div className="mt-20 text-center">
             <div className="inline-flex items-center gap-3 p-6 lg:p-8 tron-glass-strong rounded-xl border border-primary/40 hover:border-accent/60 transition-all duration-500 group hover:scale-105">
               <div className="w-3 h-3 bg-accent rounded-full animate-ping"></div>
-              <span className="text-lg lg:text-xl font-orbitron font-bold text-foreground group-hover:tron-glow-text transition-all">
+              <span className="text-lg lg:text-xl font-orbitron font-bold text-foreground transition-all">
                 Ready to revolutionize urban mobility
               </span>
               <div className="w-3 h-3 bg-primary rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>

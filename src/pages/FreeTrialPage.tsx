@@ -3,24 +3,8 @@ import { Scan, Gift, CheckCircle2, Clock, Zap, Sparkles, ArrowRight } from "luci
 const FreeTrialPage = () => {
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Animated Background Grid */}
-      <div className="fixed inset-0 opacity-20">
-        <div className="absolute inset-0" style={{
-          background: 'radial-gradient(ellipse 80% 60% at 50% 35%, hsl(var(--primary) / 0.12) 0%, transparent 70%)',
-          animation: 'grid-flow 20s linear infinite'
-        }}></div>
-      </div>
-
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-tron-grid/30 via-accent/5 to-transparent"></div>
-        
-        {/* Multiple animated orbs */}
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-40 right-1/3 w-72 h-72 bg-primary/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '0.5s'}}></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-tron-glow/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1.5s'}}></div>
-        
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16 animate-fade-in">
             {/* Floating particles effect */}
@@ -39,22 +23,20 @@ const FreeTrialPage = () => {
               ))}
             </div>
 
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-accent/20 via-accent/10 to-accent/20 border border-accent/30 mb-8 hover:scale-105 transition-all duration-300 shadow-lg shadow-accent/20">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-accent/20 via-accent/10 to-accent/20 border border-accent/30 mb-8 hover:scale-105 transition-all duration-300">
               <Sparkles className="w-4 h-4 text-accent animate-pulse" />
               <span className="text-sm font-semibold text-accent">Limited Time Exclusive Offer</span>
               <Sparkles className="w-4 h-4 text-accent animate-pulse" style={{animationDelay: '0.5s'}} />
             </div>
             
             <h1 className="text-6xl md:text-8xl font-bold mb-8 relative">
-              <span className="bg-gradient-to-r from-primary via-accent to-tron-glow bg-clip-text text-transparent animate-fade-in drop-shadow-2xl">
+              <span className="bg-gradient-to-r from-primary via-accent to-accent bg-clip-text text-transparent animate-fade-in">
                 Free Trial
               </span>
               <br />
-              <span className="bg-gradient-to-r from-tron-glow via-accent to-primary bg-clip-text text-transparent animate-fade-in">
+              <span className="bg-gradient-to-r from-accent via-accent to-primary bg-clip-text text-transparent animate-fade-in">
                 Experience
               </span>
-              {/* Glowing underline */}
-              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-accent to-transparent blur-sm"></div>
             </h1>
             
             <p className="text-xl md:text-3xl text-foreground/80 max-w-4xl mx-auto font-light leading-relaxed">
@@ -75,15 +57,13 @@ const FreeTrialPage = () => {
               <Sparkles className="w-5 h-5 text-accent animate-pulse" />
               <span className="text-sm font-semibold text-accent">See It In Action</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-accent to-tron-glow bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-accent to-accent bg-clip-text text-transparent">
               Watch How It Works
             </h2>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <div className="relative group">
-              {/* Glow border */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-tron-glow rounded-3xl opacity-30 blur-xl group-hover:opacity-50 transition-all duration-500"></div>
               <div className="relative rounded-3xl overflow-hidden border-2 border-primary/30">
                 <div className="aspect-video">
                   <iframe
@@ -131,13 +111,13 @@ const FreeTrialPage = () => {
                 icon: CheckCircle2,
                 title: "All Features",
                 description: "Every premium capability unlocked",
-                gradient: "from-accent/20 to-tron-glow/20"
+                gradient: "from-accent/20 to-accent/20"
               },
               {
                 icon: Gift,
                 title: "Zero Cost",
                 description: "No payment info needed",
-                gradient: "from-tron-glow/20 to-primary/20"
+                gradient: "from-accent/20 to-primary/20"
               },
               {
                 icon: Scan,
@@ -151,13 +131,9 @@ const FreeTrialPage = () => {
                 className="group relative animate-fade-in"
                 style={{animationDelay: `${index * 0.15}s`}}
               >
-                {/* Hover glow */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-tron-glow rounded-3xl opacity-0 group-hover:opacity-30 blur-xl transition-all duration-500"></div>
-                
                 <div className="relative h-full p-8 rounded-3xl bg-gradient-to-br from-background/90 to-background/50 border-2 border-primary/20 backdrop-blur-sm hover:border-primary/40 transition-all duration-500 hover:-translate-y-2">
                   {/* Icon container */}
                   <div className="relative mb-6">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} rounded-2xl blur-xl opacity-50`}></div>
                     <div className={`relative w-20 h-20 rounded-2xl bg-gradient-to-br ${benefit.gradient} flex items-center justify-center border border-primary/30 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
                       <benefit.icon className="w-10 h-10 text-primary" />
                     </div>
@@ -177,15 +153,11 @@ const FreeTrialPage = () => {
 
       {/* Call to Action */}
       <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-accent/5 to-transparent"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
-        
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             {/* Main CTA */}
             <div className="relative inline-block mb-8">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-tron-glow blur-2xl opacity-50 animate-pulse"></div>
-              <h2 className="relative text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-tron-glow bg-clip-text text-transparent">
+              <h2 className="relative text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-accent bg-clip-text text-transparent">
                 Start Your Journey
               </h2>
             </div>
@@ -200,19 +172,17 @@ const FreeTrialPage = () => {
               href="https://forms.gle/TxD4V4fQ8SGfxyRCA"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex flex-col items-center gap-4 p-8 rounded-3xl bg-gradient-to-br from-primary/10 via-accent/5 to-transparent border border-primary/30 backdrop-blur-sm hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-pointer group"
+              className="inline-flex flex-col items-center gap-4 p-8 rounded-3xl bg-gradient-to-br from-primary/10 via-accent/5 to-transparent border border-primary/30 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-pointer group"
             >
               <div className="flex items-center gap-3">
                 <div className="relative">
                   <Zap className="w-8 h-8 text-primary animate-pulse" />
-                  <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full animate-pulse"></div>
                 </div>
                 <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   Click to Register
                 </span>
                 <div className="relative">
                   <ArrowRight className="w-8 h-8 text-accent animate-pulse group-hover:translate-x-2 transition-transform" style={{animationDelay: '0.5s'}} />
-                  <div className="absolute inset-0 bg-accent/20 blur-xl rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
                 </div>
               </div>
               <p className="text-sm text-muted-foreground">Click here to get started</p>

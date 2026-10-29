@@ -65,11 +65,10 @@ const FAQPage: React.FC = () => {
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-orbitron font-black mb-6 tron-glow-text">
+            <h1 className="text-4xl md:text-6xl font-orbitron font-black mb-6 ">
               FREQUENTLY ASKED <span className="text-accent">QUESTIONS</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -97,7 +96,7 @@ const FAQPage: React.FC = () => {
                     <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/20">
                       <HelpCircle className="h-5 w-5 text-primary" />
                     </div>
-                    <h3 className="text-lg font-orbitron font-bold text-primary hover:tron-glow-text transition-all">
+                    <h3 className="text-lg font-orbitron font-bold text-primary transition-all">
                       {faq.question}
                     </h3>
                   </div>
@@ -129,10 +128,9 @@ const FAQPage: React.FC = () => {
 
       {/* Contact CTA Section */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5" />
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="tron-glass-strong p-8 rounded-lg border border-primary/30">
-            <h2 className="text-3xl md:text-4xl font-orbitron font-bold mb-6 tron-glow-text">
+            <h2 className="text-3xl md:text-4xl font-orbitron font-bold mb-6 ">
               STILL HAVE <span className="text-accent">QUESTIONS?</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
@@ -145,7 +143,7 @@ const FAQPage: React.FC = () => {
                 className="tron-glass p-6 rounded-lg border border-accent/20 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300 cursor-pointer block group"
               >
                 <div className="text-2xl mb-2">📧</div>
-                <h3 className="font-orbitron font-bold mb-2 text-accent group-hover:tron-glow-text">Email Us</h3>
+                <h3 className="font-orbitron font-bold mb-2 text-accent ">Email Us</h3>
                 <p className="text-sm text-muted-foreground">info@jedlik.in</p>
               </a>
               
@@ -154,7 +152,7 @@ const FAQPage: React.FC = () => {
                 className="tron-glass p-6 rounded-lg border border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-pointer block group"
               >
                 <div className="text-2xl mb-2">📞</div>
-                <h3 className="font-orbitron font-bold mb-2 text-primary group-hover:tron-glow-text">Call Us</h3>
+                <h3 className="font-orbitron font-bold mb-2 text-primary ">Call Us</h3>
                 <p className="text-sm text-muted-foreground">+91 90940 36915</p>
               </a>
               
@@ -165,7 +163,7 @@ const FAQPage: React.FC = () => {
                 className="tron-glass p-6 rounded-lg border border-accent/20 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300 cursor-pointer block group"
               >
                 <div className="text-2xl mb-2">🌐</div>
-                <h3 className="font-orbitron font-bold mb-2 text-accent group-hover:tron-glow-text">Visit Us</h3>
+                <h3 className="font-orbitron font-bold mb-2 text-accent ">Visit Us</h3>
                 <p className="text-sm text-muted-foreground">Anna University, Chennai</p>
               </a>
             </div>
