@@ -6,8 +6,7 @@ const FreeTrialPage = () => {
       {/* Animated Background Grid */}
       <div className="fixed inset-0 opacity-20">
         <div className="absolute inset-0" style={{
-          background: 'radial-gradient(ellipse 80% 60% at 50% 35%, hsl(var(--primary) / 0.12) 0%, transparent 70%), #000',
-          backgroundSize: '50px 50px',
+          background: 'radial-gradient(ellipse 80% 60% at 50% 35%, hsl(var(--primary) / 0.12) 0%, transparent 70%)',
           animation: 'grid-flow 20s linear infinite'
         }}></div>
       </div>

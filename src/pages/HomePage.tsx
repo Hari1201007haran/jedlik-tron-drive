@@ -203,11 +203,10 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           {/* Dark overlay */}
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.85) 100%)', zIndex: 2 }} />
 
-          {/* Grid overlay */}
+          {/* Subtle red glow (transparent - must not hide the videos) */}
           <div style={{
             position: 'absolute', inset: 0, zIndex: 3, pointerEvents: 'none',
-            background: 'radial-gradient(ellipse 80% 60% at 50% 40%, hsl(var(--primary) / 0.10) 0%, transparent 70%), #000',
-            backgroundSize: '50px 50px',
+            background: 'radial-gradient(ellipse 80% 60% at 50% 40%, hsl(var(--primary) / 0.10) 0%, transparent 70%)',
           }} />
 
           {/* Section heading */}
