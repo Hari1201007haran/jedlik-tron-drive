@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Send, MapPin, Phone, Mail, Globe, Linkedin, Twitter, Instagram } from 'lucide-react'
-import heroBackgroundImage from '@/assets/tron-hero-bg.jpg'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -124,7 +123,7 @@ const ContactUsPage: React.FC = () => {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBackgroundImage})` }}
+          style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 40%, hsl(var(--primary) / 0.14) 0%, transparent 65%), radial-gradient(ellipse 60% 50% at 80% 85%, hsl(var(--primary) / 0.08) 0%, transparent 70%), #000' }}
         />
         
         {/* Overlay */}
@@ -160,7 +159,6 @@ const ContactUsPage: React.FC = () => {
 
       {/* Enhanced Contact Form and Info Section */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 tron-grid-bg opacity-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-16">
             {/* Enhanced Contact Form */}

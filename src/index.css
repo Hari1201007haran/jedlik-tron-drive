@@ -7,7 +7,7 @@
 @layer base {
   :root {
     /* Red & Black Theme */
-    --background: 0 0% 4%;           /* near-black */
+    --background: 0 0% 0%;           /* pure black */
     --foreground: 0 0% 96%;          /* near-white text */
 
     --card: 0 0% 7%;
@@ -23,7 +23,7 @@
     --secondary-foreground: 0 0% 90%;
 
     --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 55%;
+    --muted-foreground: 0 0% 70%;
 
     --accent: 0 75% 40%;             /* deeper red accent */
     --accent-foreground: 0 0% 100%;
@@ -41,7 +41,6 @@
     --tron-grid: 0 85% 40%;          /* red grid lines */
     --tron-glow: 0 90% 55%;          /* red glow */
     --tron-glass: 0 0% 8%;           /* dark glass panels */
-    --tron-accent-orange: 15 90% 55%; /* keeps a warm accent tone */
 
     /* Sidebar */
     --sidebar-background: 0 0% 5%;
@@ -82,10 +81,6 @@
   /* Tron grid background utility */
   .tron-grid-bg {
     background-color: hsl(var(--background));
-    background-image:
-      linear-gradient(hsl(var(--tron-grid) / 0.12) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--tron-grid) / 0.12) 1px, transparent 1px);
-    background-size: 40px 40px;
   }
 
   /* Red glow utility */

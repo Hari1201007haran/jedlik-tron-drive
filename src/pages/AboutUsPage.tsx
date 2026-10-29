@@ -1,6 +1,5 @@
 import React from 'react'
 import { Award, MapPin, Users, Lightbulb } from 'lucide-react'
-import heroBackgroundImage from '@/assets/tron-hero-bg.jpg'
 
 const AboutUsPage: React.FC = () => {
   const achievements = [
@@ -38,7 +37,7 @@ const AboutUsPage: React.FC = () => {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBackgroundImage})` }}
+          style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 40%, hsl(var(--primary) / 0.14) 0%, transparent 65%), radial-gradient(ellipse 60% 50% at 80% 85%, hsl(var(--primary) / 0.08) 0%, transparent 70%), #000' }}
         />
         
         {/* Overlay */}
@@ -59,7 +58,6 @@ const AboutUsPage: React.FC = () => {
 
       {/* About Content Section */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 tron-grid-bg opacity-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Main Content */}
@@ -110,7 +108,6 @@ const AboutUsPage: React.FC = () => {
 
       {/* Achievements Section */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 tron-grid-bg opacity-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-16 tron-glow-text">
             OUR <span className="text-accent">ACHIEVEMENTS</span>

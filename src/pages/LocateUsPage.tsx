@@ -1,6 +1,5 @@
 import React from 'react'
 import { MapPin, Navigation, Clock, Car, Phone, Mail, Building, Zap } from 'lucide-react'
-import heroBackgroundImage from '@/assets/tron-hero-bg.jpg'
 import { Button } from '@/components/ui/button'
 
 const LocateUsPage: React.FC = () => {
@@ -60,7 +59,7 @@ const LocateUsPage: React.FC = () => {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBackgroundImage})` }}
+          style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 40%, hsl(var(--primary) / 0.14) 0%, transparent 65%), radial-gradient(ellipse 60% 50% at 80% 85%, hsl(var(--primary) / 0.08) 0%, transparent 70%), #000' }}
         />
         
         {/* Overlay */}
@@ -85,7 +84,7 @@ const LocateUsPage: React.FC = () => {
             {/* Status Indicators */}
             <div className="flex justify-center items-center gap-6 mt-8 animate-fadeIn" style={{ animationDelay: '0.6s' }}>
               <div className="flex items-center gap-2 px-4 py-2 tron-glass rounded-full border border-primary/30">
-                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
+                <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
                 <span className="text-sm font-orbitron">OPERATIONAL</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 tron-glass rounded-full border border-accent/30">
@@ -101,7 +100,6 @@ const LocateUsPage: React.FC = () => {
       <section className="py-24 relative overflow-hidden">
         {/* Dynamic Background Elements */}
         <div className="absolute inset-0">
-          <div className="tron-grid-bg opacity-15 animate-grid-flow" />
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/15 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }} />
         </div>
@@ -223,7 +221,7 @@ const LocateUsPage: React.FC = () => {
                           +91 90940 36915
                         </span>
                       </div>
-                      <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                      <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
                     </a>
                     
                     <a 
@@ -239,7 +237,7 @@ const LocateUsPage: React.FC = () => {
                           info@jedlik.in
                         </span>
                       </div>
-                      <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                      <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
                     </a>
                   </div>
                 </div>
@@ -298,7 +296,7 @@ const LocateUsPage: React.FC = () => {
                   </p>
                   
                   <div className="flex items-center justify-center gap-2 px-4 py-2 tron-glass rounded-full border border-accent/30">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                     <span className="text-sm text-accent font-orbitron font-bold">
                       {landmark.time}
                     </span>
@@ -321,7 +319,6 @@ const LocateUsPage: React.FC = () => {
       <section className="py-24 relative overflow-hidden">
         {/* Animated Grid Background */}
         <div className="absolute inset-0">
-          <div className="tron-grid-bg opacity-20 animate-grid-flow" />
           <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-background/50" />
         </div>
         
@@ -368,8 +365,8 @@ const LocateUsPage: React.FC = () => {
                     >
                       <div className="flex items-center gap-3">
                         <div className={`w-3 h-3 rounded-full animate-pulse ${
-                          hub.status === 'active' ? 'bg-green-400' :
-                          hub.status === 'operational' ? 'bg-blue-400' : 'bg-yellow-400'
+                          hub.status === 'active' ? 'bg-primary' :
+                          hub.status === 'operational' ? 'bg-primary' : 'bg-primary'
                         }`}></div>
                         <span className="text-muted-foreground group-hover/item:text-accent transition-colors">
                           {hub.name}

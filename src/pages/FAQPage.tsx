@@ -65,7 +65,6 @@ const FAQPage: React.FC = () => {
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 tron-grid-bg opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -82,7 +81,6 @@ const FAQPage: React.FC = () => {
 
       {/* FAQ Section */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 tron-grid-bg opacity-10" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="space-y-4">
             {faqs.map((faq) => (

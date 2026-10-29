@@ -69,8 +69,7 @@ export default {
 				tron: {
 					grid: 'hsl(var(--tron-grid))',
 					glow: 'hsl(var(--tron-glow))',
-					glass: 'hsl(var(--tron-glass))',
-					orange: 'hsl(var(--tron-accent-orange))'
+					glass: 'hsl(var(--tron-glass))'
 				}
 			},
 			borderRadius: {

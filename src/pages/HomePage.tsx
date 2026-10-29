@@ -1,12 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { ArrowRight, Zap, Cog, Leaf, Shield, Users, MapPin, Phone, Mail, ChevronDown } from 'lucide-react'
-import founderImage from '@/assets/founder.jpg'
-import coFounder1Image from '@/assets/co-founder-1.jpg'
-import coFounder2Image from '@/assets/co-founder-2.jpg'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 
 type HomePageProps = {
   onNavigate: (page: string) => void
@@ -101,31 +97,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     { label: 'Weather Protection', value: 'Air-conditioning', unit: 'For Sunny Days' }
   ]
 
-  const faqs = [
-    {
-      question: 'What is Jedlik Motors?',
-      answer: 'Jedlik Motors was founded by passionate adventurers and engineers on a mission to redefine urban commuting with safety, comfort, and maneuverability.'
-    },
-    {
-      question: 'Why choose e-POD?',
-      answer: 'e-POD offers the comfort and safety of a car with the maneuverability of a motorcycle.'
-    },
-    {
-      question: 'When will you reveal the product?',
-      answer: 'We are gonna reveal the product on October 9 at Codissia Trade Fair Complex, Coimbatore.'
-    },
-    {
-      question: 'How can we contact you?',
-      answer: 'You can contact us via email: info@jedlik.in and via phone: +91 90940 36915.'
-    }
-  ]
 
-  // ── Leadership data ──────────────────────────────────────────
-  const founders = [
-    { name: 'Raguram SK',     role: 'FOUNDER',     img: founderImage    },
-    { name: 'Muthuram B',     role: 'CO-FOUNDER',  img: coFounder1Image },
-    { name: 'Nishanthraj GV', role: 'CO-FOUNDER',  img: coFounder2Image },
-  ]
 
   // ─────────────────────────────────────────────────────────────
 
@@ -234,7 +206,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           {/* Grid overlay */}
           <div style={{
             position: 'absolute', inset: 0, zIndex: 3, pointerEvents: 'none',
-            backgroundImage: 'linear-gradient(rgba(200,0,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(200,0,0,0.04) 1px, transparent 1px)',
+            background: 'radial-gradient(ellipse 80% 60% at 50% 40%, hsl(var(--primary) / 0.10) 0%, transparent 70%), #000',
             backgroundSize: '50px 50px',
           }} />
 
@@ -298,7 +270,6 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
       {/* About Us Section */}
       <section id="about" className="py-20 relative">
-        <div className="absolute inset-0 tron-grid-bg opacity-10" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
             ABOUT <span className="text-accent">JEDLIK MOTORS</span>
@@ -325,6 +296,13 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <div className="tron-glass p-6 rounded-lg border border-accent/30">
                 <h4 className="text-xl font-orbitron font-bold text-accent mb-3">Expert Team</h4>
                 <p className="text-muted-foreground">Next generation engineers working on next generation of commuting.</p>
+              </div>
+              <div className="tron-glass p-6 rounded-lg border border-primary/30">
+                <h4 className="text-xl font-orbitron font-bold text-primary mb-3">Towards Level 4 Autonomy</h4>
+                <p className="text-muted-foreground">
+                  Built on our patented steer-by-wire platform with safety redundancy. We intend to
+                  bring Level 4 autonomous driving to the e-POD in future.
+                </p>
               </div>
             </div>
           </div>
@@ -356,7 +334,6 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
       {/* Tech Specs Section */}
       <section id="techspecs" className="py-20 relative">
-        <div className="absolute inset-0 tron-grid-bg opacity-10" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
             TECHNICAL <span className="text-accent">SPECIFICATIONS</span>
@@ -380,24 +357,20 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
             FREQUENTLY ASKED <span className="text-accent">QUESTIONS</span>
           </h2>
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="tron-glass-strong border border-primary/30 rounded-lg px-6">
-                <AccordionTrigger className="text-lg font-orbitron font-bold hover:text-primary hover:tron-glow-text transition-all">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-4">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div className="text-center">
+            <Button
+              onClick={() => onNavigate('faq')}
+              size="lg"
+              className="tron-glass tron-glow hover:animate-pulse-glow font-orbitron font-bold text-lg px-12 py-4 rounded-full"
+            >
+              VIEW ALL FAQS
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 relative">
-        <div className="absolute inset-0 tron-grid-bg opacity-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
             GET IN <span className="text-accent">TOUCH</span>
@@ -462,23 +435,19 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
       {/* ── LEADERSHIP SECTION ── */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 tron-grid-bg opacity-10" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 tron-glow-text">
             OUR <span className="text-accent">LEADERSHIP</span>
           </h2>
 
-          {/* Founders row — 3 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {founders.map((person) => (
-              <div key={person.name} className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-accent/60 hover:tron-glow transition-all duration-300 text-center group">
-                <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-primary/30 group-hover:border-accent/60 transition-all">
-                  <img src={person.img} alt={person.name} className="w-full h-full object-cover" />
-                </div>
-                <h3 className="text-xl font-orbitron font-bold mb-2 group-hover:tron-glow-text transition-all">{person.name}</h3>
-                <p className="text-accent font-medium text-sm tracking-widest">{person.role}</p>
-              </div>
-            ))}
+          <div className="text-center">
+            <Button
+              onClick={() => onNavigate('ourteam')}
+              size="lg"
+              className="tron-glass tron-glow hover:animate-pulse-glow font-orbitron font-bold text-lg px-12 py-4 rounded-full"
+            >
+              MEET THE TEAM
+            </Button>
           </div>
 
         </div>

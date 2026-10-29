@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { ChevronDown, ChevronUp, Zap, Gauge, Battery, Thermometer, Shield, Star, CheckCircle } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
-import circuitBoardBg from '../assets/circuit-board-bg.jpg'
 import codeMonitorBg from '../assets/code-monitor-bg.jpg'
-import matrixBg from '../assets/matrix-bg.jpg'
 
 const TechSpecsPage: React.FC = () => {
   const [expandedSection, setExpandedSection] = useState<string | null>('e-pod')
@@ -34,15 +32,51 @@ const TechSpecsPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20">      {/* ── Future Autonomy Roadmap ── */}
+      <section className="py-20 relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="tron-glass-strong border border-primary/30 rounded-lg p-8 lg:p-10">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-2xl">🧭</span>
+              <h2 className="text-xl md:text-2xl font-orbitron font-bold text-primary">
+                TOWARDS LEVEL 4 AUTONOMY
+              </h2>
+            </div>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              The e-POD is built on a patented steer-by-wire architecture with safety redundancy and
+              autonomous standing capability. These foundations are the platform we intend to build
+              upon to introduce Level 4 autonomous driving in future.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Level 4 autonomy is a future objective for the e-POD. The vehicle as currently offered
+              requires an active driver, and we will bring higher levels of autonomous capability in
+              future as the relevant systems complete further development, validation and regulatory
+              approval.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { label: 'Steer-by-Wire', value: 'Patented' },
+                { label: 'Safety Redundancy', value: 'Built-in' },
+                { label: 'Prototype Stage', value: 'TRL 5' }
+              ].map((item) => (
+                <div key={item.label} className="tron-glass rounded-lg border border-primary/20 p-4 text-center">
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">{item.label}</div>
+                  <div className="font-orbitron font-bold text-primary">{item.value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
-          style={{ backgroundImage: `url(${matrixBg})` }}
+          style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 30%, hsl(var(--primary) / 0.12) 0%, transparent 70%), #000' }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/80 to-background/95" />
-        <div className="absolute inset-0 tron-grid-bg opacity-30 animate-grid-flow" />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20" />
         
         {/* Floating tech elements */}
@@ -76,10 +110,9 @@ const TechSpecsPage: React.FC = () => {
       <section className="py-24 relative">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{ backgroundImage: `url(${circuitBoardBg})` }}
+          style={{ background: 'radial-gradient(ellipse 60% 45% at 50% 50%, hsl(var(--primary) / 0.10) 0%, transparent 70%), #000' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/98 via-background/90 to-background/98" />
-        <div className="absolute inset-0 tron-grid-bg opacity-20" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">

@@ -6,8 +6,7 @@ const FreeTrialPage = () => {
       {/* Animated Background Grid */}
       <div className="fixed inset-0 opacity-20">
         <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px)`,
+          background: 'radial-gradient(ellipse 80% 60% at 50% 35%, hsl(var(--primary) / 0.12) 0%, transparent 70%), #000',
           backgroundSize: '50px 50px',
           animation: 'grid-flow 20s linear infinite'
         }}></div>
@@ -199,7 +198,7 @@ const FreeTrialPage = () => {
             
             {/* Animated prompt */}
             <a 
-              href="https://forms.zohopublic.in/raguramkarthikeyan/form/FreeTrialregistration/formperma/2bMMbZJGO4RLOYFPV4fUSG3wyByX9FcnfLsl8TuYYWs"
+              href="https://forms.gle/TxD4V4fQ8SGfxyRCA"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex flex-col items-center gap-4 p-8 rounded-3xl bg-gradient-to-br from-primary/10 via-accent/5 to-transparent border border-primary/30 backdrop-blur-sm hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-pointer group"

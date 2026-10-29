@@ -6,6 +6,8 @@ import varunTnSummit from '@/assets/media-varun-tn-summit.jpg'
 import skyful from '@/assets/media-skyful.jpg'
 import evUpdate from '@/assets/media-ev-update.jpg'
 import startupNewsTamil from '@/assets/media-startup-news-tamil.jpg'
+import entrackrThumb from '/media/entrackr-article.png'
+import startuppediaThumb from '/media/startuppedia-article.png'
 
 interface MediaItem {
   title: string
@@ -16,6 +18,20 @@ interface MediaItem {
 }
 
 const mediaItems: MediaItem[] = [
+  {
+    title: "Jedlik Motors Founder Raguram SK on Building an Electric POD for Urban Commuters",
+    image: entrackrThumb,
+    fit: 'cover',
+    url: 'https://entrackr.com/interview/jedlik-motors-founder-raguram-sk-on-building-electric-pod-for-urban-commuters-12590845',
+    icon: Newspaper,
+  },
+  {
+    title: "Jedlik Motors Develops Prototype of its e-POD, a Fully Enclosed Electric Two-Wheeler",
+    image: startuppediaThumb,
+    fit: 'cover',
+    url: 'https://startuppedia.in/trending/startup-news/jedlik-motors-develops-prototype-of-its-e-pod-a-fully-enclosed-electric-two-wheeler-12629665',
+    icon: Newspaper,
+  },
   {
     title: "இருசக்கர வாகனத்தின் வேகம் + காரின் பாதுகாப்பு: 'ஜெட்லிக் மோட்டார்ஸ்'-ன் புரட்சிகரமான e-POD!",
     image: startupNewsTamil,

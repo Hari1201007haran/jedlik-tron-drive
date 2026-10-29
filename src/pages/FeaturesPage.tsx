@@ -1,6 +1,5 @@
 import React from 'react'
 import { Zap, Settings, Leaf, Volume2, Puzzle, Shield } from 'lucide-react'
-import heroBackgroundImage from '@/assets/tron-hero-bg.jpg'
 
 const FeaturesPage: React.FC = () => {
   const features = [
@@ -70,7 +69,7 @@ const FeaturesPage: React.FC = () => {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBackgroundImage})` }}
+          style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 40%, hsl(var(--primary) / 0.14) 0%, transparent 65%), radial-gradient(ellipse 60% 50% at 80% 85%, hsl(var(--primary) / 0.08) 0%, transparent 70%), #000' }}
         />
         
         {/* Overlay */}
@@ -91,7 +90,6 @@ const FeaturesPage: React.FC = () => {
 
       {/* Features Grid */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 tron-grid-bg opacity-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
@@ -166,7 +164,6 @@ const FeaturesPage: React.FC = () => {
       {/* Technical Excellence Section */}
       <section className="py-20 relative overflow-hidden">
         {/* Enhanced background effects */}
-        <div className="absolute inset-0 tron-grid-bg opacity-30"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10"></div>
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
@@ -276,6 +273,12 @@ const FeaturesPage: React.FC = () => {
                   description: 'Continuous R&D pipeline with breakthrough technologies in development, positioning us at the forefront of urban mobility innovation.',
                   color: 'primary',
                   icon: '💡'
+                },
+                {
+                  title: 'LEVEL 4 AUTONOMY ROADMAP',
+                  description: 'Building on our patented steer-by-wire platform and safety-redundancy architecture, we intend to bring Level 4 autonomous driving to the e-POD in future, as our autonomous and safety systems mature through further development and validation.',
+                  color: 'primary',
+                  icon: '🧭'
                 }
               ].map((item, index) => (
                 <div 

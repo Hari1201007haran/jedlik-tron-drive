@@ -91,8 +91,7 @@ const OurTeamPage = () => {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px),
-                             linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px)`,
+            background: 'radial-gradient(ellipse 80% 60% at 50% 40%, hsl(var(--primary) / 0.10) 0%, transparent 70%), #000',
             backgroundSize: "50px 50px",
             animation: "grid-flow 20s linear infinite",
           }}
