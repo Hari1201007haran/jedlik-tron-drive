@@ -64,12 +64,6 @@ const MentorsPage = () => {
       {/* Hero */}
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-accent/20 via-accent/10 to-accent/20 border border-accent/30 mb-8 hover:scale-105 transition-all duration-300">
-            <Sparkles className="w-4 h-4 text-accent animate-pulse" />
-            <span className="text-sm font-semibold text-accent">Guiding Our Journey</span>
-            <Sparkles className="w-4 h-4 text-accent animate-pulse" style={{ animationDelay: "0.5s" }} />
-          </div>
-
           <h1 className="text-6xl md:text-8xl font-bold mb-8">
             <span className="bg-gradient-to-r from-primary via-accent to-accent bg-clip-text text-transparent">
               Mentors

@@ -1,4 +1,4 @@
-import { Scan, Gift, CheckCircle2, Clock, Zap, Sparkles, ArrowRight } from "lucide-react";
+import { Calendar, Bell, Users, Zap, ArrowRight } from "lucide-react";
 
 const FreeTrialPage = () => {
   return (
@@ -23,26 +23,16 @@ const FreeTrialPage = () => {
               ))}
             </div>
 
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-accent/20 via-accent/10 to-accent/20 border border-accent/30 mb-8 hover:scale-105 transition-all duration-300">
-              <Sparkles className="w-4 h-4 text-accent animate-pulse" />
-              <span className="text-sm font-semibold text-accent">Limited Time Exclusive Offer</span>
-              <Sparkles className="w-4 h-4 text-accent animate-pulse" style={{animationDelay: '0.5s'}} />
-            </div>
-            
             <h1 className="text-6xl md:text-8xl font-bold mb-8 relative">
               <span className="bg-gradient-to-r from-primary via-accent to-accent bg-clip-text text-transparent animate-fade-in">
-                Free Trial
+                Pre-Booking
               </span>
               <br />
               <span className="bg-gradient-to-r from-accent via-accent to-primary bg-clip-text text-transparent animate-fade-in">
-                Experience
+                Now Open
               </span>
             </h1>
             
-            <p className="text-xl md:text-3xl text-foreground/80 max-w-4xl mx-auto font-light leading-relaxed">
-              Step into the future of <span className="text-primary font-semibold">urban mobility</span> with a 
-              <span className="text-accent font-semibold"> complimentary month</span> of premium access
-            </p>
           </div>
 
         </div>
@@ -53,10 +43,6 @@ const FreeTrialPage = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 mb-4">
-              <Sparkles className="w-5 h-5 text-accent animate-pulse" />
-              <span className="text-sm font-semibold text-accent">See It In Action</span>
-            </div>
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-accent to-accent bg-clip-text text-transparent">
               Watch How It Works
             </h2>
@@ -69,7 +55,7 @@ const FreeTrialPage = () => {
                   <iframe
                     className="w-full h-full"
                     src="https://www.youtube.com/embed/HgYsyzu40nY"
-                    title="Jedlik Motors Free Trial"
+                    title="Jedlik Motors Pre-Booking"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                   ></iframe>
@@ -85,44 +71,35 @@ const FreeTrialPage = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-block mb-4">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20">
-                <Sparkles className="w-5 h-5 text-accent animate-pulse" />
-                <span className="text-sm font-semibold text-accent">Premium Benefits</span>
-              </div>
-            </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
               Everything You Need
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Unlock the complete suite of premium features with zero commitment
-            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {[
               {
-                icon: Clock,
-                title: "30 Full Days",
-                description: "Complete month of unlimited premium access",
+                icon: Calendar,
+                title: "Reserve Your Place",
+                description: "Register your interest and hold a place in the first allocation",
                 gradient: "from-primary/20 to-accent/20"
               },
               {
-                icon: CheckCircle2,
-                title: "All Features",
-                description: "Every premium capability unlocked",
+                icon: Bell,
+                title: "Stay Updated",
+                description: "Get milestone updates as the e-POD moves toward delivery",
                 gradient: "from-accent/20 to-accent/20"
               },
               {
-                icon: Gift,
-                title: "Zero Cost",
-                description: "No payment info needed",
+                icon: Users,
+                title: "Talk to the Team",
+                description: "Share your use case and speak directly with the team",
                 gradient: "from-accent/20 to-primary/20"
               },
               {
-                icon: Scan,
-                title: "Instant Start",
-                description: "Register and ride",
+                icon: Zap,
+                title: "No Payment Today",
+                description: "The form records your interest — nothing is charged here",
                 gradient: "from-accent/20 to-primary/20"
               }
             ].map((benefit, index) => (
@@ -158,14 +135,9 @@ const FreeTrialPage = () => {
             {/* Main CTA */}
             <div className="relative inline-block mb-8">
               <h2 className="relative text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-accent bg-clip-text text-transparent">
-                Start Your Journey
+                Reserve Your e-POD
               </h2>
             </div>
-            
-            <p className="text-xl md:text-2xl text-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Join thousands experiencing the future of urban mobility. 
-              <span className="text-accent font-semibold"> Your premium trial</span> awaits.
-            </p>
             
             {/* Animated prompt */}
             <a 
@@ -179,13 +151,13 @@ const FreeTrialPage = () => {
                   <Zap className="w-8 h-8 text-primary animate-pulse" />
                 </div>
                 <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Click to Register
+                  Pre-Book Now
                 </span>
                 <div className="relative">
                   <ArrowRight className="w-8 h-8 text-accent animate-pulse group-hover:translate-x-2 transition-transform" style={{animationDelay: '0.5s'}} />
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground">Click here to get started</p>
+              <p className="text-sm text-muted-foreground">Fill in the form — about a minute</p>
             </a>
             
           </div>

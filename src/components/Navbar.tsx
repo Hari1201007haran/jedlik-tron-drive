@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     { id: 'ourteam', label: 'Our Team' },
     { id: 'mentors', label: 'Mentors' },
     { id: 'media', label: 'Media Coverage' },
-    { id: 'freetrial', label: 'Free Trial' },
+    { id: 'freetrial', label: 'Pre-Booking' },
     { id: 'contact', label: 'Contact Us' },
     { id: 'faq', label: 'FAQ' },
   ]

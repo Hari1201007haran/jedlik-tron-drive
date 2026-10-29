@@ -14,7 +14,6 @@ import {
   CheckCircle
 } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
-import codeMonitorBg from '../assets/code-monitor-bg.jpg'
 
 const FeaturesPage: React.FC = () => {
   const [expandedSection, setExpandedSection] = useState<string | null>('e-pod')
@@ -106,26 +105,12 @@ const FeaturesPage: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* ── Combined Hero ── */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ background: '#000' }}
-        />
-
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40" />
-
+      {/* ── Page Title ── */}
+      <section className="relative py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-orbitron font-black mb-6 ">
-              FEATURES &amp; <span className="text-accent">TECH SPECS</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover the innovative technologies that power our next-generation urban commuters — and the complete technical specifications of the e-POD
-            </p>
-          </div>
+          <h1 className="text-4xl md:text-6xl font-orbitron font-black text-center">
+            FEATURES &amp; <span className="text-accent">TECH SPECS</span>
+          </h1>
         </div>
       </section>
 
@@ -136,7 +121,7 @@ const FeaturesPage: React.FC = () => {
             CUTTING-EDGE <span className="text-accent">FEATURES</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
+            {[...features, ...cuttingEdgeFeatures].map((feature, index) => (
               <div
                 key={index}
                 className="tron-glass-strong p-8 rounded-lg border border-primary/30 hover:border-primary/60 transition-all duration-300 group"
@@ -166,68 +151,14 @@ const FeaturesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Cutting-Edge Features Section */}
-      <section className="py-20 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-16 ">
-            CUTTING-EDGE <span className="text-accent">TECHNOLOGIES</span>
-          </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {cuttingEdgeFeatures.map((feature, index) => (
-              <div
-                key={index}
-                className="tron-glass-strong p-8 rounded-lg border border-accent/30 hover:border-accent/60 transition-all duration-300 group"
-              >
-                <div className={`flex items-center justify-center w-16 h-16 rounded-lg mb-6 transition-all duration-300 ${
-                  feature.color === 'primary'
-                    ? 'bg-primary/20 group-hover:bg-primary/30 '
-                    : 'bg-accent/20 group-hover:bg-accent/30 '
-                }`}>
-                  <feature.icon className={`h-8 w-8 transition-colors ${
-                    feature.color === 'primary'
-                      ? 'text-primary group-hover:text-primary'
-                      : 'text-accent group-hover:text-accent'
-                  }`} />
-                </div>
-
-                <h3 className="text-xl font-orbitron font-bold mb-4 transition-all">
-                  {feature.title}
-                </h3>
-
-                <p className="text-muted-foreground group-hover:text-foreground transition-colors leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Vehicle Specifications Section */}
-      <section className="py-24 relative">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{
-            backgroundImage: `url(${codeMonitorBg})`,
-            backgroundPosition: 'center'
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/98 via-background/90 to-background/98" />
-
+      <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-8">
-              <Star className="h-4 w-4 text-primary mr-2" />
-              <span className="text-sm font-medium text-primary">Next-Gen Urban Mobility</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-orbitron font-bold mb-4 ">
-              VEHICLE <span className="text-accent">SPECIFICATIONS</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Detailed technical specifications and performance metrics
-            </p>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-16">
+            VEHICLE <span className="text-accent">SPECIFICATIONS</span>
+          </h2>
 
           <div className="space-y-8">
             {motorModels.map((model, index) => (
@@ -381,14 +312,8 @@ const FeaturesPage: React.FC = () => {
       {/* Technical Excellence Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Enhanced Header */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-3 mb-6">
-              <div className="w-3 h-3 bg-primary rounded-full animate-ping"></div>
-              <span className="text-primary font-orbitron text-sm uppercase tracking-widest">Innovation Hub</span>
-              <div className="w-3 h-3 bg-accent rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
-            </div>
-
+          {/* Header */}
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-orbitron font-black mb-8">
               <span className="text-primary ">TECHNICAL</span>
               <br />

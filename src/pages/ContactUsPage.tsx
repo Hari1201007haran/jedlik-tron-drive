@@ -118,41 +118,14 @@ const ContactUsPage: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Enhanced Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ background: '#000' }}
-        />
-        
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40" />
-        
+      {/* Page Title */}
+      <section className="relative py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 mb-6">
-              <div className="w-3 h-3 bg-primary rounded-full animate-ping"></div>
-              <span className="text-primary font-orbitron text-sm uppercase tracking-widest">Connect With Us</span>
-              <div className="w-3 h-3 bg-accent rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-black mb-8">
-              <span className="text-primary ">CONTACT</span>
-              <br />
-              <span className="text-accent ">US</span>
-            </h1>
-            
-            <div className="flex justify-center mb-6">
-              <div className="h-px w-32 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
-              <div className="w-3 h-3 bg-primary rounded-full mx-6 animate-pulse"></div>
-              <div className="h-px w-32 bg-gradient-to-r from-transparent via-accent to-transparent"></div>
-            </div>
-            
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Get in touch with our team to discuss your urban commuting needs and future mobility solutions
-            </p>
-          </div>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-black text-center">
+            <span className="text-primary ">CONTACT</span>
+            <br />
+            <span className="text-accent ">US</span>
+          </h1>
         </div>
       </section>
 
@@ -289,7 +262,7 @@ const ContactUsPage: React.FC = () => {
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-4 h-4 bg-accent rounded-full animate-ping"></div>
                   <h2 className="text-2xl lg:text-3xl font-orbitron font-bold text-accent ">
-                    GET IN TOUCH
+                    CONTACT DETAILS
                   </h2>
                 </div>
                 
