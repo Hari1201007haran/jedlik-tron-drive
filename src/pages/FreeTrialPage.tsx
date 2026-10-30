@@ -7,7 +7,7 @@ const FREE_TRIAL_VIDEO_THUMB = "/pre-booking-video-thumb.jpg";
 const FreeTrialPage = () => {
   const [videoPlaying, setVideoPlaying] = useState(false);
   return (
-    <div className="min-h-screen pt-20 relative overflow-hidden">
+    <div className="min-h-screen pt-24 relative overflow-hidden">
       {/* Hero Section */}
       <section className="relative py-12 md:py-12 overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">

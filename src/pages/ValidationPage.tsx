@@ -283,7 +283,7 @@ const ValidationPage: React.FC = () => {
     containerWidth > 0 ? buildCollage(validationTiles, columnCount) : []
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-24">
       {/* Hero Section */}
       <section className="relative py-14 overflow-hidden">
         <div className="absolute inset-0 tron-grid-bg opacity-10" />

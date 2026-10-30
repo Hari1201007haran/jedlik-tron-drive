@@ -111,7 +111,7 @@ const GalleryPage = () => {
     : galleryImages.filter(img => img.category === selectedCategory)
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-24">
       {/* Hero Section */}
       <section className="relative py-12 overflow-hidden">
         

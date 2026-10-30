@@ -60,7 +60,7 @@ const mentors: Mentor[] = [
 
 const MentorsPage = () => {
   return (
-    <div className="min-h-screen pt-20 relative overflow-hidden">
+    <div className="min-h-screen pt-24 relative overflow-hidden">
       {/* Hero */}
       <section className="relative py-12 md:py-12 overflow-hidden">
         <div className="container mx-auto px-4 relative z-10 text-center">
