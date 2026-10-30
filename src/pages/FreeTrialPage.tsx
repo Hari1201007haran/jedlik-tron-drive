@@ -7,11 +7,11 @@ const FREE_TRIAL_VIDEO_THUMB = "/pre-booking-video-thumb.jpg";
 const FreeTrialPage = () => {
   const [videoPlaying, setVideoPlaying] = useState(false);
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen pt-20 relative overflow-hidden">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
+      <section className="relative py-12 md:py-12 overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-10 animate-fade-in">
             {/* Floating particles effect */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {[...Array(6)].map((_, i) => (
@@ -44,7 +44,7 @@ const FreeTrialPage = () => {
       </section>
 
       {/* ── YouTube Video Section ── */}
-      <section className="py-20 relative">
+      <section className="py-12 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-10">
@@ -93,10 +93,10 @@ const FreeTrialPage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 relative">
+      <section className="py-14 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
               Everything You Need
             </h2>
@@ -155,7 +155,7 @@ const FreeTrialPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             {/* Main CTA */}

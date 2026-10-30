@@ -33,7 +33,7 @@ const AboutUsPage: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative py-20">
+      <section className="relative py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-6xl font-orbitron font-black text-center">
             ABOUT <span className="text-accent">JEDLIK MOTORS</span>
@@ -42,9 +42,9 @@ const AboutUsPage: React.FC = () => {
       </section>
 
       {/* About Content Section */}
-      <section className="py-20 relative">
+      <section className="py-12 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Main Content */}
             <div className="order-2 lg:order-1">
               <div className="tron-glass-strong p-8 rounded-lg border border-primary/30">
@@ -95,9 +95,9 @@ const AboutUsPage: React.FC = () => {
       </section>
 
       {/* Achievements Section */}
-      <section className="py-20 relative">
+      <section className="py-12 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-16 ">
+          <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-10 ">
             OUR <span className="text-accent">ACHIEVEMENTS</span>
           </h2>
           

@@ -285,7 +285,7 @@ const ValidationPage: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-14 overflow-hidden">
         <div className="absolute inset-0 tron-grid-bg opacity-10" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h1 className="text-4xl md:text-6xl font-orbitron font-black mb-6 ">

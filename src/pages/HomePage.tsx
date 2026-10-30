@@ -261,12 +261,12 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </div>
 
       {/* About Us Section */}
-      <section id="about" className="py-20 relative">
+      <section id="about" className="py-12 relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 ">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-10 ">
             ABOUT <span className="text-accent">JEDLIK MOTORS</span>
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="tron-glass-strong p-8 rounded-lg border border-primary/30">
               <div className="flex items-center mb-6">
                 <Users className="h-8 w-8 text-primary mr-4" />
@@ -298,9 +298,9 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 relative">
+      <section id="features" className="py-12 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 ">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-10 ">
             CUTTING-EDGE <span className="text-accent">FEATURES</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -320,9 +320,9 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* Tech Specs Section */}
-      <section id="techspecs" className="py-20 relative">
+      <section id="techspecs" className="py-12 relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 ">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-10 ">
             TECHNICAL <span className="text-accent">SPECIFICATIONS</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -338,12 +338,12 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 relative">
+      <section id="contact" className="py-12 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 ">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-10 ">
             GET IN <span className="text-accent">TOUCH</span>
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="tron-glass-strong p-8 rounded-lg border border-primary/30">
               <h3 className="text-2xl font-orbitron font-bold mb-6 ">Send us a Message</h3>
               <form className="space-y-6">
@@ -402,9 +402,9 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* ── LEADERSHIP SECTION ── */}
-      <section className="py-20 relative">
+      <section className="py-12 relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-16 ">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-center mb-10 ">
             OUR <span className="text-accent">LEADERSHIP</span>
           </h2>
 

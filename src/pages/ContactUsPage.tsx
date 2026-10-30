@@ -119,7 +119,7 @@ const ContactUsPage: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Page Title */}
-      <section className="relative py-20">
+      <section className="relative py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-orbitron font-black text-center">
             <span className="text-primary ">CONTACT</span>
@@ -130,9 +130,9 @@ const ContactUsPage: React.FC = () => {
       </section>
 
       {/* Enhanced Contact Form and Info Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-10">
             {/* Enhanced Contact Form */}
             <div className="relative group">
               <div className="relative tron-glass-strong p-8 lg:p-10 rounded-xl border border-primary/40 hover:border-primary/70 transition-all duration-500 group-hover:scale-[1.02]">

@@ -45,12 +45,12 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:block">
-            <div className="ml-2 flex items-baseline space-x-1">
+            <div className="ml-2 flex items-baseline space-x-2 xl:space-x-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => onNavigate(item.id)}
-                  className={`px-2 py-2 rounded-md text-xs xl:text-sm font-medium whitespace-nowrap transition-all duration-300 relative group ${
+                  className={`px-1.5 py-2 rounded-md text-xs xl:text-sm font-medium whitespace-nowrap transition-all duration-300 relative group ${
                     currentPage === item.id
                       ? 'text-primary '
                       : 'text-foreground hover:text-primary '

@@ -85,9 +85,9 @@ const team = [
 
 const OurTeamPage = () => {
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen pt-20 relative overflow-hidden">
       {/* Hero */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
+      <section className="relative py-12 md:py-12 overflow-hidden">
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-6xl md:text-8xl font-bold mb-8">
             <span className="bg-gradient-to-r from-primary via-accent to-accent bg-clip-text text-transparent">
@@ -163,7 +163,7 @@ const OurTeamPage = () => {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-24 relative text-center">
+      <section className="py-14 relative text-center">
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-accent bg-clip-text text-transparent">
             Together, We Redefine the Class.

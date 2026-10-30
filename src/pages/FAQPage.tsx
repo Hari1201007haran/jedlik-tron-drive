@@ -69,10 +69,10 @@ const FAQPage: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-12 overflow-hidden">
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h1 className="text-4xl md:text-6xl font-orbitron font-black mb-6 ">
               FREQUENTLY ASKED <span className="text-accent">QUESTIONS</span>
             </h1>
@@ -84,7 +84,7 @@ const FAQPage: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 relative">
+      <section className="py-12 relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="space-y-4">
             {faqs.map((faq) => (
@@ -132,7 +132,7 @@ const FAQPage: React.FC = () => {
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-20 relative">
+      <section className="py-12 relative">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="tron-glass-strong p-8 rounded-lg border border-primary/30">
             <h2 className="text-3xl md:text-4xl font-orbitron font-bold mb-6 ">

@@ -114,7 +114,7 @@ const FeaturesPage: React.FC = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* ── Page Title ── */}
-      <section className="relative py-20">
+      <section className="relative py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-6xl font-orbitron font-black text-center">
             FEATURES &amp; <span className="text-accent">TECH SPECS</span>
@@ -126,9 +126,9 @@ const FeaturesPage: React.FC = () => {
       </section>
 
       {/* Features Grid */}
-      <section className="py-20 relative">
+      <section className="py-12 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-16 ">
+          <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-10 ">
             CUTTING-EDGE <span className="text-accent">FEATURES</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -165,9 +165,9 @@ const FeaturesPage: React.FC = () => {
 
 
       {/* Vehicle Specifications Section */}
-      <section className="py-20 relative">
+      <section className="py-12 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-10">
             VEHICLE <span className="text-accent">SPECIFICATIONS</span>
           </h2>
 
@@ -284,7 +284,7 @@ const FeaturesPage: React.FC = () => {
       </section>
 
       {/* ── Future Autonomy Roadmap ── */}
-      <section className="py-20 relative">
+      <section className="py-12 relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="tron-glass-strong border border-primary/30 rounded-lg p-8 lg:p-10">
             <div className="flex items-center gap-3 mb-4">
@@ -321,10 +321,10 @@ const FeaturesPage: React.FC = () => {
       </section>
 
       {/* Technical Excellence Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-4xl md:text-6xl font-orbitron font-black mb-8">
               <span className="text-primary ">TECHNICAL</span>
               <br />
@@ -342,7 +342,7 @@ const FeaturesPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 items-start">
             {/* Enhanced Performance Metrics */}
             <div className="relative group">
               <div className="relative tron-glass-strong p-8 lg:p-10 rounded-xl border border-primary/40 hover:border-primary/70 transition-all duration-500 group-hover:scale-[1.02]">
