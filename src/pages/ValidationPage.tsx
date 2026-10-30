@@ -34,6 +34,16 @@ type ValidationTile = {
   alt: string
   /** Intrinsic width / height of the source screenshot. */
   ratio: number
+  /**
+   * When true the tile is laid out on its own full-width row instead of
+   * inside a masonry column.
+   *
+   * A very wide screenshot (a long LinkedIn comment) cannot be read inside
+   * a ~290px column: the box height works out to a few dozen pixels and the
+   * text shrinks to an illegible strip. Giving those tiles the full width
+   * of the collage lets the image render at close to its natural size.
+   */
+  wide?: boolean
 }
 
 /** Gap between tiles, in px. */
@@ -151,17 +161,19 @@ const validationTiles: ValidationTile[] = [
   {
     src: '/validation/linkedin-14.png',
     alt: 'LinkedIn comment saying the team was expected to build something like this ten years back and is finally doing it, and that if it works well the markets of Bangalore, Mumbai, Delhi and Chennai are wide open',
-    ratio: 1331 / 150,
+    ratio: 660 / 74,
+    wide: true,
   },
   {
     src: '/validation/linkedin-15.png',
     alt: 'LinkedIn comment saying they would really like to buy the vehicle',
-    ratio: 1340 / 180,
+    ratio: 300 / 180,
   },
   {
     src: '/validation/linkedin-16.png',
     alt: 'LinkedIn comment saying it is great to see someone attempting to solve this problem in India',
-    ratio: 1347 / 141,
+    ratio: 660 / 122,
+    wide: true,
   },
   {
     src: '/validation/mail-9.png',
@@ -193,7 +205,11 @@ const ValidationPage: React.FC = () => {
   }, [])
 
   const columns = columnsFor(containerWidth)
-  const laidOut = containerWidth > 0 ? balance(validationTiles, columns, containerWidth) : []
+  // Tiles flagged `wide` are too long to read inside a narrow masonry
+  // column, so they are pulled out and given their own full-width row.
+  const wideTiles = validationTiles.filter((t) => t.wide)
+  const narrowTiles = validationTiles.filter((t) => !t.wide)
+  const laidOut = containerWidth > 0 ? balance(narrowTiles, columns, containerWidth) : []
 
   return (
     <div className="min-h-screen pt-20">
@@ -217,7 +233,37 @@ const ValidationPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div id="validation-collage" className="w-full">
             {containerWidth > 0 && (
-              <div className="flex items-start" style={{ gap: GAP }}>
+              <>
+                {/* Wide tiles first, each on its own full-width row. The
+                    screenshot keeps its own aspect ratio, so the box is
+                    exactly as tall as the picture needs and the text stays
+                    at full size instead of being shrunk into a column. */}
+                {wideTiles.map((tile) => (
+                  <figure
+                    key={tile.src}
+                    className="group relative mb-[12px] overflow-hidden border border-primary/30 bg-white/95 transition-colors duration-300 hover:border-primary"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-x-0 top-0 z-10 h-[3px] origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+                      style={{ background: 'hsl(var(--primary))' }}
+                    />
+                    <div
+                      style={{ aspectRatio: `${tile.ratio}` }}
+                      className="w-full overflow-hidden bg-white"
+                    >
+                      <img
+                        src={tile.src}
+                        alt={tile.alt}
+                        loading="lazy"
+                        decoding="async"
+                        className="block h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.015]"
+                      />
+                    </div>
+                  </figure>
+                ))}
+
+                <div className="flex items-start" style={{ gap: GAP }}>
                 {laidOut.map((col, ci) => (
                   <div
                     key={ci}
@@ -258,7 +304,8 @@ const ValidationPage: React.FC = () => {
                     ))}
                   </div>
                 ))}
-              </div>
+                </div>
+              </>
             )}
           </div>
         </div>
