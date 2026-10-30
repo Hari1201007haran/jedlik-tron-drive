@@ -149,6 +149,21 @@ const validationTiles: ValidationTile[] = [
     ratio: 972 / 204,
   },
   {
+    src: '/validation/linkedin-14.png',
+    alt: 'LinkedIn comment saying the team was expected to build something like this ten years back and is finally doing it, and that if it works well the markets of Bangalore, Mumbai, Delhi and Chennai are wide open',
+    ratio: 1331 / 150,
+  },
+  {
+    src: '/validation/linkedin-15.png',
+    alt: 'LinkedIn comment saying they would really like to buy the vehicle',
+    ratio: 1340 / 180,
+  },
+  {
+    src: '/validation/linkedin-16.png',
+    alt: 'LinkedIn comment saying it is great to see someone attempting to solve this problem in India',
+    ratio: 1347 / 141,
+  },
+  {
     src: '/validation/mail-9.png',
     alt: "Inbound email from an industry reader who saw the vision and wants to be on the line for a collaboration, with the sender's address blurred",
     ratio: 933 / 400,
