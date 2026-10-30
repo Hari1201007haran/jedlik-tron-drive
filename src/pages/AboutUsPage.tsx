@@ -61,6 +61,9 @@ const AboutUsPage: React.FC = () => {
                   <p className="text-foreground">
                     Our vision is to provide <span className="text-primary font-semibold">superior maneuverability in congested city traffic</span> while offering features like airbags, full weather protection, and innovative docking capability for multi-unit travel.
                   </p>
+                  <p className="text-muted-foreground">
+                    We are also developing the autonomous driving capability for the e-POD in-house, built on the company's own motors, controllers and steer-by-wire systems and designed for the long term to handle increasingly complex traffic conditions.
+                  </p>
                 </div>
               </div>
             </div>

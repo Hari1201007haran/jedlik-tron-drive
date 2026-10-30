@@ -24,6 +24,10 @@ import React, { useEffect, useState } from 'react'
  *      (classic greedy masonry balance).
  *   3. The starting column is rotated per tile, so the collage does not
  *      read as a set of vertical stripes.
+ *   4. A very wide screenshot would shrink to an illegible strip inside one
+ *      narrow column, so `wide` tiles break out of the masonry and take a
+ *      full-width row of their own, in the same order as the array, and the
+ *      columns restart beneath them.
  *
  * The email screenshots are published with the sender's address already
  * blurred at the image level, so nothing here needs to know about redaction.
@@ -140,6 +144,116 @@ const validationTiles: ValidationTile[] = [
   },
 ]
 
+/**
+ * One horizontal slice of the wall, in visual (top-to-bottom) order.
+ *
+ * The array of tiles is cut into bands: a run of masonry columns, then a
+ * wide tile on a full-width row, then the next run of columns, and so on.
+ * Walking the bands top to bottom keeps the reading order of the collage
+ * identical to the order of the source array.
+ */
+type CollageBand =
+  /** A wide screenshot spanning the full collage width. */
+  | { kind: 'wide'; tile: ValidationTile }
+  /** A band of equal-width masonry columns. */
+  | { kind: 'masonry'; columns: ValidationTile[][] }
+
+/**
+ * Greedy masonry over the known intrinsic ratios.
+ *
+ * Heights are accumulated in "column width" units (a tile of ratio r is
+ * 1 / r column-widths tall), which is exact because every column in a band
+ * has the same width. Nothing is measured on screen, so the layout is the
+ * same before and after the images load.
+ *
+ * Each tile goes into the currently shortest column, but the search for
+ * that column starts one slot past the previous placement. Rotating the
+ * scan start makes ties break in a different order for every tile, so the
+ * wall does not degenerate into a set of vertical stripes.
+ *
+ * A `wide` tile flushes the running columns into a finished band and then
+ * takes a full-width band of its own; the columns restart empty beneath it,
+ * so a long LinkedIn comment keeps the whole width and stays legible.
+ */
+function buildCollage(
+  tiles: ValidationTile[],
+  columnCount: number,
+): CollageBand[] {
+  const bands: CollageBand[] = []
+
+  const emptyColumns = (): ValidationTile[][] =>
+    Array.from({ length: columnCount }, () => [])
+
+  let columns = emptyColumns()
+  let heights = new Array<number>(columnCount).fill(0)
+  let scanStart = 0
+
+  const flushColumns = () => {
+    if (columns.some((column) => column.length > 0)) {
+      bands.push({ kind: 'masonry', columns })
+    }
+    columns = emptyColumns()
+    heights = new Array<number>(columnCount).fill(0)
+    scanStart = 0
+  }
+
+  for (const tile of tiles) {
+    if (tile.wide) {
+      flushColumns()
+      bands.push({ kind: 'wide', tile })
+      continue
+    }
+
+    // Shortest column, scanning forward from the rotated start so ties go
+    // to whichever candidate comes first in the rotated order.
+    let shortest = scanStart
+    for (let i = 1; i < columnCount; i++) {
+      const candidate = (scanStart + i) % columnCount
+      if (heights[candidate] < heights[shortest]) shortest = candidate
+    }
+
+    columns[shortest].push(tile)
+    heights[shortest] += 1 / tile.ratio
+    scanStart = (shortest + 1) % columnCount
+  }
+
+  flushColumns()
+  return bands
+}
+
+/**
+ * A single screenshot tile. Identical whether it sits in a masonry column
+ * or on a full-width row — only the available width differs.
+ */
+const CollageTile: React.FC<{ tile: ValidationTile }> = ({ tile }) => (
+  <figure className="group relative overflow-hidden border border-primary/30 bg-white/95 transition-colors duration-300 hover:border-primary">
+    {/* Red hairline that fills on hover. */}
+    <span
+      aria-hidden="true"
+      className="absolute inset-x-0 top-0 z-10 h-[3px] origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+      style={{ background: 'hsl(var(--primary))' }}
+    />
+
+    {/* The intrinsic ratio reserves the exact box before the image loads,
+        so the wall never reflows. The box is sized with aspect-ratio
+        rather than width/height attributes, because those attributes
+        together with a full-width image collapse the height and knock the
+        image out of the column. */}
+    <div
+      style={{ aspectRatio: `${tile.ratio}` }}
+      className="w-full overflow-hidden bg-white"
+    >
+      <img
+        src={tile.src}
+        alt={tile.alt}
+        loading="eager"
+        decoding="async"
+        className="block h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.015]"
+      />
+    </div>
+  </figure>
+)
+
 const ValidationPage: React.FC = () => {
   const [containerWidth, setContainerWidth] = useState(0)
 
@@ -157,13 +271,16 @@ const ValidationPage: React.FC = () => {
     return () => ro.disconnect()
   }, [])
 
-  // Every tile is rendered full-width, one per row.
-  //
-  // A masonry column squeezes a screenshot down to a fraction of its
-  // width, which shrinks the comment text to a few pixels tall and makes
-  // it unreadable. Stacking the tiles keeps each one at the full column
-  // width, so every comment is legible and every photo is visible.
-  const laidOut = containerWidth > 0 ? validationTiles : []
+  // Measured collage width -> column count. Below ~640px the wall is a
+  // single column, from ~640px up it is two, and from 1024px up three.
+  const columnCount =
+    containerWidth < 640 ? 1 : containerWidth < 1024 ? 2 : 3
+
+  // The bands come from the known intrinsic ratios alone — never from
+  // rendered measurements — so the wall is fully determined on the first
+  // paint and never reflows when the images finish loading.
+  const bands =
+    containerWidth > 0 ? buildCollage(validationTiles, columnCount) : []
 
   return (
     <div className="min-h-screen pt-20">
@@ -188,43 +305,36 @@ const ValidationPage: React.FC = () => {
           <div id="validation-collage" className="w-full">
             {containerWidth > 0 && (
               <div className="flex flex-col" style={{ gap: GAP }}>
-                {/* Every tile sits on its own full-width row. The picture
-                    keeps its own aspect ratio, so the box is exactly as
-                    tall as the image needs and the comment text stays at
-                    full size instead of being shrunk into a narrow
-                    column. */}
-                {laidOut.map((tile) => (
-                  <figure
-                    key={tile.src}
-                    className="group relative overflow-hidden border border-primary/30 bg-white/95 transition-colors duration-300 hover:border-primary"
-                  >
-                    {/* Red hairline that fills on hover. */}
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-x-0 top-0 z-10 h-[3px] origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
-                      style={{ background: 'hsl(var(--primary))' }}
-                    />
-
-                    {/* The intrinsic ratio reserves the exact box before the
-                        image loads, so the wall never reflows. The box is
-                        sized with aspect-ratio rather than width/height
-                        attributes, because those attributes together with a
-                        full-width image collapse the height and knock the
-                        image out of the column. */}
+                {bands.map((band, bandIndex) =>
+                  band.kind === 'wide' ? (
+                    // A wide screenshot keeps the full collage width, so a
+                    // long LinkedIn comment renders at close to its natural
+                    // size instead of a squeezed, illegible strip.
+                    <CollageTile key={band.tile.src} tile={band.tile} />
+                  ) : (
+                    // A band of equal-width columns. flex-1 with min-w-0
+                    // splits the row evenly; the aspect-ratio boxes inside
+                    // reserve each tile's exact height before the image
+                    // loads, so the columns stay balanced with no reflow.
                     <div
-                      style={{ aspectRatio: `${tile.ratio}` }}
-                      className="w-full overflow-hidden bg-white"
+                      key={`columns-${bandIndex}`}
+                      className="flex"
+                      style={{ gap: GAP }}
                     >
-                      <img
-                        src={tile.src}
-                        alt={tile.alt}
-                        loading="eager"
-                        decoding="async"
-                        className="block h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.015]"
-                      />
+                      {band.columns.map((column, columnIndex) => (
+                        <div
+                          key={columnIndex}
+                          className="flex flex-1 min-w-0 flex-col"
+                          style={{ gap: GAP }}
+                        >
+                          {column.map((tile) => (
+                            <CollageTile key={tile.src} tile={tile} />
+                          ))}
+                        </div>
+                      ))}
                     </div>
-                  </figure>
-                ))}
+                  )
+                )}
               </div>
             )}
           </div>

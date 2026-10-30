@@ -54,6 +54,11 @@ const FAQPage: React.FC = () => {
       id: 'maintenance',
       question: 'How do I maintain the vehicle?',
       answer: 'We support ease of repairablity and provide DIY kits and videos to maintain the vehicle at times of need.'
+    },
+    {
+      id: 'autonomy',
+      question: 'Does the e-POD have autonomous or self-driving capability?',
+      answer: 'We are developing our own autonomous driving capability in-house. It is built on the drive-by-wire electronics we design ourselves (throttle-by-wire, steer-by-wire, and our own motors and controllers) and is being designed with the long-term objective of handling increasingly complex traffic conditions. This work is in development. No autonomous or self-driving mode is being marketed as available to customers today, and the e-POD as currently offered requires an active driver.'
     }
   ]
 

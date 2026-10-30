@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -22,6 +22,14 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('home');
+
+  // Every page change resets the scroll offset immediately so the new page
+  // always opens at its top (not wherever the previous page left the window).
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [currentPage]);
 
   const renderPage = () => {
     switch (currentPage) {

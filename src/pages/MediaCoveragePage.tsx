@@ -1,6 +1,8 @@
 import React from 'react'
-import { Newspaper, Linkedin, ExternalLink } from 'lucide-react'
+import { Newspaper, Linkedin, ExternalLink, Headphones } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import foundervoxThumb from '/media/foundervox-article.webp'
+import efuThumb from '/media/efu-article.jpg'
 import annaIncubator from '@/assets/media-anna-incubator.jpg'
 import varunTnSummit from '@/assets/media-varun-tn-summit.jpg'
 import skyful from '@/assets/media-skyful.jpg'
@@ -18,6 +20,25 @@ interface MediaItem {
 }
 
 const mediaItems: MediaItem[] = [
+  {
+    title: "Jedlik Motors Develops e-POD Electric Two-Wheeler With Car-Like Comfort",
+    image: foundervoxThumb,
+    fit: 'cover',
+    url: 'https://foundervox.org/startups/jedlik-motors-develops-e-pod-electric-two-wheeler-with-car-like-comfort',
+    icon: Newspaper,
+  },
+  {
+    title: "E-Pod: Engineering an Enclosed Electric Two-Wheeler",
+    image: efuThumb,
+    fit: 'cover',
+    url: 'https://www.electronicsforu.com/news/e-pod-engineering-an-enclosed-electric-two-wheeler',
+    icon: Newspaper,
+  },
+  {
+    title: "From Vision to Wheels: The Jedlik Motors Journey (CMR India Podcast)",
+    url: 'https://cmrindia.com/cmr_media/from-vision-to-wheels-the-jedlik-motors-journey/',
+    icon: Headphones,
+  },
   {
     title: "Jedlik Motors Founder Raguram SK on Building an Electric POD for Urban Commuters",
     image: entrackrThumb,

@@ -11,7 +11,8 @@ import {
   Gauge,
   Battery,
   Star,
-  CheckCircle
+  CheckCircle,
+  Cpu
 } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 
@@ -75,6 +76,12 @@ const FeaturesPage: React.FC = () => {
       title: 'Compact Design',
       description: 'Optimized for short urban commutes (0–20 km) with reduced congestion impact.',
       color: 'primary'
+    },
+    {
+      icon: Cpu,
+      title: 'Autonomous Drive Stack',
+      description: 'Our in-house drive-by-wire electronics (throttle-by-wire, steer-by-wire, and our own motors and controllers) are the foundation for the autonomous driving capability now in development, building toward progressively more capable self-driving as the system matures.',
+      color: 'accent'
     }
   ]
 
@@ -94,7 +101,8 @@ const FeaturesPage: React.FC = () => {
         'USP': 'Car safety + Motorcycle maneuverability',
         'Safety Features': 'Airbags (uncommon in two-wheelers)',
         'Comfort': 'Pushback seats for ergonomic comfort',
-        'Weather Protection': 'Full protection - no helmets required'
+        'Weather Protection': 'Full protection - no helmets required',
+        'Autonomy': 'In-house autonomous drive stack (in development)'
       }
     }
   ]
@@ -111,6 +119,9 @@ const FeaturesPage: React.FC = () => {
           <h1 className="text-4xl md:text-6xl font-orbitron font-black text-center">
             FEATURES &amp; <span className="text-accent">TECH SPECS</span>
           </h1>
+          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mt-6 leading-relaxed">
+            The e-POD is built on drive-by-wire electronics developed in-house (our own motors, controllers and steer-by-wire), which also form the foundation of an autonomous drive stack now in development.
+          </p>
         </div>
       </section>
 

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react'
-import { ArrowRight, Zap, Cog, Leaf, Shield, Users, MapPin, Phone, Mail, ChevronDown } from 'lucide-react'
+import { ArrowRight, Zap, Cog, Cpu, Leaf, Shield, Users, MapPin, Phone, Mail, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -85,6 +85,11 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       icon: Zap,
       title: 'Fast Charging',
       description: '80 km range with charging under 10 minutes.'
+    },
+    {
+      icon: Cpu,
+      title: 'Autonomous Drive Stack',
+      description: 'Our own drive-by-wire electronics (throttle-by-wire, steer-by-wire, and in-house motors and controllers) form the foundation for an autonomous driving capability now in development.'
     }
   ]
 
@@ -94,7 +99,8 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     { label: 'Range per Charge', value: '200', unit: 'km' },
     { label: 'Charging Time', value: '4', unit: 'Hours' },
     { label: 'Protection', value: 'Airbag', unit: 'Fully-enclosed' },
-    { label: 'Weather Protection', value: 'Air-conditioning', unit: 'For Sunny Days' }
+    { label: 'Weather Protection', value: 'Air-conditioning', unit: 'For Sunny Days' },
+    { label: 'Autonomous Drive Stack', value: 'In-House', unit: 'In Development' }
   ]
 
 

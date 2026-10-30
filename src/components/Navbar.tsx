@@ -32,24 +32,25 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           <div className="flex items-center">
             <button
               onClick={() => onNavigate('home')}
+              aria-label="Jedlik Motors — home"
               className="flex items-center"
             >
               <img
                 src="/jedlik_logo_transparent.png"
                 alt="Jedlik Motors"
-                className="h-28 w-auto object-contain"
+                className="h-10 w-auto object-contain"
               />
             </button>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+          <div className="hidden lg:block">
+            <div className="ml-2 flex items-baseline space-x-1">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => onNavigate(item.id)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
+                  className={`px-2 py-2 rounded-md text-xs xl:text-sm font-medium whitespace-nowrap transition-all duration-300 relative group ${
                     currentPage === item.id
                       ? 'text-primary '
                       : 'text-foreground hover:text-primary '
@@ -65,11 +66,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMobileMenuOpen}
               className="tron-glass border border-primary/30"
             >
               {isMobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
@@ -79,7 +82,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 tron-glass mt-2 rounded-lg border border-primary/30">
               {navItems.map((item) => (
                 <button

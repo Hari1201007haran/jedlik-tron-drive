@@ -1,6 +1,11 @@
-import { Calendar, Bell, Users, Zap, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { Calendar, Bell, Users, Zap, ArrowRight, Play } from "lucide-react";
+
+const FREE_TRIAL_VIDEO_ID = "yf2NwVTYO6w";
+const FREE_TRIAL_VIDEO_THUMB = "/pre-booking-video-thumb.jpg";
 
 const FreeTrialPage = () => {
+  const [videoPlaying, setVideoPlaying] = useState(false);
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Hero Section */}
@@ -52,13 +57,34 @@ const FreeTrialPage = () => {
             <div className="relative group">
               <div className="relative rounded-3xl overflow-hidden border-2 border-primary/30">
                 <div className="aspect-video">
-                  <iframe
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/HgYsyzu40nY"
-                    title="Jedlik Motors Pre-Booking"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
+                  {videoPlaying ? (
+                    <iframe
+                      className="w-full h-full"
+                      src={`https://www.youtube.com/embed/${FREE_TRIAL_VIDEO_ID}?autoplay=1&rel=0`}
+                      title="Jedlik Motors Pre MVP Test Runs"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setVideoPlaying(true)}
+                      className="w-full h-full relative group/play"
+                      aria-label="Play the Jedlik Motors pre-MVP test run video"
+                    >
+                      <img
+                        src={FREE_TRIAL_VIDEO_THUMB}
+                        alt="Jedlik Motors e-POD pre-MVP test run"
+                        className="w-full h-full object-cover"
+                      />
+                      <span className="absolute inset-0 bg-background/40 group-hover/play:bg-background/20 transition-colors"></span>
+                      <span className="absolute inset-0 flex items-center justify-center">
+                        <span className="flex items-center justify-center w-20 h-20 rounded-full bg-primary/90 group-hover/play:scale-110 transition-transform duration-300 shadow-[0_0_40px_hsl(var(--primary)/0.6)]">
+                          <Play className="w-8 h-8 text-primary-foreground translate-x-0.5" fill="currentColor" />
+                        </span>
+                      </span>
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
