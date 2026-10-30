@@ -1,4 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from '@/components/ui/dialog'
 
 /**
  * ValidationPage — the wall of real reactions to the e-POD.
@@ -24,10 +31,17 @@ import React, { useEffect, useState } from 'react'
  *      (classic greedy masonry balance).
  *   3. The starting column is rotated per tile, so the collage does not
  *      read as a set of vertical stripes.
- *   4. A very wide screenshot would shrink to an illegible strip inside one
- *      narrow column, so `wide` tiles break out of the masonry and take a
- *      full-width row of their own, in the same order as the array, and the
- *      columns restart beneath them.
+ *   4. A very wide screenshot (a long LinkedIn comment) would shrink to an
+ *      illegible strip inside one narrow column, so those tiles are marked
+ *      `wide`. On wide screens they pair up two per full-width row — big
+ *      enough to read, but half the height of one-per-row, which is what
+ *      keeps the whole wall in view. On narrow screens where the wall is
+ *      only one or two columns wide, each wide tile keeps a row to itself.
+ *
+ * The collage is deliberately compact: four masonry columns on desktop so
+ * as many screenshots as possible are on screen at once, and because a
+ * smaller tile is naturally harder to read, every tile opens a full-size
+ * lightbox on click (arrows or Esc to move through the wall).
  *
  * The email screenshots are published with the sender's address already
  * blurred at the image level, so nothing here needs to know about redaction.
@@ -39,13 +53,9 @@ type ValidationTile = {
   /** Intrinsic width / height of the source screenshot. */
   ratio: number
   /**
-   * When true the tile is laid out on its own full-width row instead of
-   * inside a masonry column.
-   *
-   * A very wide screenshot (a long LinkedIn comment) cannot be read inside
-   * a ~290px column: the box height works out to a few dozen pixels and the
-   * text shrinks to an illegible strip. Giving those tiles the full width
-   * of the collage lets the image render at close to its natural size.
+   * When true the tile is a long screenshot that must not be squeezed into
+   * one narrow column. Wide tiles get their own full-width row(s) inside
+   * the wall: paired two-up on desktop, one per row on small screens.
    */
   wide?: boolean
 }
@@ -148,13 +158,13 @@ const validationTiles: ValidationTile[] = [
  * One horizontal slice of the wall, in visual (top-to-bottom) order.
  *
  * The array of tiles is cut into bands: a run of masonry columns, then a
- * wide tile on a full-width row, then the next run of columns, and so on.
+ * row of wide tiles, then the next run of columns, and so on.
  * Walking the bands top to bottom keeps the reading order of the collage
  * identical to the order of the source array.
  */
 type CollageBand =
-  /** A wide screenshot spanning the full collage width. */
-  | { kind: 'wide'; tile: ValidationTile }
+  /** Long screenshots sharing one full-width row (one or two of them). */
+  | { kind: 'wideRow'; tiles: ValidationTile[] }
   /** A band of equal-width masonry columns. */
   | { kind: 'masonry'; columns: ValidationTile[][] }
 
@@ -172,8 +182,9 @@ type CollageBand =
  * wall does not degenerate into a set of vertical stripes.
  *
  * A `wide` tile flushes the running columns into a finished band and then
- * takes a full-width band of its own; the columns restart empty beneath it,
- * so a long LinkedIn comment keeps the whole width and stays legible.
+ * buffers into a wide row: two of them per row on desktop-sized walls,
+ * one per row when the wall is only one or two columns wide. A leftover
+ * odd wide tile keeps its own row at the end.
  */
 function buildCollage(
   tiles: ValidationTile[],
@@ -187,6 +198,11 @@ function buildCollage(
   let columns = emptyColumns()
   let heights = new Array<number>(columnCount).fill(0)
   let scanStart = 0
+  let wideBuffer: ValidationTile[] = []
+
+  // Two wide tiles share a row only when the wall is wide enough that each
+  // half is still comfortably readable (~600px at the desktop column count).
+  const widePerRow = columnCount >= 4 ? 2 : 1
 
   const flushColumns = () => {
     if (columns.some((column) => column.length > 0)) {
@@ -197,10 +213,18 @@ function buildCollage(
     scanStart = 0
   }
 
+  const flushWide = () => {
+    if (wideBuffer.length > 0) {
+      bands.push({ kind: 'wideRow', tiles: wideBuffer })
+      wideBuffer = []
+    }
+  }
+
   for (const tile of tiles) {
     if (tile.wide) {
       flushColumns()
-      bands.push({ kind: 'wide', tile })
+      wideBuffer.push(tile)
+      if (wideBuffer.length >= widePerRow) flushWide()
       continue
     }
 
@@ -218,15 +242,24 @@ function buildCollage(
   }
 
   flushColumns()
+  flushWide()
   return bands
 }
 
 /**
  * A single screenshot tile. Identical whether it sits in a masonry column
- * or on a full-width row — only the available width differs.
+ * or on a wide row — only the available width differs. Clicking opens the
+ * tile full size, which is what keeps the compact collage readable.
  */
-const CollageTile: React.FC<{ tile: ValidationTile }> = ({ tile }) => (
-  <figure className="group relative overflow-hidden border border-primary/30 bg-white/95 transition-colors duration-300 hover:border-primary">
+const CollageTile: React.FC<{
+  tile: ValidationTile
+  onOpen: () => void
+}> = ({ tile, onOpen }) => (
+  <figure
+    onClick={onOpen}
+    title="Click to view full size"
+    className="group relative overflow-hidden border border-primary/30 bg-white/95 cursor-zoom-in transition-colors duration-300 hover:border-primary"
+  >
     {/* Red hairline that fills on hover. */}
     <span
       aria-hidden="true"
@@ -256,6 +289,7 @@ const CollageTile: React.FC<{ tile: ValidationTile }> = ({ tile }) => (
 
 const ValidationPage: React.FC = () => {
   const [containerWidth, setContainerWidth] = useState(0)
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   // Measure the container so the wall can be balanced against the real
   // column width rather than a guess.
@@ -272,15 +306,28 @@ const ValidationPage: React.FC = () => {
   }, [])
 
   // Measured collage width -> column count. Below ~640px the wall is a
-  // single column, from ~640px up it is two, and from 1024px up three.
+  // single column, from ~640px up it is two, from ~1024px three, and from
+  // the full desktop width up it is four so as much of the wall as
+  // possible is visible at once.
   const columnCount =
-    containerWidth < 640 ? 1 : containerWidth < 1024 ? 2 : 3
+    containerWidth < 640 ? 1 : containerWidth < 1024 ? 2 : containerWidth < 1280 ? 3 : 4
 
   // The bands come from the known intrinsic ratios alone — never from
   // rendered measurements — so the wall is fully determined on the first
   // paint and never reflows when the images finish loading.
   const bands =
     containerWidth > 0 ? buildCollage(validationTiles, columnCount) : []
+
+  const closeLightbox = () => setLightboxIndex(null)
+  const navigate = (step: 1 | -1) =>
+    setLightboxIndex((current) =>
+      current === null
+        ? current
+        : (current + step + validationTiles.length) % validationTiles.length,
+    )
+
+  const lightboxTile =
+    lightboxIndex === null ? null : validationTiles[lightboxIndex]
 
   return (
     <div className="min-h-screen pt-24">
@@ -293,7 +340,8 @@ const ValidationPage: React.FC = () => {
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Real reactions from the people who found us — every comment and email below
-            is a captured screenshot, unedited and unretouched.
+            is a captured screenshot, unedited and unretouched. Click any of them to
+            read it full size.
           </p>
         </div>
       </section>
@@ -306,11 +354,26 @@ const ValidationPage: React.FC = () => {
             {containerWidth > 0 && (
               <div className="flex flex-col" style={{ gap: GAP }}>
                 {bands.map((band, bandIndex) =>
-                  band.kind === 'wide' ? (
-                    // A wide screenshot keeps the full collage width, so a
-                    // long LinkedIn comment renders at close to its natural
-                    // size instead of a squeezed, illegible strip.
-                    <CollageTile key={band.tile.src} tile={band.tile} />
+                  band.kind === 'wideRow' ? (
+                    // Long screenshots share a full-width row, two per row
+                    // on desktop, so they stay readable without each one
+                    // eating a whole screen of scrolling.
+                    <div
+                      key={`wide-${bandIndex}`}
+                      className="flex items-start"
+                      style={{ gap: GAP }}
+                    >
+                      {band.tiles.map((tile) => (
+                        <div key={tile.src} className="flex-1 min-w-0">
+                          <CollageTile
+                            tile={tile}
+                            onOpen={() =>
+                              setLightboxIndex(validationTiles.indexOf(tile))
+                            }
+                          />
+                        </div>
+                      ))}
+                    </div>
                   ) : (
                     // A band of equal-width columns. flex-1 with min-w-0
                     // splits the row evenly; the aspect-ratio boxes inside
@@ -328,18 +391,67 @@ const ValidationPage: React.FC = () => {
                           style={{ gap: GAP }}
                         >
                           {column.map((tile) => (
-                            <CollageTile key={tile.src} tile={tile} />
+                            <CollageTile
+                              key={tile.src}
+                              tile={tile}
+                              onOpen={() =>
+                                setLightboxIndex(validationTiles.indexOf(tile))
+                              }
+                            />
                           ))}
                         </div>
                       ))}
                     </div>
-                  )
+                  ),
                 )}
               </div>
             )}
           </div>
         </div>
       </section>
+
+      {/* Lightbox: the compact wall stays readable because any tile opens
+          here at full size. Built-in Esc and close button; arrows walk the
+          wall in its visual order. */}
+      <Dialog open={lightboxIndex !== null} onOpenChange={closeLightbox}>
+        <DialogContent className="max-w-[95vw] md:max-w-6xl w-auto p-0 bg-background/98 backdrop-blur-md border-primary/40 overflow-hidden tron-glass">
+          {lightboxTile && (
+            <div className="flex flex-col items-center gap-3 p-4 md:p-6">
+              <DialogTitle className="sr-only">{lightboxTile.alt}</DialogTitle>
+              <div className="flex w-full items-center justify-center">
+                <img
+                  src={lightboxTile.src}
+                  alt={lightboxTile.alt}
+                  className="max-h-[78vh] w-auto max-w-full object-contain"
+                />
+              </div>
+              <div className="flex items-center gap-4">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => navigate(-1)}
+                  title="Previous (←)"
+                  className="tron-glass border border-primary/40 hover:border-primary/60"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </Button>
+                <span className="text-sm text-muted-foreground tabular-nums">
+                  {(lightboxIndex ?? 0) + 1} / {validationTiles.length}
+                </span>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => navigate(1)}
+                  title="Next (→)"
+                  className="tron-glass border border-primary/40 hover:border-primary/60"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </Button>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }
