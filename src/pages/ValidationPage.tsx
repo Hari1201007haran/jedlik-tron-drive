@@ -55,11 +55,15 @@ const HAIRLINE = 3
 /**
  * Number of masonry columns at each breakpoint. The page measures the
  * container so it can rebalance on resize.
+ *
+ * Two columns on desktop, not four: a comment screenshot shrunk into a
+ * 290px column renders its text at only a few pixels tall, which is
+ * unreadable. Two columns give each tile roughly double the width.
  */
 const COLUMN_COUNTS: { minWidth: number; columns: number }[] = [
-  { minWidth: 1024, columns: 4 },
-  { minWidth: 640, columns: 3 },
-  { minWidth: 0, columns: 2 },
+  { minWidth: 1024, columns: 2 },
+  { minWidth: 640, columns: 2 },
+  { minWidth: 0, columns: 1 },
 ]
 
 function columnsFor(width: number): number {
@@ -106,84 +110,90 @@ const validationTiles: ValidationTile[] = [
   {
     src: '/validation/linkedin-1.png',
     alt: 'LinkedIn comment describing the enclosed electric two-wheeler as a game-changer for city commuting',
-    ratio: 647 / 143,
+    ratio: 4.5245,
+    wide: true,
   },
   {
     src: '/validation/linkedin-2.png',
     alt: 'LinkedIn comment congratulating the team',
-    ratio: 675 / 135,
+    ratio: 5.0000,
+    wide: true,
   },
   {
     src: '/validation/linkedin-3.png',
     alt: 'LinkedIn comment encouraging the team to take the vehicle to the MVP and production, and asking for a roof for heat, sun and dust protection',
-    ratio: 647 / 262,
+    ratio: 2.4695,
   },
   {
     src: '/validation/linkedin-4.png',
     alt: 'LinkedIn comment on the e-POD challenging the assumption that urban mobility must choose between two-wheeler agility and four-wheeler protection',
-    ratio: 670 / 312,
+    ratio: 2.1474,
   },
   {
     src: '/validation/linkedin-5.png',
     alt: 'LinkedIn comment saying the product is great',
-    ratio: 646 / 117,
+    ratio: 5.5043,
+    wide: true,
   },
   {
     src: '/validation/linkedin-6.png',
     alt: 'LinkedIn comment noting price is key and that Europe and cold-winter countries need the product',
-    ratio: 693 / 183,
+    ratio: 3.7049,
+    wide: true,
   },
   {
     src: '/validation/linkedin-7.png',
     alt: 'LinkedIn comment saying the next generation will love this product',
-    ratio: 697 / 152,
+    ratio: 4.5855,
+    wide: true,
   },
   {
     src: '/validation/linkedin-8.png',
     alt: 'LinkedIn comment saying the vehicle helps with traffic congestion and pollution, and calling it a great innovation',
-    ratio: 696 / 477,
+    ratio: 1.4591,
   },
   {
     src: '/validation/linkedin-10.png',
     alt: 'LinkedIn comments with a mix of reactions, one calling the product much needed and a Gr8 news, one calling it a nice concept, and one calling it amazing for police patrol, delivery professionals and micro ambulance use cases',
-    ratio: 550 / 442,
+    ratio: 1.2443,
   },
   {
     src: '/validation/linkedin-12.png',
     alt: 'LinkedIn comments reacting to the launch with hearts and the word amazing',
-    ratio: 618 / 167,
+    ratio: 1.5090,
   },
   {
     src: '/validation/linkedin-13.png',
     alt: 'LinkedIn comment saying offering the battery as a service instead of bundling it into the sticker price is what actually gets the on-road cost down to something a daily commuter will consider',
-    ratio: 972 / 204,
+    ratio: 4.7647,
+    wide: true,
   },
   {
     src: '/validation/linkedin-14.png',
     alt: 'LinkedIn comment saying the team was expected to build something like this ten years back and is finally doing it, and that if it works well the markets of Bangalore, Mumbai, Delhi and Chennai are wide open',
-    ratio: 660 / 74,
+    ratio: 8.9189,
     wide: true,
   },
   {
     src: '/validation/linkedin-15.png',
     alt: 'LinkedIn comment saying they would really like to buy the vehicle',
-    ratio: 300 / 180,
+    ratio: 1.6667,
   },
   {
     src: '/validation/linkedin-16.png',
     alt: 'LinkedIn comment saying it is great to see someone attempting to solve this problem in India',
-    ratio: 660 / 122,
+    ratio: 5.4098,
     wide: true,
   },
   {
     src: '/validation/mail-9.png',
     alt: "Inbound email from an industry reader who saw the vision and wants to be on the line for a collaboration, with the sender's address blurred",
-    ratio: 933 / 400,
+    ratio: 2.3325,
   },
   {
     src: '/validation/mail-10.png',
     alt: "Inbound email congratulating the team on the product and looking forward to the launch, with the sender's address blurred",
-    ratio: 935 / 473,
+    ratio: 1.9767,
   },
 ]
 
