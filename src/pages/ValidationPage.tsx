@@ -218,7 +218,7 @@ const ValidationPage: React.FC = () => {
                       <img
                         src={tile.src}
                         alt={tile.alt}
-                        loading="lazy"
+                        loading="eager"
                         decoding="async"
                         className="block h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.015]"
                       />
