@@ -49,63 +49,6 @@ type ValidationTile = {
 /** Gap between tiles, in px. */
 const GAP = 12
 
-/** Height of the red hover hairline reserved at the top of each tile. */
-const HAIRLINE = 3
-
-/**
- * Number of masonry columns at each breakpoint. The page measures the
- * container so it can rebalance on resize.
- *
- * Two columns on desktop, not four: a comment screenshot shrunk into a
- * 290px column renders its text at only a few pixels tall, which is
- * unreadable. Two columns give each tile roughly double the width.
- */
-const COLUMN_COUNTS: { minWidth: number; columns: number }[] = [
-  { minWidth: 1024, columns: 2 },
-  { minWidth: 640, columns: 2 },
-  { minWidth: 0, columns: 1 },
-]
-
-function columnsFor(width: number): number {
-  for (const c of COLUMN_COUNTS) {
-    if (width >= c.minWidth) return c.columns
-  }
-  return 2
-}
-
-/**
- * Spread the tiles across columns so every column ends at roughly the same
- * height. Greedy shortest-column placement, but the starting column is
- * rotated per tile so tall and short tiles interleave instead of stacking
- * into predictable stripes.
- */
-function balance(
-  tiles: ValidationTile[],
-  columns: number,
-  containerWidth: number
-): ValidationTile[][] {
-  const colWidth = (containerWidth - GAP * (columns - 1)) / columns
-  const heights = new Array(columns).fill(0) as number[]
-  const result: ValidationTile[][] = Array.from({ length: columns }, () => [])
-
-  tiles.forEach((tile, i) => {
-    // Rotate the starting point so successive tiles do not all compete for
-    // the same column and end up forming visible vertical runs.
-    const start = i % columns
-    let best = start
-    for (let k = 0; k < columns; k++) {
-      const idx = (start + k) % columns
-      if (heights[idx] < heights[best]) best = idx
-    }
-    result[best].push(tile)
-    // Height the tile will occupy: image height at this column width, plus
-    // the hairline and the gap beneath it.
-    heights[best] += colWidth / tile.ratio + HAIRLINE + GAP
-  })
-
-  return result
-}
-
 const validationTiles: ValidationTile[] = [
   {
     src: '/validation/linkedin-1.png',
@@ -214,12 +157,13 @@ const ValidationPage: React.FC = () => {
     return () => ro.disconnect()
   }, [])
 
-  const columns = columnsFor(containerWidth)
-  // Tiles flagged `wide` are too long to read inside a narrow masonry
-  // column, so they are pulled out and given their own full-width row.
-  const wideTiles = validationTiles.filter((t) => t.wide)
-  const narrowTiles = validationTiles.filter((t) => !t.wide)
-  const laidOut = containerWidth > 0 ? balance(narrowTiles, columns, containerWidth) : []
+  // Every tile is rendered full-width, one per row.
+  //
+  // A masonry column squeezes a screenshot down to a fraction of its
+  // width, which shrinks the comment text to a few pixels tall and makes
+  // it unreadable. Stacking the tiles keeps each one at the full column
+  // width, so every comment is legible and every photo is visible.
+  const laidOut = containerWidth > 0 ? validationTiles : []
 
   return (
     <div className="min-h-screen pt-20">
@@ -243,21 +187,30 @@ const ValidationPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div id="validation-collage" className="w-full">
             {containerWidth > 0 && (
-              <>
-                {/* Wide tiles first, each on its own full-width row. The
-                    screenshot keeps its own aspect ratio, so the box is
-                    exactly as tall as the picture needs and the text stays
-                    at full size instead of being shrunk into a column. */}
-                {wideTiles.map((tile) => (
+              <div className="flex flex-col" style={{ gap: GAP }}>
+                {/* Every tile sits on its own full-width row. The picture
+                    keeps its own aspect ratio, so the box is exactly as
+                    tall as the image needs and the comment text stays at
+                    full size instead of being shrunk into a narrow
+                    column. */}
+                {laidOut.map((tile) => (
                   <figure
                     key={tile.src}
-                    className="group relative mb-[12px] overflow-hidden border border-primary/30 bg-white/95 transition-colors duration-300 hover:border-primary"
+                    className="group relative overflow-hidden border border-primary/30 bg-white/95 transition-colors duration-300 hover:border-primary"
                   >
+                    {/* Red hairline that fills on hover. */}
                     <span
                       aria-hidden="true"
                       className="absolute inset-x-0 top-0 z-10 h-[3px] origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
                       style={{ background: 'hsl(var(--primary))' }}
                     />
+
+                    {/* The intrinsic ratio reserves the exact box before the
+                        image loads, so the wall never reflows. The box is
+                        sized with aspect-ratio rather than width/height
+                        attributes, because those attributes together with a
+                        full-width image collapse the height and knock the
+                        image out of the column. */}
                     <div
                       style={{ aspectRatio: `${tile.ratio}` }}
                       className="w-full overflow-hidden bg-white"
@@ -272,50 +225,7 @@ const ValidationPage: React.FC = () => {
                     </div>
                   </figure>
                 ))}
-
-                <div className="flex items-start" style={{ gap: GAP }}>
-                {laidOut.map((col, ci) => (
-                  <div
-                    key={ci}
-                    className="flex min-w-0 flex-1 flex-col"
-                    style={{ gap: GAP }}
-                  >
-                    {col.map((tile, i) => (
-                      <figure
-                        key={tile.src}
-                        className="group relative overflow-hidden border border-primary/30 bg-white/95 transition-colors duration-300 hover:border-primary"
-                      >
-                        {/* Red hairline that fills on hover. */}
-                        <span
-                          aria-hidden="true"
-                          className="absolute inset-x-0 top-0 z-10 h-[3px] origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
-                          style={{ background: 'hsl(var(--primary))' }}
-                        />
-
-                        {/* The intrinsic ratio reserves the exact box before the
-                            image loads, so the wall never reflows. The box is
-                            sized with aspect-ratio rather than width/height
-                            attributes, because those attributes together with a
-                            full-width image collapse the height and knock the
-                            image out of the column. */}
-                        <div
-                          style={{ aspectRatio: `${tile.ratio}` }}
-                          className="w-full overflow-hidden bg-white"
-                        >
-                          <img
-                            src={tile.src}
-                            alt={tile.alt}
-                            loading="lazy"
-                            decoding="async"
-                            className="block h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.015]"
-                          />
-                        </div>
-                      </figure>
-                    ))}
-                  </div>
-                ))}
-                </div>
-              </>
+              </div>
             )}
           </div>
         </div>
