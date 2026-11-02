@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
@@ -15,33 +15,20 @@ import {
  * re-typed copy, so there are no claims to keep in sync and no invented
  * statistics — the pixels are the evidence.
  *
- * The screenshots come in very different shapes. Some are a single thin
- * LinkedIn line, others are a tall thread of replies or a full email body.
- * A normal grid would leave large holes whenever a tall image shares a row
- * with a short one.
+ * The screenshots are packed into one tight masonry collage (CSS
+ * multi-column) so all sixteen read as a single wall of social proof at a
+ * glance, with no empty gaps between them. Each screenshot keeps its own
+ * aspect ratio: the box is reserved from that ratio before the image loads,
+ * so the collage never reflows and nothing is cropped. Because the tiles
+ * vary in height they pack tightly and the columns land at roughly the same
+ * height — the collage look — while the column count steps up with the
+ * viewport (2 → 3 → 4) so the wall stays dense on a laptop but never turns
+ * the comment text into a thin, unreadable strip.
  *
- * CSS columns would fix the holes but they fill strictly top-to-bottom in
- * each column, which starves the last column and leaves a ragged bottom
- * edge. So this page lays the wall out itself:
- *
- *   1. Every tile's height is known ahead of time from its intrinsic aspect
- *      ratio, so nothing has to be measured on screen and the layout never
- *      jumps before the images load.
- *   2. Each tile is placed into whichever column is currently shortest
- *      (classic greedy masonry balance).
- *   3. The starting column is rotated per tile, so the collage does not
- *      read as a set of vertical stripes.
- *   4. A very wide screenshot (a long LinkedIn comment) would shrink to an
- *      illegible strip inside one narrow column, so those tiles are marked
- *      `wide`. On wide screens they pair up two per full-width row — big
- *      enough to read, but half the height of one-per-row, which is what
- *      keeps the whole wall in view. On narrow screens where the wall is
- *      only one or two columns wide, each wide tile keeps a row to itself.
- *
- * The collage is deliberately compact: four masonry columns on desktop so
- * as many screenshots as possible are on screen at once, and because a
- * smaller tile is naturally harder to read, every tile opens a full-size
- * lightbox on click (arrows or Esc to move through the wall).
+ * Since a smaller tile is naturally harder to read, every tile opens a
+ * full-size lightbox on click (arrows or Esc to move through the wall). That
+ * is what keeps the compact collage honest: the wall shows the volume of
+ * reaction, and the lightbox lets any single one be read at full size.
  *
  * The email screenshots are published with the sender's address already
  * blurred at the image level, so nothing here needs to know about redaction.
@@ -53,14 +40,13 @@ type ValidationTile = {
   /** Intrinsic width / height of the source screenshot. */
   ratio: number
   /**
-   * When true the tile is a long screenshot that must not be squeezed into
-   * one narrow column. Wide tiles get their own full-width row(s) inside
-   * the wall: paired two-up on desktop, one per row on small screens.
+   * Kept for source-data compatibility; the collage treats every tile the
+   * same now, so this is no longer used to split the layout.
    */
   wide?: boolean
 }
 
-/** Gap between tiles, in px. */
+/** Gap between tiles, in px. Drives both the column gap and the row gap. */
 const GAP = 12
 
 const validationTiles: ValidationTile[] = [
@@ -155,101 +141,8 @@ const validationTiles: ValidationTile[] = [
 ]
 
 /**
- * One horizontal slice of the wall, in visual (top-to-bottom) order.
- *
- * The array of tiles is cut into bands: a run of masonry columns, then a
- * row of wide tiles, then the next run of columns, and so on.
- * Walking the bands top to bottom keeps the reading order of the collage
- * identical to the order of the source array.
- */
-type CollageBand =
-  /** Long screenshots sharing one full-width row (one or two of them). */
-  | { kind: 'wideRow'; tiles: ValidationTile[] }
-  /** A band of equal-width masonry columns. */
-  | { kind: 'masonry'; columns: ValidationTile[][] }
-
-/**
- * Greedy masonry over the known intrinsic ratios.
- *
- * Heights are accumulated in "column width" units (a tile of ratio r is
- * 1 / r column-widths tall), which is exact because every column in a band
- * has the same width. Nothing is measured on screen, so the layout is the
- * same before and after the images load.
- *
- * Each tile goes into the currently shortest column, but the search for
- * that column starts one slot past the previous placement. Rotating the
- * scan start makes ties break in a different order for every tile, so the
- * wall does not degenerate into a set of vertical stripes.
- *
- * A `wide` tile flushes the running columns into a finished band and then
- * buffers into a wide row: two of them per row on desktop-sized walls,
- * one per row when the wall is only one or two columns wide. A leftover
- * odd wide tile keeps its own row at the end.
- */
-function buildCollage(
-  tiles: ValidationTile[],
-  columnCount: number,
-): CollageBand[] {
-  const bands: CollageBand[] = []
-
-  const emptyColumns = (): ValidationTile[][] =>
-    Array.from({ length: columnCount }, () => [])
-
-  let columns = emptyColumns()
-  let heights = new Array<number>(columnCount).fill(0)
-  let scanStart = 0
-  let wideBuffer: ValidationTile[] = []
-
-  // Two wide tiles share a row only when the wall is wide enough that each
-  // half is still comfortably readable (~600px at the desktop column count).
-  const widePerRow = columnCount >= 4 ? 2 : 1
-
-  const flushColumns = () => {
-    if (columns.some((column) => column.length > 0)) {
-      bands.push({ kind: 'masonry', columns })
-    }
-    columns = emptyColumns()
-    heights = new Array<number>(columnCount).fill(0)
-    scanStart = 0
-  }
-
-  const flushWide = () => {
-    if (wideBuffer.length > 0) {
-      bands.push({ kind: 'wideRow', tiles: wideBuffer })
-      wideBuffer = []
-    }
-  }
-
-  for (const tile of tiles) {
-    if (tile.wide) {
-      flushColumns()
-      wideBuffer.push(tile)
-      if (wideBuffer.length >= widePerRow) flushWide()
-      continue
-    }
-
-    // Shortest column, scanning forward from the rotated start so ties go
-    // to whichever candidate comes first in the rotated order.
-    let shortest = scanStart
-    for (let i = 1; i < columnCount; i++) {
-      const candidate = (scanStart + i) % columnCount
-      if (heights[candidate] < heights[shortest]) shortest = candidate
-    }
-
-    columns[shortest].push(tile)
-    heights[shortest] += 1 / tile.ratio
-    scanStart = (shortest + 1) % columnCount
-  }
-
-  flushColumns()
-  flushWide()
-  return bands
-}
-
-/**
- * A single screenshot tile. Identical whether it sits in a masonry column
- * or on a wide row — only the available width differs. Clicking opens the
- * tile full size, which is what keeps the compact collage readable.
+ * A single screenshot tile. Clicking opens the tile full size, which is what
+ * keeps the compact collage readable.
  */
 const CollageTile: React.FC<{
   tile: ValidationTile
@@ -268,7 +161,7 @@ const CollageTile: React.FC<{
     />
 
     {/* The intrinsic ratio reserves the exact box before the image loads,
-        so the wall never reflows. The box is sized with aspect-ratio
+        so the collage never reflows. The box is sized with aspect-ratio
         rather than width/height attributes, because those attributes
         together with a full-width image collapse the height and knock the
         image out of the column. */}
@@ -288,35 +181,7 @@ const CollageTile: React.FC<{
 )
 
 const ValidationPage: React.FC = () => {
-  const [containerWidth, setContainerWidth] = useState(0)
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
-
-  // Measure the container so the wall can be balanced against the real
-  // column width rather than a guess.
-  useEffect(() => {
-    const el = document.getElementById('validation-collage')
-    if (!el) return
-
-    const measure = () => setContainerWidth(el.clientWidth)
-    measure()
-
-    const ro = new ResizeObserver(measure)
-    ro.observe(el)
-    return () => ro.disconnect()
-  }, [])
-
-  // Measured collage width -> column count. Below ~640px the wall is a
-  // single column, from ~640px up it is two, from ~1024px three, and from
-  // the full desktop width up it is four so as much of the wall as
-  // possible is visible at once.
-  const columnCount =
-    containerWidth < 640 ? 1 : containerWidth < 1024 ? 2 : containerWidth < 1280 ? 3 : 4
-
-  // The bands come from the known intrinsic ratios alone — never from
-  // rendered measurements — so the wall is fully determined on the first
-  // paint and never reflows when the images finish loading.
-  const bands =
-    containerWidth > 0 ? buildCollage(validationTiles, columnCount) : []
 
   const closeLightbox = () => setLightboxIndex(null)
   const navigate = (step: 1 | -1) =>
@@ -350,62 +215,28 @@ const ValidationPage: React.FC = () => {
       <section id="validation" className="pb-24 relative">
         <div className="absolute inset-0 tron-grid-bg opacity-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div id="validation-collage" className="w-full">
-            {containerWidth > 0 && (
-              <div className="flex flex-col" style={{ gap: GAP }}>
-                {bands.map((band, bandIndex) =>
-                  band.kind === 'wideRow' ? (
-                    // Long screenshots share a full-width row, two per row
-                    // on desktop, so they stay readable without each one
-                    // eating a whole screen of scrolling.
-                    <div
-                      key={`wide-${bandIndex}`}
-                      className="flex items-start"
-                      style={{ gap: GAP }}
-                    >
-                      {band.tiles.map((tile) => (
-                        <div key={tile.src} className="flex-1 min-w-0">
-                          <CollageTile
-                            tile={tile}
-                            onOpen={() =>
-                              setLightboxIndex(validationTiles.indexOf(tile))
-                            }
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    // A band of equal-width columns. flex-1 with min-w-0
-                    // splits the row evenly; the aspect-ratio boxes inside
-                    // reserve each tile's exact height before the image
-                    // loads, so the columns stay balanced with no reflow.
-                    <div
-                      key={`columns-${bandIndex}`}
-                      className="flex"
-                      style={{ gap: GAP }}
-                    >
-                      {band.columns.map((column, columnIndex) => (
-                        <div
-                          key={columnIndex}
-                          className="flex flex-1 min-w-0 flex-col"
-                          style={{ gap: GAP }}
-                        >
-                          {column.map((tile) => (
-                            <CollageTile
-                              key={tile.src}
-                              tile={tile}
-                              onOpen={() =>
-                                setLightboxIndex(validationTiles.indexOf(tile))
-                              }
-                            />
-                          ))}
-                        </div>
-                      ))}
-                    </div>
-                  ),
-                )}
+          {/* CSS multi-column masonry: tiles of differing heights flow down
+              one column then into the next, packing into a tight collage with
+              no empty gaps. `break-inside-avoid` (on the wrapper) keeps a tile
+              from being split across two columns; the wrapper's bottom margin
+              is the row gap inside a column. */}
+          <div
+            id="validation-collage"
+            className="w-full columns-2 md:columns-3 lg:columns-4"
+            style={{ columnGap: GAP }}
+          >
+            {validationTiles.map((tile) => (
+              <div
+                key={tile.src}
+                className="break-inside-avoid"
+                style={{ marginBottom: GAP }}
+              >
+                <CollageTile
+                  tile={tile}
+                  onOpen={() => setLightboxIndex(validationTiles.indexOf(tile))}
+                />
               </div>
-            )}
+            ))}
           </div>
         </div>
       </section>
