@@ -24,7 +24,7 @@ const mentors: Mentor[] = [
     photo: "/Swathi.jpg",
     gradient: "from-primary to-accent",
     description: "Guiding the mechanical engineering vision of Jedlik Motors.",
-    currentPosition: "EE-Chassis Electronics & ADAS Expert, VINFAST",
+    currentPosition: "Technologist, EV Projects — Royal Enfield",
     experience: [
       { title: "Sr. Manager", company: "Ex-Stellantis" },
       { title: "Performance Manager", company: "Ex-Renault" },
