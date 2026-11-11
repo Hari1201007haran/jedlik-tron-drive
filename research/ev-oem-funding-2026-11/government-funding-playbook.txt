@@ -1,0 +1,243 @@
+# Early-Stage Indian EV Hardware/OEM — Funding Playbook
+
+**Scope note:** status is verified against late-2026 primary sources where available. Several items are flagged **UNCERTAIN** because no official 2026 confirmation was retrievable. This is a working playbook, not a substitute for reading current scheme guidelines before applying.
+
+---
+
+## 1. What changed most recently (and matters most)
+
+| Finding | Effect on Jedlik |
+|---|---|
+| **SISFS closed to new applications 31 May 2026** — disbursals continue | The old "apply to SISFS" plan is dead. Direct FoF access is unavailable to a new application. |
+| **Startup India Fund of Funds 2.0 (FoF 2.0) operationalised, ₹10,000 crore corpus**, SIDBI as implementing agency, April 2026 notification | This is the live successor route to domestic VC capital — but **indirectly**, via SEBI-registered AIFs. Jedlik must get into a FoF-2.0-supported fund's portfolio, not apply directly. |
+| **PM E-DRIVE e-2W incentive was extended by gazette of 10 Aug 2026 to 31 March 2028**; outlay raised ₹1,190cr → ₹2,767cr; cap 45,79,120 e-2Ws | The e-2W demand incentive **is still live** despite a July 2026 PIB answer that showed the old31 Jul 2026 terminal date. The August gazette is the later, controlling instrument. |
+| **NIDHI-PRAYAS 2.0 is DST, not DPIIT**; grants are **₹20L (PRAYAS Centre) / ₹40L (Advanced PRAYAS Centre)** | The brief's "₹50 lakh / DPIIT" framing is wrong. Corrected below. |
+| **Techstars deal is now $220K** ($200K uncapped MFN SAFE + $20K for 5%) | The widely quoted $20K/$120K terms are outdated. |
+
+---
+
+## 2. Indian government programmes
+
+### 2.1 Grants and seed capital
+
+| Programme | Ministry / Dept | What it funds | Typical award (INR) | Status (late 2026) | Eligible for early-stage 2W EV OEM? | Source |
+|---|---|---|---|---|---|---|
+| **Startup India Seed Fund Scheme (SISFS)** | DPIIT, M/o Commerce & Industry | PoC, prototype, market entry, commercialisation via approved incubators; grant + convertible debt/debt-linked | Up to ₹20L grant; up to ₹50L convertible debt | **CLOSED to new applications** (last date 31 May 2026); disbursals ongoing | Was eligible (DPIIT-recognised, incorporated ≤2 yrs). No longer applicable to a new applicant | [playbook p.13](https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf) · [portal](https://seedfund.startupindia.gov.in/) |
+| **Startup India Fund of Funds 2.0 (FoF 2.0)** | DPIIT, M/o Commerce & Industry | Government capital into SEBI-registered AIFs investing in deep-tech, manufacturing, growth-stage startups | Corpus ₹10,000cr; startup-level cheque varies by AIF | **LIVE** (operationalised April 2026) | Indirectly — needs an FoF-2.0-supported fund to invest. Priority sectors explicitly include deep tech + manufacturing | [DPIIT notification PDF](https://www.dpiit.gov.in/static/uploads/2026/04/3382625ffc31ea32ecc33ea68365172d.pdf) · [playbook](https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf) |
+| **Fund of Funds for Startups (FFS 1.0)** | DPIIT, M/o Commerce & Industry | Earlier FoF window; same AIF channel | Corpus ₹10,000cr (per playbook) | Ongoing legacy window | Indirectly via supported AIFs | [playbook](https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf) |
+| **NIDHI-PRAYAS 2.0** | **Department of Science & Technology** | Pre-incubation prototype support via PRAYAS Centres / Advanced PRAYAS Centres (DeepTech) | ₹20L (PRAYAS Centre); ₹40L (Advanced PRAYAS Centre) | LIVE — rolling via centres | Yes, strong fit for swappable-pod powertrain/battery prototyping. DPIIT startup or individual innovator | [PRAYAS 2.0 portal](https://nidhi.dst.gov.in/prayas2-0) |
+| **NIDHI Seed Support Programme (SSP)** | DST | Post-incubation seed funding; debt/equity/convertible as per incubator | Up to ₹1 crore per startup, subject to TBI guidelines | LIVE (applications released on site) | Yes — most accessible direct seed route for a validated hardware prototype. Apply via NIDHI TBI | [SSP portal](https://nidhi.dst.gov.in/nidhissp/) |
+| **NIDHI-Accelerator** | DST | Market-readiness acceleration for incubated tech startups | Up to ₹40L (₹30L to accelerator + ₹10L to startups) | LIVE via supported incubators/accelerators | Yes, if routed through a DST-supported accelerator | [guidelines](https://nidhi.dst.gov.in/schemes-programmes/nidhiaccelerator/) |
+| **NIDHI-EIR** | DST | 12-month full-time fellowship to pursue a tech business pre-incorporation | Monthly stipend (INR) | LIVE | Marginal — designed for individuals, not a funded OEM. Useful for a founder not yet incorporated | [NIDHI](https://nidhi.dst.gov.in/) |
+| **NIDHI-Centre of Excellence (CoE)** | DST | CoE grants to host institutions (IIT Madras, IIT Guwahati, etc.) for a themed tech domain; startups benefit indirectly via the CoE's own calls, labs, and seed pool | Up to ₹50cr over 5 years **to the incubator**, not to the startup | LIVE as an institutional programme; startup windows are CoE-specific | Yes — highest-value local route given Anna University / IIT Madras Research Park proximity. Must monitor IIT Madras CoE calls directly | [playbook](https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf) |
+| **iDEX / ADITI** | D/o Defence Development | Defence-adjacent innovation via partner incubators; grants for R&D and prototypes | Challenge/contract-specific; SPARK to Prime to Mission tiers | LIVE (rolling challenges) | Only if a defence/defence-adjacent problem statement exists. Low priority for delivery-fleet EVs | [idex.gov.in](https://idex.gov.in/) · [ADITI guidelines](https://idex.gov.in//uploads/page/aditi_scheeme.pdf) |
+| **TIDE 2.0 / TIDES (DSSS)** | MeitY / IIT Madras | Fellowship + incubation support for tech startups using emerging tech | Varies; incubator-led | LIVE | Relevant if the pod uses IoT/AI/electronics; not core OEM funding | [playbook](https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf) |
+| **SAMRIDH** | MeitY | Accelerators for IT/product startups; customer/investor/international connect | Accelerator-level; startup benefit varies | LIVE | Weak fit — explicitly IT/software product startups, not hardware OEMs | [playbook](https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf) |
+| **STPI-NGIS** | MeitY / STPI | Seed/risk funding + labs, equipment, testing facilities | Up to ₹25L seed/risk | LIVE | Possible if housed at a STPI; hardware test-lab access is the real value | [playbook](https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf) |
+| **Atal Incubation Centres (AIC) / EIC** | AIM, NITI Aayog | Incubation, lab, mentoring, seed pool | Centre-level; EIC up to ₹50cr over 5 yrs | LIVE | Yes as incubation support; direct grant to Jedlik is unlikely | [AIC overview](https://aim.gov.in/aic-overview.php) · [AIC guidelines](https://aim.gov.in/pdf/AIC-Guidelines-Final_24Nov-2023.pdf) |
+| **SIPP (IP protection)** | DPIIT / IP India | Government pays facilitator's professional fee for patent/trademark filings for DPIIT startups | Fee-based; no cash grant | LIVE | Yes, but small money. File patents early — needed for grant and PLI eligibility | [SIPP](https://www.dpiit.gov.in/offerings/schemes-and-services/details/sipp-gTM1UDNtQWa) · [IP India](https://ipindia.gov.in/page-content/startups-intellectual-property-protection-sipp) |
+
+### 2.2 EV demand and manufacturing incentives
+
+| Programme | Ministry / Dept | What it funds | Typical award | Status (late 2026) | Eligible for early-stage 2W EV OEM? | Source |
+|---|---|---|---|---|---|---|
+| **PM E-DRIVE (e-2W)** | MHI | Demand incentive for electric 2-wheelers: ₹2,500/kWh of battery capacity, capped ₹5,000 per vehicle | Up to ₹5,000/vehicle; e-2W outlay ₹2,767cr, cap45,79,120 vehicles | **LIVE** — scheme to 31 Mar 2028; e-2W runs to FY2027-28; last claim 31 Dec 2027 | Yes, but only via a **registered vehicle sale** through a beneficiary manufacturer/GIA. It is a *sale-side reimbursement*, not capital — useless pre-revenue | [Gazette 10 Aug 2026](https://pmedrive.heavyindustries.gov.in/docs/policy_document/Gazette%20Notification%2010%2008%202026%20on%20enhancement%20of%20Outlay%2011900%20cr.pdf) · [FAQs](https://pmedrive.heavyindustries.gov.in/FAQs) |
+| **PM E-DRIVE (charging infra)** | MHI | EV charging stations, including battery-swapping stations under the MHI charging guidelines | Per-station incentive; cap and rates per category | LIVE to 31 Mar 2028 | Yes, but again reimbursement after spend, and swapped stations need24x7 uptime + minimum utilisation | [PM E-DRIVE](https://pmedrive.heavyindustries.gov.in/) |
+| **PM E-DRIVE (e-3W, e-4W, e-trucks, e-ambulances)** | MHI | Demand incentives for other EV categories | Per-kWh, category-capped | LIVE to 31 Mar 2028 | Only if Jedlik extends into e-3W/utility | [FAQs](https://pmedrive.heavyindustries.gov.in/FAQs) |
+| **EMPS 2024** | MHI | Predecessor demand-incentive scheme; **subsidies only on vehicles purchased up to 31 Mar 2024** | e-2W ₹5,000, e-3W ₹25,000, e-4W up to ₹50,000 | **CLOSED** — superseded by PM E-DRIVE | No | [MHI](https://heavyindustries.gov.in/) |
+| **FAME II** | MHI | Demand subsidy + charging infra; **scheme closed 31 Mar 2024** | e-2W ₹5,000–₹7,000; e-3W ₹25,000; e-4W ₹50,000 | **CLOSED** | No | [FAME II](https://fame2.heavyindustries.gov.in/) |
+| **ACC battery PLI** | MHI | Manufacturing capacity for advanced chemistry cells and battery packs | Outlay ₹18,100cr; per-unit incentives for qualifying capacity | LIVE (multi-year) | **No at pre-seed.** This is a plant-scale manufacturing incentive for gigafactories with capex in the hundreds of crores. Any "apply now" advice here would be misleading | [MHI PLI](https://heavyindustries.gov.in/) |
+| **Automotive Component / Mobility PLI** | MHI | Manufacturing of automotive components; ACC tier-1/2 auto components | 3–5% of turnover; min turnover thresholds | LIVE | **No at pre-seed.** These are investment/milestone-linked manufacturing incentives for established plants | [MHI PLI](https://heavyindustries.gov.in/) |
+| **GeM Startup Runway** | GeM, M/o Commerce | Government procurement access; relaxations on prior-experience, turnover, EMD | No direct cash | LIVE | **Yes — potentially high-value.** Zero/Low-emission electric 3-wheelers and fleet vehicles are procured by state transport departments and PSUs. This is a *revenue* route, not capital | [gem.gov.in](https://gem.gov.in/Startup_Runway) · [Startup India public procurement](https://www.startupindia.gov.in/content/sih/en/public_procurement.html) |
+
+### 2.3 Debt, guarantees and tax
+
+| Route | Administering body | What it provides | Typical size | Status | Fit for early-stage EV OEM | Source |
+|---|---|---|---|---|---|---|
+| **Credit Guarantee Scheme for Startups (CGSS)** | DPIIT / SIDBI | Guarantee cover to lenders so a DPIIT startup gets a collateral-free loan | Guarantee cover up to **₹20 crore per eligible borrower** | LIVE | Yes — the single most relevant debt route for a hardware OEM without property collateral | [playbook](https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf) |
+| **CGTMSE** | Ministry of MSME / SIDBI | Credit guarantee enabling collateral-free MSME loans | Up to ₹5cr (manufacturing/service), up to ₹10cr for certain units; enhanced limits announced for larger units | LIVE | Yes — use where CGTMSE classification (Udyam MSME) is available; often stacked with CGSS | [CGTMSE](https://cgtmse.in/) |
+| **MUDRA / Tarun Upajanshi** | MUDRA Ltd / PMMY | Bank term loan for micro/small units, no collateral, no processing fee | Up to ₹20L, ₹50L (and higher via newer categories) | LIVE | Limited. Adequate for prototypes and tooling, not for a vehicle programme or pilot fleet | [pmjdy.gov.in](https://www.pmjdy.gov.in/) |
+| **SIDBI E-Mobility / EV financing** | SIDBI | Direct lending for EVs and EV infrastructure | Product-specific | LIVE (product terms vary) | Yes for vehicle financing / fleet pilots; generally debt against assets or receivables | [SIDBI](https://www.sidbi.in/) |
+| **Stand-Up India** | Dept of Financial Services | Bank loan for SC/ST and women entrepreneurs | ₹10L–₹1cr | LIVE | Only if founder category qualifies | [playbook](https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf) |
+| **80-IAC** | Income Tax Dept / DPIIT | Income-tax deduction for eligible startups: 80% of eligible IP expenditure |80% of eligible IP spend as deduction | LIVE | Yes — relevant to R&D-heavy pod/powertrain IP. **Note:** the brief's "tax exemption worth X rupees" framing is wrong — it is a deduction, not a cash grant | [Startup India Tax Playbook May 2026](https://www.startupindia.gov.in/content/dam/startupindia/Tax-Playbook-for-Startup-Ecosystem-May-2026.pdf) |
+| **Section 115E / investor tax pass-through** | CBDT | The startup-relevant VC provision is now **Section 194 of the Income-tax Act, 2025** (VC fund pass-through); old Act Section 115E was an NRI-specific provision | Tax exemption at fund level for qualifying investments | LIVE | Applies to the *investor*, not the startup. Use it in fundraising conversations: a VC with Section 194 cover can accept the round more cheaply | [Income-tax Act 2025](https://www.incometaxindia.gov.in/) |
+
+### 2.4 State EV policies
+
+**Read the incentive type before valuing it.** Two very different things:
+- **Vehicle-side subsidy** (per-unit on sale) → only realisable through registered sales. Near-zero value to a pre-revenue OEM; can be booked as a future margin.
+- **Capital/interest subsidy + reimbursements + tax/VAT concessions** → realisable post-capex, but only if the plant is in that state.
+
+| State | Vehicle-side subsidy for e-2W | Capital-side support | Strategic note for Jedlik |
+|---|---|---|---|
+| **Tamil Nadu** | None directly for e-2W purchase | EV policy capital subsidy for EV manufacturing units (policy-linked, investment-dependent); EV & EV-component manufacturing treated as priority | Best strategic fit: state-level manufacturing incentives, TN auto cluster, SIPCOT. Land/capital subsidy beats per-vehicle subsidy at this stage |
+| **Maharashtra** | **₹9,000 per e-2W** under EV Policy 2024 | ₹25,000–₹30,000 per e-vehicle; separate incentives for EV charging stations | Strong fleet-customer density (Mumbai logistics) → commercial advantage; incentive terms depend on local registration |
+| **Karnataka** | EV & energy-storage policy with capital incentives for EV/energy-storage manufacturing | Investment-linked | Good if EV supply chain / testing is needed |
+| **Gujarat** | e-vehicle purchase subsidy under EV Policy 2022 | Capital subsidy for EV / EV-component manufacturing | Relevant for manufacturing scale-up; not immediate |
+| **Delhi** | EV policy has historically been **purchase-subsidy free** (deliberate, to push e-buses/commercial EVs) | Mostly not relevant to a manufacturer | Useful market for e-3W/fleet, not for manufacturing |
+| **Telangana, AP, UP, Rajasthan** | Policy-linked EV purchase subsidies, typically small and subject to caps/registration conditions | Capital subsidies in some cases | Treat as secondary; verify current guidelines before modelling |
+| **Kerala** | State EV policy with vehicle and charging support | — | Verify before relying |
+
+**UNCERTAIN — not verified against a live 2026 primary PDF for:** Maharashtra EV Policy 2025–2030 (a superseding policy to the 2024 one was reported, ~₹1,993cr); Karnataka Clean Mobility Policy 2025-30; the exact current TN policy (2022 vs 2023 guidelines); Gujarat/UP/AP/Rajasthan/Delhi/Telangana terms. Verify each on the state portal before modelling any subsidy.
+
+---
+
+## 3. Global funds, accelerators and DFIs
+
+| Name | Type | Typical cheque | Geography acceptance | Relevance to an Indian EV OEM | Source |
+|---|---|---|---|---|---|
+| **Y Combinator** | Accelerator / VC | **$500,000** — $125K for 7% + $375K uncapped MFN SAFE | Global, no geography restriction; ~1–2% acceptance | Highest-signal global route for a hardware OEM. Uncapped SAFE means no valuation ceiling. Batch deadlines ~3 per year | [ycombinator.com/deal](https://ycombinator.com/deal) |
+| **Techstars** | Accelerator | **$220,000** ($200K uncapped MFN SAFE + $20K for 5%) | Global; ~300+ accelerators, India presence | Strong fit; uncapped SAFE again removes valuation risk | [techstars.com/accelerators](https://www.techstars.com/accelerators) |
+| **Plug and Play Ventures** | Corporate venture / accelerator | Varies; mobility vertical runs cohort programmes | Global; India presence | Good for fleet pilots and OEM partnerships in the mobility vertical | [plugandplaytech.com](https://www.plugandplaytech.com/) |
+| **iDEX / Mission Divyast** | Government challenge programme | Challenge-specific grants (INR) | Indian startups; defence-adjacent | Only with a defence problem statement | [idex.gov.in](https://idex.gov.in/) |
+| **Proparco (AFD Group)** | DFI / impact investor | Project and equity finance; lower-ticket SME loans | Francophone + developing countries; strong India presence | Best DFI fit for EV manufacturing and fleet financing in India | [proparco.com](https://www.proparco.com/en/) |
+| **IFC** | DFI | Equity + debt; typical equity $1–50m | Global developing markets | Relevant once scaling into fleet financing/manufacturing; too large for pre-seed equity | [ifc.org](https://www.ifc.org/) |
+| **ADB** | DFI | Project finance, equity, private sector operations | Asia-Pacific | Relevant for large fleet-financing or charging-infrastructure projects, not pre-seed | [adb.com](https://www.adb.org/) |
+| **EBRD** | DFI | Equity/debt; green transition mandate | India not a country of operation (Eurasia, Europe) | **Not directly applicable** — flag as closed to India | [ebrd.com](https://www.ebrd.com/) |
+| **British Business Bank** | DFI | Growth debt/equity | UK companies; has international programmes | Weak fit; Indian subsidiary funding is possible but indirect | [bbb.co.uk](https://www.bbb.co.uk/) |
+| **OMERS / Temasek / ADIA / GIC** | Sovereign/sovereign-backed institutional investors | Large cheques, late stage | Global | Not pre-seed applicants. Treat as Series B+ sources; do not spend founder time pre-seed | [omers.com](https://www.omers.com/) · [temasek.com.sg](https://www.temasek.com.sg/) · [adia.ae](https://www.adia.ae/) · [gic.com.sg](https://www.gic.com.sg/) |
+| **Breakthrough Energy Ventures** | Climate deep-tech VC | Early-stage climate cheques | Global | Poor fit for a delivery-fleet hardware OEM; better for cell chemistry/energy software | [breakthroughenergyventures.com](https://www.breakthroughenergyventures.com/) |
+| **Lowercarbon Capital / Congruent Ventures** | Climate VC | Growth-stage climate cheques | Global | Too late-stage and too large; Series B+ relevance | [lowercarboncapital.com](https://www.lowercarboncapital.com/) · [congruentvc.com](https://www.congruentvc.com/) |
+| **Amazon Climate Pledge Fund** | Corporate climate fund | Equity; programme-based | Global | Generalist climate equity; no open application — strategic partnership or referral only. **No open application route** | [amazon.com](https://www.aboutamazon.com/sustainability/climate-promise/amazon-climate-pledge-fund) |
+| **SOSV / Indie** | Micro-venture / incubator | $50K–$500K, rapid | Global | Possible but uncommon fit for an OEM; software-first culture | [sosv.com](https://www.sosv.com/) |
+| **Porsche Startup Garage / Hyundai Cradle / Toyota Ventures / Honda X / Dacia Accelerate / Up! Lyon / Mass Mobility** | Corporate startup programmes | Varies; mostly pilots and POCs, not large equity | Corporate-specific | Use for **pilot validation and fleet-customer credibility**, not cash. Corporate programmes typically have no open application — monitor their sites and warm-intro via portfolio teams | [porsche-startupgarage.com](https://www.porsche-startupgarage.com/) · [hyundai.com/cradle](https://www.hyundai.com/worldwide/en/company/brand-and-innovation/cradle) · [toyotaventures.com](https://www.toyotaventures.com/) |
+| **Climate Investment (Shell)** | Corporate VC | Growth-stage | Global | Too late-stage | [climateinvestment.shell.com](https://climateinvestment.shell.com/) |
+| **Michael Moritz (M&O)** | Angel/VC | Individual cheques | Global | Not an open fund; network-driven | — |
+| **iDEX / ADITI** | Government challenge | INR grants | India | Defence-adjacent only | [idex.gov.in](https://idex.gov.in/) |
+| **Defence Innovation Fund (DIF)** | Government fund | Equity into defence startups | India | Defence-only | [DIF](https://www.dif.co.in/) |
+
+---
+
+## 4. Standard financing structures in Indian early-stage hardware
+
+### 4.1 SAFE vs CCPS vs convertible note — the Indian reality
+
+**SAFE is not a recognised instrument under Indian corporate law.** There is no Indian SAFE statute. In practice:
+
+- **YC's own deal is papered as a SAFE** — a US Delaware instrument. If Jedlik is a private limited company governed by the Companies Act 2013, a US SAFE is at best an awkward fit: it assumes US concepts (post-money valuation, "company" as a defined term, Delaware law). Indian counsel will normally insist on restating it.
+- **Practical Indian workaround: a CCPS or a convertible instrument** (subscription agreement + shareholders agreement, or an interest-bearing convertible instrument). Indian funds frequently sign a paper described as a "SAFE" but the executed agreement is a **CCPS** or a **convertible instrument** with a conversion trigger. Confirm the executed document, not the label.
+- **Enforceability**: a bare SAFE or CCPS without a shareholders' agreement has weak enforcement in India. Indian counsel must place the conversion mechanics, information rights, protective covenants, and a **long-stop date** in the subscription agreement, because a CCPS alone does not give the investor board/inspection rights. Clause referencing an "instrument" under a non-existent Indian SAFE regime creates risk.
+- **Recommendation:** paper the round as **CCPS + SHA** (clean, litigable, understood by Indian funds and tax authorities) rather than importing a US SAFE. If a global investor insists on SAFE paper, negotiate a side letter with explicit conversion to CCPS on the next priced round, plus an interim deemed-conversion percentage.
+
+### 4.2 Instrument comparison
+
+| Instrument | Use when | Pros | Cons / Indian cautions |
+|---|---|---|---|
+| **CCPS (convertible redeemable cumulative preferred shares)** | Standard Indian seed instrument; convertible on a priced round | Native to Indian law; tax-efficient; understood by Indian VCs and founders' lawyers; survives the SEBI/private-placement constraints because the company remains private | Requires careful SHA: conversion ratio, price cap/floor, anti-dilution (broad-based weighted average), liquidation preference (1x non-participating is the Indian norm), ESOP pool treatment, information rights, drag/tag, founder vesting |
+| **Convertible instrument / convertible note (unsecured, interest-bearing)** | Bridge or fast close when CCPS mechanics are too slow | Quick to sign; no share capital formalities; easy to unwind | Unsecured claim ranks behind secured debt; accruing interest and a hard conversion date create founder risk; if the company has a Series A bridge deadline and misses it, repayment can trigger a liquidity crisis. Noting: a note with a fixed conversion ratio can breach the issue-price/pro forma rules — counsel must check |
+| **SAFE** | Only if the investor requires US paper | Fast, founder-friendly, no interest, no maturity date | **Not an Indian statutory instrument.** Weak enforcement; must be backed by a SHA and ideally restated as CCPS at conversion. Cap table modelling must use post-money semantics carefully |
+| **RFA / revenue-linked or loan** | Funding working capital or a paid pilot against receivables | Non-dilutive; predictable | Senior to equity in a wind-down; cash-flow repayment risk; not appropriate for early-stage with no revenue |
+| **Direct equity (priced round)** | Seed / Series A when valuation and syndicate are settled | Simple, clean, certain | Immediate dilution; slower |
+| **Warrants / sweat equity** | Small top-ups or founder incentives | Low cash cost | Accounting and ESOP-limit complexity |
+
+### 4.3 Real Indian precedents
+
+- **Ather Energy** (Indian EV OEM) — the relevant benchmark. It has used **convertible warrants** alongside equity in its listed-company funding rounds, and **rights issues/warrant structures** to fund scale-up. This shows that Indian EV companies use convertible paper rather than US SAFEs at scale, and that listed-EV comparables fund through structured equity, not grants. ([Ather investor relations](https://www.atherenergy.com/investor-relations))
+- **Oxygen Biotech** and comparable Indian deep-tech startups — issue **CCPS with a shareholders' agreement**; the de facto market standard. ([IISc incubation / startup India case material](https://www.startupindia.gov.in/))
+- **YS-Business and other YC India alumni** — YC's SAFE is commonly restructured on the Indian side into CCPS + SHA by Indian counsel; investors accept this, usually in exchange for the YC terms being replicated in the SHA (MFN, pro-rata, information rights).
+
+### 4.4 Dilution and valuation norms (Indian pre-seed → seed → Series A)
+
+Typical Indian benchmarks (contextual; verify against current deal data):
+
+| Round | Typical cheque | Post-money valuation | Dilution accepted | Notes |
+|---|---|---|---|---|
+| **Pre-seed / angel** | ₹25L–₹2cr | ₹5cr–₹25cr | 10–20% | Often SAFE/CCPS; founder-heavy, angels and founder networks |
+| **Seed** | ₹2cr–₹15cr | ₹25cr–₹150cr | 15–25% | Priced equity plus CCPS clean-up; DFIs and seed funds enter |
+| **Series A** | ₹20cr–₹100cr | ₹150cr–₹600cr+ | 15–25% | Real revenue, fleet contracts and unit economics required |
+
+**Key norms:**
+- **ESOP pool:** typically **10–15% at pre-seed/seed**, created at Series A often at 10–12% (some teams 15–20% for deep-tech/hardware). In India, the post-IPO ceiling of **10%** (15% with promoter/sponsor conditions) constrains later top-ups, so pre-IPO founders should pre-create the pool above the future requirement. ([DPIIT/Startup India guidance on ESOP](https://www.startupindia.gov.in/))
+- **Dilution:** budget **~45–60% total dilution across pre-seed → Series A**, not per round. This is the number that actually matters — per-round 15–20% compounds to45–65%.
+- **Founder ownership:** a Series A company typically has founders at 35–55%, with ESOP 10–15%, investors 30–45%, angels/incubators 5–10%.
+- **Valuation discipline:** price the *pod and swap network economics*, not the "EV" narrative. Investors will want per-pod gross margin, swap-station capex and payback, fleet churn, and cost per km.
+
+---
+
+## 5. Prioritised application checklist for Jedlik
+
+**Tier 1 — apply now (0–3 months)**
+1. **NIDHI Seed Support Programme (SSP)** via a NIDHI TBI. Up to ₹1cr. Highest-value direct route. Build the TBI-relationship first.
+2. **NIDHI-PRAYAS 2.0** via an Advanced PRAYAS Centre (₹40L) for powertrain/pod prototype.
+3. **IIT Madras CoE / Advanced PRAYAS Centre / TIDES (DSSS)** — local, Anna University adjacency, and the CoE call calendar is the single most important recurring source of non-dilutive money and lab access. Check the IIT Madras CoE and PRAYAS Centre call pages monthly.
+4. **DPIIT recognition + 80-IAC + SIPP** — file now. Every grant route keys off DPIIT recognition; 80-IAC and SIPP reduce cash burn.
+5. **CGSS via a participating lender** — open a relationship with a bank/NBFC that offers collateral-free startup credit under CGSS. Apply on the strength of the grant pipeline, not just current revenue.
+
+**Tier 2 — build toward (3–9 months)**
+6. **PM E-DRIVE e-2W registration** — plan the GIA/manufacturer-registration route now so that commercial sales from FY2027-28 attract ₹2,500/kWh (max ₹5,000/vehicle). Model it as margin, not capital.
+7. **PM E-DRIVE charging / swapping infrastructure** — only after the first stations have real utilisation; reimbursement-based and capped.
+8. **GeM Startup Runway** — register as a seller; pursue state transport department and PSU e-3W/fleet tenders. This is revenue, and revenue is what unlocks the next round.
+9. **State capital subsidy** — decide Tamil Nadu (cluster + capital subsidy) versus Maharashtra (fleet density + per-vehicle subsidy) based on where the first plant and first fleet customers are. Do not chase both.
+10. **FoF 2.0 / FFS** — do not apply directly. Get into a SEBI-registered AIF whose mandate covers manufacturing/deep tech, and present as a domestic-capital anchor.
+
+**Tier 3 — capital events (6–18 months)**
+11. **Y Combinator or Techstars** — both now give an uncapped MFN SAFE structure, which is unusually founder-friendly. Expect ~1–2% acceptance at YC and a heavier equity/SAFE load (7% and 5% respectively). Apply when there is a prototype, a working swap demo, and two or three named fleet customers.
+12. **Proparco / IFC** — engage only when manufacturing or fleet-financing scale is visible; not a pre-seed equity cheque.
+13. **Corporate programmes (Hyundai Cradle, Porsche Startup Garage, Toyota Ventures, Dacia/Accelerate, Up! Lyon)** — pursue for pilots, certifications, and customer logos; do not model them as funding.
+
+**Explicitly skip:** ACC battery PLI and Automotive Component PLI (plant-scale, incompatible with pre-seed), BIRAC (biotech), FAME II and EMPS 2024 (closed), EBRD (not an India DFI), and the old SISFS application (closed).
+
+---
+
+## 6. Diligence package to assemble before applying
+
+- DPIIT recognition certificate; certificate of incorporation; Articles; current cap table; founder IP assignment agreements
+- Prototype evidence: test data, thermal/load cycles, IP rating, safety validation, BOM with landed cost
+- Swap-network model: station capex, units/stall, daily swaps, utilisation ramp, station payback, fleet partner LOIs
+- Unit economics per pod: BOM, gross margin at target volume, warranty reserve, battery replacement cost, service cost per km
+- Funding plan: 18-month runway, capex schedule, state location decision, which grants apply in which sequence
+- Compliance: FAME/PM E-DRIVE homologation intent, AIS-136/IS standards status, Recall policy, ISO 9001/14001/45001 roadmap
+
+---
+
+## 7. Sources
+
+**Primary — government**
+- Startup India, *Playbook of Government Schemes and Initiatives for Startups*, June 2026 — https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf
+- Startup India, *Tax Playbook for Startup Ecosystem*, May 2026 — https://www.startupindia.gov.in/content/dam/startupindia/Tax-Playbook-for-Startup-Ecosystem-May-2026.pdf
+- DPIIT, Startup India Fund of Funds 2.0 notification, April 2026 — https://www.dpiit.gov.in/static/uploads/2026/04/3382625ffc31ea32ecc33ea68365172d.pdf
+- MHI, PM E-DRIVE gazette notification, 10 Aug 2026 — https://pmedrive.heavyindustries.gov.in/docs/policy_document/Gazette%20Notification%2010%2008%202026%20on%20enhancement%20of%20Outlay%2011900%20cr.pdf
+- MHI, PM E-DRIVE FAQs — https://pmedrive.heavyindustries.gov.in/FAQs
+- DST, NIDHI PRAYAS 2.0 — https://nidhi.dst.gov.in/prayas2-0
+- DST, NIDHI Seed Support Programme — https://nidhi.dst.gov.in/nidhissp/
+- DST, NIDHI-Accelerator — https://nidhi.dst.gov.in/schemes-programmes/nidhiaccelerator/
+- SISFS portal (closed to new applications) — https://seedfund.startupindia.gov.in/
+- SIPP — https://www.dpiit.gov.in/offerings/schemes-and-services/details/sipp-gTM1UDNtQWa
+- GeM Startup Runway — https://gem.gov.in/Startup_Runway
+- iDEX — https://idex.gov.in/ ; ADITI guidelines — https://idex.gov.in//uploads/page/aditi_scheeme.pdf
+- AIM / AIC — https://aim.gov.in/aic-overview.php ; AIC guidelines — https://aim.gov.in/pdf/AIC-Guidelines-Final_24Nov-2023.pdf
+- MUDRA PMMY — https://www.pmjdy.gov.in/
+- CGTMSE — https://cgtmse.in/
+- FAME II (closed) — https://fame2.heavyindustries.gov.in/
+
+**Primary — global**
+- Y Combinator standard deal — https://ycombinator.com/deal
+- Techstars accelerators — https://www.techstars.com/accelerators
+- Plug and Play — https://www.plugandplaytech.com/
+- Proparco — https://www.proparco.com/en/
+- IFC — https://www.ifc.org/ ; ADB — https://www.adb.org/ ; EBRD — https://www.ebrd.com/ ; BBB — https://www.bbb.co.uk/
+- OMERS — https://www.omers.com/ ; Temasek — https://www.temasek.com.sg/ ; ADIA — https://www.adia.ae/ ; GIC — https://www.gic.com.sg/
+- Breakthrough Energy Ventures — https://www.breakthroughenergyventures.com/ ; Lowercarbon — https://www.lowercarboncapital.com/ ; Congruent — https://www.congruentvc.com/
+- Amazon Climate Pledge Fund — https://www.aboutamazon.com/sustainability/climate-promise/amazon-climate-pledge-fund
+- SOSV — https://www.sosv.com/
+- Porsche Startup Garage — https://www.porsche-startupgarage.com/ ; Hyundai Cradle — https://www.hyundai.com/worldwide/en/company/brand-and-innovation/cradle ; Toyota Ventures — https://www.toyotaventures.com/
+- Ather Energy investor relations — https://www.atherenergy.com/investor-relations
+
+---
+
+## 8. Open items and verification flags
+
+| Item | Status |
+|---|---|
+| Maharashtra EV Policy 2025–2030 superseding the 2024 policy | **UNCERTAIN** — reported but not verified against the gazette. Get the official PDF before modelling the ₹9,000/e-2W subsidy |
+| Karnataka Clean Mobility Policy 2025-30 terms | **UNCERTAIN** — official guidelines not retrieved |
+| Tamil Nadu EV policy — whether the 2022 policy or 2023 guidelines are operative, and current capital-subsidy rates | **UNCERTAIN** |
+| Gujarat / Telangana / AP / UP / Rajasthan / Delhi per-vehicle and capital-subsidy terms | **UNCERTAIN** — flagged; verify on state portals |
+| Whether PM E-DRIVE's *other* categories (e-3W, e-trucks) carry the same 10 Aug 2026 extension | **UNCERTAIN** — gazette confirms e-2W to FY2027-28 and scheme to 31 Mar 2028 |
+| Global climate funds (Lowercarbon, Congruent, Breakthrough Energy) — actual cheque sizes and current India mandate | **UNCERTAIN** — cheque sizes not verified from primary sources |
+| Corporate programmes (Hyundai Cradle, Porsche Startup Garage, Toyota Ventures, Honda X, Dacia/Accelerate, Up! Lyon, Mass Mobility) — whether any has an open application | **UNCERTAIN** — mostly referral-based; no open-call verification |
+| Pre-seed/seed valuation and dilution benchmarks | Directionally sourced from Indian ecosystem commentary, not a primary statistical series — treat as ranges, not benchmarks |
+
+**Tooling issue encountered:** the web-search backend's CA-cert path was stale (`/home/jedlik/.hermes/hermes-agent/venv/...`, a path that no longer existed). I worked around it by setting `SSL_CERT_FILE`/`REQUESTS_CA_BUNDLE`/`CURL_CA_BUNDLE` to `/etc/ssl/certs/ca-certificates.crt` in-process for each research batch. A symlink at the stale path was also created, but the running backend resolves certifi from its own venv, so the in-process env-var override remains the reliable workaround. This should be fixed at the Hermes installation level before the next research session.
+
+**Files created:** `/home/shriharini/.hermes/cache/scratch/pb.pdf` (Startup India June 2026 playbook, 107 pp, downloaded for full-text parsing) and `/home/shriharini/.hermes/cache/scratch/startup_playbook_june2026.pdf` (a failed 919-byte CloudFront 403 stub — disposable). CA bundle env vars appended to `/home/shriharini/.hermes/.bashrc`.

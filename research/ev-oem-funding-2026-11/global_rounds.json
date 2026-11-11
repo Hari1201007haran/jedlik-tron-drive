@@ -1,0 +1,438 @@
+{
+ "canoo": [
+  {
+   "date": "Oct 02, 2023",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "",
+   "lead": "",
+   "other": ""
+  },
+  {
+   "date": "Aug 24, 2020",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "",
+   "lead": "",
+   "other": "Yageo Corporation"
+  },
+  {
+   "date": "Apr 2020",
+   "amount": "",
+   "stage": "Conventional Debt",
+   "val": "",
+   "lead": "",
+   "other": "U.S. Small Business Administration"
+  }
+ ],
+ "fisker": [
+  {
+   "date": "Jul 10, 2023",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "-"
+  },
+  {
+   "date": "Oct 28, 2020",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "-"
+  },
+  {
+   "date": "Jul 08, 2020",
+   "amount": "",
+   "stage": "Series D",
+   "val": "$2.9B",
+   "lead": "-",
+   "other": "-"
+  },
+  {
+   "date": "Oct 22, 2018",
+   "amount": "",
+   "stage": "Series D",
+   "val": "-",
+   "lead": "Caterpillar",
+   "other": "-"
+  },
+  {
+   "date": "Dec 06, 2016",
+   "amount": "",
+   "stage": "Series D",
+   "val": "-",
+   "lead": "-",
+   "other": "-"
+  },
+  {
+   "date": "Sep 26, 2012",
+   "amount": "",
+   "stage": "Series D",
+   "val": "-",
+   "lead": "-",
+   "other": "-"
+  },
+  {
+   "date": "Apr 13, 2012",
+   "amount": "",
+   "stage": "Series D",
+   "val": "-",
+   "lead": "-",
+   "other": "-"
+  },
+  {
+   "date": "Jun 06, 2011",
+   "amount": "",
+   "stage": "Series D",
+   "val": "-",
+   "lead": "-",
+   "other": "-"
+  },
+  {
+   "date": "Mar 23, 2011",
+   "amount": "",
+   "stage": "Series D",
+   "val": "-",
+   "lead": "-",
+   "other": "-"
+  },
+  {
+   "date": "",
+   "amount": "",
+   "stage": "Seed",
+   "val": "-",
+   "lead": "-",
+   "other": "New Enterprise Associates"
+  },
+  {
+   "date": "Feb 2010",
+   "amount": "",
+   "stage": "Angel",
+   "val": "-",
+   "lead": "Jose Marin , Fabrice Grinda",
+   "other": "-"
+  },
+  {
+   "date": "Jan 27, 2010",
+   "amount": "",
+   "stage": "Series D",
+   "val": "-",
+   "lead": "-",
+   "other": "-"
+  },
+  {
+   "date": "Apr 07, 2009",
+   "amount": "",
+   "stage": "Series D",
+   "val": "-",
+   "lead": "-",
+   "other": "Egis Capital Partners"
+  },
+  {
+   "date": "Sep 10, 2008",
+   "amount": "",
+   "stage": "Series C",
+   "val": "-",
+   "lead": "-",
+   "other": "-"
+  },
+  {
+   "date": "Feb 08, 2008",
+   "amount": "",
+   "stage": "Series B",
+   "val": "-",
+   "lead": "-",
+   "other": "Palo Alto Investors"
+  },
+  {
+   "date": "Dec 03, 2007",
+   "amount": "",
+   "stage": "Series A",
+   "val": "-",
+   "lead": "-",
+   "other": "Palo Alto Investors"
+  }
+ ],
+ "lordstown": [
+  {
+   "date": "Nov 08, 2022",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "",
+   "lead": "",
+   "other": ""
+  },
+  {
+   "date": "Oct 14, 2020",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "",
+   "lead": "",
+   "other": ""
+  },
+  {
+   "date": "Sep 04, 2020",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "",
+   "lead": "",
+   "other": ""
+  },
+  {
+   "date": "Jul 06, 2020",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "",
+   "lead": "",
+   "other": ""
+  },
+  {
+   "date": "Apr 2020",
+   "amount": "",
+   "stage": "Conventional Debt",
+   "val": "",
+   "lead": "",
+   "other": "U.S. Small Business Administration"
+  },
+  {
+   "date": "Nov 08, 2019",
+   "amount": "2340",
+   "stage": "620120",
+   "val": "",
+   "lead": "",
+   "other": ""
+  }
+ ],
+ "nikola": [
+  {
+   "date": "Sep 08, 2020",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "General Motors"
+  },
+  {
+   "date": "Jun 08, 2020",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "Iveco"
+  },
+  {
+   "date": "Apr 15, 2020",
+   "amount": "",
+   "stage": "Conventional Debt",
+   "val": "-",
+   "lead": "-",
+   "other": "U.S. Small Business Administration"
+  },
+  {
+   "date": "Sep 03, 2019",
+   "amount": "",
+   "stage": "Series D",
+   "val": "-",
+   "lead": "CNH Industrial",
+   "other": "Bosch , Hanwha"
+  },
+  {
+   "date": "Apr 16, 2019",
+   "amount": "",
+   "stage": "Series C",
+   "val": "-",
+   "lead": "-",
+   "other": "ValueAct Capital"
+  },
+  {
+   "date": "Mar 06, 2019",
+   "amount": "",
+   "stage": "Series C",
+   "val": "-",
+   "lead": "-",
+   "other": "Ninatrans"
+  },
+  {
+   "date": "Aug 07, 2018",
+   "amount": "",
+   "stage": "Series C",
+   "val": "$1.1B",
+   "lead": "-",
+   "other": "Pillsbury , Nel Hydrogen"
+  },
+  {
+   "date": "Dec 20, 2017",
+   "amount": "",
+   "stage": "Series A",
+   "val": "$1B",
+   "lead": "WABCO",
+   "other": "-"
+  }
+ ],
+ "nio": [
+  {
+   "date": "Jun 03, 2024",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "Wuhan Optics Innovation Fund"
+  },
+  {
+   "date": "Dec 18, 2023",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "CYVN Holdings"
+  },
+  {
+   "date": "Jun 20, 2023",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "CYVN Holdings"
+  },
+  {
+   "date": "Apr 24, 2022",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "Tencent , Lone Pine Capital , CITIC Capital , Baillie Gifford"
+  },
+  {
+   "date": "Jan 13, 2021",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "-"
+  },
+  {
+   "date": "Jun 10, 2020",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "Tencent"
+  },
+  {
+   "date": "Apr 29, 2020",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "Hefei Construction Investment Holding , Anhui Provincial Emerging Industry Investment , SDIC Innovation"
+  },
+  {
+   "date": "Mar 05, 2020",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "-"
+  },
+  {
+   "date": "Feb 14, 2020",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "-"
+  },
+  {
+   "date": "Feb 06, 2020",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "-"
+  },
+  {
+   "date": "Jan 2020",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "-"
+  },
+  {
+   "date": "Sep 24, 2019",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "Tencent , Li Bin"
+  },
+  {
+   "date": "May 28, 2019",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "E-Town International Investment & Development"
+  },
+  {
+   "date": "Jan 30, 2019",
+   "amount": "",
+   "stage": "Post IPO",
+   "val": "-",
+   "lead": "-",
+   "other": "Tencent , Hillhouse"
+  },
+  {
+   "date": "Mar 03, 2017",
+   "amount": "",
+   "stage": "Series C",
+   "val": "-",
+   "lead": "Baidu , Tencent",
+   "other": "Hillhouse , Lenovo , GIC , Everbright-IDG"
+  },
+  {
+   "date": "Jun 30, 2016",
+   "amount": "",
+   "stage": "Series B",
+   "val": "-",
+   "lead": "-",
+   "other": "Temasek , TPG , Lenovo , Hopu Investments"
+  },
+  {
+   "date": "Sep 16, 2015",
+   "amount": "",
+   "stage": "Series B",
+   "val": "-",
+   "lead": "Sequoia Capital , Joy Capital",
+   "other": "-"
+  },
+  {
+   "date": "Jun 2015",
+   "amount": "",
+   "stage": "Series A",
+   "val": "-",
+   "lead": "-",
+   "other": "Hillhouse , Tencent , JD.com , Shunwei Capital , Bitauto"
+  }
+ ],
+ "zeekr": [
+  {
+   "date": "Feb 12, 2023",
+   "amount": "",
+   "stage": "Series A",
+   "val": "",
+   "lead": "",
+   "other": ""
+  },
+  {
+   "date": "Aug 27, 2021",
+   "amount": "",
+   "stage": "Seed",
+   "val": "",
+   "lead": "Contemporary Amperex Technology & 2 more",
+   "other": "Intel Capital"
+  }
+ ]
+}
